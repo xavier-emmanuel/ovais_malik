@@ -2,27 +2,27 @@
     <div class="header__nav--is-top">
       <ul class="social-media__link">
         <li class="social-media__icon social-media__icon--facebook">
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--twitter">
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--linkedin">
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--youtube">
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--imdb">
-          <a href="#">
+          <a href="#" target="_blank">
             <i class="fab fa-imdb"></i>
           </a>
         </li>
@@ -70,15 +70,47 @@
             <a class="nav-link" href="/videos-show">Videos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/blogs">Blog</a>
+            <a class="nav-link" href="/blogs">Blogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">
             LOGIN
           </button>
         </ul>
       </div>
     </nav>
   </header>
+
+  <!-- Modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voice Over Logo" width="100px">
+          <br>
+          <br>
+          <br>
+          <form action="">
+            <div class="form-group text-left">
+              <label for="login-username">Username:</label>
+              <input type="text" class="form-control" id="login-username">
+            </div>
+            <div class="form-group text-left">
+              <label for="login-password">Password:</label>
+              <input type="password" class="form-control" id="login-password">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-block">LOGIN</button>
+        </div>
+      </div>
+    </div>
+  </div>

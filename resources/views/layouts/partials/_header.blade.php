@@ -12,10 +12,6 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('/plugins/fontawesome/css/fontawesome-all.min.css') }}">
 
-  <!-- Owl Carousel -->
-  <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.carousel.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.theme.default.css') }}">
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
   @yield('stylesheets')

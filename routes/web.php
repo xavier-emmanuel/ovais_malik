@@ -12,6 +12,7 @@
 */
 Route::get('/admin-video', 'PagesController@adminVideo');
 
+Route::get('/contact', 'PagesController@contact');
 Route::get('/blog-single', 'PagesController@blogSingle');
 Route::get('/blogs', 'PagesController@blogs');
 Route::get('/videos-show', 'PagesController@videos');
