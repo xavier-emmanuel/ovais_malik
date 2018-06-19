@@ -20,5 +20,5 @@
   <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
   @yield('stylesheets')
 
-  <title>Ovais Malik Voice Over</title>
+  <title>{{ $page }} | Ovais Malik Voice Over</title>
 </head>
