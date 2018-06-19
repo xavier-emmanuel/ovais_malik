@@ -13,27 +13,27 @@ class PagesController extends Controller
      */
     public function index()
     {
-     return view('index');
+     return view('index')->with(array('page' => 'Home'));
     }
 
     public function about()
     {
-        return view('about');
+        return view('about')->with(array('page' => 'About'));
     }
 
     public function gallery()
     {
-        return view('gallery');
+        return view('gallery')->with(array('page' => 'Gallery'));
     }
 
     public function videos()
     {
-        return view('videos');
+        return view('videos')->with(array('page' => 'Videos'));
     }
 
     public function blogs()
     {
-        return view('blogs');
+        return view('blogs')->with(array('page' => 'Blogs'));
     }
 
     public function contact()
