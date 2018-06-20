@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="{{ asset('/plugins/datatable/dataTables.bootstrap4.min.css') }}">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
 
   <title>Ovais Malik Voice Over</title>
 </head>
