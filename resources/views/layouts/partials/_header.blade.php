@@ -13,9 +13,10 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('/plugins/fontawesome/css/fontawesome-all.min.css') }}">
 
+  @yield('stylesheets')
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
-  @yield('stylesheets')
 
   <title>{{ $page }} | Ovais Malik Voice Over</title>
 </head>
