@@ -20,7 +20,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
 
-  <title>{{ $page }} | Ovais Malik Voice Over</title>>
+  <title>{{ $page }} | Ovais Malik Voice Over</title>
 </head>
 
 <body class="admin-body">

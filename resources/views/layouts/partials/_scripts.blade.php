@@ -5,4 +5,5 @@
 
 <!-- Bootstrap JS -->
 <script src="{{ asset('/plugins/bootstrap/bootstrap.min.js') }}"></script>
+
 @yield('scripts')

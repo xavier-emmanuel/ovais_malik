@@ -2,10 +2,10 @@
 
 @section('stylesheets')
   <!-- CKEditor -->
-  <link rel="stylesheet" href="assets/plugins/ckeditor/contents.css">
+  <link rel="stylesheet" href="{{ asset('/plugins/ckeditor/contents.css') }}">
 
   <!-- Bootstrap Tags Input -->
-  <link rel="stylesheet" href="assets/plugins/bootstrap-tags-input/bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="{{ asset('/plugins/bootstrap-tags-input/bootstrap-tagsinput.css') }}">
 @endsection
 
 @section('content')
@@ -55,7 +55,7 @@
         <div class="form-group">
           <label for="">Preview:</label>
           <div class="preview-image-wrapper">
-            <img src="assets/img/oneiros-web-solutions-logo.png" alt="">
+            <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" alt="">
           </div>
         </div>
 
@@ -73,12 +73,12 @@
 
 @section('scripts')
 <!-- CKEditor -->
-<script src="assets/plugins/ckeditor/ckeditor.js"></script>
-<script src="assets/plugins/ckeditor/config.js"></script>
-<script src="assets/plugins/ckeditor/styles.js"></script>
+<script src="{{ asset('/plugins/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('/plugins/ckeditor/config.js') }}"></script>
+<script src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
 
 <!--Bootstrap Tags Input -->
-<script src="assets/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js"></script>
+<script src="{{ asset('/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
 
 <!-- Jquery Validator -->
 <script src="{{ asset('/plugins/jquery-validation/jquery.validate.min.js') }}"></script>

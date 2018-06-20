@@ -13,9 +13,10 @@
 <!-- Custom JS -->
 <script src="{{ asset('/js/app.js') }}"></script>
 
+@yield('scripts')
+
 <script>
   $(document).ready(function () {
     $('#myTable').DataTable();
   });
 </script>
-@yield('scripts')
