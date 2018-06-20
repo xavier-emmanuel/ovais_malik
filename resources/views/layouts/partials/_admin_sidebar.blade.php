@@ -12,7 +12,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="admin-blog">
                 <i class="fab fa-blogger-b"></i>&nbsp;&nbsp; Blog
               </a>
             </li>
