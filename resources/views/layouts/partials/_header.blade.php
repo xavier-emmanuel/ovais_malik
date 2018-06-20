@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{ asset('/plugins/fontawesome/css/fontawesome-all.min.css') }}">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
   @yield('stylesheets')
 
   <title>{{ $page }} | Ovais Malik Voice Over</title>
