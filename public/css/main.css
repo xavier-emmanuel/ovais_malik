@@ -388,7 +388,7 @@ blockquote {
   width: 100%;
   height: 70vh;
   overflow: hidden;
-  z-index: -1; }
+  z-index: 2; }
   @media only screen and (max-width: 532px) {
     #hero-wrapper {
       height: auto; } }
@@ -818,7 +818,9 @@ blockquote {
   display: grid;
   grid-template-columns: 230px 1fr;
   grid-template-rows: 60px auto 40px;
-  grid-template-areas: "aside header" "aside section" "aside footer";
+  grid-template-areas: "aside header"
+ "aside section"
+ "aside footer";
   margin: 0 auto;
   min-height: 100%;
   height: 100vh; }

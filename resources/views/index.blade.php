@@ -198,6 +198,7 @@
 @section('scripts')
 <!-- Owl Carousel JS -->
 <script src="{{ asset('/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('/js/pages/home.js') }}"></script>
 <script>
   $(document).ready(function () {
     var testimonial = $('.owl-carousel');
