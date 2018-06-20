@@ -5,6 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{{ asset('/img/favicon.ico') }}" sizes="16x16">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/bootstrap.min.css') }}">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="{{ asset('/plugins/fontawesome/css/fontawesome-all.min.css') }}">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="{{ asset('/css/main.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
   @yield('stylesheets')
 
   <title>{{ $page }} | Ovais Malik Voice Over</title>
