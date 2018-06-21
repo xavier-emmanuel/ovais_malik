@@ -30,6 +30,12 @@
               <a href="#">
                 <i class="fas fa-images"></i>&nbsp;&nbsp; Gallery
               </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-list-ol"></i>&nbsp;&nbsp; Category
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
