@@ -43,13 +43,13 @@
             <div class="headul"></div>
             <ul>
               <li>
-                <i class="fas fa-check"></i>&nbsp; Customized Recording Booth</li>
+                Customized Recording Booth</li>
               <li>
-                <i class="fas fa-check"></i>&nbsp; ISDN/Phone Patch/Skype</li>
+                ISDN/Phone Patch/Skype</li>
               <li>
-                <i class="fas fa-check"></i>&nbsp; MXL Heritage Genesis HE Microphone</li>
+                MXL Heritage Genesis HE Microphone</li>
               <li>
-                <i class="fas fa-check"></i>&nbsp; Custom PC/ Adobe Audition CC</li>
+                Custom PC/ Adobe Audition CC</li>
             </ul>
           </div>
         </div>
