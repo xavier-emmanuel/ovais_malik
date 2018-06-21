@@ -32,7 +32,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/admin-category">
                 <i class="fas fa-list-ol"></i>&nbsp;&nbsp; Category
               </a>
             </li>

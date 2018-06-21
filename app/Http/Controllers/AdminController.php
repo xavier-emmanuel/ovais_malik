@@ -15,4 +15,8 @@ class AdminController extends Controller
 		return view('create_blog')->with(array('page' => 'Create Blog'));
 	}
 
+	public function adminCategory() {
+		return view('admin_category')->with(array('page' => 'Category'));
+	}
+
 }

@@ -4,6 +4,11 @@
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.theme.default.css') }}">
+<style>
+  #hero-wrapper {
+    z-index: 1 !important;
+  }
+</style>
 @endsection
 @section('content')
 	<section id="hero-wrapper">
