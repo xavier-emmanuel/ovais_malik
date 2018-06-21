@@ -10,9 +10,9 @@
 
 @section('content')
   <section class="admin-section">
-    <div class="blog-wrapper">
-      <form id="frm-create-blog" method="post" enctype="multipart/form-data" name="frm_create_blog">
-        {{ csrf_field() }}
+    <form id="frm-create-blog" method="post" enctype="multipart/form-data" name="frm_create_blog">
+      {{ csrf_field() }}
+      <div class="blog-wrapper">
         <div class="box box-content-1">
           <div class="form-group">
             <label for="add-blog-title">
@@ -70,8 +70,8 @@
             </button>
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   </section>
 
 @endsection
