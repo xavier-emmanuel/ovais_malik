@@ -75,6 +75,7 @@
                 </span>
                 <span>{{ $audio->audio_duration }}</span>
               </li>
+              @endforeach
               <li class="list-group-item">
                 <p class="small">
                   <em>
@@ -82,7 +83,6 @@
                   </em>
                 </p>
               </li>
-              @endforeach
             </ul>
           </div>
         </div>
