@@ -9,9 +9,10 @@ $(document).ready(function() {
 		}
 	});
 
-    $(document).on('click','#btn-more',function(){
+    $(document).on('click','.show_more',function(){
        var id = $(this).data('id');
-       $("#btn-more").html("Loading...");
+       $('.li-show-more').html('<i class="fas fa-spinner fa-pulse"></i>');
+       $('.li-show-more').fadeOut(300);
        $.ajax({
            url : '/audio/more',
            method : 'POST',
@@ -29,7 +30,7 @@ $(document).ready(function() {
               }
               else
               {
-                  $('#btn-more').html("");
+                  $('.show_more').hide();
               }
            },
            error: function(xhr, error, ajaxOptions, thrownError) {
@@ -62,6 +63,9 @@ $(document).ready(function() {
 		$('.progress-bar').stop(true, true).animate({
 			'width': 0 + '%'
 		});
+
+		$('#audio-preview').get(0).play();
+		$('#audio-play').removeClass('fa-play').addClass('fa-pause');
 
 		player.addEventListener("timeupdate", function() {
 			var s = parseInt(player.currentTime % 60);

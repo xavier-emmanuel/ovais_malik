@@ -76,10 +76,10 @@
                 <span>{{ $audio->audio_duration }}</span>
               </li>
               @endforeach
-              <li class="list-group-item">
+              <li class="list-group-item li-show-more">
                 <p class="small">
                   <em>
-                    <span id="btn-more" data-id="{{ $audio->id }}" class="show_more">View More</span>
+                    <span data-id="{{ $audio->id }}" class="show_more">View More</span>
                   </em>
                 </p>
               </li>

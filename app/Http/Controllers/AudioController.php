@@ -122,13 +122,14 @@ class AudioController extends Controller
         $output = '';
         $id = $request->id;
         
-        $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(4)->get();
+        $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(2)->get();
         
         if(!$data->isEmpty())
         {
             foreach($data as $audio)
             {                               
-                $output .= '<li class="list-group-item audio-list" data-title="'.$audio->title.'" data-audio-duration="			'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
+                $output .= '<li class="list-group-item audio-list" data-title="'.$audio->title.'" 
+                				data-audio-duration="'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
 				                <span>
 				                  <i class="far fa-play-circle"></i>
 				                  &nbsp; '.$audio->title.'
@@ -136,13 +137,13 @@ class AudioController extends Controller
 				                <span>'.$audio->audio_duration.'</span>
 				            </li>';
             }
-            $output .= '<li class="list-group-item">
+            $output .= '<li class="list-group-item li-show-more">
             				<p class="small">
 	                            <em>
 	                            	<span id="btn-more" data-id="'.$audio->id.'" class="show_more">View More</span>
 	                            </em>
                             </p>
-                        </div>';
+                        </li>';
             echo $output;
         }
     }
