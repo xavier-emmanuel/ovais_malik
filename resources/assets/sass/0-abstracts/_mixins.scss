@@ -1,0 +1,70 @@
+@mixin contact {
+  .contact {
+    display: flex;
+    margin-right: 25px !important;
+
+    @media only screen and (max-width: 320px) {
+      flex-direction: column;
+      text-align: center;
+      margin-top: 10px;
+      margin-right: 0 !important;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 350px) {
+      flex-direction: column;
+      text-align: center;
+      margin-top: 10px;
+      margin-right: 0 !important;
+      padding: 0;
+    }
+
+    @media only screen and (max-width: 767px) {
+      margin-top: 0;
+      margin-right: 0 !important;
+      padding: 0.5rem;
+    }
+
+    .contact__list {
+      &:last-child {
+        margin-left: 20px;
+
+        @media only screen and (max-width: 320px) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin heading-underline {
+  .headul {
+    margin: 30px auto 50px auto;
+
+    @media only screen and (max-width: 767px) {
+      margin: 20px auto 40px auto;
+    }
+
+    @media only screen and (max-width: 575px) {
+      margin: 15px auto 35px auto;
+    }
+
+    @media only screen and (max-width: 320px) {
+      margin: 10px auto 30px auto;
+    }
+
+    &:before {
+      content: " ";
+      width: 220px;
+      height: 2px;
+      @extend %head-ul;
+    }
+
+    &:after {
+      content: " ";
+      width: 60px;
+      height: 6px;
+      @extend %head-ul;
+    }
+  }
+}

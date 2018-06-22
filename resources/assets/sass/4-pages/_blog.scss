@@ -1,0 +1,9 @@
+#blog {
+  @extend %background-default;
+
+  @extend .box-wrapper;
+
+  #pagination {
+    margin-top: 30px;
+  }
+}

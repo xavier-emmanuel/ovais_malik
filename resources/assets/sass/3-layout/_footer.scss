@@ -1,0 +1,22 @@
+#footer {
+  padding: 50px 0;
+  text-align: center;
+  background-color: $dark-grey;
+  color: darken($white, 3);
+
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    &.small {
+      color: darken($grey, 10);
+    }
+
+    img {
+      width: 90px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-stack-lato;
+  color: $dark-grey !important;
+}
+
+a {
+  color: inherit;
+  &:hover {
+    color: $dark-red !important;
+  }
+}
+
+@include heading-underline;
+
+#loginModal {
+  .modal-header {
+    border-bottom: none;
+    padding: 1rem 1rem 0 1rem;
+  }
+
+  .modal-footer {
+    border-top: none;
+    padding-top: 0;
+  }
+}
