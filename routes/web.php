@@ -31,6 +31,7 @@ Route::get('/check-audio-title', 'AudioController@checkAudioTitle');
 Route::get('/admin-audio/show', 'AudioController@ajaxShow');
 Route::post('/admin-audio/update', 'AudioController@ajaxUpdate');
 Route::post('/admin-audio/delete', 'AudioController@ajaxDelete');
+Route::post('/audio/more', 'AudioController@ajaxShowMore');
 
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog-single', 'PagesController@blogSingle');

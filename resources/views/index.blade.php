@@ -33,26 +33,30 @@
       <div class="headul"></div>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reel-controller">
-          <h4>Commercial Reel</h4>
+          <h4 class="audio-title">Commercial Reel</h4>
+          <div class="form-group" id="add-audio-prewiew" hidden><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
           <div class="author-time">
             <em>
               <p class="small">By: Ovais Malik</p>
             </em>
 
-            <p class="small">( 00:09 / 00:39 )</p>
+            <p class="small audio-duration"></p>
           </div>
 
           <div class="reel-controls">
             <div class="row">
               <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 controller">
-                <i class="fas fa-backward"></i>
-                <i class="fas fa-play"></i>
-                <i class="fas fa-forward"></i>
+                <input type="hidden" id="hdn-audio-duration" value="">
+                <span class="audio-control">
+                  <i class="fas fa-backward"></i>
+                  <i id="audio-play" class="fas fa-play"></i>
+                  <i class="fas fa-forward"></i>
+                </span>
               </div>
 
               <div class="col-lg-8 col-md-7 col-sm-6 col-xs-6">
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar" role="progressbar"></div>
                 </div>
               </div>
             </div>
@@ -61,39 +65,21 @@
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
           <div class="reel-container">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">
+            <ul class="list-group list-group-flush demo-reels">
+              <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+              @foreach($data as $audio)
+              <li class="list-group-item audio-list" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
                 <span>
                   <i class="far fa-play-circle"></i>
-                  &nbsp; Commercial Reel
+                  &nbsp; {{ $audio->title }}
                 </span>
-                <span>00:39</span>
+                <span>{{ $audio->audio_duration }}</span>
               </li>
-              <li class="list-group-item">
-                <span>
-                  <i class="far fa-play-circle"></i>
-                  &nbsp; Video Game Reel
-                </span>
-                <span>01:11</span>
-              </li>
-              <li class="list-group-item">
-                <span>
-                  <i class="far fa-play-circle"></i>
-                  &nbsp; Movie Trailer Reel
-                </span>
-                <span>00:59</span>
-              </li>
-              <li class="list-group-item">
-                <span>
-                  <i class="far fa-play-circle"></i>
-                  &nbsp; Urdu &amp; Hindi Reel
-                </span>
-                <span>01:08</span>
-              </li>
+              @endforeach
               <li class="list-group-item">
                 <p class="small">
                   <em>
-                    <a href="#">View More</a>
+                    <span id="btn-more" data-id="{{ $audio->id }}" class="show_more">View More</span>
                   </em>
                 </p>
               </li>

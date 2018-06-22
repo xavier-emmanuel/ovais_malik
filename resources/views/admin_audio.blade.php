@@ -57,7 +57,7 @@
                 <div class="form-group">
                   <label for="add-audio">
                     <i class="fas fa-file-audio"></i>&nbsp; Audio:<span>*</span></label>
-                  <input type="file" id="add-audio" name="add_audio" class="form-control-file" required><br>
+                  <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
                   <div class="form-group" id="add-audio-prewiew"><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
                 </div>
               

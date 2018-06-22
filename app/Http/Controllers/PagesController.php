@@ -15,9 +15,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $audio = Audio::all();
+        $audio = Audio::orderBy('created_at','DESC')->limit(4)->get();;
 
-        return view('index')->with(array('page' => 'Home', 'audio' => $audio));
+        return view('index')->with(array('page' => 'Home', 'data' => $audio));
     }
 
     public function about()
@@ -50,4 +50,10 @@ class PagesController extends Controller
     {
         return view('blog_single');
     }
+
+    public function adminVideo()
+    {
+        return view('admin_video');
+    }
+
 }
