@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Audio;
+
 
 class PagesController extends Controller
 {
@@ -13,7 +15,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-     return view('index')->with(array('page' => 'Home'));
+        $audio = Audio::all();
+
+        return view('index')->with(array('page' => 'Home', 'audio' => $audio));
     }
 
     public function about()

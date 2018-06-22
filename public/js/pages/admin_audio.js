@@ -83,6 +83,7 @@ $(document).ready(function() {
                 contentType: false,
                 success: function(data) {
                     $('#add-audio-modal').modal('hide');
+                    $('#add-audio-prewiew').hide();
                     $('#tbl-audio').DataTable().ajax.reload(null, false);
                     $('#frm-add-audio').trigger('reset');
                     $('.btn-add-audio').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Save');

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Audio;
+use App\MP3File;
 
 class AudioController extends Controller
 {
     //
+
     public function ajaxStore(Request $request){
 	    $input = Input::all();
 
@@ -23,6 +25,9 @@ class AudioController extends Controller
 				
 		$audio->title = $input['add_audio_title'];
 		$audio->audio_file = '/uploads/audio/'.$name;
+		$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
+		$duration = $mp3file->getDuration();
+		$audio->audio_duration = MP3File::formatTime($duration);
 		$audio->updated_at = null;
 
 		$audio->save();
@@ -83,14 +88,19 @@ class AudioController extends Controller
 		       $file = $input['edit_audio'];
 		       $name=time().$file->getClientOriginalName();
 		       $file->move(public_path().'/uploads/audio/', $name);
-		       $image = 'uploads/audio/'.$name;
+		       $audio_file = 'uploads/audio/'.$name;
+		       $mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
+			   $duration = $mp3file->getDuration();
 		   }
 		   else {
-		    $image = $input['hdn_audio'];
+		    $audio_file = $input['hdn_audio'];
+		    $mp3file = new MP3File(public_path().$audio_file);
+		    $duration = $mp3file->getDuration();
 		   }
 
 		$audio->title = $input['edit_audio_title'];
-		$audio->audio_file = $image;
+		$audio->audio_file = $audio_file;
+		$audio->audio_duration = MP3File::formatTime($duration);
 
 		$audio->save();
 

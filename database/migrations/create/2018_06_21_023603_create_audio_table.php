@@ -17,6 +17,7 @@ class CreateAudioTable extends Migration
             $table->increments('id');
             $table->string('title')->unique();
             $table->string('audio_file');
+            $table->string('audio_duration');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });
