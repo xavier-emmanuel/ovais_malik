@@ -22,7 +22,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="/admin-video">
                 <i class="fas fa-video"></i>&nbsp;&nbsp; Video
               </a>
             </li>

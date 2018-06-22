@@ -75,7 +75,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button">
             LOGIN
           </button>
         </ul>
@@ -92,25 +92,26 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voice Over Logo" width="100px">
-          <br>
-          <br>
-          <br>
-          <form action="">
+        <form action="/auth/login" method="POST" id="frm-login" name="frm_login">
+          {{ csrf_field() }}
+          <div class="modal-body">
+            <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voice Over Logo" width="100px">
+            <br>
+            <br>
+            <br>
             <div class="form-group text-left">
               <label for="login-username">Username:</label>
-              <input type="text" class="form-control" id="login-username">
+              <input type="text" class="form-control" id="login-username" name="login_username" autocomplete="off">
             </div>
             <div class="form-group text-left">
               <label for="login-password">Password:</label>
-              <input type="password" class="form-control" id="login-password">
+              <input type="password" class="form-control" id="login-password" name="login_password" autocomplete="off">
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary btn-block">LOGIN</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

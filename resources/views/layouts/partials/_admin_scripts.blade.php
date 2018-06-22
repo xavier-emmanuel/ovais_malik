@@ -13,10 +13,10 @@
 <!-- Custom JS -->
 <script src="{{ asset('/js/app.js') }}"></script>
 
-@yield('scripts')
+<!-- Toastr -->
+<script src="{{ asset('/plugins/toast-master/js/jquery.toast.js') }}"></script>
 
-<script>
-  $(document).ready(function () {
-    $('#myTable').DataTable();
-  });
-</script>
+<!-- jQuery Validation -->
+<script src="{{ asset('/plugins/jquery-validation/dist/jquery.validate.js') }}"></script>
+
+@yield('scripts')

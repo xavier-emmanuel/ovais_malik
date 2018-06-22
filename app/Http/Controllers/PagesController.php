@@ -50,9 +50,4 @@ class PagesController extends Controller
     {
         return view('blog_single');
     }
-
-    public function adminVideo()
-    {
-        return view('admin_video');
-    }
 }
