@@ -18,6 +18,13 @@ Route::get('/admin-blog/create', 'AdminController@createBlog');
 Route::get('/admin-category', 'AdminController@adminCategory');
 Route::get('/admin-category/store', 'CategoryController@ajaxStore');
 
+Route::get('/admin-audio', 'AdminController@adminAudio');
+Route::post('/admin-audio/store', 'AudioController@ajaxStore');
+Route::get('/check-audio-title', 'AudioController@checkAudioTitle');
+Route::get('/admin-audio/show', 'AudioController@ajaxShow');
+Route::post('/admin-audio/update', 'AudioController@ajaxUpdate');
+Route::post('/admin-audio/delete', 'AudioController@ajaxDelete');
+
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog-single', 'PagesController@blogSingle');
 Route::get('/blogs', 'PagesController@blogs');

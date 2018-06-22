@@ -19,4 +19,9 @@ class AdminController extends Controller
 		return view('admin_category')->with(array('page' => 'Category'));
 	}
 
+	public function adminAudio() {
+		return view('admin_audio')->with(array('page' => 'Audio'));
+	}
+
+
 }
