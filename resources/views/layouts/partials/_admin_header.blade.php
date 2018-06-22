@@ -24,7 +24,7 @@
 
   @yield('stylesheets')
 
-  <title>{{ $page }} | Ovais Malik Voice Over</title>
+  <title>Ovais Malik Voiceover | Multilingual Voice Talent - {{ $page }}</title>
 </head>
 
 <body class="admin-body">

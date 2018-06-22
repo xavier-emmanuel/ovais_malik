@@ -18,5 +18,5 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('/css/main.min.css') }}">
 
-  <title>{{ $page }} | Ovais Malik Voice Over</title>
+  <title>Ovais Malik Voiceover | Multilingual Voice Talent - {{ $page }}</title>
 </head>
