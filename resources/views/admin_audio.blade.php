@@ -1,7 +1,7 @@
 @extends('layouts.admin_master')
 
 @section('stylesheets')
-<link rel="stylesheet" href="{{ asset('/plugins/toast/jquery.toast.css') }}">
+<link rel="stylesheet" href="{{ asset('/plugins/toast-master/css/jquery.toast.css') }}">
 <style>
   .error {
         color: red !important;
@@ -145,6 +145,6 @@
 @endsection
 @section('scripts')
 <script src="{{ asset('/plugins/jquery-validation/jquery.validate.js') }}"></script>
-<script src="{{ asset('/plugins/toast/jquery.toast.js') }}"></script>
+<script src="{{ asset('/plugins/toast-master/js/jquery.toast.js') }}"></script>
 <script src="{{ asset('/js/pages/admin_audio.js') }}"></script>
 @endsection
