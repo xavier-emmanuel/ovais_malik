@@ -4,12 +4,8 @@
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.theme.default.css') }}">
-<style>
-  #hero-wrapper {
-    z-index: 1 !important;
-  }
-</style>
 @endsection
+
 @section('content')
 	<section id="hero-wrapper">
     <div id="hero-content">
@@ -185,12 +181,16 @@
       </div>
     </div>
   </section>
+
+  <button class="scroll-to-top" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 @endsection
+
 @section('scripts')
 <!-- Owl Carousel JS -->
 <script src="{{ asset('/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/js/pages/home.js') }}"></script>
 <script>
+
   $(document).ready(function () {
     var testimonial = $('.owl-carousel');
 
@@ -201,6 +201,21 @@
       autoplay: true,
       autoplayTimeout: 5000,
       autoplayHoverPause: true
+    });
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 150) {
+            $('.scroll-to-top').fadeIn();
+        } else {
+            $('.scroll-to-top').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scroll-to-top').click(function(){
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
     });
   });
 </script>
