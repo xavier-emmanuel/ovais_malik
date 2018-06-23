@@ -964,14 +964,8 @@ blockquote {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-#audio-reel .reel-container .list-group-item:last-child {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  min-height: 44px;
-  height: 44px;
+  min-height: 48px;
+  height: 48px;
 }
 
 #audio-reel .reel-container .list-group-item:hover {
@@ -985,6 +979,11 @@ blockquote {
 
 #audio-reel .reel-container .list-group-item a {
   color: #f2f2f2;
+}
+
+#audio-reel .active {
+  color: #b90504 !important;
+  border: none;
 }
 
 #testimonial {
@@ -1606,5 +1605,64 @@ label > span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.add-photos-wrapper {
+  margin: 0 0 30px 14px;
+}
+
+.add-photos-wrapper label {
+  margin-bottom: 0;
+}
+
+input[type=file] {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  bottom: 0;
+  left: 30px;
+  width: 145px;
+  height: 38px;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.admin-photos {
+  position: relative;
+}
+
+.admin-photos figure:hover {
+  cursor: pointer;
+}
+
+.admin-photos figure:hover .overlay {
+  opacity: 1;
+}
+
+.admin-photos figure:hover .gallery-action {
+  opacity: 1;
+}
+
+.admin-photos .overlay {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  overflow: hidden;
+  width: calc(100% - 30px);
+  height: calc(100% - 30px);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.admin-photos .gallery-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
 }
 

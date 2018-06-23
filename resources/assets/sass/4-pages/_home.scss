@@ -170,12 +170,8 @@
       color: darken($white, 5);
       display: flex;
       justify-content: space-between;
-
-      &:last-child {
-        justify-content: center;
-        min-height: 44px;
-        height: 44px;
-      }
+      min-height: 48px;
+      height: 48px;
 
       &:hover {
         color: $red;
@@ -190,6 +186,11 @@
         color: darken($white, 5);
       }
     }
+  }
+
+  .active {
+    color: $red !important;
+    border: none;
   }
 }
 

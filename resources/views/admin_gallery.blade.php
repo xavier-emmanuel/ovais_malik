@@ -1,74 +1,104 @@
 @extends('layouts.admin_master')
 
 @section('stylesheets')
-  <!-- Fancybox -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
 @endsection
 
 @section('content')
   <section class="admin-section">
     <div class="box">
       <div class="action">
-        <button type="button" id="test" class="btn btn-outline" data-toggle="modal" data-target="#add-image" data-backdrop="static">
-          <i class="fas fa-plus"></i>&nbsp; Add Image(s)
+        <button class="btn btn-outline" data-toggle="modal" data-target="#add-photos" data-backdrop="static">
+          <i class="fas fa-plus"></i>&nbsp; Upload Photos
         </button>
       </div>
 
-      <div class="row">
+      <div class="row admin-photos">
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1079" data-caption="My caption">
-              <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1077">
-              <img src="https://picsum.photos/300/200/?image=1077" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1062">
-              <img src="https://picsum.photos/300/200/?image=1062" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1050">
-              <img src="https://picsum.photos/300/200/?image=1050" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1027">
-              <img src="https://picsum.photos/300/200/?image=1027" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1024">
-              <img src="https://picsum.photos/300/200/?image=1024" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=9">
-              <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
-            <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=20">
-              <img src="https://picsum.photos/300/200/?image=20" alt="" width="100%">
-            </a>
+            <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
+            <div class="overlay">
+              <div class="gallery-action">
+                <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
           </figure>
         </div>
       </div>
@@ -78,8 +108,8 @@
     </div>
   </section>
 
-  <!-- Modal Add Image -->
-  <div class="modal fade" id="add-image" tabindex="-1" role="dialog" aria-labelledby="addImage" aria-hidden="true">
+  <!-- Modal Add Photos -->
+  <div class="modal fade" id="add-photos" tabindex="-1" role="dialog" aria-labelledby="addPhotos" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <form id="frm-edit-audio" method="post" enctype="multipart/form-data" name="frm_edit_audio">
@@ -87,27 +117,48 @@
           <input type="hidden" name="hdn_audio_id" id="hdn-audio-id">
           <input type="hidden" name="hdn_audio" id="hdn-audio">
           <div class="modal-header">
-            <h5 class="modal-title">Edit Audio</h5>
+            <h5 class="modal-title">Add Photo</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <div class="container-fluid"></div>
+            <button type="button" class="btn btn-primary add-photos-wrapper">
+              <input type="file" name="add_photos" id="add-photos" multiple>
+              <label for="add-photos"><i class="fas fa-image"></i>&nbsp; Select photos</label>
+            </button>
+
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Preview images here -->
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
+                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
+                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
+                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
+                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
+                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
+                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
             <button type="submit" class="btn btn-info btn-edit-audio">
-              <i class="fas fa-save"></i>&nbsp; Save</button>
+              <i class="fas fa-upload"></i>&nbsp; Upload</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- Modal Edit Image -->
-  <div class="modal fade" id="edit-image" tabindex="-1" role="dialog" aria-labelledby="editImage" aria-hidden="true">
+  <!-- Modal Edit Photos -->
+  <div class="modal fade" id="edit-photos" tabindex="-1" role="dialog" aria-labelledby="editPhotos" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form id="frm-edit-audio" method="post" enctype="multipart/form-data" name="frm_edit_audio">
@@ -147,8 +198,8 @@
     </div>
   </div>
 
-  <!-- Modal Delete Image -->
-  <div class="modal fade" id="delete-image" tabindex="-1" role="dialog" aria-labelledby="deleteImage" aria-hidden="true">
+  <!-- Modal Delete Photos -->
+  <div class="modal fade" id="delete-photos" tabindex="-1" role="dialog" aria-labelledby="deletePhotos" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form id="frm-delete-audio" method="post" name="frm_delete_audio">
@@ -179,6 +230,4 @@
 @endsection
 
 @section('scripts')
-  <!-- Fancybox -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 @endsection
