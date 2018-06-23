@@ -17,81 +17,88 @@
     min-height: 100%;
     width: 100vw;
   }
+}
 
-  #video-content {
-    top: -100px;
-    left: 0;
-    right: 0;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: $white;
-    height: 100vh;
+#video-content {
+  top: -100px;
+  left: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: $white;
+  height: 100vh;
 
-    @media only screen and (max-width: 320px) {
-      top: -35vh;
+  @media only screen and (max-width: 320px) {
+    top: -35vh;
+  }
+
+  h1 {
+    @media only screen and (max-width: 532px) {
+      display: none;
     }
 
-    h1 {
-      @media only screen and (max-width: 532px) {
-        display: none;
-      }
+    span {
+      color: $red;
+    }
+  }
 
-      @media only screen and (min-width: 533px) and (max-width: 766px) {
-        font-size: 2rem;
-      }
-
-      @media only screen and (max-width: 767px) {
-        font-size: 3.25rem;
-      }
-
-      span {
-        color: $red;
-      }
+  p {
+    @media only screen and (max-width: 532px) {
+      display: none;
     }
 
-    p {
-      @media only screen and (max-width: 532px) {
-        display: none;
-      }
-
-      @media only screen and (min-width: 533px) and (max-width: 766px) {
-        font-size: 1.5rem;
-      }
-
-      @media only screen and (max-width: 767px) {
-        font-size: 2.25rem;
-      }
+    @media only screen and (min-width: 533px) and (max-width: 766px) {
+      font-size: 1.5rem;
     }
 
-    .video-control {
-      position: absolute;
-      top: 25%;
-      right: 5%;
-
-      @media only screen and (max-width: 320px) {
-        top: 38vh;
-      }
-
-      @media only screen and (min-width: 487px) and (max-width: 767px) {
-        top: 28vh;
-      }
-
-      i {
-        font-size: 2rem;
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        @media only screen and (max-width: 320px) {
-          font-size: 1.5rem;
-        }
-      }
+    @media only screen and (max-width: 767px) {
+      font-size: 2.25rem;
     }
+  }
+}
+
+.video-control {
+  position: absolute;
+  top: 20%;
+  right: 2%;
+  display: flex;
+
+  .video-control--is-circle {
+    border-radius: 50%;
+    border: 3px solid $white;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: transparent;
+    margin-left: 5px;
+
+    &:hover {
+      background-color: $red;
+      border-color: $red;
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    top: 38vh;
+    right: 5%;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 486px) {
+    top: 20vh;
+    right: 5%;
+  }
+
+  @media only screen and (min-width: 487px) and (max-width: 767px) {
+    top: 20vh;
+    right: 5%;
   }
 }
 

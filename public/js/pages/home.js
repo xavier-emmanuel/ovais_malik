@@ -1,10 +1,10 @@
-$(document).ready(function() {
-	$(document).on("click", ".video-control", function() {
-		if ($(this).find('i').hasClass('fa-pause-circle')) {
-			$(this).find('i').removeClass('fa-pause-circle').addClass('fa-play-circle');
+$(document).ready(function () {
+	$(document).on("click", ".video-control", function () {
+		if ($(this).find('i').hasClass('fa-pause')) {
+			$(this).find('i').removeClass('fa-pause').addClass('fa-play');
 			$('#myVideo').get(0).pause();
 		} else {
-			$(this).find('i').removeClass('fa-play-circle').addClass('fa-pause-circle');
+			$(this).find('i').removeClass('fa-play').addClass('fa-pause');
 			$('#myVideo').get(0).play();
 		}
 	});

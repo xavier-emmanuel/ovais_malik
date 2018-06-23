@@ -786,7 +786,7 @@ blockquote {
   width: 100vw;
 }
 
-#hero-wrapper #video-content {
+#video-content {
   top: -100px;
   left: 0;
   right: 0;
@@ -794,10 +794,6 @@ blockquote {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -810,80 +806,86 @@ blockquote {
 }
 
 @media only screen and (max-width: 320px) {
-  #hero-wrapper #video-content {
+  #video-content {
     top: -35vh;
   }
 }
 
 @media only screen and (max-width: 532px) {
-  #hero-wrapper #video-content h1 {
+  #video-content h1 {
     display: none;
   }
 }
 
-@media only screen and (min-width: 533px) and (max-width: 766px) {
-  #hero-wrapper #video-content h1 {
-    font-size: 2rem;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  #hero-wrapper #video-content h1 {
-    font-size: 3.25rem;
-  }
-}
-
-#hero-wrapper #video-content h1 span {
+#video-content h1 span {
   color: #b90504;
 }
 
 @media only screen and (max-width: 532px) {
-  #hero-wrapper #video-content p {
+  #video-content p {
     display: none;
   }
 }
 
 @media only screen and (min-width: 533px) and (max-width: 766px) {
-  #hero-wrapper #video-content p {
+  #video-content p {
     font-size: 1.5rem;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  #hero-wrapper #video-content p {
+  #video-content p {
     font-size: 2.25rem;
   }
 }
 
-#hero-wrapper #video-content .video-control {
+.video-control {
   position: absolute;
-  top: 25%;
-  right: 5%;
+  top: 20%;
+  right: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.video-control .video-control--is-circle {
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: transparent;
+  margin-left: 5px;
+}
+
+.video-control .video-control--is-circle:hover {
+  background-color: #b90504;
+  border-color: #b90504;
+  cursor: pointer;
+}
+
+.video-control .video-control--is-circle i {
+  font-size: 1rem;
 }
 
 @media only screen and (max-width: 320px) {
-  #hero-wrapper #video-content .video-control {
+  .video-control {
     top: 38vh;
+    right: 5%;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 486px) {
+  .video-control {
+    top: 20vh;
+    right: 5%;
   }
 }
 
 @media only screen and (min-width: 487px) and (max-width: 767px) {
-  #hero-wrapper #video-content .video-control {
-    top: 28vh;
-  }
-}
-
-#hero-wrapper #video-content .video-control i {
-  font-size: 2rem;
-}
-
-#hero-wrapper #video-content .video-control i:hover {
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 320px) {
-  #hero-wrapper #video-content .video-control i {
-    font-size: 1.5rem;
+  .video-control {
+    top: 20vh;
+    right: 5%;
   }
 }
 

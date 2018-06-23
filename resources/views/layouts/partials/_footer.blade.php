@@ -1,3 +1,5 @@
+<button class="scroll-to-top" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
 <footer id="footer">
   <div class="container">
     <p>Copyright 2018
