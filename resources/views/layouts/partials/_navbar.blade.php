@@ -2,22 +2,22 @@
     <div class="header__nav--is-top">
       <ul class="social-media__link">
         <li class="social-media__icon social-media__icon--facebook">
-          <a href="#" target="_blank">
+          <a href="https://www.facebook.com/ovaismalikvoiceover/" target="_blank">
             <i class="fab fa-facebook-f"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--twitter">
-          <a href="#" target="_blank">
+          <a href="https://twitter.com/OvaisMalikVO" target="_blank">
             <i class="fab fa-twitter"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--linkedin">
-          <a href="#" target="_blank">
+          <a href="https://www.linkedin.com/in/ovaismalik/" target="_blank">
             <i class="fab fa-linkedin-in"></i>
           </a>
         </li>
         <li class="social-media__icon social-media__icon--youtube">
-          <a href="#" target="_blank">
+          <a href="https://www.youtube.com/user/drumgy8" target="_blank">
             <i class="fab fa-youtube"></i>
           </a>
         </li>
