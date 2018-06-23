@@ -120,16 +120,16 @@ class AudioController extends Controller
 	public function ajaxShowMore(Request $request)
     {
         $output = '';
+        $output_show_more = '';
         $id = $request->id;
         
-        $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(4)->get();
+        $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(2)->get();
         
         if(!$data->isEmpty())
         {
             foreach($data as $audio)
             {                               
-                $output .= '<li class="list-group-item audio-list audio-list-id'.$audio->id.'" data-id="'.$audio->id.'" data-title="'.$audio->title.'" 
-                				data-audio-duration="'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
+                $output .= '<li class="list-group-item audio-list audio-list-id'.$audio->id.'" data-id="'.$audio->id.'" data-title="'.$audio->title.'" data-audio-duration="'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
 				                <span>
 				                  <i class="far fa-play-circle"></i>
 				                  &nbsp; '.$audio->title.'
@@ -137,14 +137,14 @@ class AudioController extends Controller
 				                <span>'.$audio->audio_duration.'</span>
 				            </li>';
             }
-            $output .= '<li class="list-group-item li-show-more">
-            				<p class="small">
-	                            <em>
-	                            	<span id="btn-more" data-id="'.$audio->id.'" class="show_more">View More</span>
-	                            </em>
-                            </p>
-                        </li>';
-            echo $output;
+            $output_show_more .= '<div class="div-show-more"><li class="list-group-item li-show-more">
+		            				<p class="small">
+				                            <em>
+				                            	<span id="btn-more" data-id="'.$audio->id.'" class="show_more">View More</span>
+				                            </em>
+			                            </p>
+			                        </li></div>';
+            return response()->json(['output' => $output, 'btn_show_more' => $output_show_more]);
         }
     }
 

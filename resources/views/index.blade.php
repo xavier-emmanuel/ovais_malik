@@ -4,6 +4,14 @@
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.theme.default.css') }}">
+<style>
+  .list-group-item {
+    justify-content: space-between !important;
+  }
+  .li-show-more {
+    justify-content: center !important;
+  }
+</style>
 @endsection
 
 @section('content')
@@ -34,7 +42,7 @@
       <div class="headul"></div>
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reel-controller">
-          <h4 class="audio-title">Commercial Reel</h4>
+          <h4 class="audio-title"></h4>
           <div class="form-group" id="add-audio-prewiew" hidden><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
           <div class="author-time">
             <em>
@@ -47,6 +55,7 @@
           <div class="reel-controls">
             <div class="row">
               <div class="col-lg-4 col-md-5 col-sm-6 col-xs-6 controller">
+                <input type="hidden" id="hdn-audio-list-id" value="">
                 <input type="hidden" id="hdn-audio-duration" value="">
                 <span class="audio-control">
                   <i class="fas fa-backward"></i>
@@ -69,14 +78,16 @@
             <ul class="list-group list-group-flush demo-reels">
               <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
               @foreach($data as $audio)
-              <li class="list-group-item audio-list" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
-                <span>
-                  <i class="far fa-play-circle"></i>
-                  &nbsp; {{ $audio->title }}
-                </span>
-                <span>{{ $audio->audio_duration }}</span>
-              </li>
+                <li class="list-group-item audio-list audio-list-id{{ $audio->id }}" data-id="{{ $audio->id }}" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
+                  <span>
+                    <i class="far fa-play-circle"></i>
+                    &nbsp; {{ $audio->title }}
+                  </span>
+                  <span>{{ $audio->audio_duration }}</span>
+                </li>
               @endforeach
+            </ul>
+            <div class="div-show-more">
               <li class="list-group-item li-show-more">
                 <p class="small">
                   <em>
@@ -84,7 +95,7 @@
                   </em>
                 </p>
               </li>
-            </ul>
+            </div>
           </div>
         </div>
       </div>

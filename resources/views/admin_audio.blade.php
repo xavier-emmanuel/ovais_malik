@@ -96,7 +96,7 @@
               <div class="form-group">
                 <label for="add-audio">
                   Audio:<span>*</span></label>
-                <input type="file" id="edit-audio" name="edit_audio" class="form-control-file"><br>
+                <input type="file" id="edit-audio" name="edit_audio" class="form-control-file" accept=".mp3,audio/*"><br>
               </div>
               <div class="form-group audio-preview" id="edit-audio-prewiew">
                 <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
