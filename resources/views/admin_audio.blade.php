@@ -7,9 +7,10 @@
         color: red !important;
         border-color: red !important;
     }
-  
+
 </style>
 @endsection
+
 @section('content')
 		<section class="admin-section">
       <div class="box">
@@ -29,7 +30,7 @@
             </tr>
           </thead>
           <tbody>
-            
+
           </tbody>
         </table>
       </div>
@@ -48,19 +49,20 @@
               </button>
             </div>
             <div class="modal-body">
-              
+
                 <div class="form-group">
-                  <label for="add-audio">
-                    <i class="fas fa-tag"></i>&nbsp; Title:<span>*</span></label>
+                  <label for="add-audio">Title:<span>*</span></label>
                   <input type="text" class="form-control" id="add-audio-title" name="add_audio_title" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                   <label for="add-audio">
-                    <i class="fas fa-file-audio"></i>&nbsp; Audio:<span>*</span></label>
+                    Audio:<span>*</span></label>
                   <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
-                  <div class="form-group" id="add-audio-prewiew"><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
                 </div>
-              
+                <div class="form-group audio-preview" id="add-audio-prewiew">
+                  <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+                </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -88,19 +90,20 @@
               </button>
             </div>
             <div class="modal-body">
-              
+
                 <div class="form-group">
-                  <label for="add-audio">
-                    <i class="fas fa-tag"></i>&nbsp; Title:<span>*</span></label>
+                  <label for="add-audio">Title:<span>*</span></label>
                   <input type="text" class="form-control" id="edit-audio-title" name="edit_audio_title" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                   <label for="add-audio">
-                    <i class="fas fa-file-audio"></i>&nbsp; Audio:<span>*</span></label>
+                    Audio:<span>*</span></label>
                   <input type="file" id="edit-audio" name="edit_audio" class="form-control-file"><br>
-                  <div class="form-group" id="edit-audio-prewiew"><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
                 </div>
-              
+                <div class="form-group audio-preview" id="edit-audio-prewiew">
+                  <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+                </div>
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -143,6 +146,7 @@
       </div>
     </div>
 @endsection
+
 @section('scripts')
 <script src="{{ asset('/plugins/jquery-validation/jquery.validate.js') }}"></script>
 <script src="{{ asset('/plugins/toast-master/js/jquery.toast.js') }}"></script>

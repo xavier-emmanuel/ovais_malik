@@ -166,10 +166,17 @@
 
       &:last-child {
         justify-content: center;
+        min-height: 44px;
+        height: 44px;
       }
+
       &:hover {
         color: $red;
         cursor: pointer;
+      }
+
+      p.small {
+        margin: 0;
       }
 
       a {

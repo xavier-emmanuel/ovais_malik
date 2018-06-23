@@ -1,0 +1,47 @@
+.jq-toast-single {
+  border-radius: 4px !important;
+}
+
+.jq-toast-single h2 {
+  font-family: inherit !important;
+}
+
+.jq-icon-success {
+  background-color: $s-success !important;
+  border-color: darken($s-success, 10) !important;
+  color: $white !important;
+
+  .jq-toast-loader {
+    background-color: darken($s-success, 10) !important;
+  }
+}
+
+.jq-icon-error {
+  background-color: $s-error !important;
+  border-color: darken($s-error, 10) !important;
+  color: $white !important;
+
+  .jq-toast-loader {
+    background-color: darken($s-error, 10) !important;
+  }
+}
+
+.jq-icon-warning {
+  background-color: $s-warning !important;
+  border-color: darken($s-warning, 10) !important;
+  color: $white !important;
+
+  .jq-toast-loader {
+    background-color: darken($s-warning, 10) !important;
+  }
+}
+
+.jq-icon-info {
+  background-color: $s-info !important;
+  border-color: darken($s-info, 10) !important;
+  color: $white !important;
+
+  .jq-toast-loader {
+    background-color: darken($s-info, 10) !important;
+  }
+}

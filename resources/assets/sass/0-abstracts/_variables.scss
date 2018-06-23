@@ -5,6 +5,12 @@ $dark-grey: #333333 !default;
 $grey:      #cccccc !default;
 $white:     #ffffff !default;
 
+// Supporting Color
+$s-error    : #e0182d !default;
+$s-success  : #5aa700 !default;
+$s-warning  : #efc100 !default;
+$s-info     : #5aaafa !default;
+
 // Font
 $font-base: 16;
 $font-stack-poppins: ("Poppins", "Helvetica Neue", Arial, sans-serif) !default;

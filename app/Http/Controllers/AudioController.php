@@ -22,7 +22,7 @@ class AudioController extends Controller
 		}
 
 		$audio = new Audio();
-				
+
 		$audio->title = $input['add_audio_title'];
 		$audio->audio_file = '/uploads/audio/'.$name;
 		$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
@@ -36,17 +36,17 @@ class AudioController extends Controller
 	}
 
 	public function checkAudioTitle(Request $request){
-		
+
 		$audio = Audio::where('title', Input::get('add_audio_title'))->first();
 	   	if ($audio) {
 	        return response()->json(FALSE);
 	   	} else {
 	        return response()->json(TRUE);
-	    }	
+	    }
 	}
 
 	public function ajaxShow(Request $request){
-    	
+
     	$audio = Audio::all();
     	$data = array();
 
@@ -75,13 +75,13 @@ class AudioController extends Controller
         );
 
 		return response()->json($output);
-		
+
 	}
 
 	public function ajaxUpdate(Request $request){
 
 		$input = Input::all();
-		$audio = Audio::findOrFail($input['hdn_audio_id']);  
+		$audio = Audio::findOrFail($input['hdn_audio_id']);
 
         if(Input::file('edit_audio'))
 		   {
@@ -105,7 +105,7 @@ class AudioController extends Controller
 		$audio->save();
 
 		return response()->json(['success'=>'Updated successfully.']);
-		
+
 	}
 
 	public function ajaxDelete(Request $request){
@@ -114,21 +114,21 @@ class AudioController extends Controller
 		Audio::find($input['hdn_audio_id'])->delete();
 
 		return response()->json();
-		
+
 	}
 
 	public function ajaxShowMore(Request $request)
     {
         $output = '';
         $id = $request->id;
-        
+
         $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(2)->get();
-        
+
         if(!$data->isEmpty())
         {
             foreach($data as $audio)
-            {                               
-                $output .= '<li class="list-group-item audio-list" data-title="'.$audio->title.'" 
+            {
+                $output .= '<li class="list-group-item audio-list" data-title="'.$audio->title.'"
                 				data-audio-duration="'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
 				                <span>
 				                  <i class="far fa-play-circle"></i>
