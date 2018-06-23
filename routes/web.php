@@ -25,6 +25,8 @@ Route::get('/admin-blog/create', 'AdminController@createBlog');
 Route::get('/admin-category', 'AdminController@adminCategory');
 Route::get('/admin-category/store', 'CategoryController@ajaxStore');
 
+Route::get('/admin-gallery', 'AdminController@adminGallery');
+
 Route::get('/admin-audio', 'AdminController@adminAudio');
 Route::post('/admin-audio/store', 'AudioController@ajaxStore');
 Route::get('/check-audio-title', 'AudioController@checkAudioTitle');

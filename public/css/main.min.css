@@ -1066,21 +1066,21 @@ blockquote {
   }
 }
 
-.gallery figure {
+figure {
   margin-bottom: 1.75rem;
 }
 
-.gallery .load-more {
+.load-more {
   margin-top: 20px;
 }
 
-.gallery .load-more .btn-outline {
+.load-more .btn-outline {
   padding-right: 30px;
   padding-left: 30px;
 }
 
 @media only screen and (max-width: 575px) {
-  .gallery .load-more .btn-outline {
+  .load-more .btn-outline {
     width: 100%;
   }
 }
@@ -1526,6 +1526,14 @@ label > span {
 .admin-aside a:hover {
   text-decoration: none;
   background-color: #e6e5e5;
+}
+
+.admin-aside .active {
+  background-color: #e6e5e5;
+}
+
+.admin-aside .active a {
+  color: #b90504;
 }
 
 .admin-section {

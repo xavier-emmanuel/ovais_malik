@@ -96,6 +96,14 @@
       background-color: darken($white, 10);
     }
   }
+
+  .active {
+    background-color: darken($white, 10);
+
+    a {
+      color: $red;
+    }
+  }
 }
 
 .admin-section {

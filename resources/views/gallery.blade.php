@@ -1,9 +1,10 @@
 @extends('layouts.master')
 
 @section('stylesheets')
-<!-- Fancybox -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+  <!-- Fancybox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
 @endsection
+
 @section('content')
 	<section class="gallery">
     <div class="container">
@@ -73,7 +74,8 @@
     </div>
   </section>
 @endsection
+
 @section('scripts')
-<!-- Fancybox -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <!-- Fancybox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 @endsection

@@ -10,13 +10,13 @@
 <script src="{{ asset('/plugins/datatable/dataTables.min.js') }}"></script>
 <script src="{{ asset('/plugins/datatable/dataTables.bootstrap4.min.js') }}"></script>
 
-<!-- Custom JS -->
-<script src="{{ asset('/js/app.js') }}"></script>
-
 <!-- Toastr -->
 <script src="{{ asset('/plugins/toast-master/js/jquery.toast.js') }}"></script>
 
 <!-- jQuery Validation -->
 <script src="{{ asset('/plugins/jquery-validation/dist/jquery.validate.js') }}"></script>
+
+<!-- Custom JS -->
+<script src="{{ asset('/js/app.js') }}"></script>
 
 @yield('scripts')

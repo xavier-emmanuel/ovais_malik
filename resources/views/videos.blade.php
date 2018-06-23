@@ -2,6 +2,7 @@
 
 @section('stylesheets')
 @endsection
+
 @section('content')
 	<section class="videos">
     <div class="container">
@@ -14,6 +15,7 @@
     </div>
   </section>
 @endsection
+
 @section('scripts')
-<script src="{{ asset('/js/pages/videos.js') }}"></script>
+  <script src="{{ asset('/js/pages/videos.js') }}"></script>
 @endsection

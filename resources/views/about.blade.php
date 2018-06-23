@@ -2,6 +2,7 @@
 
 @section('stylesheets')
 @endsection
+
 @section('content')
 	<section id="about">
     <div class="container">
@@ -57,5 +58,6 @@
     </div>
   </section>
 @endsection
+
 @section('scripts')
 @endsection

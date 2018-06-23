@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     //
-    public function adminBlog() {
+  public function adminBlog() {
 		return view('admin_blog')->with(array('page' => 'Blog'));
 	}
 
@@ -23,5 +23,7 @@ class AdminController extends Controller
 		return view('admin_audio')->with(array('page' => 'Audio'));
 	}
 
-
+	public function adminGallery() {
+		return view('admin_gallery')->with(array('page' => 'Gallery'));
+	}
 }
