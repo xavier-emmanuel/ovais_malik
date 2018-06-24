@@ -18,4 +18,22 @@
 
 @section('scripts')
   <script src="{{ asset('/js/pages/videos.js') }}"></script>
+  <script>
+    window.sr = ScrollReveal({
+      mobile: true,
+      opacity: 0,
+      scale: 1,
+      duration: 1000
+    });
+
+    sr.reveal('h1.text-center', {
+      origin: 'right',
+      distance: '500px',
+    });
+
+    sr.reveal('.headul', {
+      origin: 'left',
+      distance: '500px',
+    });
+  </script>
 @endsection
