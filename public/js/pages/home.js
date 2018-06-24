@@ -1,3 +1,38 @@
+window.sr = ScrollReveal({
+	mobile: true,
+	opacity: 0,
+	scale: 1,
+	duration: 1000
+});
+
+sr.reveal('.reel-controller, .reel-container', {
+	distance: '2px',
+	delay: 700
+});
+
+sr.reveal('h1.text-center', {
+	origin: 'right',
+	distance: '1000px',
+});
+
+sr.reveal('.headul', {
+	origin: 'left',
+	distance: '1000px',
+});
+
+sr.reveal('.img-fluid', {
+	scale: 1,
+	origin: 'left',
+	easing: 'ease',
+	distance: '100px',
+	delay: 700
+});
+
+sr.reveal('.about', {
+	delay: 800,
+	distance: '2px'
+});
+
 $(document).ready(function() {
 	$(document).on("click", ".video-pause-play", function() {
 		if ($(this).find('i').hasClass('fa-pause')) {

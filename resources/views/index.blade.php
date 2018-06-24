@@ -116,7 +116,7 @@
           <img src="{{ asset('/img/about-us-image.jpg') }}" alt="About Image" class="img-fluid">
         </div>
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-          <p>Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
+          <p class="about">Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
             which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music.
             <br>
             <br> Trustworthy is one of the first words clients use to describe Ovais' voice. Other words include Believable,
@@ -207,7 +207,6 @@
 <script src="{{ asset('/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/js/pages/home.js') }}"></script>
 <script>
-
   $(document).ready(function () {
     var testimonial = $('.owl-carousel');
 

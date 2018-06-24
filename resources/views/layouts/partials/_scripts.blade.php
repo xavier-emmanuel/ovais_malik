@@ -6,6 +6,9 @@
 <!-- Bootstrap JS -->
 <script src="{{ asset('/plugins/bootstrap/bootstrap.min.js') }}"></script>
 
+<!-- Scroll Reveal JS -->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
 <script>
   $(document).ready(function() {
      //Check to see if the window is top if not then display button
