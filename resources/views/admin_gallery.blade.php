@@ -102,9 +102,6 @@
           </figure>
         </div>
       </div>
-      <div class="text-center load-more">
-        <a href="#" class="btn btn-outline">LOAD MORE</a>
-      </div>
     </div>
   </section>
 
