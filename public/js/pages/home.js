@@ -12,12 +12,12 @@ sr.reveal('.reel-controller, .reel-container', {
 
 sr.reveal('h1.text-center', {
 	origin: 'right',
-	distance: '1000px',
+	distance: '500px',
 });
 
 sr.reveal('.headul', {
 	origin: 'left',
-	distance: '1000px',
+	distance: '500px',
 });
 
 sr.reveal('.img-fluid', {

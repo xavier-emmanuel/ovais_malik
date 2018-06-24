@@ -15,7 +15,7 @@
           <img src="{{ asset('/img/about-us-image.jpg') }}" alt="About Image" class="img-fluid">
         </div>
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-          <p>Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
+          <p class="about">Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
             which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music.
             <br>
             <br> Trustworthy is one of the first words clients use to describe Ovais' voice. Other words include Believable,
@@ -60,4 +60,38 @@
 @endsection
 
 @section('scripts')
+  <script>
+    window.sr = ScrollReveal({
+      mobile: true,
+      opacity: 0,
+      scale: 1,
+      duration: 1000
+    });
+
+    sr.reveal('h1.text-center', {
+      origin: 'right',
+      distance: '500px',
+    });
+
+    sr.reveal('.headul', {
+      origin: 'left',
+      distance: '500px',
+      container: '#about'
+    });
+
+    sr.reveal('.img-fluid', {
+      scale: 1,
+      origin: 'left',
+      easing: 'ease',
+      distance: '100px',
+      delay: 700
+    });
+
+    sr.reveal('.about', {
+      delay: 800,
+      distance: '2px'
+    });
+
+    sr.reveal('.box')
+  </script>
 @endsection

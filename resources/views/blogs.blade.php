@@ -166,4 +166,14 @@
 @endsection
 
 @section('scripts')
+  <script>
+    window.sr = ScrollReveal({
+      mobile: true,
+      opacity: 0,
+      scale: 1,
+      duration: 1000
+    });
+
+    sr.reveal('.box')
+  </script>
 @endsection
