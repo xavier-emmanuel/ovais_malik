@@ -1,21 +1,22 @@
 .add-photos-wrapper {
   margin: 0 0 30px 14px;
+
   label {
     margin-bottom: 0;
   }
-}
 
-input[type=file] {
-  position: absolute;
-  top: 16px;
-  right: 0;
-  bottom: 0;
-  left: 30px;
-  width: 145px;
-  height: 38px;
-  cursor: pointer;
-  overflow: hidden;
-  opacity: 0;
+  input[type=file] {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    bottom: 0;
+    left: 30px;
+    width: 145px;
+    height: 38px;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+  }
 }
 
 .admin-photos {

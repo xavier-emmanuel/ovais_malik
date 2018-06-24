@@ -1615,7 +1615,7 @@ label > span {
   margin-bottom: 0;
 }
 
-input[type=file] {
+.add-photos-wrapper input[type=file] {
   position: absolute;
   top: 16px;
   right: 0;
