@@ -5,7 +5,7 @@ sr.reveal('.reel-controller, .reel-container', {
 
 sr.reveal('.headul', {
 	origin: 'left',
-	distance: '500px',
+	distance: '100px',
 });
 
 sr.reveal('.img-fluid', {

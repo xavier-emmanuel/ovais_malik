@@ -22,7 +22,7 @@
     <div id="hero-content">
       <div id="video-background">
         <video autoplay loop muted id="myVideo">
-          <source src="{{ asset('/videos/test.mp4') }}" type="video/mp4">
+          <source src="{{ asset('/videos/video_background.mp4') }}" type="video/mp4">
         </video>
       </div>
 

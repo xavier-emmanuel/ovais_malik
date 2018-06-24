@@ -63,7 +63,7 @@
   <script>
     sr.reveal('.headul', {
       origin: 'left',
-      distance: '500px',
+      distance: '200px',
       container: '#about'
     });
 

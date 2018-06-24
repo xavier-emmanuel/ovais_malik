@@ -19,7 +19,7 @@
 
   sr.reveal('h1.text-center', {
     origin: 'right',
-    distance: '500px',
+    distance: '100px',
   });
 
   $(document).ready(function() {

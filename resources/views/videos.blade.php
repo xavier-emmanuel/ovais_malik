@@ -21,7 +21,7 @@
   <script>
     sr.reveal('.headul', {
       origin: 'left',
-      distance: '500px',
+      distance: '100px',
     });
   </script>
 @endsection

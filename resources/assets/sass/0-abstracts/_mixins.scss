@@ -3,20 +3,12 @@
     display: flex;
     margin-right: 25px !important;
 
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 425px) {
       flex-direction: column;
-      text-align: center;
       margin-top: 10px;
       margin-right: 0 !important;
       padding: 0;
-    }
-
-    @media only screen and (max-width: 350px) {
-      flex-direction: column;
       text-align: center;
-      margin-top: 10px;
-      margin-right: 0 !important;
-      padding: 0;
     }
 
     @media only screen and (max-width: 767px) {
@@ -29,7 +21,7 @@
       &:last-child {
         margin-left: 20px;
 
-        @media only screen and (max-width: 320px) {
+        @media only screen and (max-width: 425px) {
           margin-left: 0;
         }
       }
