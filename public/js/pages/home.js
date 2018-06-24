@@ -1,11 +1,21 @@
 $(document).ready(function() {
-	$(document).on("click", ".video-control", function() {
+	$(document).on("click", ".video-pause-play", function() {
 		if ($(this).find('i').hasClass('fa-pause')) {
 			$(this).find('i').removeClass('fa-pause').addClass('fa-play');
 			$('#myVideo').get(0).pause();
 		} else {
 			$(this).find('i').removeClass('fa-play').addClass('fa-pause');
 			$('#myVideo').get(0).play();
+		}
+	});
+
+	$(document).on("click", ".video-volume", function() {
+		if ($(this).find('i').hasClass('fa-volume-off')) {
+			$(this).find('i').removeClass('fa-volume-off').addClass('fa-volume-up');
+			$("#myVideo").prop('muted', false);
+		} else {
+			$(this).find('i').removeClass('fa-volume-up').addClass('fa-volume-off');
+			$("#myVideo").prop('muted', true);
 		}
 	});
 

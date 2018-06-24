@@ -25,10 +25,10 @@
 
       <div id="video-content">
         <span class="video-control">
-          <div class="video-control--is-circle">
+          <div class="video-control--is-circle video-volume">
             <i class="fas fa-volume-off"></i>
           </div>
-          <div class="video-control--is-circle">
+          <div class="video-control--is-circle video-pause-play">
             <i class="fas fa-pause"></i>
           </div>
         </span>
