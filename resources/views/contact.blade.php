@@ -59,4 +59,12 @@
 @endsection
 
 @section('scripts')
+  <script>
+    sr.reveal('.headul', {
+      origin: 'left',
+      distance: '500px',
+    });
+
+    sr.reveal('.form-wrapper')
+  </script>
 @endsection

@@ -1,18 +1,6 @@
-window.sr = ScrollReveal({
-	mobile: true,
-	opacity: 0,
-	scale: 1,
-	duration: 1000
-});
-
 sr.reveal('.reel-controller, .reel-container', {
 	distance: '2px',
 	delay: 500
-});
-
-sr.reveal('h1.text-center', {
-	origin: 'right',
-	distance: '500px',
 });
 
 sr.reveal('.headul', {

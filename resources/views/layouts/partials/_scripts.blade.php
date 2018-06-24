@@ -10,6 +10,18 @@
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
 <script>
+  window.sr = ScrollReveal({
+    mobile: true,
+    opacity: 0,
+    scale: 1,
+    duration: 1000
+  });
+
+  sr.reveal('h1.text-center', {
+    origin: 'right',
+    distance: '500px',
+  });
+
   $(document).ready(function() {
      //Check to see if the window is top if not then display button
     $(window).scroll(function(){

@@ -167,11 +167,9 @@
 
 @section('scripts')
   <script>
-    window.sr = ScrollReveal({
-      mobile: true,
-      opacity: 0,
-      scale: 1,
-      duration: 1000
+    sr.reveal('.headul', {
+      origin: 'left',
+      distance: '500px',
     });
 
     sr.reveal('.box')
