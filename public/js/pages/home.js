@@ -173,21 +173,16 @@ $(document).ready(function() {
      	if ($('.demo-reels li.active').find('i').hasClass('fa-pause-circle')) {
 			$('.demo-reels li.active').find('i').removeClass('fa-pause-circle').addClass('fa-play-circle');
 			$('#audio-preview').get(0).pause();
+			window.clearInterval(updateTime);
 		} else if ($('.demo-reels li.active').find('i').hasClass('fa-play-circle')) {
 			$('.demo-reels li').not('.active').find('i').removeClass('fa-pause-circle').addClass('fa-play-circle');
 			$('#audio-play').removeClass('fa-play').addClass('fa-pause');
 			$('.demo-reels li.active').find('i').removeClass('fa-play-circle').addClass('fa-pause-circle');
 			$('#audio-preview').get(0).play();
+			updateTime = setInterval(update,500);
 		}
 
 		var player = document.getElementById('audio-preview');
-		player.addEventListener("timeupdate", function() {
-			var currentTime = player.currentTime;
-			var duration = player.duration;
-			$('.progress-bar').stop(true, true).animate({
-				'width': (currentTime + .25) / duration * 100 + '%'
-			}, 250, 'linear');
-		});
 
 		player.addEventListener("timeupdate", function() {
 			var s = parseInt(player.currentTime % 60);
@@ -221,21 +216,16 @@ $(document).ready(function() {
      	if ($('.demo-reels li.active').find('i').hasClass('fa-pause-circle')) {
 			$('.demo-reels li.active').find('i').removeClass('fa-pause-circle').addClass('fa-play-circle');
 			$('#audio-preview').get(0).pause();
+			window.clearInterval(updateTime);
 		} else if ($('.demo-reels li.active').find('i').hasClass('fa-play-circle')) {
 			$('.demo-reels li').not('.active').find('i').removeClass('fa-pause-circle').addClass('fa-play-circle');
 			$('#audio-play').removeClass('fa-play').addClass('fa-pause');
 			$('.demo-reels li.active').find('i').removeClass('fa-play-circle').addClass('fa-pause-circle');
 			$('#audio-preview').get(0).play();
+			updateTime = setInterval(update,500);
 		}
 
 		var player = document.getElementById('audio-preview');
-		player.addEventListener("timeupdate", function() {
-			var currentTime = player.currentTime;
-			var duration = player.duration;
-			$('.progress-bar').stop(true, true).animate({
-				'width': (currentTime + .25) / duration * 100 + '%'
-			}, 250, 'linear');
-		});
 
 		player.addEventListener("timeupdate", function() {
 			var s = parseInt(player.currentTime % 60);
