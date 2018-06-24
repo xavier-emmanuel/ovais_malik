@@ -7,7 +7,7 @@ window.sr = ScrollReveal({
 
 sr.reveal('.reel-controller, .reel-container', {
 	distance: '2px',
-	delay: 700
+	delay: 500
 });
 
 sr.reveal('h1.text-center', {
@@ -30,6 +30,11 @@ sr.reveal('.img-fluid', {
 
 sr.reveal('.about', {
 	delay: 800,
+	distance: '2px'
+});
+
+sr.reveal('.owl-carousel', {
+	delay: 500,
 	distance: '2px'
 });
 
