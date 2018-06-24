@@ -11,6 +11,9 @@
   .li-show-more {
     justify-content: center !important;
   }
+  .progress {
+    width: 100% !important;
+  }
 </style>
 @endsection
 
@@ -66,7 +69,7 @@
 
               <div class="col-lg-8 col-md-7 col-sm-6 col-xs-6">
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar"></div>
+                  <div class="progress-bar" id="progress-bar" role="progressbar"></div>
                 </div>
               </div>
             </div>
