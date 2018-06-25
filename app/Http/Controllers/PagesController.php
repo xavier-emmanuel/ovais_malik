@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Audio;
+use App\Blog;
 
 
 class PagesController extends Controller
@@ -37,7 +38,8 @@ class PagesController extends Controller
 
     public function blogs()
     {
-        return view('blogs')->with(array('page' => 'Blogs'));
+        $blog = Blog::orderBy('created_at','DESC')->paginate(4);
+        return view('blogs')->with(array('page' => 'Blogs', 'data' => $blog));
     }
 
     public function contact()
