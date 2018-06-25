@@ -77,7 +77,7 @@
             <a href="#" target="_blank" class="btn btn-outline"> <i class="fas fa-eye"></i>
               &nbsp; Preview
             </a>
-            <button type="submit" class="btn btn-outline"> <i class="fas fa-newspaper"></i>
+            <button type="submit" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
               &nbsp; Publish
             </button>
           </div>

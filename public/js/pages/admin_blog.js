@@ -46,6 +46,7 @@ $(document).ready(function () {
                }
             },
             blog_featured_image: "required",
+            blog_category: "required",
             blog_content: {
                 required: function() {
                     CKEDITOR.instances.blog_content.updateElement();
@@ -59,6 +60,7 @@ $(document).ready(function () {
                 remote: "This title already exists."
             },
             blog_featured_image: "The featured image field is required.",
+            blog_category: "The category field is required.",
             blog_content: {
                 required: "Please enter Text",
                 minlength: "Please enter 10 characters"
@@ -71,6 +73,7 @@ $(document).ready(function () {
 
             $('#frm-create-blog input').prop('disabled', true);
             $('#frm-create-blog .btn').prop('disabled', true);
+            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
 
             $.ajax({
                 url: '/admin-blog/create/store',
@@ -97,6 +100,7 @@ $(document).ready(function () {
         debug: false,
         rules: {
             blog_title: "required",
+            blog_category: "required",
             blog_content: {
                 required: function() {
                     CKEDITOR.instances.blog_content.updateElement();
@@ -108,6 +112,7 @@ $(document).ready(function () {
             blog_title: {
                 required: "The title field is required."
             },
+            blog_category: "The category field is required.",
             blog_content: {
                 required: "Please enter Text",
                 minlength: "Please enter 10 characters"
@@ -120,6 +125,7 @@ $(document).ready(function () {
 
             $('#frm-edit-blog input').prop('disabled', true);
             $('#frm-edit-blog .btn').prop('disabled', true);
+            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
 
             $.ajax({
                 url: '/admin-blog/edit/update',
