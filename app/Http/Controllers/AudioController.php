@@ -15,7 +15,7 @@ class AudioController extends Controller
 
 		if($input['add_audio']) {
 			$file = $input['add_audio'];
-			$name=time().$file->getClientOriginalName();
+			$name=$input['add_audio_title'].'.mp3';
 			$file->move(public_path().'/uploads/audio/', $name);
 		}
 
@@ -86,7 +86,7 @@ class AudioController extends Controller
 
         if(Input::file('edit_audio')) {
 			$file = $input['edit_audio'];
-			$name=time().$file->getClientOriginalName();
+			$name=$input['add_audio_title'].'.mp3';
 			$file->move(public_path().'/uploads/audio/', $name);
 			$audio_file = 'uploads/audio/'.$name;
 			$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);

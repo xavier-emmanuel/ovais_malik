@@ -34,6 +34,12 @@ Route::get('/admin-audio/show', 'AudioController@ajaxShow');
 Route::post('/admin-audio/update', 'AudioController@ajaxUpdate');
 Route::post('/admin-audio/delete', 'AudioController@ajaxDelete');
 
+Route::get('/admin-category/show', 'CategoryController@ajaxShow');
+Route::post('/admin-category/store', 'CategoryController@ajaxStore');
+Route::get('/check-category-name', 'CategoryController@checkCategoryName');
+Route::post('/admin-category/update', 'CategoryController@ajaxUpdate');
+Route::post('/admin-category/delete', 'CategoryController@ajaxDelete');
+
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog-single', 'PagesController@blogSingle');
 Route::get('/blogs', 'PagesController@blogs');
