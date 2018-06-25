@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reel-controller">
           <h4 class="audio-title"></h4>
-          <div class="form-group" id="add-audio-prewiew" hidden><audio controls src="#" type="audio/mp3" id="audio-preview"></audio></div>
+          <audio controls id="audio-preview" hidden></audio>
           <div class="author-time">
             <em>
               <p class="small">By: Ovais Malik</p>
@@ -71,7 +71,7 @@
               </div>
 
               <div class="col-lg-8 col-md-7 col-sm-6 col-xs-6">
-                <div class="progress">
+                <div class="progress" id="progress">
                   <div class="progress-bar" id="progress-bar" role="progressbar"></div>
                 </div>
               </div>

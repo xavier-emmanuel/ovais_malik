@@ -91,17 +91,32 @@ $(document).ready(function() {
 		}
 	}
 
+	function clickedBar(e) {
+		var player = document.getElementById('audio-preview');
+		var progressBar = document.getElementById('progress-bar');
+		var bar = document.getElementById('progress');
+
+		if (!player.ended) {
+			var mouseX = e.pageX - bar.offsetLeft;
+			var newtime = mouseX * player.duration / 100;
+			player.currentTime = newtime;
+			progressBar.style.width = mouseX + '%';
+		}
+	}
+
     var id = $('.audio-list').data('id');
     var audio_file = $('.audio-list').data('audio-file');
     var title = $('.audio-list').data('title');
     var audio_duration = $('.audio-list').data('audio-duration');
+    var bar = document.getElementById('progress');
     $('.audio-title').html(title);
 	$('.audio-duration').html('( 0:00 / ' + audio_duration + ' )');
-	$("#add-audio-prewiew").find('#audio-preview').attr('src', audio_file);
+	$('#audio-preview').attr('src', audio_file);
     $('#hdn-audio-duration').val(audio_duration);
     $('#audio-play').addClass('audio-play'+id);
     $('#hdn-audio-list-id').val(id);
     $('.audio-list-id'+id).addClass('active');
+    bar.addEventListener('click',clickedBar,false);
     
     $(document).on('click','.audio-list',function(){
        var id = $(this).data('id');
@@ -111,7 +126,7 @@ $(document).ready(function() {
        $('.audio-title').html(title);
 	   $('.audio-duration').html(audio_duration);
 	   if ($(this).find('i').hasClass('fa-play-circle')) {
-	   		$("#add-audio-prewiew").find('#audio-preview').attr('src', audio_file);
+	   		$('#audio-preview').attr('src', audio_file);
 	   }
 	   $('.audio-control').find('.fa-pause').removeClass('fa-pause').addClass('fa-play');
 	   $('#hdn-audio-duration').val(audio_duration);
@@ -194,7 +209,7 @@ $(document).ready(function() {
 		var audio_file = $('.demo-reels li.active').data('audio-file');
 		var title = $('.demo-reels li.active').data('title');
 	    var audio_duration = $('.demo-reels li.active').data('audio-duration');
-		$("#add-audio-prewiew").find('#audio-preview').attr('src', audio_file);
+		$('#audio-preview').attr('src', audio_file);
 		$('.audio-title').html(title);
      	$('.audio-duration').html('( 0:00 / ' + audio_duration + ' )');
 
@@ -237,7 +252,7 @@ $(document).ready(function() {
 		var audio_file = $('.demo-reels li.active').data('audio-file');
 		var title = $('.demo-reels li.active').data('title');
 	    var audio_duration = $('.demo-reels li.active').data('audio-duration');
-		$("#add-audio-prewiew").find('#audio-preview').attr('src', audio_file);
+		$('#audio-preview').attr('src', audio_file);
 		$('.audio-title').html(title);
      	$('.audio-duration').html('( 0:00 / ' + audio_duration + ' )');
 
