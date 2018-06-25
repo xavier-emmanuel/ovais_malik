@@ -40,8 +40,37 @@
     }
   }
 
-  .admin-name {
+  .o-admin__wrapper {
     margin-left: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      margin-top: 22px;
+      min-width: 13rem;
+    }
+
+    .dropdown-item {
+      padding: .40rem 1rem;
+      color: inherit;
+    }
+
+    .o-admin-bell {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: -5px;
+      left: 25px;
+    }
+  }
+
+  .o-admin__image--is-round {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
   }
 }
 
