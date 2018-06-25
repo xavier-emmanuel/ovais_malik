@@ -57,8 +57,7 @@
           <div class="modal-body">
 
               <div class="form-group">
-                <label for="add-category">
-                  <i class="fas fa-link"></i>&nbsp; Name:</label>
+                <label for="add-category">Name:</label>
                 <input type="text" class="form-control" id="add-category-name" name="category_name" autocomplete="off">
               </div>
 
@@ -98,8 +97,7 @@
           <div class="modal-body">
 
               <div class="form-group">
-                <label for="edit-category">
-                  <i class="fas fa-link"></i>&nbsp; Name:</label>
+                <label for="edit-category">Name:</label>
                 <input type="text" class="form-control" id="edit-category-name" name="category_name" autocomplete="off">
               </div>
 

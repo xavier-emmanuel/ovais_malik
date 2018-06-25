@@ -51,11 +51,11 @@ class AudioController extends Controller
     	foreach($audio as $row) {
     		$id =  $row->id;
             $title = $row->title;
-            $created_at = date('d M Y', $row->created_at->timestamp);
-            if (isset($row->updated_at->timestamp)) {
-            	$updated_at = date('d M Y', $row->updated_at->timestamp);
-            } else {
+            $created_at = $row->created_at->format('F d, Y h:i:s A');
+            if (empty($row->updated_at)) {
             	$updated_at = '';
+            } else {
+            	$updated_at = $row->updated_at->format('F d, Y h:i:s A');
             }
             $button = '<td>
 						<button type="button" class="btn btn-info edit-audio" data-toggle="modal" data-target="#edit-audio" data-id="'.$row->id.'" data-title="'.$row->title.'" data-audio="'.$row->audio_file.'"><i class="fas fa-edit"></i></button>&nbsp;

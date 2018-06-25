@@ -4,25 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Carbon\Carbon;
 use App\Category;
 
 class CategoryController extends Controller
 {
-    //
 
     public function ajaxShow(Request $request){
-
     	$category = Category::all();
     	$data = array();
 
     	foreach($category as $row) {
-    		$id =  $row->id;
+
+    				$id =  $row->id;
             $name = $row->name;
-            $created_at = date('d M Y', $row->created_at->timestamp);
-            if (isset($row->updated_at->timestamp)) {
-            	$updated_at = date('d M Y', $row->updated_at->timestamp);
-            } else {
+            $created_at = $row->created_at->format('F d, Y h:i:s A');
+            if (empty($row->updated_at)) {
             	$updated_at = '';
+            } else {
+            	$updated_at = $row->updated_at->format('F d, Y h:i:s A');
             }
             $button = '<td>
 						<button type="button" class="btn btn-info edit-category" data-toggle="modal" data-target="#edit-category" data-id="'.$row->id.'" data-name="'.$row->name.'"><i class="fas fa-edit"></i></button>&nbsp;
@@ -47,7 +47,7 @@ class CategoryController extends Controller
 	}
 
 	public function ajaxStore(Request $request){
-	    $input = Input::all();
+	  $input = Input::all();
 
 		$category = new Category();
 

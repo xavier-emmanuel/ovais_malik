@@ -17,8 +17,8 @@ class AdminVideoController extends Controller
       $link = '<td>
                 <a href="'.$row->link.'" target="_blank">'.$row->link.'</a>
               </td>';
-      $created_at = '<td>'.$row->created_at.'</td>';
-      $updated_at = '<td>'.$row->updated_at.'</td>';
+      $created_at = '<td>'.$row->created_at->format('F d, Y h:i:s A').'</td>';
+      $updated_at = '<td>'.$row->updated_at->format('F d, Y h:i:s A').'</td>';
       $button = '<td>
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#edit-video" id="btn-edit-video" data-id="'.$row->id.'" data-link="'.$row->link.'">
                   <i class="fas fa-edit"></i>
