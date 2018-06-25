@@ -132,5 +132,5 @@
 @endsection
 
 @section('scripts')
-  <script src="{{ asset('/js/pages/admin_video.js')}}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_video.js' : '/js/pages/admin_video.js')}}"></script>
 @endsection

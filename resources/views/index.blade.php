@@ -2,8 +2,8 @@
 
 @section('stylesheets')
 <!-- Owl Carousel -->
-<link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.carousel.min.css') }}">
-<link rel="stylesheet" href="{{ asset('/plugins/owl-carousel/owl.theme.default.css') }}">
+<link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.css' : '/plugins/owl-carousel/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.theme.default.css' : '/plugins/owl-carousel/owl.theme.default.css') }}">
 <style>
   .list-group-item {
     justify-content: space-between !important;
@@ -22,7 +22,7 @@
     <div id="hero-content">
       <div id="video-background">
         <video autoplay loop muted id="myVideo">
-          <source src="{{ asset('/videos/video_background.mp4') }}" type="video/mp4">
+          <source src="{{ asset(App::environment('production') ? '/public/videos/video_background.mp4' : '/videos/video_background.mp4') }}" type="video/mp4">
         </video>
       </div>
 
@@ -113,7 +113,7 @@
       <div class="headul"></div>
       <div class="row">
         <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-          <img src="{{ asset('/img/about-us-image.jpg') }}" alt="About Image" class="img-fluid">
+          <img src="{{ asset(App::environment('production') ? '/public/img/about-us-image.jpg' : '/img/about-us-image.jpg') }}" alt="About Image" class="img-fluid">
         </div>
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
           <p class="about">Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
@@ -192,10 +192,10 @@
     <div class="container">
       <div class="brand-wrapper">
         <div class="image-wrapper">
-          <img src="{{ asset('/img/lamina.png') }}" alt="Company Name Here" width="100%;">
+          <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset('/img/Keen_Software_House_logo.png') }}" alt="Company Name Here" width="100%;">
+          <img src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
         </div>
       </div>
     </div>
@@ -204,8 +204,8 @@
 
 @section('scripts')
 <!-- Owl Carousel JS -->
-<script src="{{ asset('/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('/js/pages/home.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.js' : '/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/js/pages/home.js' : '/js/pages/home.js') }}"></script>
 <script>
   $(document).ready(function () {
     var testimonial = $('.owl-carousel');

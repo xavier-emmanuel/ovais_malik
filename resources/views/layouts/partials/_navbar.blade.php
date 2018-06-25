@@ -46,7 +46,7 @@
 
     <nav class="header__nav--is-bottom navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
-        <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo">
+        <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -95,7 +95,7 @@
         <form action="/auth/login" method="POST" id="frm-login" name="frm_login">
           {{ csrf_field() }}
           <div class="modal-body">
-            <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voice Over Logo" width="100px">
+            <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo" width="100px">
             <br>
             <br>
             <br>

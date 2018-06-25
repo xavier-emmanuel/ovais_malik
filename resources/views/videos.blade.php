@@ -17,7 +17,7 @@
 @endsection
 
 @section('scripts')
-  <script src="{{ asset('/js/pages/videos.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/videos.js' : '/js/pages/videos.js') }}"></script>
   <script>
     sr.reveal('.headul', {
       origin: 'left',

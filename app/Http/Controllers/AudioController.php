@@ -9,13 +9,11 @@ use App\MP3File;
 
 class AudioController extends Controller
 {
-    //
 
     public function ajaxStore(Request $request){
 	    $input = Input::all();
 
-		if($input['add_audio'])
-		{
+		if($input['add_audio']) {
 			$file = $input['add_audio'];
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/audio/', $name);
@@ -32,7 +30,7 @@ class AudioController extends Controller
 
 		$audio->save();
 
-		return response()->json(['success'=>'Added successfully.']);
+		return response()->json(['success' => 'Added successfully.']);
 	}
 
 	public function checkAudioTitle(Request $request){
@@ -59,7 +57,10 @@ class AudioController extends Controller
             } else {
             	$updated_at = '';
             }
-            $button = '<td><button type="button" class="btn btn-info edit-audio" data-toggle="modal" data-target="#edit-audio" data-id="'.$row->id.'" data-title="'.$row->title.'" data-audio="'.$row->audio_file.'"><i class="fas fa-edit"></i></button>&nbsp;<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-audio" data-id="'.$row->id.'"" data-title="'.$row->title.'"><i class="fas fa-trash"></i></button></td>';
+            $button = '<td>
+						<button type="button" class="btn btn-info edit-audio" data-toggle="modal" data-target="#edit-audio" data-id="'.$row->id.'" data-title="'.$row->title.'" data-audio="'.$row->audio_file.'"><i class="fas fa-edit"></i></button>&nbsp;
+						<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-audio" data-id="'.$row->id.'" data-title="'.$row->title.'"><i class="fas fa-trash"></i></button>
+					   </td>';
 
     		$data[] = array(
                     $id,
@@ -83,20 +84,18 @@ class AudioController extends Controller
 		$input = Input::all();
 		$audio = Audio::findOrFail($input['hdn_audio_id']);
 
-        if(Input::file('edit_audio'))
-		   {
-		       $file = $input['edit_audio'];
-		       $name=time().$file->getClientOriginalName();
-		       $file->move(public_path().'/uploads/audio/', $name);
-		       $audio_file = 'uploads/audio/'.$name;
-		       $mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
-			   $duration = $mp3file->getDuration();
-		   }
-		   else {
-		    $audio_file = $input['hdn_audio'];
-		    $mp3file = new MP3File(public_path().$audio_file);
-		    $duration = $mp3file->getDuration();
-		   }
+        if(Input::file('edit_audio')) {
+			$file = $input['edit_audio'];
+			$name=time().$file->getClientOriginalName();
+			$file->move(public_path().'/uploads/audio/', $name);
+			$audio_file = 'uploads/audio/'.$name;
+			$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
+			$duration = $mp3file->getDuration();
+		} else {
+		$audio_file = $input['hdn_audio'];
+		$mp3file = new MP3File(public_path().$audio_file);
+		$duration = $mp3file->getDuration();
+		}
 
 		$audio->title = $input['edit_audio_title'];
 		$audio->audio_file = $audio_file;
@@ -122,13 +121,11 @@ class AudioController extends Controller
         $output = '';
         $output_show_more = '';
         $id = $request->id;
-        
+
         $data = Audio::where('id', '<', $id)->orderBy('created_at','DESC')->limit(2)->get();
-        
-        if(!$data->isEmpty())
-        {
-            foreach($data as $audio)
-            {                               
+
+        if(!$data->isEmpty()) {
+            foreach($data as $audio) {
                 $output .= '<li class="list-group-item audio-list audio-list-id'.$audio->id.'" data-id="'.$audio->id.'" data-title="'.$audio->title.'" data-audio-duration="'.$audio->audio_duration.'" data-audio-file="'.$audio->audio_file.'">
 				                <span>
 				                  <i class="far fa-play-circle"></i>
@@ -147,5 +144,4 @@ class AudioController extends Controller
             return response()->json(['output' => $output, 'btn_show_more' => $output_show_more]);
         }
     }
-
 }

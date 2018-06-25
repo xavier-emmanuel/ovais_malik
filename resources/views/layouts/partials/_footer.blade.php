@@ -7,7 +7,7 @@
     </p>
     <p class="small">Designed &amp; Developed by
       <a href="https://www.oneiroswebsolutions.com">&nbsp;
-        <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" alt="Oneiros Web Solutions Logo">
+        <img src="{{ asset(App::environment('production') ? '/public/img/oneiros-web-solutions-logo.png' : '/img/oneiros-web-solutions-logo.png') }}" alt="Oneiros Web Solutions Logo">
       </a>
     </p>
   </div>

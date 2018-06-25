@@ -78,15 +78,15 @@
 
 @section('scripts')
   <!-- CKEditor -->
-  <script src="{{ asset('/plugins/ckeditor/ckeditor.js') }}"></script>
-  <script src="{{ asset('/plugins/ckeditor/config.js') }}"></script>
-  <script src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/ckeditor.js' : '/plugins/ckeditor/ckeditor.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/config.js' : '/plugins/ckeditor/config.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/styles.js' : '/plugins/ckeditor/styles.js') }}"></script>
 
   <!--Bootstrap Tags Input -->
-  <script src="{{ asset('/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
 
   <!-- Jquery Validator -->
-  <script src="{{ asset('/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/jquery.validate.min.js' : '/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 
   <script>
     CKEDITOR.replace('add-blog-content');

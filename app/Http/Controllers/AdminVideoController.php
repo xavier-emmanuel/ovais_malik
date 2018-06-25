@@ -11,7 +11,7 @@ class AdminVideoController extends Controller
 	public function ajaxShow(Request $request) {
 		$video = Video::all();
 		$data = array();
-		
+
 		foreach($video as $row) {
 			$id = '<td class="text-center">'.$row->id.'</td>';
       $link = '<td>

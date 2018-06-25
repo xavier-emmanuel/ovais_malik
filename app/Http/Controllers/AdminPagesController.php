@@ -11,7 +11,7 @@ class AdminPagesController extends Controller
 	{
 	    $this->middleware('auth');
 	}
-	
+
   public function adminVideo()
 	  {
 	    return view('admin_video')->with(array('page' => 'Videos | Admin'));

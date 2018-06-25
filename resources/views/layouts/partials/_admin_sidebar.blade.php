@@ -1,6 +1,6 @@
 <aside class="admin-aside" id="nav">
   <div class="admin-logo text-center">
-    <img src="{{ asset('/img/logo.jpg') }}" alt="Ovais Malik Voice Over Logo">
+    <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo">
   </div>
   <div class="admin-navigation">
     <span class="navigation-title text-muted small">Navigation</span>

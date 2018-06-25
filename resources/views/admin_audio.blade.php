@@ -47,20 +47,18 @@
             </button>
           </div>
           <div class="modal-body">
-
-              <div class="form-group">
-                <label for="add-audio">Title:<span>*</span></label>
-                <input type="text" class="form-control" id="add-audio-title" name="add_audio_title" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                <label for="add-audio">
-                  Audio:<span>*</span></label>
-                <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
-              </div>
-              <div class="form-group audio-preview" id="add-audio-prewiew">
-                <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
-              </div>
-
+            <div class="form-group">
+              <label for="add-audio">Title:<span>*</span></label>
+              <input type="text" class="form-control" id="add-audio-title" name="add_audio_title" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="add-audio">
+                Audio:<span>*</span></label>
+              <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
+            </div>
+            <div class="form-group audio-preview" id="add-audio-prewiew">
+              <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -88,20 +86,18 @@
             </button>
           </div>
           <div class="modal-body">
-
-              <div class="form-group">
-                <label for="add-audio">Title:<span>*</span></label>
-                <input type="text" class="form-control" id="edit-audio-title" name="edit_audio_title" autocomplete="off" required>
-              </div>
-              <div class="form-group">
-                <label for="add-audio">
-                  Audio:<span>*</span></label>
-                <input type="file" id="edit-audio" name="edit_audio" class="form-control-file" accept=".mp3,audio/*"><br>
-              </div>
-              <div class="form-group audio-preview" id="edit-audio-prewiew">
-                <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
-              </div>
-
+            <div class="form-group">
+              <label for="add-audio">Title:<span>*</span></label>
+              <input type="text" class="form-control" id="edit-audio-title" name="edit_audio_title" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+              <label for="add-audio">
+                Audio:<span>*</span></label>
+              <input type="file" id="edit-audio" name="edit_audio" class="form-control-file" accept=".mp3,audio/*"><br>
+            </div>
+            <div class="form-group audio-preview" id="edit-audio-prewiew">
+              <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -146,5 +142,5 @@
 @endsection
 
 @section('scripts')
-  <script src="{{ asset('/js/pages/admin_audio.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_audio.js' : '/js/pages/admin_audio.js') }}"></script>
 @endsection

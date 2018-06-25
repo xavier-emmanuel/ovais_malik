@@ -1,10 +1,10 @@
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{ asset('/plugins/jquery/jquery.min.js') }}"></script>
-<script src="{{ asset('/plugins/popper/popper.min.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/plugins/jquery/jquery.min.js' : '/plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/plugins/popper/popper.min.js' : '/plugins/popper/popper.min.js') }}"></script>
 
 <!-- Bootstrap JS -->
-<script src="{{ asset('/plugins/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap/bootstrap.min.js' : '/plugins/bootstrap/bootstrap.min.js') }}"></script>
 
 <!-- Scroll Reveal JS -->
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
