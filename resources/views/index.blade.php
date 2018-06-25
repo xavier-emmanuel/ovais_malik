@@ -85,7 +85,7 @@
               <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
               @foreach($data as $audio)
                 <li class="list-group-item audio-list audio-list-id{{ $audio->id }}" data-id="{{ $audio->id }}" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
-                  <span>
+                  <span class="playlist-title">
                     <i class="far fa-play-circle"></i>
                     &nbsp; {{ $audio->title }}
                   </span>
