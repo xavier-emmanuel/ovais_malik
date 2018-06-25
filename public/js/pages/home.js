@@ -5,14 +5,14 @@ sr.reveal('.reel-controller, .reel-container', {
 
 sr.reveal('.headul', {
 	origin: 'left',
-	distance: '100px',
+	distance: '3vw',
 });
 
 sr.reveal('.img-fluid', {
 	scale: 1,
 	origin: 'left',
 	easing: 'ease',
-	distance: '100px',
+	distance: '3vw',
 	delay: 300
 });
 

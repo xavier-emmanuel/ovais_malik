@@ -63,7 +63,7 @@
   <script>
     sr.reveal('.headul', {
       origin: 'left',
-      distance: '200px',
+      distance: '3vw',
       container: '#about'
     });
 
@@ -71,7 +71,7 @@
       scale: 1,
       origin: 'left',
       easing: 'ease',
-      distance: '100px',
+    distance: '3vw',
       delay: 300
     });
 

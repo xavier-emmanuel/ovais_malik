@@ -169,7 +169,7 @@
   <script>
     sr.reveal('.headul', {
       origin: 'left',
-      distance: '100px',
+      distance: '3vw',
     });
 
     sr.reveal('.box')
