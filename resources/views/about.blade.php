@@ -72,11 +72,11 @@
       origin: 'left',
       easing: 'ease',
       distance: '100px',
-      delay: 700
+      delay: 300
     });
 
     sr.reveal('.about', {
-      delay: 800,
+      delay: 500,
       distance: '2px'
     });
 
