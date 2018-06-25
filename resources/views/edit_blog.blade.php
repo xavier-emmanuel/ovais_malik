@@ -17,55 +17,60 @@
 
 @section('content')
   <section class="admin-section">
-    <form id="frm-create-blog" method="post" enctype="multipart/form-data" name="frm_store_blog">
+    <form id="frm-edit-blog" method="post" enctype="multipart/form-data" name="frm_edit_blog">
       {{ csrf_field() }}
+      <input type="hidden" value="{{ $blogs->id }}" name="hdn_blog_id">
+      <input type="hidden" value="{{ $blogs->slug }}" name="hdn_blog_slug">
+      <input type="hidden" value="{{ $blogs->image }}" name="hdn_blog_image">
       <div class="blog-wrapper">
         <div class="box box-content-1">
           <div class="form-group">
-            <label for="add-blog-title">
+            <label for="edit-blog-title">
               Title:
               <span>*</span>
             </label>
-            <input type="text" class="form-control" id="add-blog-title" name="blog_title" required></div>
+            <input type="text" class="form-control" id="edit-blog-title" name="blog_title" value="{{ $blogs->title }}" required></div>
 
           <div class="form-group">
-            <label for="add-blog-category">
+            <label for="edit-blog-category">
               Category:
               <span>*</span>
             </label>
-            <select name="blog_category" id="add-blog-category" class="form-control">
+            <select name="blog_category" id="edit-blog-category" class="form-control">
               <option selected disabled>Select category</option>
-              @foreach($data as $category)
-              <option value="{{ $category->id }}">{{ $category->name }}</option>
+              @foreach($categories as $category)
+              <option value="{{ $category->id }}" @if($category->id == $blogs->category_id)
+                selected
+              @endif>{{ $category->name }}</option>
               @endforeach
             </select>
           </div>
 
           <div class="form-group">
-            <label for="add-blog-content">
+            <label for="edit-blog-content">
               Content:
               <span>*</span>
             </label>
-            <textarea name="blog_content" id="blog_content" cols="30" rows="10" required></textarea>
+            <textarea name="blog_content" id="blog_content" cols="30" rows="10" required>{{ $blogs->content }}</textarea>
           </div>
         </div>
 
         <div class="box box-content-2">
           <div class="form-group">
-            <label for="add-blog-tags">Tags:</label>
-            <input type="text" id="add-blog-tags" name="blog_tags" class="form-control" data-role="tagsinput"></div>
+            <label for="edit-blog-tags">Tags:</label>
+            <input type="text" id="edit-blog-tags" name="blog_tags" class="form-control" value="{{ $blogs->tags }}" data-role="tagsinput"></div>
 
           <div class="form-group">
-            <label for="add-blog-featured-image">
+            <label for="edit-blog-featured-image">
               Featured Image:
               <span>*</span>
             </label>
-            <input type="file" id="add-blog-featured-image" name="blog_featured_image" class="form-control-file" accept="image/x-png,image/gif,image/jpeg" required></div>
+            <input type="file" id="edit-blog-featured-image" name="blog_featured_image" class="form-control-file" accept="image/x-png,image/gif,image/jpeg"></div>
 
           <div class="form-group">
             <label for="">Preview:</label>
             <div class="preview-image-wrapper">
-              <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" id="image-preview" alt=""></div>
+              <img src="/{{ $blogs->image }}" id="image-preview" alt=""></div>
           </div>
 
           <div class="text-center">
@@ -101,7 +106,7 @@
     CKEDITOR.replace('blog_content');
 
     $(document).ready(function () {
-      $('#add-blog-tags').tagsinput();
+      $('#edit-blog-tags').tagsinput();
     });
   </script>
 @endsection

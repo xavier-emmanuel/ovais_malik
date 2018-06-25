@@ -16,7 +16,7 @@ class CategoryController extends Controller
 
     	foreach($category as $row) {
 
-    				$id =  $row->id;
+    		$id =  $row->id;
             $name = $row->name;
             $created_at = $row->created_at->format('F d, Y h:i:s A');
             if (empty($row->updated_at)) {

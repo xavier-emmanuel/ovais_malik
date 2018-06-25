@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
+use App\Blog;
 
 class AdminController extends Controller
 {
@@ -12,7 +14,14 @@ class AdminController extends Controller
 	}
 
 	public function createBlog() {
-		return view('create_blog')->with(array('page' => 'Create Blog'));
+		$category = Category::all();
+		return view('create_blog')->with(array('page' => 'Create Blog', 'data' => $category));
+	}
+
+	public function editBlog($slug) {
+		$blog = Blog::where('slug', $slug)->first();
+		$category = Category::all();
+		return view('edit_blog')->with(array('page' => 'Edit Blog', 'blogs' => $blog, 'categories' => $category));
 	}
 
 	public function adminCategory() {

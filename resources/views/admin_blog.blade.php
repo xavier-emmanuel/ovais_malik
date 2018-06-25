@@ -11,7 +11,7 @@
           <i class="fas fa-plus"></i>&nbsp; Create Blog
         </a>
       </div>
-      <table id="myTable" class="table table-striped" style="width:100%">
+      <table id="myTable" class="table table-striped tbl-blog" style="width:100%">
         <thead>
           <tr>
             <th width="3%" class="text-center">#</th>
@@ -68,4 +68,38 @@
 @endsection
 
 @section('scripts')
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_delete_blog.js' : '/js/pages/admin_delete_blog.js') }}"></script>
+  <script>
+    $('.tbl-blog').DataTable({
+        "ajax": {
+            url: "/admin-blog/show",
+            type: 'GET'
+        },
+    });
+
+    $(document).ready(function(){
+        if(localStorage.getItem("Create"))
+        {
+            $.toast({
+                heading: 'Success',
+                text: 'Created successfully.',
+                position: 'top-right',
+                icon: 'success',
+                hideAfter: 3500
+            });
+            localStorage.clear();
+        }
+        if(localStorage.getItem("Update"))
+        {
+            $.toast({
+                heading: 'Success',
+                text: 'Updated successfully.',
+                position: 'top-right',
+                icon: 'success',
+                hideAfter: 3500
+            });
+            localStorage.clear();
+        }
+    });
+</script>
 @endsection
