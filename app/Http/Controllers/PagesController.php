@@ -15,7 +15,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $audio = Audio::orderBy('created_at','DESC')->limit(3)->get();
+        $audio = Audio::orderBy('created_at','DESC')->get();
 
         return view('index')->with(array('page' => 'Home', 'data' => $audio));
     }

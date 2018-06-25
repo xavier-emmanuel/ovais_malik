@@ -47,37 +47,6 @@ $(document).ready(function() {
 		}
 	});
 
-  $(document).on('click','.show_more',function(){
-       var id = $(this).data('id');
-       $('.li-show-more').html('<i class="fas fa-spinner fa-pulse"></i>');
-       $('.li-show-more').fadeOut(300);
-       $.ajax({
-           url : '/audio/more',
-           method : 'POST',
-           data : {
-	           	id:id,
-	           	_token:$('#token').val()
-           },
-           dataType: "json",
-           success : function (data)
-           {
-              if(data != '') 
-              {
-                  $('#btn-more').remove();
-                  $('.demo-reels').append(data.output);
-                  $('.div-show-more').html(data.btn_show_more);
-              }
-              else
-              {
-                  $('.div-show-more').hide();
-              }
-           },
-           error: function(xhr, error, ajaxOptions, thrownError) {
-                $('.div-show-more').hide();
-           }
-       });
-  });
-
     function update() {
 		var player = document.getElementById('audio-preview');
 		var progressBar = document.getElementById('progress-bar');
