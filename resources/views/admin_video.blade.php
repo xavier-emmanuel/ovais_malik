@@ -42,6 +42,14 @@
   <!-- Modal Add Video -->
   <div class="modal fade" id="add-video" tabindex="-1" role="dialog" aria-labelledby="addVideoTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Add Video</h5>
@@ -72,6 +80,14 @@
   <!-- Modal Edit Video -->
   <div class="modal fade" id="edit-video" tabindex="-1" role="dialog" aria-labelledby="editVideoTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Edit Video</h5>
@@ -103,6 +119,14 @@
   <!-- Modal Delete Video -->
   <div class="modal fade" id="delete-video" tabindex="-1" role="dialog" aria-labelledby="deleteVideoTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">

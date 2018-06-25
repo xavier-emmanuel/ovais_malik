@@ -62,6 +62,14 @@
   <!-- Modal Delete Blog -->
   <div class="modal fade" id="delete-blog" tabindex="-1" role="dialog" aria-labelledby="deleteblog" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-delete-blog" method="post" name="frm_delete_blog">
           <input type="hidden" name="hdn_blog_id" id="hdn-blog-id">

@@ -37,6 +37,14 @@
   <!-- Modal Add Audio -->
   <div class="modal fade" id="add-audio-modal" tabindex="-1" role="dialog" aria-labelledby="addAudio" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-add-audio" method="post" enctype="multipart/form-data" name="frm_add_audio">
           {{ csrf_field() }}
@@ -57,7 +65,7 @@
               <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
             </div>
             <div class="form-group audio-preview" id="add-audio-prewiew">
-              <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+              <audio controls src="#" type="audio/mp3" id="audio-preview" controlsList="nodownload"></audio>
             </div>
           </div>
           <div class="modal-footer">
@@ -74,6 +82,14 @@
   <!-- Modal Edit Audio -->
   <div class="modal fade" id="edit-audio" tabindex="-1" role="dialog" aria-labelledby="editAudio" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-edit-audio" method="post" enctype="multipart/form-data" name="frm_edit_audio">
           {{ csrf_field() }}
@@ -96,7 +112,7 @@
               <input type="file" id="edit-audio" name="edit_audio" class="form-control-file" accept=".mp3,audio/*"><br>
             </div>
             <div class="form-group audio-preview" id="edit-audio-prewiew">
-              <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
+              <audio controls src="#" type="audio/mp3" id="audio-preview" controlsList="nodownload"></audio>
             </div>
           </div>
           <div class="modal-footer">
@@ -113,6 +129,14 @@
   <!-- Modal Delete Audio -->
   <div class="modal fade" id="delete-audio" tabindex="-1" role="dialog" aria-labelledby="deleteAudio" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-delete-audio" method="post" name="frm_delete_audio">
           <input type="hidden" name="hdn_audio_id" id="hdn-audio-id">

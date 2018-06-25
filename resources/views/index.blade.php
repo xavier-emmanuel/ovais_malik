@@ -4,6 +4,9 @@
 <!-- Owl Carousel -->
 <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.css' : '/plugins/owl-carousel/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.theme.default.css' : '/plugins/owl-carousel/owl.theme.default.css') }}">
+
+<!-- Perfect Scrollbar -->
+<link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/perfect-scrollbar/perfect-scrollbar.css' : '/plugins/perfect-scrollbar/perfect-scrollbar.css') }}">
 <style>
   .list-group-item {
     justify-content: space-between !important;
@@ -90,15 +93,6 @@
                 </li>
               @endforeach
             </ul>
-            <div class="div-show-more">
-              <li class="list-group-item li-show-more">
-                <p class="small">
-                  <em>
-                    <span data-id="{{ $audio->id }}" class="show_more">View More</span>
-                  </em>
-                </p>
-              </li>
-            </div>
           </div>
         </div>
       </div>
@@ -205,8 +199,14 @@
 @section('scripts')
 <!-- Owl Carousel JS -->
 <script src="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.js' : '/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
+
+<!-- Perfect Scrollbar JS -->
+<script src="{{ asset(App::environment('production') ? '/public/plugins/perfect-scrollbar/perfect-scrollbar.js' : '/plugins/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+
 <script src="{{ asset(App::environment('production') ? '/public/js/pages/home.js' : '/js/pages/home.js') }}"></script>
 <script>
+  var ps = new PerfectScrollbar('.reel-container');
+
   $(document).ready(function () {
     var testimonial = $('.owl-carousel');
 

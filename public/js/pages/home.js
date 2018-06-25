@@ -47,7 +47,7 @@ $(document).ready(function() {
 		}
 	});
 
-    $(document).on('click','.show_more',function(){
+  $(document).on('click','.show_more',function(){
        var id = $(this).data('id');
        $('.li-show-more').html('<i class="fas fa-spinner fa-pulse"></i>');
        $('.li-show-more').fadeOut(300);
@@ -76,7 +76,7 @@ $(document).ready(function() {
                 $('.div-show-more').hide();
            }
        });
-   });  
+  });
 
     function update() {
 		var player = document.getElementById('audio-preview');

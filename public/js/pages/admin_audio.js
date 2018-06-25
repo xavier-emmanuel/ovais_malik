@@ -72,7 +72,10 @@ $(document).ready(function () {
             event.preventDefault();
 
             var data = new FormData($("#frm-add-audio")[0]);
-            $('.btn-add-audio').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-pulse"></i>&nbsp; Saving');
+
+            $('#frm-add-audio input').prop('disabled', true);
+            $('#frm-add-audio .btn').prop('disabled', true);
+            $('.loading-overlay').css('display', 'block');
 
             $.ajax({
                 url: '/admin-audio/store',
@@ -82,11 +85,14 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 success: function (data) {
+                    $('#frm-add-audio input').prop('disabled', false);
+                    $('#frm-add-audio .btn').prop('disabled', false);
+                    $('.loading-overlay').css('display', 'none');
+
                     $('#add-audio-modal').modal('hide');
                     $('#add-audio-prewiew').hide();
                     $('#tbl-audio').DataTable().ajax.reload(null, false);
                     $('#frm-add-audio').trigger('reset');
-                    $('.btn-add-audio').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Save');
 
                     $.toast({
                         heading: 'Success',
@@ -119,7 +125,9 @@ $(document).ready(function () {
 
             var data = new FormData($("#frm-edit-audio")[0]);
 
-            $('.btn-edit-audio').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-pulse"></i>&nbsp; Updating');
+            $('#frm-edit-audio input').prop('disabled', true);
+            $('#frm-edit-audio .btn').prop('disabled', true);
+            $('.loading-overlay').css('display', 'block');
 
             $.ajax({
                 url: '/admin-audio/update',
@@ -129,9 +137,12 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 success: function (data) {
+                    $('#frm-edit-audio input').prop('disabled', false);
+                    $('#frm-edit-audio .btn').prop('disabled', false);
+                    $('.loading-overlay').css('display', 'none');
+
                     $('#edit-audio').modal('hide');
                     $('#tbl-audio').DataTable().ajax.reload(null, false);
-                    $('.btn-edit-audio').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Update');
 
                     $.toast({
                         heading: 'Success',
@@ -152,7 +163,8 @@ $(document).ready(function () {
 
         var data = new FormData($("#frm-delete-audio")[0]);
 
-        $('.btn-delete-audio').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-pulse"></i>&nbsp; Deleting');
+        $('#frm-delete-audio .btn').prop('disabled', true);
+        $('.loading-overlay').css('display', 'block');
 
         $.ajax({
             url: '/admin-audio/delete',
@@ -162,9 +174,11 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (data) {
+                $('#frm-delete-audio .btn').prop('disabled', false);
+                $('.loading-overlay').css('display', 'none');
+
                 $('#delete-audio').modal('hide');
                 $('#tbl-audio').DataTable().ajax.reload(null, false);
-                $('.btn-delete-audio').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Delete');
 
                 $.toast({
                     heading: 'Success',

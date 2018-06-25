@@ -31,6 +31,14 @@
   <!-- Modal Add Category -->
   <div class="modal fade" id="add-category" tabindex="-1" role="dialog" aria-labelledby="addCategory" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form action="admin-category/store" method="post" id="frm-add-category">
           <div class="modal-header">
@@ -62,6 +70,14 @@
   <!-- Modal Edit Category -->
   <div class="modal fade" id="edit-category" tabindex="-1" role="dialog" aria-labelledby="editCategory" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Edit Category</h5>
@@ -91,6 +107,14 @@
   <!-- Modal Delete Video -->
   <div class="modal fade" id="delete-category" tabindex="-1" role="dialog" aria-labelledby="deleteCategory" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
