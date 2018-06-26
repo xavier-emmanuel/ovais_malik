@@ -9,16 +9,15 @@
       <div class="blog-wrapper">
         <div class="blog-header">
           <div class="blog-info">
-            <span class="blog-category">Collections</span>
+            <span class="blog-category">{{ $data->categories->name }}</span>
+            @foreach($tags as $tag)
             <span class="blog-tags small">
-              <a href="#">CSS</a>
+              <a href="#">{{ $tag }}</a>
             </span>
-            <span class="blog-tags small">
-              <a href="#">JavaScript</a>
-            </span>
+            @endforeach
           </div>
 
-          <img src="https://picsum.photos/1000/600/?image=1077" alt="" width="100%">
+          <img src="/{{ $data->image }}" alt="" width="100%">
 
           <div class="blog-overlay">
             <h2>
@@ -59,7 +58,7 @@
           <div class="blog-content">
             <p class="text-justify">{!! $data->content !!}</p>
 
-            <img src="https://picsum.photos/1000/600/?image=1077" alt="" width="100%">
+            <img src="/{{ $data->image }}" alt="" width="100%">
 
             <div class="blog-related">
               <h5>Related Posts</h5>

@@ -51,7 +51,9 @@ class PagesController extends Controller
     public function blogSingle($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
-        return view('blog_single')->with(array('page' => $slug, 'data' => $blog));
+        $tags = $blog->tags;
+        $tagsArray = explode(',', $tags);
+        return view('blog_single')->with(array('page' => $slug, 'data' => $blog, 'tags' => $tagsArray));
     }
 
     public function adminVideo()
