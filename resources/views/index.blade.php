@@ -17,6 +17,63 @@
   .progress {
     width: 100% !important;
   }
+
+  /* PULSE */
+
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+
+    50% {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    100% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+  }
+
+  .faa-pulse.animated,
+  .faa-pulse.animated-hover:hover,
+  .faa-parent.animated-hover:hover > .faa-pulse {
+    -webkit-animation: pulse 2s linear infinite;
+    animation: pulse 2s linear infinite;
+  }
+
+  .faa-pulse.animated.faa-fast,
+  .faa-pulse.animated-hover.faa-fast:hover,
+  .faa-parent.animated-hover:hover > .faa-pulse.faa-fast {
+    -webkit-animation: pulse 1s linear infinite;
+    animation: pulse 1s linear infinite;
+  }
+
+  .faa-pulse.animated.faa-slow,
+  .faa-pulse.animated-hover.faa-slow:hover,
+  .faa-parent.animated-hover:hover > .faa-pulse.faa-slow {
+    -webkit-animation: pulse 3s linear infinite;
+    animation: pulse 3s linear infinite;
+  }
 </style>
 @endsection
 
@@ -86,7 +143,9 @@
               @foreach($data as $audio)
                 <li class="list-group-item audio-list audio-list-id{{ $audio->id }}" data-id="{{ $audio->id }}" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
                   <span class="playlist-title">
-                    <i class="far fa-play-circle"></i>
+                    <!-- Add this <i> tag below when its <li> parent tag has an active class.
+                         This should only appear in currently playing music. -->
+                    <i class="fas fa-headphones faa-pulse animated faa-fast"></i>
                     &nbsp; {{ $audio->title }}
                   </span>
                   <span>{{ $audio->audio_duration }}</span>
