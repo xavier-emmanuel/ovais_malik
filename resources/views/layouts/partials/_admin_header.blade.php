@@ -48,31 +48,7 @@
             <span class="badge badge-danger">12</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
+          <a href="/auth/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
         </div>
       </div>
     </header>
-
-    <!-- Modal Logout -->
-    <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="logoutModalTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div>
-              <p><i class="fas fa-question-circle" style="font-size: 2rem;"></i>&nbsp;&nbsp;&nbsp; Are you sure you want to logout?</p>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              <i class="fas fa-times"></i>&nbsp; No</button>
-            <a href="/auth/logout"><button type="button" class="btn btn-info">
-              <i class="fas fa-check"></i>&nbsp; Yes</button></a>
-          </div>
-        </div>
-      </div>
-    </div>

@@ -22,9 +22,4 @@
   <title>Ovais Malik Voiceover | Multilingual Voice Talent - {{ $page }}</title>
 
   <link rel="canonical" href="{{ url()->full() }}">
-  <meta property="og:url"           content="{{ url()->full() }}" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="{{ $data->title }}" />
-  <meta property="og:description"   content="{{ $data->content}}" />
-  <meta property="og:image"         content="/{{ $data->image }}" />
 </head>

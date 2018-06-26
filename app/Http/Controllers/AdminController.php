@@ -32,6 +32,11 @@ class AdminController extends Controller
 		return view('admin_audio')->with(array('page' => 'Audio'));
 	}
 
+	public function adminVideo()
+  {
+    return view('admin_video')->with(array('page' => 'Videos'));
+  }
+
 	public function adminGallery() {
 		return view('admin_gallery')->with(array('page' => 'Gallery'));
 	}

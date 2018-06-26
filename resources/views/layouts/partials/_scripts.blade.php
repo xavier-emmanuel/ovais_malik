@@ -6,6 +6,12 @@
 <!-- Bootstrap JS -->
 <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap/bootstrap.min.js' : '/plugins/bootstrap/bootstrap.min.js') }}"></script>
 
+<!-- jQuery Validation -->
+<script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/dist/jquery.validate.js' : '/plugins/jquery-validation/dist/jquery.validate.js') }}"></script>
+
+<!-- JS for Login -->
+<script src="{{ asset(App::environment('production') ? '/public/js/pages/login.js' : '/js/pages/login.js') }}"></script>
+
 <!-- Scroll Reveal JS -->
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 

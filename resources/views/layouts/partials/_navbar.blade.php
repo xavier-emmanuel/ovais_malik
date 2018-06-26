@@ -54,25 +54,26 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navigation">
+        <input type="hidden" name="page_name" id="page-name" value="{{ $page }}">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item" id="li-home">
             <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="li-about">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="li-gallery">
             <a class="nav-link" href="/gallery">Gallery</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="li-videos">
             <a class="nav-link" href="/videos-show">Videos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="li-blogs">
             <a class="nav-link" href="/blogs">Blogs</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="li-contact">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button">
@@ -99,6 +100,11 @@
             <br>
             <br>
             <br>
+			@if($errors->any())
+              <div id="error" class="alert alert-danger">
+                <i class="fas fa-exclamation-triangle"></i> <span>{{$errors->first()}}</span>
+              </div>
+            @endif
             <div class="form-group text-left">
               <label for="login-username">Username:</label>
               <input type="text" class="form-control" id="login-username" name="login_username" autocomplete="off">
@@ -109,7 +115,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
+            <button type="submit" class="btn btn-primary btn-block" id="btn-login">LOGIN</button>
           </div>
         </form>
       </div>
