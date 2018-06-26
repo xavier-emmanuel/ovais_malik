@@ -14,9 +14,9 @@ class AdminVideoController extends Controller
 		$data = array();
 		
 		foreach($video as $row) {
-      $created_date = Carbon::parse($row->created_at)->format('F d, Y h:i:s A');
+      $created_date = Carbon::parse($row->created_at)->format('F d, Y h:i A');
       if($row->updated_at != null){
-        $updated_date = Carbon::parse($row->updated_at)->format('F d, Y h:i:s A');
+        $updated_date = Carbon::parse($row->updated_at)->format('F d, Y h:i A');
       } else {
         $updated_date = null;
       }
