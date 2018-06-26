@@ -76,7 +76,7 @@
           <li class="nav-item" id="li-contact">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button" style="display: {{ Auth::check() ? 'none' : 'block' }};">
             LOGIN
           </button>
         </ul>
