@@ -56,24 +56,24 @@
       <div class="collapse navbar-collapse" id="navigation">
         <input type="hidden" name="page_name" id="page-name" value="{{ $page }}">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item" id="li-home">
+          <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
             <a class="nav-link" href="/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item" id="li-about">
+          <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item" id="li-gallery">
+          <li class="nav-item {{ Request::is('gallery') ? 'active' : '' }}">
             <a class="nav-link" href="/gallery">Gallery</a>
           </li>
-          <li class="nav-item" id="li-videos">
+          <li class="nav-item {{ Request::is('videos-show') ? 'active' : '' }}">
             <a class="nav-link" href="/videos-show">Videos</a>
           </li>
-          <li class="nav-item" id="li-blogs">
+          <li class="nav-item {{ Request::is('blogs') ? 'active' : '' }}">
             <a class="nav-link" href="/blogs">Blogs</a>
           </li>
-          <li class="nav-item" id="li-contact">
+          <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
             <a class="nav-link" href="/contact">Contact</a>
           </li>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button" style="display: {{ Auth::check() ? 'none' : 'block' }};">

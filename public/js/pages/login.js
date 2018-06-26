@@ -1,21 +1,6 @@
 var login_form;
 
 $(document).ready(function() {
-	var page_title = $('#page-name').val();
-	if(page_title == "Home"){
-		$('#li-home').addClass('active');
-	} else if(page_title == "About") {
-		$('#li-about').addClass('active');
-	} else if(page_title == "Gallery") {
-		$('#li-gallery').addClass('active');
-	} else if(page_title == "Videos") {
-		$('#li-videos').addClass('active');
-	} else if(page_title == "Blogs") {
-		$('#li-blogs').addClass('active');
-	} else if(page_title == "Contact") {
-		$('#li-contact').addClass('active');
-	}
-
 	login();
 })
 
