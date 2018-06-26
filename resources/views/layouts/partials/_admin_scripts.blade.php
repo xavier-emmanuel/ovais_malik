@@ -19,4 +19,7 @@
 <!-- Custom JS -->
 <script src="{{ asset(App::environment('production') ? '/public/js/app.js' : '/js/app.js') }}"></script>
 
+<!-- Active Navigation -->
+<script src="{{ asset(App::environment('production') ? '/public/js/pages/active-navigation.js' : '/js/pages/active-navigation.js') }}"></script>
+
 @yield('scripts')

@@ -38,6 +38,6 @@ class AdminController extends Controller
   }
 
 	public function adminGallery() {
-		return view('admin_gallery')->with(array('page' => 'Gallery'));
+		return view('admin_gallery')->with(array('page' => 'Images'));
 	}
 }
