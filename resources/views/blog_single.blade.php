@@ -17,7 +17,7 @@
             @endforeach
           </div>
 
-          <img src="/{{ $data->image }}" alt="" width="100%">
+          <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
           <div class="blog-overlay">
             <h2>
@@ -60,8 +60,7 @@
         <div class="blog-content-wrapper">
           <div class="blog-content">
             <p class="text-justify">{!! $data->content !!}</p>
-
-            <img src="/{{ $data->image }}" alt="" width="100%">
+            <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
             <div class="blog-related">
               <h5>Related Posts</h5>

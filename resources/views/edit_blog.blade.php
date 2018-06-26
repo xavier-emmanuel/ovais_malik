@@ -73,7 +73,7 @@
           <div class="form-group">
             <label for="">Preview:</label>
             <div class="preview-image-wrapper">
-              <img src="/{{ $blogs->image }}" id="image-preview" alt=""></div>
+              <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$blogs->image : 'uploads/admin-blogs/original/'.$blogs->image) }}" id="image-preview" alt=""></div>
           </div>
 
           <div class="text-center">

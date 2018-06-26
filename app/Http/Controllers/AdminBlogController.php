@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 use App\Blog;
+use Image;
 
 class AdminBlogController extends Controller
 {
@@ -52,14 +53,17 @@ class AdminBlogController extends Controller
 	    if($input['blog_featured_image'])
 		   {
 		      $file = $input['blog_featured_image'];
+		      $thumbnail = Image::make($file);
 		      $name=time().$file->getClientOriginalName();
-		      $file->move(public_path().'/uploads/admin-blogs/', $name);
+		      $file->move(public_path().'/uploads/admin-blogs/original/', $name);
+		      $thumbnail->resize(525,315);
+		      $thumbnail->save(public_path().'/uploads/admin-blogs/thumbnail/'.$name);
 		   }
 
 		$blog = new Blog();
 			
 		$blog->title = $input['blog_title'];
-		$blog->image = 'uploads/admin-blogs/'.$name;
+		$blog->image = $name;
 		$blog->content = $input['blog_content'];
 		$blog->category_id = $input['blog_category'];
 		$blog->tags = $input['blog_tags'];
@@ -90,9 +94,12 @@ class AdminBlogController extends Controller
         if(Input::file('blog_featured_image'))
 		   {
 		       $file = $input['blog_featured_image'];
+		       $thumbnail = Image::make($file);
 		       $name=time().$file->getClientOriginalName();
-		       $file->move(public_path().'/uploads/admin-blogs/', $name);
-		       $image = 'uploads/admin-blogs/'.$name;
+		       $file->move(public_path().'/uploads/admin-blogs/original/', $name);
+		       $image = $name;
+		       $thumbnail->resize(525,315);
+		       $thumbnail->save(public_path().'/uploads/admin-blogs/thumbnail/'.$name);
 		   }
 		   else {
 		    $image = $input['hdn_blog_image'];
