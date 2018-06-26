@@ -21,10 +21,10 @@
             <div class="box-overlay">
               <div class="box-overlay__content">
                 <h4 class="box-overlay__title">
-                  <a href="/blog-single">{{ $blog->title }}</a>
+                  <a href="/blogs/{{ $blog->slug }}">{{ $blog->title }}</a>
                 </h4>
                 <p class="small">Written by
-                  <a href="#">Ovais Malik</a> on {{ $blog->created_at->format('F d, Y h:i:s A') }}
+                  <a href="">Ovais Malik</a> on {{ $blog->created_at->format('F d, Y h:i:s A') }}
                 </p>
               </div>
             </div>

@@ -44,9 +44,11 @@ Route::get('/admin-audio/show', 'AudioController@ajaxShow');
 Route::post('/admin-audio/update', 'AudioController@ajaxUpdate');
 Route::post('/admin-audio/delete', 'AudioController@ajaxDelete');
 
+Route::get('/blogs', 'PagesController@blogs');
+Route::get('/blogs/{slug}', 'PagesController@blogSingle')->name('blog-single');
+
 Route::get('/contact', 'PagesController@contact');
 Route::get('/blog-single', 'PagesController@blogSingle');
-Route::get('/blogs', 'PagesController@blogs');
 Route::get('/videos-show', 'PagesController@videos');
 Route::get('/gallery', 'PagesController@gallery');
 Route::get('/about', 'PagesController@about');
