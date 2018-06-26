@@ -94,9 +94,6 @@
   <!--Bootstrap Tags Input -->
   <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
 
-  <!-- Jquery Validator -->
-  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/jquery.validate.min.js' : '/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
-
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_blog.js' : '/js/pages/admin_blog.js') }}"></script>
 
   <script>

@@ -29,12 +29,9 @@
               </p>
 
               <ul class="social-sharer social-media__link">
-                <li class="social-media__icon social-media__icon--facebook">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-
+                <li class="social-media__icon">
+                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                  </div>
                 </li>
                 <li class="social-media__icon social-media__icon--twitter">
                   <a href="#">
@@ -127,7 +124,7 @@
               </div>
             </div>
 
-            <div class="blog-comments">
+            <div class="blog-comments" id="disqus_thread">
               <p>Comments goes here...</p>
             </div>
           </div>
@@ -153,4 +150,22 @@
 @endsection
 
 @section('scripts')
+  <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+    var disqus_config = function () {
+      this.page.url = '{{ url()->full() }}';
+      this.page.identifier = '{{ url()->full() }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ovaismalik.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 @endsection

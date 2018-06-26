@@ -191,6 +191,15 @@
         <div class="image-wrapper">
           <img src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
         </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
+        </div>
       </div>
     </div>
   </section>

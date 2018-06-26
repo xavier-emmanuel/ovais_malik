@@ -61,7 +61,7 @@ class AdminBlogController extends Controller
 		   }
 
 		$blog = new Blog();
-			
+
 		$blog->title = $input['blog_title'];
 		$blog->image = $name;
 		$blog->content = $input['blog_content'];
@@ -73,23 +73,23 @@ class AdminBlogController extends Controller
 		$blog->save();
 
 		return response()->json(['success'=>'Added successfully.']);
-		
+
     }
 
     public function checkBlogTitle(Request $request){
-		
+
 		$blog = Blog::where('title', Input::get('blog_title'))->first();
 	   	if ($blog) {
 	        return response()->json(FALSE);
 	   	} else {
 	        return response()->json(TRUE);
-	    }	
+	    }
 	}
 
 	public function ajaxUpdate(Request $request){
 
 		$input = Input::all();
-		$blog = Blog::findOrFail($input['hdn_blog_id']);  
+		$blog = Blog::findOrFail($input['hdn_blog_id']);
 
         if(Input::file('blog_featured_image'))
 		   {
@@ -115,7 +115,7 @@ class AdminBlogController extends Controller
 		$blog->save();
 
 		return response()->json(['success'=>'Updated successfully.']);
-		
+
 	}
 
 	public function ajaxDelete(Request $request){
@@ -124,6 +124,6 @@ class AdminBlogController extends Controller
 		Blog::find($input['hdn_blog_id'])->delete();
 
 		return response()->json();
-		
+
 	}
 }
