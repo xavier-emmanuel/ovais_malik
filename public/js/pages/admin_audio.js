@@ -194,7 +194,14 @@ $(document).ready(function () {
         });
     });
 
+    $('#add-audio-modal').on('show.bs.modal', function (e) {
+        $('#frm-add-audio').trigger('reset');
+        $('#add-audio-prewiew').hide();
+        $("#frm-add-audio").find('#audio-preview').attr('src', '');
+    });
+
     $('#edit-audio').on('show.bs.modal', function (e) {
+        $('#frm-edit-audio').trigger('reset');
         var id = $(e.relatedTarget).data('id');
         var title = $(e.relatedTarget).data('title');
         var audio = $(e.relatedTarget).data('audio');

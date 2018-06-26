@@ -12,6 +12,9 @@
       color: red !important;
       border-color: red !important;
     }
+    .category-name {
+      color: #495057 !important;
+    }
   </style>
 @endsection
 
@@ -39,7 +42,7 @@
             <select name="blog_category" id="edit-blog-category" class="form-control">
               <option selected disabled>Select category</option>
               @foreach($categories as $category)
-              <option value="{{ $category->id }}" @if($category->id == $blogs->category_id)
+              <option value="{{ $category->id }}" class="category-name" @if($category->id == $blogs->category_id)
                 selected
               @endif>{{ $category->name }}</option>
               @endforeach

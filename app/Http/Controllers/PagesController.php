@@ -50,7 +50,7 @@ class PagesController extends Controller
 
     public function blogSingle()
     {
-        return view('blog_single');
+        return view('blog_single')->with(array('page' => 'Slug'));
     }
 
     public function adminVideo()

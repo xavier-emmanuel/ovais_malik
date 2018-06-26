@@ -12,6 +12,9 @@
       color: red !important;
       border-color: red !important;
     }
+    .category-name {
+      color: #495057 !important;
+    }
   </style>
 @endsection
 
@@ -36,7 +39,7 @@
             <select name="blog_category" id="add-blog-category" class="form-control">
               <option selected disabled>Select category</option>
               @foreach($data as $category)
-              <option value="{{ $category->id }}">{{ $category->name }}</option>
+              <option value="{{ $category->id }}" class="category-name">{{ $category->name }}</option>
               @endforeach
             </select>
           </div>
