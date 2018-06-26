@@ -29,14 +29,13 @@
               </p>
 
               <ul class="social-sharer social-media__link">
-              <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ url()->full() }}&layout=button_count&size=large&mobile_iframe=true&width=84&height=28&appId" width="84" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-                <!-- <li class="social-media__icon social-media__icon--facebook"> -->
-                  <!-- <a href="#">
+                <li class="social-media__icon social-media__icon--facebook">
+                  <a href="#">
                     <i class="fab fa-facebook-f"></i>
-                  </a> -->
-                  <!-- <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div> -->
+                  </a>
+                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
 
-                <!-- </li> -->
+                </li>
                 <li class="social-media__icon social-media__icon--twitter">
                   <a href="#">
                     <i class="fab fa-twitter"></i>
