@@ -83,7 +83,6 @@
       </div>
     </form>
   </section>
-
 @endsection
 
 @section('scripts')
