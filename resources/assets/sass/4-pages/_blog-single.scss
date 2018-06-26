@@ -6,6 +6,10 @@
   }
 
   @extend .box-wrapper;
+
+  .blog-wrapper {
+    flex-direction: column;
+  }
   .box {
     flex: 0 1 30.7%;
     margin: 0 30px;
@@ -89,18 +93,18 @@
   .blog-overlay {
     @extend %blog-overlay;
     padding: 15px 35px;
-    margin-right: 250px;
+    width: calc(100% - 250px);
 
     @media only screen and (max-width: 991px) {
-      margin-right: 100px;
+      width: calc(100% - 100px);
     }
 
     @media only screen and (max-width: 767px) {
-      margin-right: 70px;
+      width: calc(100% - 70px);
     }
 
     @media only screen and (max-width: 480px) {
-      margin: 0;
+      width: 100%;
     }
 
     @media only screen and (max-width: 380px) {

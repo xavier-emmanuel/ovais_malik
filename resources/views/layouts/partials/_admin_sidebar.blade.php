@@ -28,7 +28,7 @@
         </li>
         <li>
           <a href="/admin-gallery">
-            <i class="fas fa-images"></i>&nbsp;&nbsp; Gallery
+            <i class="fas fa-images"></i>&nbsp;&nbsp; Images
           </a>
         </li>
         <li>

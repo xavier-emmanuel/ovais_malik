@@ -43,8 +43,10 @@
   .o-admin__wrapper {
     margin-left: auto;
 
-    &:hover {
-      cursor: pointer;
+    .dropdown-toggle {
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     .dropdown-menu {

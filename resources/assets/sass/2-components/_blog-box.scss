@@ -39,6 +39,7 @@
     @extend %blog-overlay;
     padding: 15px;
     margin-right: 40px;
+    min-width: calc(100% - 40px);
 
     @media only screen and (max-width: 380px) {
       margin-right: 0;

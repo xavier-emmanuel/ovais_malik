@@ -3,7 +3,6 @@
   width: 100%;
 
   @media only screen and (max-width: 991px) {
-    display: flex;
     flex-direction: column;
   }
 
@@ -12,19 +11,19 @@
       margin-right: 25px;
     }
   }
+}
 
-  .preview-image-wrapper {
-    max-width: 296px;
-    width: 296px;
-    height: auto;
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
+.preview-image-wrapper {
+  max-width: 296px;
+  width: 296px;
+  height: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
 
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
 }
 
@@ -41,6 +40,14 @@
   @media only screen and (max-width: 991px) {
     width: 100% !important;
     margin: 0 0 20px 0  !important;
+  }
+
+  .bootstrap-tagsinput {
+    height: auto;
+  }
+
+  .tag {
+    margin-bottom: 3px;
   }
 }
 

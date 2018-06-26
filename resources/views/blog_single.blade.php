@@ -25,7 +25,7 @@
             </h2>
             <div class="author-info">
               <p class="small">Written by
-                <a href="#">Ovais Malik</a> on {{ $data->created_at->format('F d, Y h:i:s A') }}
+                <a href="#">Ovais Malik</a> on {{ $data->created_at->format('F d, Y') }}
               </p>
 
               <ul class="social-sharer social-media__link">

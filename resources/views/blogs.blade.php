@@ -24,7 +24,7 @@
                   <a href="/blogs/{{ $blog->slug }}">{{ $blog->title }}</a>
                 </h4>
                 <p class="small">Written by
-                  <a href="">Ovais Malik</a> on {{ $blog->created_at->format('F d, Y h:i:s A') }}
+                  <a href="/about">Ovais Malik</a> on {{ $blog->created_at->format('F d, Y') }}
                 </p>
               </div>
             </div>

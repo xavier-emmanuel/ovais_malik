@@ -19,10 +19,17 @@
   }
 }
 
-.admin-photos {
+.admin-gallery {
   position: relative;
 
   figure {
+    max-height: 195px;
+    height: 195px;
+    border: 1px solid $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &:hover {
       cursor: pointer;
 
@@ -46,6 +53,15 @@
     width: calc(100% - 30px);
     height: calc(100% - 30px);
     transition: .3s ease;
+    padding: 20px;
+
+    .gallery-title {
+      color: $white;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
   }
 
   .gallery-action {
@@ -54,5 +70,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
+  }
+}
+
+.tab-content {
+  .action {
+    margin-top: 10px;
   }
 }

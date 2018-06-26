@@ -5,7 +5,8 @@ For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 
 .cke_editable
 {
-	font-size: 13px;
+	font-size: 16px;
+	font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
 	line-height: 1.6;
 
 	/* Fix for missing scrollbars with RTL texts. (#10488) */

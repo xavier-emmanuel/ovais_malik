@@ -205,6 +205,19 @@
 
 <script src="{{ asset(App::environment('production') ? '/public/js/pages/home.js' : '/js/pages/home.js') }}"></script>
 <script>
+  // Safari video promise
+  var promise = document.querySelector('video').play();
+  var pauseIcon = document.querySelector('.video-pause-play');
+  var node = document.createElement('i');
+
+  if (promise !== undefined) {
+    promise.catch(error => {
+      pauseIcon.children[0].remove();
+      pauseIcon.appendChild(node).classList.add('fas', 'fa-play');
+    }).then(() => {
+        // Auto-play started
+    });
+  }
   var ps = new PerfectScrollbar('.reel-container');
 
   $(document).ready(function () {
