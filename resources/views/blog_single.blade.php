@@ -22,11 +22,11 @@
 
           <div class="blog-overlay">
             <h2>
-              Popular Design News Of The Week: June 4, 2018 - June 10, 2018
+             {{ $data->title }}
             </h2>
             <div class="author-info">
               <p class="small">Written by
-                <a href="#">Ovais Malik</a> on June 15, 2018
+                <a href="#">Ovais Malik</a> on {{ $data->created_at->format('F d, Y h:i:s A') }}
               </p>
 
               <ul class="social-sharer social-media__link">
@@ -57,36 +57,7 @@
 
         <div class="blog-content-wrapper">
           <div class="blog-content">
-            <h2>Super Useful Color Tools for UI Design</h2>
-            <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi sunt facere, consequuntur magni beatae molestias
-              magnam obcaecati vel fuga cum voluptatem, corporis autem odit quidem animi eveniet perferendis! Magni, quod.
-              Ipsum unde maiores doloribus. Dolorem facilis, nostrum possimus fugiat eveniet quae officia nam ullam consectetur
-              minima aut adipisci iste laudantium provident reiciendis quasi tempore molestiae molestias ea explicabo laborum.
-              Aliquam. Non officiis ea laboriosam quidem est facilis dolor a voluptates, quam voluptas quod molestiae aperiam
-              nulla quia beatae. Reprehenderit, nisi voluptates tenetur hic porro veniam sequi dicta cupiditate amet impedit.
-              Dolores consequuntur quod laboriosam reiciendis nulla suscipit veritatis eaque nisi magni sint, repudiandae
-              at optio! Quam exercitationem qui architecto! Doloribus minima maxime tempora asperiores aliquam unde doloremque
-              eaque. Laudantium, debitis! Ea fugit dolorum aut sint voluptates incidunt, laboriosam laudantium molestias
-              repellat culpa quaerat inventore, unde nobis quasi nisi vitae iure soluta. Ex natus consequatur vero itaque
-              suscipit eius fugiat iusto. Distinctio, consequatur reprehenderit quia eveniet veritatis amet quos ex explicabo
-              ipsum earum nostrum eius ullam ut! Placeat impedit, quod hic, corporis, culpa nihil optio dolor maiores neque
-              libero similique quam? Dolorem ducimus accusamus ad eligendi eos repellendus eaque molestias, asperiores earum
-              maxime, velit ipsam quod ratione. Obcaecati, natus voluptatem quia, at nulla unde officiis adipisci eos laboriosam
-              ex, impedit asperiores. Tempora modi sunt quos, aliquid corporis nam facere itaque magnam, optio cumque incidunt
-              cupiditate recusandae esse, dignissimos sint quaerat numquam molestiae iste sequi soluta maiores possimus?
-              Aut excepturi cumque rerum? Ratione omnis harum unde, ex aspernatur in nisi iure sequi officia hic error temporibus
-              autem aliquam obcaecati eum. Voluptatum accusamus cupiditate corporis dicta cumque corrupti magnam sit in,
-              reprehenderit laborum! Soluta rerum nihil eius veritatis quam, ad nesciunt alias maiores numquam. Dicta unde
-              rem aperiam eaque sapiente odio iste possimus repellendus natus esse molestias, quia pariatur perspiciatis,
-              eius maxime eum! Sunt quam aliquam praesentium? Temporibus nisi doloremque eum, ea nobis suscipit facere! Ducimus
-              enim laboriosam repellendus pariatur perspiciatis placeat aut suscipit quo fugiat aspernatur est voluptates
-              similique quia, necessitatibus mollitia. Id quae facilis nemo perspiciatis hic expedita consequuntur debitis
-              alias quos explicabo quo quaerat mollitia pariatur distinctio enim ea beatae itaque optio atque, neque molestiae
-              quis sunt fugit sapiente! Culpa. Ad quibusdam rem nesciunt blanditiis eveniet cupiditate facilis, et qui cumque
-              ipsam nobis repellat aspernatur, aut reiciendis minima neque ex sequi fugiat deserunt ut quod totam. Consectetur
-              explicabo consequuntur doloribus. Cupiditate dignissimos inventore laborum natus dolor nulla exercitationem,
-              quod libero deleniti, sequi rerum deserunt nobis laudantium possimus pariatur amet! Aut, id dolorum autem dicta
-              veritatis voluptatibus atque deserunt eos reprehenderit!</p>
+            <p class="text-justify">{!! $data->content !!}</p>
 
             <img src="https://picsum.photos/1000/600/?image=1077" alt="" width="100%">
 
