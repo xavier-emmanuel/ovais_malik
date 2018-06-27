@@ -7,6 +7,10 @@
 
   @extend .box-wrapper;
 
+  .social-media__icon {
+    padding: 0;
+  }
+
   .blog-wrapper {
     flex-direction: column;
   }

@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('stylesheets')
+  <style>
+      .fb_iframe_widget iframe {
+          margin-top: -4px !important;
+      }
+  </style>
 @endsection
 
 @section('content')
@@ -30,21 +35,20 @@
 
               <ul class="social-sharer social-media__link">
                 <li class="social-media__icon">
-                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                  <div title="Click to share on Facebook" class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button" data-size="small" data-mobile-iframe="true">
+                      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
                   </div>
                 </li>
                 <li class="social-media__icon">
-                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-related="" data-show-count="true">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-related="" data-show-count="true" title="Click to share on Twitter">Tweet</a>
+                  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </li>
-                <li class="social-media__icon social-media__icon--linkedin">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
+                <li class="social-media__icon">
+                  <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+                  <script type="IN/Share" data-url="{{ url()->full() }}"></script>
                 </li>
-                <li class="social-media__icon social-media__icon--google">
-                  <a href="#">
-                    <i class="fab fa-google-plus-g"></i>
-                  </a>
+                <li class="social-media__icon">
+                  <a class="g-plus" data-href="{{ url()->full() }}" data-action="share" data-annotation="none" data-height="20" title="Click to share on Google Plus"></a>
                 </li>
               </ul>
             </div>
@@ -123,7 +127,6 @@
             </div>
 
             <div class="blog-comments" id="disqus_thread">
-              <p>Comments goes here...</p>
             </div>
           </div>
 
@@ -166,4 +169,5 @@
     })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//ovaismalik.disqus.com/count.js" async></script>
 @endsection

@@ -26,6 +26,7 @@
                 <p class="small">Written by
                   <a href="/about">Ovais Malik</a> on {{ $blog->created_at->format('F d, Y') }}
                 </p>
+                <i class="fas fa-comments"></i>&nbsp; <a href="/blogs/{{ $blog->slug }}#disqus_thread">Comments</a>
               </div>
             </div>
           </div>
@@ -39,6 +40,7 @@
 @endsection
 
 @section('scripts')
+  <script id="dsq-count-scr" src="//ovaismalik.disqus.com/count.js" async></script>
   <script>
     sr.reveal('.headul', {
       origin: 'left',
