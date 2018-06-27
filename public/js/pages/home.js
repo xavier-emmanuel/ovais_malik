@@ -67,9 +67,9 @@ $(document).ready(function() {
 
 		if (!player.ended) {
 			var mouseX = e.pageX - bar.offsetLeft;
-			var newtime = mouseX * player.duration / 100;
-			player.currentTime = newtime;
-			progressBar.style.width = mouseX + '%';
+			var newtime = Math.floor((e.offsetX / bar.offsetWidth) * 100)
+			player.currentTime = player.duration*(newtime/100);
+			progressBar.style.width = newtime + '%';
 		}
 	}
 
