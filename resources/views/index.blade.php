@@ -121,7 +121,7 @@
                   <span class="playlist-title">
                     <!-- Add this <i> tag below when its <li> parent tag has an active class.
                          This should only appear in currently playing music. -->
-                    <i class="fas fa-headphones faa-pulse animated faa-fast" style="font-size: 14px;"></i>
+                    <i class="fas fa-headphones" style="font-size: 14px;"></i>
                     &nbsp; {{ $audio->title }}
                   </span>
                   <span>{{ $audio->audio_duration }}</span>

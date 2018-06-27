@@ -53,7 +53,7 @@ class PagesController extends Controller
         $blog = Blog::where('slug', $slug)->first();
         $tags = $blog->tags;
         $tagsArray = explode(',', $tags);
-        return view('blog_single')->with(array('page' => $blog->title, 'data' => $blog, 'tags' => $tagsArray));
+        return view('blog_single')->with(array('page' => $slug, 'data' => $blog, 'tags' => $tagsArray));
     }
 
     public function adminVideo()
