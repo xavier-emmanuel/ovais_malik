@@ -22,7 +22,7 @@ class AudioController extends Controller
 		$audio = new Audio();
 
 		$audio->title = $input['add_audio_title'];
-		$audio->audio_file = '/uploads/audio/'.$name;
+		$audio->audio_file = '/public/uploads/audio/'.$name;
 		$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
 		$duration = $mp3file->getDuration();
 		$audio->audio_duration = MP3File::formatTime($duration);
@@ -88,7 +88,7 @@ class AudioController extends Controller
 			$file = $input['edit_audio'];
 			$name=$input['edit_audio_title'].'.mp3';
 			$file->move(public_path().'/uploads/audio/', $name);
-			$audio_file = 'uploads/audio/'.$name;
+			$audio_file = '/public/uploads/audio/'.$name;
 			$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
 			$duration = $mp3file->getDuration();
 		} else {
