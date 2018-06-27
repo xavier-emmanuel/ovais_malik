@@ -27,9 +27,16 @@
     <meta property="og:type"            content="article" />
     <meta property="og:title"           content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
     <meta property="og:description"     content="{!! $data->content !!}" />
-    <meta property="og:image"           content="{{ url('/public/'.$data->image) }}" />
-    <meta property="og:image:width"     content="1200" />
-    <meta property="og:image:height"    content="630" />
+    <meta property="og:image"           content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
+    <meta property="og:image:width"     content="525" />
+    <meta property="og:image:height"    content="315" />
+
+    <meta name="twitter:card"           content="summary_large_image" />
+    <meta name="twitter:site"           content="@OvaisMalikVO">
+    <meta name="twitter:creator"        content="@OvaisMalikVO" />
+    <meta name="twitter:title"          content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
+    <meta name="twitter:description"    content="{!! $data->content !!}" />
+    <meta name="twitter:image0"          content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
   @else
 
   @endif

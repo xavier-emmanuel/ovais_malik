@@ -30,13 +30,11 @@
 
               <ul class="social-sharer social-media__link">
                 <li class="social-media__icon">
-                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button_count" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+                  <div class="fb-share-button" data-href="{{ url()->full() }}" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
                   </div>
                 </li>
-                <li class="social-media__icon social-media__icon--twitter">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
+                <li class="social-media__icon">
+                  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-related="" data-show-count="true">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </li>
                 <li class="social-media__icon social-media__icon--linkedin">
                   <a href="#">
