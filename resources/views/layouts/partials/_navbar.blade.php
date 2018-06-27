@@ -70,7 +70,7 @@
           <li class="nav-item {{ Request::is('videos-show') ? 'active' : '' }}">
             <a class="nav-link" href="/videos-show">Videos</a>
           </li>
-          <li class="nav-item {{ Request::is('blogs') ? 'active' : '' }}">
+          <li class="nav-item {{ Request::is('blogs') || Request::is('blogs/*') ? 'active' : '' }}">
             <a class="nav-link" href="/blogs">Blogs</a>
           </li>
           <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
