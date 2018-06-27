@@ -36,7 +36,7 @@
     <meta name="twitter:creator"        content="@OvaisMalikVO" />
     <meta name="twitter:title"          content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
     <meta name="twitter:description"    content="{!! $data->content !!}" />
-    <meta name="twitter:image0"          content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
+    <meta name="twitter:image"          content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
   @else
 
   @endif
