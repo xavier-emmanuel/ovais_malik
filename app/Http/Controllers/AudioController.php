@@ -93,8 +93,9 @@ class AudioController extends Controller
 			$mp3file = new MP3File(public_path().'/uploads/audio/'.$name);
 			$duration = $mp3file->getDuration();
 		} else {
-		$audio_file = str_replace("/public", "", $input['hdn_audio']);
-		$mp3file = new MP3File(public_path().$audio_file);
+		$audio_file = $input['hdn_audio'];
+		$mp3_file_duration = str_replace("/public", "", $input['hdn_audio']);
+		$mp3file = new MP3File(public_path().$mp3_file_duration);
 		$duration = $mp3file->getDuration();
 		}
 
