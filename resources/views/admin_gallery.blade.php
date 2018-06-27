@@ -15,7 +15,7 @@
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-gallery" role="tabpanel" aria-labelledby="nav-gallery-tab">
           <div class="action">
-            <button class="btn btn-outline" data-toggle="modal" data-target="#add-gallery" data-backdrop="static">
+            <button class="btn btn-outline" data-toggle="modal" data-target="#add-gallery" data-backdrop="static" id="btn-upload-photos">
               <i class="fas fa-plus"></i>&nbsp; Upload Photos
             </button>
           </div>
@@ -280,9 +280,9 @@
             </button>
 
             <div class="container-fluid">
-              <div class="row">
+              <div class="row preview-image">
                 <!-- Preview images here -->
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
+                {{-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
                   <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
                   <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
                 </div>
@@ -293,7 +293,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
                   <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
                   <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -489,4 +489,5 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
 @endsection
