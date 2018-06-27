@@ -22,50 +22,26 @@
 
   @-webkit-keyframes pulse {
     0% {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
     }
 
     50% {
-      -webkit-transform: scale(0.8);
-      transform: scale(0.8);
+      -webkit-transform: scale(1);
+      transform: scale(1);
     }
 
     100% {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
+      -webkit-transform: scale(1.5);
+      transform: scale(1.5);
     }
-  }
-
-  @keyframes pulse {
-    0% {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-
-    50% {
-      -webkit-transform: scale(0.8);
-      transform: scale(0.8);
-    }
-
-    100% {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
-  }
-
-  .faa-pulse.animated,
-  .faa-pulse.animated-hover:hover,
-  .faa-parent.animated-hover:hover > .faa-pulse {
-    -webkit-animation: pulse 2s linear infinite;
-    animation: pulse 2s linear infinite;
   }
 
   .faa-pulse.animated.faa-fast,
   .faa-pulse.animated-hover.faa-fast:hover,
   .faa-parent.animated-hover:hover > .faa-pulse.faa-fast {
-    -webkit-animation: pulse 1s linear infinite;
-    animation: pulse 1s linear infinite;
+    -webkit-animation: pulse 0.5s linear infinite;
+    animation: pulse 0.5s linear infinite;
   }
 
   .faa-pulse.animated.faa-slow,
@@ -145,7 +121,7 @@
                   <span class="playlist-title">
                     <!-- Add this <i> tag below when its <li> parent tag has an active class.
                          This should only appear in currently playing music. -->
-                    <i class="fas fa-headphones faa-pulse animated faa-fast"></i>
+                    <i class="fas fa-headphones faa-pulse animated faa-fast" style="font-size: 14px;"></i>
                     &nbsp; {{ $audio->title }}
                   </span>
                   <span>{{ $audio->audio_duration }}</span>
