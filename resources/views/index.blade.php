@@ -134,27 +134,6 @@
     </div>
   </section>
 
-  <section id="about">
-    <div class="container">
-      <h1 class="text-center">About
-        <span>Ovais Malik</span>
-      </h1>
-      <div class="headul"></div>
-      <div class="row">
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-          <img src="{{ asset(App::environment('production') ? '/public/img/about-us-image.jpg' : '/img/about-us-image.jpg') }}" alt="About Image" class="img-fluid">
-        </div>
-        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-          <p class="about">Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA,
-            which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music.
-            <br>
-            <br> Trustworthy is one of the first words clients use to describe Ovais' voice. Other words include Believable,
-            Versatile, Fresh, Powerful, Authoritative, Sincere, and Guy Next Door.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="testimonial">
     <div class="container">
       <h1 class="text-center">Client Testimonials</h1>

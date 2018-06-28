@@ -1,34 +1,3 @@
-@mixin contact {
-  .contact {
-    display: flex;
-    margin-right: 25px !important;
-
-    @media only screen and (max-width: 425px) {
-      flex-direction: column;
-      margin-top: 10px;
-      margin-right: 0 !important;
-      padding: 0;
-      text-align: center;
-    }
-
-    @media only screen and (max-width: 767px) {
-      margin-top: 0;
-      margin-right: 0 !important;
-      padding: 0.5rem;
-    }
-
-    .contact__list {
-      &:last-child {
-        margin-left: 20px;
-
-        @media only screen and (max-width: 425px) {
-          margin-left: 0;
-        }
-      }
-    }
-  }
-}
-
 @mixin heading-underline {
   .headul {
     margin: 30px auto 50px auto;

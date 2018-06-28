@@ -1,9 +1,46 @@
 .social-media__link {
   display: flex;
+  justify-content: flex-end;
   padding-left: 0.5rem;
+  width: 100%;
+
+  .social, .contact {
+    display: flex;
+  }
 
   @media only screen and (max-width: 767px) {
     padding-left: 0.5rem;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 525px) {
+    justify-content: space-between;
+    padding-left: 0;
+  }
+
+  @media only screen and (max-width: 424px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact {
+    @media only screen and (max-width: 991px) {
+      margin-bottom: 5px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+
+    @media only screen and (max-width: 525px) {
+      flex-direction: column;
+    }
+  }
+
+  .social {
+    @media only screen and (max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
 
   .social-media__icon {
@@ -11,7 +48,7 @@
     padding: 3px;
     text-align: center;
     border-radius: 5px;
-    margin-right: 5px;
+    margin-left: 5px;
 
     i {
       color: $white;
@@ -23,7 +60,6 @@
       left: 0;
       color: #f5de50;
       font-size: 34px;
-      margin: 0;
       &:hover {
         color: darken(#f5de50, 10);
       }

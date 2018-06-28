@@ -1,53 +1,54 @@
   <header id="header" class="container">
     <div class="header__nav--is-top">
+      <a class="navbar-brand" href="#">
+        <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo" width="150px">
+      </a>
       <ul class="social-media__link">
-        <li class="social-media__icon social-media__icon--facebook">
-          <a href="https://www.facebook.com/ovaismalikvoiceover/" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-        <li class="social-media__icon social-media__icon--twitter">
-          <a href="https://twitter.com/OvaisMalikVO" target="_blank">
-            <i class="fab fa-twitter"></i>
-          </a>
-        </li>
-        <li class="social-media__icon social-media__icon--linkedin">
-          <a href="https://www.linkedin.com/in/ovaismalik/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-        </li>
-        <li class="social-media__icon social-media__icon--youtube">
-          <a href="https://www.youtube.com/user/drumgy8" target="_blank">
-            <i class="fab fa-youtube"></i>
-          </a>
-        </li>
-        <li class="social-media__icon social-media__icon--imdb">
-          <a href="#" target="_blank">
-            <i class="fab fa-imdb"></i>
-          </a>
-        </li>
-      </ul>
-
-      <ul class="contact">
-        <li class="contact__list">
-          <i class="fas fa-phone"></i>&nbsp;
-          <a href="javascript:void(0);">
-            <span>(805) 624-2020</span>
-          </a>
-        </li>
-        <li class="contact__list">
-          <i class="fas fa-envelope"></i>&nbsp;
-          <a href="mailto:info@ovaismalik.com">
-            <span>info@ovaismalik.com</span>
-          </a>
-        </li>
+        <div class="contact">
+          <li class="contact__list">
+            <i class="fas fa-phone"></i>&nbsp;
+            <a href="javascript:void(0);">
+              <span>(805) 624-2020</span>
+            </a>
+          </li>
+          <li class="contact__list">
+            <i class="fas fa-envelope"></i>&nbsp;
+            <a href="mailto:info@ovaismalik.com">
+              <span>info@ovaismalik.com</span>
+            </a>
+          </li>
+        </div>
+        <div class="social">
+          <li class="social-media__icon social-media__icon--facebook">
+            <a href="https://www.facebook.com/ovaismalikvoiceover/" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="social-media__icon social-media__icon--twitter">
+            <a href="https://twitter.com/OvaisMalikVO" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="social-media__icon social-media__icon--linkedin">
+            <a href="https://www.linkedin.com/in/ovaismalik/" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li class="social-media__icon social-media__icon--youtube">
+            <a href="https://www.youtube.com/user/drumgy8" target="_blank">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li class="social-media__icon social-media__icon--imdb">
+            <a href="https://www.imdb.com/name/nm5415237/" target="_blank">
+              <i class="fab fa-imdb"></i>
+            </a>
+          </li>
+        </div>
       </ul>
     </div>
 
-    <nav class="header__nav--is-bottom navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">
-        <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo">
-      </a>
+    <nav class="header__nav--is-bottom navbar navbar-expand-xl navbar-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,7 +71,7 @@
           <li class="nav-item {{ Request::is('videos-show') ? 'active' : '' }}">
             <a class="nav-link" href="/videos-show">Videos</a>
           </li>
-          <li class="nav-item {{ Request::is('blogs') || Request::is('blogs/*') ? 'active' : '' }}">
+          <li class="nav-item {{ Request::is('blogs') ? 'active' : '' }}">
             <a class="nav-link" href="/blogs">Blogs</a>
           </li>
           <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
