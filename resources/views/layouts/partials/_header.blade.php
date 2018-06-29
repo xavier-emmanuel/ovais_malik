@@ -21,9 +21,9 @@
 
   <title>Ovais Malik Voiceover | Multilingual Voice Talent - {{ $page }}</title>
 
+  <link rel="canonical" href="{{ url()->full() }}">
+  <meta property="og:url"             content="{{ url()->full() }}" />
   @if(Request::is('blogs/*'))
-    <link rel="canonical" href="{{ url()->full() }}">
-    <meta property="og:url"             content="{{ url()->full() }}" />
     <meta property="og:type"            content="article" />
     <meta property="og:title"           content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
     <meta property="og:description"     content="{!! $data->content !!}" />
@@ -38,6 +38,18 @@
     <meta name="twitter:description"    content="{!! $data->content !!}" />
     <meta name="twitter:image"          content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
   @else
+    <meta property="og:type"            content="website" />
+    <meta property="og:title"           content="Ovais Malik Voiceover | Multilingual Voice Talent" />
+    <meta property="og:description"     content="Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA, which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music. " />
+    <meta property="og:image"           content="{{ url('/public/img/logo.jpg) }}" />
+    <meta property="og:image:width"     content="525" />
+    <meta property="og:image:height"    content="315" />
 
+    <meta name="twitter:card"           content="summary_large_image" />
+    <meta name="twitter:site"           content="@OvaisMalikVO">
+    <meta name="twitter:creator"        content="@OvaisMalikVO" />
+    <meta name="twitter:title"          content="Ovais Malik Voiceover | Multilingual Voice Talent" />
+    <meta name="twitter:description"    content="Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA, which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music. " />
+    <meta name="twitter:image"          content="{{ url('/public/img/logo.jpg) }}" />
   @endif
 </head>
