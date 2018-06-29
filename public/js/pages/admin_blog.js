@@ -83,7 +83,7 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    localStorage.setItem("Create",data.OperationStatus)
+                    localStorage.setItem("Create",data.OperationStatus);
                     setTimeout(function(){
                         window.location.href = '/admin-blog';
                     },2000);
@@ -135,7 +135,7 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    localStorage.setItem("Update",data.OperationStatus)
+                    localStorage.setItem("Update",data.OperationStatus);
                     setTimeout(function(){
                         window.location.href = '/admin-blog';
                     },2000);

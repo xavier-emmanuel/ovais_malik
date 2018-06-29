@@ -82,7 +82,7 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 reel-controller">
           <h4 class="audio-title"></h4>
-          <audio controls id="audio-preview" hidden></audio>
+          <audio id="audio-preview"></audio>
           <div class="author-time">
             <em>
               <p class="small">By: Ovais Malik</p>

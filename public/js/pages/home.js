@@ -107,7 +107,7 @@ $(document).ready(function() {
 	   $('#audio-play').removeClass('fa-play').addClass('fa-pause');
 	   $(this).find('i').addClass('faa-pulse animated faa-fast');
 	   $('#audio-preview').get(0).play();
-	   updateTime = setInterval(update,500);
+	   updateTime = setInterval(update,100);
 		
 
 		var player = document.getElementById('audio-preview');
@@ -139,7 +139,7 @@ $(document).ready(function() {
 			$(this).removeClass('fa-play').addClass('fa-pause');
 			$('.demo-reels li.active').find('i').addClass('faa-pulse animated faa-fast');
 			$('#audio-preview').get(0).play();
-			updateTime = setInterval(update,500);
+			updateTime = setInterval(update,100);
 
 			var audio_duration = $('#hdn-audio-duration').val();
 			var player = document.getElementById('audio-preview');
@@ -184,7 +184,7 @@ $(document).ready(function() {
 			$('#audio-play').removeClass('fa-play').addClass('fa-pause');
 			$('.demo-reels li.active').find('i').addClass('faa-pulse animated faa-fast');
 			$('#audio-preview').get(0).play();
-			updateTime = setInterval(update,500);
+			updateTime = setInterval(update,100);
 		}
 
 		var player = document.getElementById('audio-preview');
@@ -227,7 +227,7 @@ $(document).ready(function() {
 			$('#audio-play').removeClass('fa-play').addClass('fa-pause');
 			$('.demo-reels li.active').find('i').addClass('faa-pulse animated faa-fast');
 			$('#audio-preview').get(0).play();
-			updateTime = setInterval(update,500);
+			updateTime = setInterval(update,100);
 		}
 
 		var player = document.getElementById('audio-preview');

@@ -54,6 +54,8 @@ Route::get('/blogs/{slug}', 'PagesController@blogSingle')->name('blog-single');
 Route::get('/videos-show/display', 'AdminVideoController@ajaxDisplayVideos');
 
 Route::get('/contact', 'PagesController@contact');
+Route::post('/contact/send', 'ContactController@contactSend');
+
 Route::get('/blog-single', 'PagesController@blogSingle');
 Route::get('/videos-show', 'PagesController@videos');
 Route::get('/gallery', 'PagesController@gallery');
