@@ -16,7 +16,7 @@ $(document).ready(function() {
               reader.onload = function(event) {
                   $($.parseHTML('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 image-displayed">'
                   + '<input type="hidden" class="image-name" name="image_name" value="'+ event.target.result +'">'
-                  + '<img src="'+ event.target.result +'" alt="" width="100%" height="130px">'
+                  + '<img src="{{ asset(App::environment("production") ? "public/uploads/admin-blogs/thumbnail/"'+ event.target.result +' : "uploads/admin-blogs/thumbnail/"'+ event.target.result +') }}" alt="" width="100%" height="130px">'
                   + '<textarea name="caption" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>'
                 	+ '</div>')).appendTo(placeToInsertImagePreview);
               }
@@ -82,11 +82,7 @@ function uploadImage() {
 		e.preventDefault();
 		$('#btn-edit-audio').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Uploading');
 		var data = new FormData($("#frm-add-gallery")[0]);
-		var image_link = [];
 		var image_caption = [];
-		$('.image-name').each(function() {
-			image_link.push($(this).val());
-		})
 		$('.image-caption').each(function() {
 			image_caption.push($(this).val());
 		})
