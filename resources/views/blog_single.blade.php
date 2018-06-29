@@ -131,18 +131,23 @@
           </div>
 
           <div class="blog-ads">
-            <a href="https://placeholder.com" style="margin-bottom: 20px;">
-              <img src="http://via.placeholder.com/310x250">
-            </a>
-
-            <a href="https://placeholder.com" style="margin-bottom: 20px;">
-              <img src="http://via.placeholder.com/310x800">
-            </a>
-
-            <a href="https://placeholder.com">
-              <img src="http://via.placeholder.com/310x650">
-            </a>
-
+            <div class="side-ads">
+              <div class="side-ads__header">
+                <p class="ads-title">Connect with me on Facebook</p>
+                <hr class="headul">
+              </div>
+              <div class="fb-page" data-href="https://www.facebook.com/ovaismalikvoiceover/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="270"><blockquote cite="https://www.facebook.com/ovaismalikvoiceover/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ovaismalikvoiceover/">Ovais Malik Voiceover</a></blockquote></div>
+            </div>
+            <div class="side-ads">
+              <div class="side-ads__header">
+                <p class="ads-title">Latest Posts</p>
+                <hr class="headul">
+              </div>
+              <div class="latest-posts">
+                <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                <p class="latest-post__title">Lorem Ipsum Maalsum</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
