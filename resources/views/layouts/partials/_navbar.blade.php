@@ -78,6 +78,15 @@
             <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
               <a class="nav-link" href="/contact">Contact</a>
             </li>
+            <div class="dropdown">
+              <button class="btn btn-outline dropdown-toggle" type="button" id="admin-setting-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-cogs"></i>&nbsp;
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="admin-setting-option">
+                <a href="#" class="dropdown-item"><i class="fas fa-tachometer-alt"></i>&nbsp; Go to Dashboard</a>
+                <a href="#" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
+              </div>
+            </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button" style="display: {{ Auth::check() ? 'none' : 'block' }};">
               LOGIN
             </button>
@@ -103,7 +112,7 @@
             <br>
             <br>
             <br>
-			@if($errors->any())
+			      @if($errors->any())
               <div id="error" class="alert alert-danger">
                 <i class="fas fa-exclamation-triangle"></i> <span>{{$errors->first()}}</span>
               </div>

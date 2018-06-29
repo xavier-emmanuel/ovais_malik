@@ -214,6 +214,18 @@
         <div class="image-wrapper">
           <img src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
+        </div>
+        <div class="image-wrapper">
+          <img src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
+        </div>
       </div>
     </div>
   </section>

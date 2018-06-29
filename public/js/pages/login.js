@@ -18,7 +18,7 @@ function login() {
 	login_form = $('#frm-login').validate({
 		errorClass: "my-error-class",
    	validClass: "my-valid-class",
-   	
+
    	rules:
    		{
 				login_username: "required",
