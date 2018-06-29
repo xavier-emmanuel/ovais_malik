@@ -20,119 +20,8 @@
             </button>
           </div>
 
-          <div class="row admin-gallery">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 1</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 2</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 3</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 4</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 5</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 6</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 7</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Caption # 8</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
+          <div class="row admin-gallery" id="gallery-images">
+            
           </div>
         </div>
         <div class="tab-pane fade" id="nav-client-logo" role="tabpanel" aria-labelledby="nav-client-logo-tab">
@@ -265,7 +154,7 @@
   <div class="modal fade" id="add-gallery" tabindex="-1" role="dialog" aria-labelledby="addGallery" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <form id="frm-add-gallery" method="post" enctype="multipart/form-data" name="frm_add_gallery">
+        <form id="frm-add-gallery" action="/admin-gallery/create" method="post" enctype="multipart/form-data" name="frm_add_gallery">
           {{ csrf_field() }}
           <div class="modal-header">
             <h5 class="modal-title">Add Photo</h5>
@@ -275,32 +164,20 @@
           </div>
           <div class="modal-body">
             <button type="button" class="btn btn-primary add-photos-wrapper">
-              <input type="file" name="add_photos" id="add-photos" multiple>
+              <input type="file" name="filenames[]" id="add-photos" multiple>
               <label for="add-photos"><i class="fas fa-image"></i>&nbsp; Select photos</label>
             </button>
 
             <div class="container-fluid">
               <div class="row preview-image">
-                <!-- Preview images here -->
-                {{-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
-                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
-                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
-                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
-                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-xs 6">
-                  <img src="https://picsum.photos/300/200/?image=9" alt="" width="100%">
-                  <textarea name="" id="" cols="30" rows="3" class="form-control">Caption</textarea>
-                </div> --}}
+
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
-            <button type="submit" class="btn btn-info btn-edit-audio">
+            <button type="submit" class="btn btn-info" id="btn-edit-audio">
               <i class="fas fa-upload"></i>&nbsp; Upload</button>
           </div>
         </form>
@@ -402,10 +279,10 @@
               <input type="file" id="add-client-logo-image" name="add_client_logo_image" class="form-control-file" required>
             </div>
             <!-- Hidden by default. Should only be displayed when input file count is > 0 -->
-            <div class="form-group">
+            <div class="form-group logo-preview">
               <label for="">Preview:</label>
               <div class="preview-image-wrapper">
-                <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" alt="">
+                <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" alt="" id="logo-show">
               </div>
             </div>
           </div>
