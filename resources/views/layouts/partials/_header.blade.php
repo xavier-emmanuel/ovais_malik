@@ -41,7 +41,7 @@
     <meta property="og:type"            content="website" />
     <meta property="og:title"           content="Ovais Malik Voiceover | Multilingual Voice Talent" />
     <meta property="og:description"     content="Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA, which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music. " />
-    <meta property="og:image"           content="{{ url('/public/img/logo.jpg) }}" />
+    <meta property="og:image"           content="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" />
     <meta property="og:image:width"     content="525" />
     <meta property="og:image:height"    content="315" />
 
@@ -50,6 +50,6 @@
     <meta name="twitter:creator"        content="@OvaisMalikVO" />
     <meta name="twitter:title"          content="Ovais Malik Voiceover | Multilingual Voice Talent" />
     <meta name="twitter:description"    content="Ovais Malik is a multilingual voice over talent with a unique flair. He was born in Pakistan and raised in LA, which helped cultivate his insatiable appetite for the creative arts, particularly in acting and music. " />
-    <meta name="twitter:image"          content="{{ url('/public/img/logo.jpg) }}" />
+    <meta name="twitter:image"          content="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" />
   @endif
 </head>
