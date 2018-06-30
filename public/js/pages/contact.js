@@ -30,10 +30,20 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 success: function (data) {
-                    localStorage.setItem("Send",data.OperationStatus);
-                    setTimeout(function(){
-                        window.location.href = '/contact';
-                    },2000);
+                    $('#frm-contact input').prop('disabled', false);
+                    $('#frm-contact .btn').prop('disabled', false);
+                    $('.loading-overlay').css('display', 'none');
+
+                    $('#frm-contact').trigger('reset');
+                    $('.btn-send').html('<i class="fas fa-paper-plane"></i>&nbsp; Send');
+
+                    $.toast({
+                        heading: 'Success',
+                        text: 'Mail sent successfully. Thank you!',
+                        position: 'top-right',
+                        icon: 'success',
+                        hideAfter: 3500
+                    });
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
                     alert(xhr.responseText);

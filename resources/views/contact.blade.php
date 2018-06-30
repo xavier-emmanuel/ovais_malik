@@ -81,19 +81,5 @@
 
     sr.reveal('.form-wrapper')
   </script>
-  <script>
-    $(document).ready(function(){
-        if(localStorage.getItem("Send"))
-        {
-            $.toast({
-                heading: 'Success',
-                text: 'Thanks for contacting us!',
-                position: 'top-right',
-                icon: 'success',
-                hideAfter: 3500
-            });
-            localStorage.clear();
-        }
-    });
-  </script>
+
 @endsection
