@@ -21,7 +21,7 @@
           </div>
 
           <div class="row admin-gallery" id="gallery-images">
-            
+
           </div>
         </div>
         <div class="tab-pane fade" id="nav-client-logo" role="tabpanel" aria-labelledby="nav-client-logo-tab">
@@ -366,5 +366,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
 @endsection

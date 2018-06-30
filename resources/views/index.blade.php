@@ -1,11 +1,8 @@
 @extends('layouts.master')
 
 @section('stylesheets')
-<!-- Owl Carousel -->
 <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.css' : '/plugins/owl-carousel/owl.carousel.min.css') }}">
 <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.theme.default.css' : '/plugins/owl-carousel/owl.theme.default.css') }}">
-
-<!-- Perfect Scrollbar -->
 <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/perfect-scrollbar/perfect-scrollbar.css' : '/plugins/perfect-scrollbar/perfect-scrollbar.css') }}">
 <style>
   .list-group-item {
@@ -17,8 +14,6 @@
   .progress {
     width: 100% !important;
   }
-
-  /* PULSE */
 
   @-webkit-keyframes pulse {
     0% {
@@ -200,31 +195,31 @@
     <div class="container">
       <div class="brand-wrapper">
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
       </div>
     </div>
@@ -232,15 +227,10 @@
 @endsection
 
 @section('scripts')
-<!-- Owl Carousel JS -->
 <script src="{{ asset(App::environment('production') ? '/public/plugins/owl-carousel/owl.carousel.min.js' : '/plugins/owl-carousel/owl.carousel.min.js') }}"></script>
-
-<!-- Perfect Scrollbar JS -->
 <script src="{{ asset(App::environment('production') ? '/public/plugins/perfect-scrollbar/perfect-scrollbar.js' : '/plugins/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
-
 <script src="{{ asset(App::environment('production') ? '/public/js/pages/home.js' : '/js/pages/home.js') }}"></script>
 <script>
-  // Safari video promise
   var promise = document.querySelector('video').play();
   var pauseIcon = document.querySelector('.video-pause-play');
   var node = document.createElement('i');
@@ -250,7 +240,7 @@
       pauseIcon.children[0].remove();
       pauseIcon.appendChild(node).classList.add('fas', 'fa-play');
     }).then(() => {
-        // Auto-play started
+
     });
   }
   var ps = new PerfectScrollbar('.reel-container');

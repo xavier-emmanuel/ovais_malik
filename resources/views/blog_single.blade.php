@@ -22,7 +22,7 @@
             @endforeach
           </div>
 
-          <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
+          <img class="lazy" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
           <div class="blog-overlay">
             <h2>
@@ -69,7 +69,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -89,7 +89,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -109,7 +109,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -147,7 +147,7 @@
                 <ul>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -156,7 +156,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -165,7 +165,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -174,7 +174,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -183,7 +183,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -219,5 +219,5 @@
     })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <script id="dsq-count-scr" src="//ovaismalik.disqus.com/count.js" async></script>
+  <script id="dsq-count-scr" src="//ovaismalik.disqus.com/count.js" async></script>
 @endsection

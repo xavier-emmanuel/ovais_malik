@@ -153,5 +153,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_categories.js' : '/js/pages/admin_categories.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_categories.js' : '/js/pages/admin_categories.js') }}"></script>
 @endsection

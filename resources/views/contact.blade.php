@@ -1,9 +1,7 @@
 @extends('layouts.master')
 
 @section('stylesheets')
-  <!-- Toastr -->
   <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/toast-master/css/jquery.toast.css' : '/plugins/toast-master/css/jquery.toast.css') }}">
-  
   <style>
     .error {
       color: red !important;
@@ -16,7 +14,7 @@
 	<section id="contact">
     <div class="container">
       <h1 class="text-center">Contact
-        <span>Ovais Malik</span>
+        <span>Ovais</span>
       </h1>
       <div class="headul"></div>
 
@@ -69,10 +67,7 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/contact.js' : '/js/pages/contact.js') }}"></script>
-
-  <!-- Toastr -->
-<script src="{{ asset(App::environment('production') ? '/public/plugins/toast-master/js/jquery.toast.js' : '/plugins/toast-master/js/jquery.toast.js') }}"></script>
-
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/toast-master/js/jquery.toast.js' : '/plugins/toast-master/js/jquery.toast.js') }}"></script>
   <script>
     sr.reveal('.headul', {
       origin: 'left',
@@ -81,5 +76,4 @@
 
     sr.reveal('.form-wrapper')
   </script>
-
 @endsection

@@ -1,12 +1,8 @@
 @extends('layouts.admin_master')
 
 @section('stylesheets')
-  <!-- CKEditor -->
   <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/contents.css' : '/plugins/ckeditor/contents.css') }}">
-
-  <!-- Bootstrap Tags Input -->
   <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.css' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.css') }}">
-
   <style>
     .error {
       color: red !important;
@@ -86,16 +82,11 @@
 @endsection
 
 @section('scripts')
-  <!-- CKEditor -->
   <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/ckeditor.js' : '/plugins/ckeditor/ckeditor.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/config.js' : '/plugins/ckeditor/config.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/styles.js' : '/plugins/ckeditor/styles.js') }}"></script>
-
-  <!--Bootstrap Tags Input -->
   <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
-
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_blog.js' : '/js/pages/admin_blog.js') }}"></script>
-
   <script>
     CKEDITOR.replace('blog_content');
 
