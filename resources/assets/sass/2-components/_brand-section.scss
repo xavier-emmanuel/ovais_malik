@@ -9,8 +9,14 @@
   }
 
   .image-wrapper {
-    max-width: 100px;
+    max-width: 160px;
     width: 100%;
-    margin: 10px 20px;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+
+    @media (max-width: 320px) {
+      max-width: 130px;
+      padding: 5px 15px;
+    }
   }
 }

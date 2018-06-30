@@ -25,9 +25,7 @@
 }
 
 .admin-header {
-  display: flex;
-  justify-items: center;
-  align-items: center;
+  @include flex-center-all;
   grid-area: header;
   padding: 10px 30px;
   border-bottom: 1px solid darken($white, 10);

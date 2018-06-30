@@ -29,3 +29,19 @@
     }
   }
 }
+
+@mixin display-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}

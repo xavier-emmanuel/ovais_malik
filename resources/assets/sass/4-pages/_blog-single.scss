@@ -12,42 +12,7 @@
   }
 
   .blog-wrapper {
-    flex-direction: column;
-  }
-  .box {
-    flex: 0 1 30.7%;
-    margin: 0 30px;
-
-    @media only screen and (max-width: 1199px) {
-      flex: 0 1 30.1%;
-    }
-
-    @media only screen and (max-width: 991px) {
-      flex: 0 1 46.8%;
-      margin-bottom: 30px;
-      &:nth-child(2) {
-        margin-right: 0;
-      }
-    }
-
-    @media only screen and (max-width: 767px) {
-      flex: 0 1 auto;
-      margin: 15px 0;
-    }
-
-    &:last-child, &:first-child {
-      margin-right: 0;
-      margin-left: 0;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    .box-overlay {
-      position: relative;
-      margin-right: 0;
-    }
+    @include display-flex-column;
   }
 
   .blog-header {
@@ -167,13 +132,32 @@
   }
 
   .blog-ads {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
     padding: 0 0 0 20px;
     width: 290px;
 
     @media only screen and (max-width: 950px) {
       padding: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @media only screen and (max-width: 545px) {
+      flex-direction: column;
+    }
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .ads-info {
+      @include display-flex-column;
     }
 
     .headul {
@@ -191,20 +175,10 @@
     }
   }
 
-  .blog-related {
-    margin: 25px 0;
-    padding-top: 10px;
-    border-top: 1px solid darken($white, 10);
-  }
-
   .blog-content-wrapper {
     display: flex;
 
     @media only screen and (max-width: 950px) {
-      flex-direction: column;
-    }
-
-    @media only screen and (max-width: 768px) {
       flex-direction: column;
     }
 
@@ -222,19 +196,132 @@
   }
 
   .side-ads {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
+    min-width: 270px;
+
+    @media only screen and (min-width: 546px) and (max-width: 767px) {
+      min-width: 230px;
+      padding: 0 10px;
+    }
+
+    @media only screen and (max-width: 545px) {
+      margin: 0 auto;
+    }
   }
 
   .latest-posts {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
 
     .latest-post__title {
       width: 100%;
+      max-width: 212px;
       padding-left: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    li {
+      cursor: pointer;
+      @include display-flex-column;
+      align-items: flex-start;
+    }
+
+    .latest-post__link {
+      @include flex-space-between;
+      position: relative;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.blog-related {
+  border-top: 1px solid darken($white, 10);
+
+  .blog-related__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    grid-auto-flow: row;
+
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 375px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .blog-related__card {
+    position: relative;
+    min-height: 0;
+
+    &:hover {
+      box-shadow: 0 3px 10px 0 rgba(87, 87, 87, 0.75);
+    }
+  }
+
+  .blog-related__card--info {
+    @extend %blog-info;
+
+    span {
+      &.blog-category {
+        @extend %blog-category;
+
+        &:hover {
+          @extend %blog-category-hover;
+        }
+      }
+    }
+
+    span {
+      &.blog-tags {
+        color: $white;
+        margin-right: 7px;
+
+        &::before {
+          content: "#";
+        }
+
+        @media only screen and (max-width: 380px) {
+          display: none;
+        }
+      }
+
+      a {
+        padding: 5px 0;
+
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+
+  .blog-related__card--category {
+    @extend %blog-category;
+
+    &:hover {
+      @extend %blog-category-hover;
+    }
+  }
+
+  .box-overlay {
+    @extend %blog-overlay;
+    position: relative !important;
+    margin-right: 0 !important;
+
+    @media only screen and (max-width: 380px) {
+      margin-right: 0;
+      bottom: 0;
+    }
+  }
+
+  img {
+    &:hover {
+      opacity: 0.9;
     }
   }
 }

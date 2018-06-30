@@ -60,13 +60,13 @@
             <p class="text-justify">{!! $data->content !!}</p>
             <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
-            <div class="blog-related">
+            <div class="blog-related my-4 pt-2">
               <h5>Related Posts</h5>
-              <div class="box-wrapper">
-                <div class="box">
-                  <div class="box-image">
-                    <div class="box-info">
-                      <span class="box-category">News</span>
+              <div class="blog-related__wrapper">
+                <div class="blog-related__card">
+                  <div class="blog-related__image">
+                    <div class="blog-related__card--info">
+                      <span class="blog-related__card--category">News</span>
                     </div>
 
                     <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
@@ -76,17 +76,17 @@
                         <h6 class="box-overlay__title">
                           <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
                         </h6>
-                        <p class="small">Written by
+                        <p class="small mb-0">Written by
                           <a href="#">Ovais Malik</a> on June 15, 2018
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="box">
-                  <div class="box-image">
-                    <div class="box-info">
-                      <span class="box-category">News</span>
+                <div class="blog-related__card">
+                  <div class="blog-related__image">
+                    <div class="blog-related__card--info">
+                      <span class="blog-related__card--category">News</span>
                     </div>
 
                     <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
@@ -96,17 +96,17 @@
                         <h6 class="box-overlay__title">
                           <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
                         </h6>
-                        <p class="small">Written by
+                        <p class="small mb-0">Written by
                           <a href="#">Ovais Malik</a> on June 15, 2018
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="box">
-                  <div class="box-image">
-                    <div class="box-info">
-                      <span class="box-category">News</span>
+                <div class="blog-related__card">
+                  <div class="blog-related__image">
+                    <div class="blog-related__card--info">
+                      <span class="blog-related__card--category">News</span>
                     </div>
 
                     <img src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
@@ -116,7 +116,7 @@
                         <h6 class="box-overlay__title">
                           <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
                         </h6>
-                        <p class="small">Written by
+                        <p class="small mb-0">Written by
                           <a href="#">Ovais Malik</a> on June 15, 2018
                         </p>
                       </div>
@@ -130,22 +130,67 @@
             </div>
           </div>
 
-          <div class="blog-ads">
-            <div class="side-ads">
+          <div class="blog-ads pt-3">
+            <div class="side-ads mb-3">
               <div class="side-ads__header">
                 <p class="ads-title">Connect with me on Facebook</p>
                 <hr class="headul">
               </div>
               <div class="fb-page" data-href="https://www.facebook.com/ovaismalikvoiceover/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="270"><blockquote cite="https://www.facebook.com/ovaismalikvoiceover/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ovaismalikvoiceover/">Ovais Malik Voiceover</a></blockquote></div>
             </div>
-            <div class="side-ads">
+            <div class="side-ads mb-3">
               <div class="side-ads__header">
                 <p class="ads-title">Latest Posts</p>
                 <hr class="headul">
               </div>
               <div class="latest-posts">
-                <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
-                <p class="latest-post__title">Lorem Ipsum Maalsum</p>
+                <ul>
+                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
+                    <a href="#" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <div class="ads-info pl-2">
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
+                    <a href="#" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <div class="ads-info pl-2">
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
+                    <a href="#" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <div class="ads-info pl-2">
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
+                    <a href="#" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <div class="ads-info pl-2">
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
+                    <a href="#" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <div class="ads-info pl-2">
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

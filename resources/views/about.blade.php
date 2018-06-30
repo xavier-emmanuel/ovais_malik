@@ -7,7 +7,7 @@
 	<section id="about">
     <div class="container">
       <h1 class="text-center">About
-        <span>Ovais Malik</span>
+        <span>Ovais</span>
       </h1>
       <div class="headul"></div>
       <div class="row">
