@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('stylesheets')
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/toast-master/css/jquery.toast.css' : '/plugins/toast-master/css/jquery.toast.css') }}">
+  
   <style>
     .error {
       color: red !important;
@@ -18,7 +21,7 @@
       <div class="headul"></div>
 
       <div class="form-wrapper">
-        <form id="frm-contact" name="frm_contact" method="post">
+        <form id="frm-contact" name="frm_contact" method="post" action="/contact/send">
           {{ csrf_field() }}
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -49,7 +52,7 @@
                 <label for="contact-message">Message:
                   <span>*</span>
                 </label>
-                <textarea name="contact_message" id="contact-message" cols="30" rows="10" class="form-control"></textarea>
+                <textarea name="message" id="contact-message" cols="30" rows="10" class="form-control"></textarea>
               </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
@@ -66,6 +69,10 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/contact.js' : '/js/pages/contact.js') }}"></script>
+
+  <!-- Toastr -->
+<script src="{{ asset(App::environment('production') ? '/public/plugins/toast-master/js/jquery.toast.js' : '/plugins/toast-master/js/jquery.toast.js') }}"></script>
+
   <script>
     sr.reveal('.headul', {
       origin: 'left',

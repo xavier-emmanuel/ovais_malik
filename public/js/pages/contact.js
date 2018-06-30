@@ -6,12 +6,12 @@ $(document).ready(function () {
         rules: {
             contact_name: "required",
             contact_email: "required",
-            contact_message: "required",
+            message: "required",
         },
         messages: {
             contact_name: "The name field is required.",
             contact_email: "The email field is required.",
-            contact_message: "The message field is required.",
+            message: "The message field is required.",
         },
         submitHandler: function (frm_contact, e) {
             event.preventDefault();

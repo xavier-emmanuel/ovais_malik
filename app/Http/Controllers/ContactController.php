@@ -15,12 +15,17 @@ class ContactController extends Controller
    	$name = $input['contact_name'];
    	$from = $input['contact_email'];
    	$subject = $input['contact_subject'];
-   	$contact_message = $input['contact_message'];
+
+   	$data = array(
+                'name' => $name,
+                'email' => $from ,
+                'subject' => $subject,
+                'page' => 'Contact',
+                'msg' => $request->message
+            );
    
-    Mail::send('contact',
-       array(
-       	   'page' => 'Contact'
-       ), function($message) use ($from, $subject, $name)
+    Mail::send('contact-message',
+       $data, function($message) use ($from, $subject, $name)
     {	
        $message->from($from, $name);
        $message->to('info@ovaismalik.com', 'Ovais Malik')->subject($subject);
