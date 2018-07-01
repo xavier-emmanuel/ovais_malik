@@ -11,7 +11,6 @@
 
       <div class="row" id="video-section">
       </div>
-
     </div>
   </section>
 @endsection

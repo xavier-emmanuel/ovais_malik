@@ -22,7 +22,7 @@
             @endforeach
           </div>
 
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
           <div class="blog-overlay">
             <h2>
@@ -58,7 +58,7 @@
         <div class="blog-content-wrapper">
           <div class="blog-content">
             <p class="text-justify">{!! $data->content !!}</p>
-            <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
+            <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
             <div class="blog-related my-4 pt-2">
               <h5>Related Posts</h5>
@@ -69,7 +69,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -89,7 +89,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -109,7 +109,7 @@
                       <span class="blog-related__card--category">News</span>
                     </div>
 
-                    <img class="lazy" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
@@ -147,7 +147,7 @@
                 <ul>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -156,7 +156,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -165,7 +165,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -174,7 +174,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
@@ -183,7 +183,7 @@
                   </li>
                   <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
                     <a href="#" class="latest-post__link">
-                      <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="" width="50px" height="50px">
+                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
                       <div class="ads-info pl-2">
                         <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>

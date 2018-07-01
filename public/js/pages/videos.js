@@ -9,8 +9,10 @@ function displayVideos() {
 		dataType: "json",
 		success: function (data) {
 			for (var i = 0, len = data.length; i < len; i++) {
-				$('#video-section').append('<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">'
-					+ '<iframe width="100%" height="200" src="https://www.youtube.com/embed/' + data[i].link + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+				$('#video-section').append('<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 mb-3">'
+				  + '<div class="embed-responsive embed-responsive-16by9">'
+					+ '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + data[i].link + '" encrypted-media" allowfullscreen></iframe>'
+					+ '</div>'
 					+ '</div>');
 			}
 		}

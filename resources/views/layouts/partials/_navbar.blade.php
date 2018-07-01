@@ -1,7 +1,7 @@
-  <div class="header-wrapper sticky-top" style="background-color: #fff;">
+  <div class="shadow-sm sticky-top" style="background-color: #fff;">
     <header id="header" class="container">
       <div class="header__nav--is-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand d-none d-sm-block" href="#">
           <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo" width="150px">
         </a>
         <ul class="social-media__link">
@@ -50,6 +50,9 @@
       </div>
 
       <nav class="header__nav--is-bottom navbar navbar-expand-xl navbar-light">
+        <a class="navbar-brand d-block d-sm-none" href="#">
+          <img src="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" alt="Ovais Malik Voiceover Logo" width="150px">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

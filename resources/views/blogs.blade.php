@@ -16,7 +16,7 @@
               <span class="box-category">{{ $blog->categories->name }}</span>
             </div>
 
-            <img class="lazy" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$blog->image : 'uploads/admin-blogs/thumbnail/'.$blog->image) }}" alt="" width="100%">
+            <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$blog->image : 'uploads/admin-blogs/thumbnail/'.$blog->image) }}"  data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$blog->image : 'uploads/admin-blogs/original/'.$blog->image) }}" alt="" width="100%">
 
             <div class="box-overlay">
               <div class="box-overlay__content">

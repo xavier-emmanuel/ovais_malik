@@ -11,7 +11,7 @@
   <style>
     img:not([src]):not([srcset]) {
 			visibility: hidden;
-		}
+    }
   </style>
 
   @yield('stylesheets')

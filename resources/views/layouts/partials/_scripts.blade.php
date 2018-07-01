@@ -6,7 +6,7 @@
 <script src="{{ asset(App::environment('production') ? '/public/plugins/lazyload/lazyload.js' : '/plugins/lazyload/lazyload.js') }}"></script>
 <script src="{{ asset(App::environment('production') ? '/public/js/pages/login.js' : '/js/pages/login.js') }}"></script>
 <script>
-  new LazyLoad();
+  lazyload();
   window.sr = ScrollReveal({
     mobile: true,
     opacity: 0,
