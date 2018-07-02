@@ -2020,3 +2020,14 @@ label > span {
   margin-top: 10px;
 }
 
+input.my-error-class, select.my-error-class {
+  border-color:#FF0000;
+}
+
+label.my-error-class {
+  color:#FF0000;
+}
+
+label.my-valid-class {
+  color:#00CC00;
+}

@@ -36,6 +36,13 @@ Route::group( [ 'middleware' => 'auth' ], function()
 	Route::post('/admin-category/update', 'CategoryController@ajaxUpdate');
 	Route::post('/admin-category/delete', 'CategoryController@ajaxDelete');
 
+	Route::post('/admin-logo/delete', 'AdminLogoController@ajaxDelete');
+	Route::post('/admin-logo/update', 'AdminLogoController@ajaxUpdate');
+	Route::post('/admin-logo/create', 'AdminLogoController@ajaxStore');
+	Route::get('/admin-logo/show', 'AdminLogoController@ajaxShow');
+	
+	Route::post('/admin-gallery/delete', 'AdminImageController@ajaxDelete');
+	Route::post('/admin-gallery/update', 'AdminImageController@ajaxUpdate');
 	Route::post('/admin-gallery/create', 'AdminImageController@ajaxStore');
 	Route::get('/admin-gallery/show', 'AdminImageController@ajaxShow');
 	Route::get('/admin-gallery', 'AdminController@adminGallery');

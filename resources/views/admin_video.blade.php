@@ -1,17 +1,6 @@
 @extends('layouts.admin_master')
 
 @section('stylesheets')
-  <style type="text/css">
-    input.my-error-class, select.my-error-class {
-      border-color:#FF0000;
-    }
-    label.my-error-class {
-      color:#FF0000;
-    }
-    label.my-valid-class {
-      color:#00CC00;
-    }
-  </style>
 @endsection
 
 @section('content')

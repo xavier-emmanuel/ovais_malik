@@ -21,129 +21,18 @@
           </div>
 
           <div class="row admin-gallery" id="gallery-images">
-
+            
           </div>
         </div>
         <div class="tab-pane fade" id="nav-client-logo" role="tabpanel" aria-labelledby="nav-client-logo-tab">
           <div class="action">
-            <button class="btn btn-outline" data-toggle="modal" data-target="#add-client-logo">
+            <button class="btn btn-outline" data-toggle="modal" data-target="#add-client-logo" id="btn-upload-logo" data-backdrop="static">
               <i class="fas fa-plus"></i>&nbsp; Add Logo
             </button>
           </div>
 
-          <div class="row admin-gallery">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Lamina Studios</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-              <img src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Keen Software House Logo</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/195/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 3</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 4</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 5</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 6</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 7</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-              <figure>
-                <img src="https://picsum.photos/300/200/?image=1079" alt="" width="100%">
-                <div class="overlay">
-                  <div class="gallery-title">
-                    <p class="text-center">Company Name # 8</p>
-                  </div>
-                  <div class="gallery-action">
-                    <button class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-primary"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </figure>
-            </div>
+          <div class="row admin-gallery" id="gallery-logo">
+            
           </div>
         </div>
       </div>
@@ -154,7 +43,7 @@
   <div class="modal fade" id="add-gallery" tabindex="-1" role="dialog" aria-labelledby="addGallery" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <form id="frm-add-gallery" action="/admin-gallery/create" method="post" enctype="multipart/form-data" name="frm_add_gallery">
+        <form id="frm-add-gallery" method="post" enctype="multipart/form-data" name="frm_add_gallery">
           {{ csrf_field() }}
           <div class="modal-header">
             <h5 class="modal-title">Add Photo</h5>
@@ -177,7 +66,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
-            <button type="submit" class="btn btn-info" id="btn-edit-audio">
+            <button type="submit" class="btn btn-info" id="btn-upload">
               <i class="fas fa-upload"></i>&nbsp; Upload</button>
           </div>
         </form>
@@ -189,36 +78,35 @@
   <div class="modal fade" id="edit-gallery" tabindex="-1" role="dialog" aria-labelledby="editGallery" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="frm-edit-audio" method="post" enctype="multipart/form-data" name="frm_edit_audio">
+        <form id="frm-edit-gallery" name="frm_edit_gallery" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
-          <input type="hidden" name="hdn_audio_id" id="hdn-audio-id">
-          <input type="hidden" name="hdn_audio" id="hdn-audio">
           <div class="modal-header">
-            <h5 class="modal-title">Edit Audio</h5>
+            <h5 class="modal-title">Edit Image</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-
-              <div class="form-group">
-                <label for="add-audio">Title:<span>*</span></label>
-                <input type="text" class="form-control" id="edit-audio-title" name="edit_audio_title" autocomplete="off" required>
+            <div class="form-group">
+              <input type="hidden" name="edit_image_id" id="edit-image-id">
+              <label for="add-client-logo-image">Image: </label>
+              <input type="file" id="edit-photo" name="edit_photo" class="form-control-file">
+            </div>
+            <div class="form-group">
+              <label for="">Preview:</label>
+              <div class="preview-image-wrapper">
+                <img id="image-show" src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="">
               </div>
-              <div class="form-group">
-                <label for="add-audio">
-                  Audio:<span>*</span></label>
-                <input type="file" id="edit-audio" name="edit_audio" class="form-control-file"><br>
-              </div>
-              <div class="form-group audio-preview" id="edit-audio-prewiew">
-                <audio controls src="#" type="audio/mp3" id="audio-preview"></audio>
-              </div>
-
+            </div>
+            <div class="form-group">
+              <label for="add-client-logo-name">Caption: </label>
+              <textarea id="edit-caption" name="edit_caption" cols="30" rows="3" class="form-control" placeholder="Add caption here"></textarea>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
-            <button type="submit" class="btn btn-info btn-edit-audio">
+            <button type="submit" class="btn btn-info" id="btn-edit-image">
               <i class="fas fa-save"></i>&nbsp; Update</button>
           </div>
         </form>
@@ -230,25 +118,24 @@
   <div class="modal fade" id="delete-gallery" tabindex="-1" role="dialog" aria-labelledby="deleteGallery" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="frm-delete-audio" method="post" name="frm_delete_audio">
-          <input type="hidden" name="hdn_audio_id" id="hdn-audio-id">
+        <form id="frm-delete-gallery" method="post" name="frm_delete_gallery">
           {{ csrf_field() }}
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <input type="hidden" name="delete_image_id" id="delete-image-id">
           <div class="modal-body">
             <div class="delete-question">
               <i class="fas fa-question-circle" style="font-size: 2rem;"></i>&nbsp;&nbsp;&nbsp;
-              <p>Are you sure you want to delete
-                <span id="audio-title"></span> ?</p>
+              <p>Are you sure you want to delete this image?</p>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; No</button>
-            <button type="submit" class="btn btn-info btn-delete-audio">
+            <button type="submit" class="btn btn-info" id="btn-delete-image">
               <i class="fas fa-check"></i>&nbsp; Yes</button>
           </div>
         </form>
@@ -260,7 +147,7 @@
   <div class="modal fade" id="add-client-logo" tabindex="-1" role="dialog" aria-labelledby="addClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="frm-add-client-logo" method="post" enctype="multipart/form-data">
+        <form id="frm-add-client-logo" name="frm_add_client_logo" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="modal-header">
             <h5 class="modal-title">Add Client Logo</h5>
@@ -271,7 +158,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="add-client-logo-name">Name: <span>*</span></label>
-              <input type="text" class="form-control" id="add-client-logo-name" name="add_client_logo_name">
+              <input type="text" class="form-control" id="add-client-logo-name" name="add_client_logo_name" autocomplete="off">
             </div>
 
             <div class="form-group">
@@ -282,14 +169,14 @@
             <div class="form-group logo-preview">
               <label for="">Preview:</label>
               <div class="preview-image-wrapper">
-                <img src="{{ asset('/img/oneiros-web-solutions-logo.png') }}" alt="" id="logo-show">
+                <img src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="" id="logo-show">
               </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
-            <button type="submit" class="btn btn-info btn-edit-audio">
+            <button type="submit" class="btn btn-info" id="btn-add-logo">
               <i class="fas fa-save"></i>&nbsp; Save</button>
           </div>
         </form>
@@ -301,7 +188,7 @@
   <div class="modal fade" id="edit-client-logo" tabindex="-1" role="dialog" aria-labelledby="editClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="frm-edit-client-logo" method="post" enctype="multipart/form-data">
+        <form id="frm-edit-client-logo" name="frm_edit_client_logo" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="modal-header">
             <h5 class="modal-title">Edit Client Logo</h5>
@@ -310,23 +197,29 @@
             </button>
           </div>
           <div class="modal-body">
+            <input type="hidden" name="edit_logo_id" id="edit-logo-id">
             <div class="form-group">
-              <label for="add-client-logo-name">Name: <span>*</span></label>
-              <input type="text" class="form-control" id="add-client-logo-name" name="add_client_logo_name">
+              <label for="edit-client-logo-name">Name: <span>*</span></label>
+              <input type="text" class="form-control" id="edit-client-logo-name" name="edit_client_logo_name" autocomplete="off">
             </div>
-
             <div class="form-group">
-              <label for="add-client-logo-image">
+              <label for="edit-client-logo-image">
                 Logo:
                 <span>*</span>
               </label>
-              <input type="file" id="add-client-logo-image" name="add_client_logo_image" class="form-control-file" required>
+              <input type="file" id="edit-client-logo-image" name="edit_client_logo_image" class="form-control-file">
+            </div>
+            <div class="form-group logo-preview-edit">
+              <label for="">Preview:</label>
+              <div class="preview-image-wrapper">
+                <img id="logo-show-edit" src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="">
+              </div>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; Close</button>
-            <button type="submit" class="btn btn-info btn-edit-audio">
+            <button type="submit" class="btn btn-info" id="btn-edit-logo">
               <i class="fas fa-save"></i>&nbsp; Update</button>
           </div>
         </form>
@@ -338,8 +231,7 @@
   <div class="modal fade" id="delete-client-logo" tabindex="-1" role="dialog" aria-labelledby="deleteClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form id="frm-delete-audio" method="post" name="frm_delete_audio">
-          <input type="hidden" name="hdn_audio_id" id="hdn-audio-id">
+        <form id="frm-delete-client-logo" method="post" name="frm_delete_client_logo">
           {{ csrf_field() }}
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -347,16 +239,16 @@
             </button>
           </div>
           <div class="modal-body">
+            <input type="hidden" name="delete_logo_id" id="delete-logo-id">
             <div class="delete-question">
               <i class="fas fa-question-circle" style="font-size: 2rem;"></i>&nbsp;&nbsp;&nbsp;
-              <p>Are you sure you want to delete
-                <span id="audio-title"></span> ?</p>
+              <p>Are you sure you want to delete this client's logo?</p>
             </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
               <i class="fas fa-times"></i>&nbsp; No</button>
-            <button type="submit" class="btn btn-info btn-delete-audio">
+            <button type="submit" class="btn btn-info" id="btn-delete-logo">
               <i class="fas fa-check"></i>&nbsp; Yes</button>
           </div>
         </form>
@@ -366,5 +258,5 @@
 @endsection
 
 @section('scripts')
-  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
+<script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
 @endsection

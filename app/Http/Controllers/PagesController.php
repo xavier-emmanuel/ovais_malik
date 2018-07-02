@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Audio;
 use App\Blog;
+use App\Gallery;
+use App\Logo;
 
 
 class PagesController extends Controller
@@ -17,8 +19,8 @@ class PagesController extends Controller
     public function index()
     {
         $audio = Audio::orderBy('created_at','DESC')->get();
-
-        return view('index')->with(array('page' => 'Home', 'data' => $audio));
+        $logo = Logo::all();
+        return view('index')->with(array('page' => 'Home', 'data' => $audio, 'logos' => $logo));
     }
 
     public function about()
@@ -28,7 +30,8 @@ class PagesController extends Controller
 
     public function gallery()
     {
-        return view('gallery')->with(array('page' => 'Gallery'));
+        $images = Gallery::all();
+        return view('gallery')->with(array('page' => 'Gallery', 'images' => $images));
     }
 
     public function videos()

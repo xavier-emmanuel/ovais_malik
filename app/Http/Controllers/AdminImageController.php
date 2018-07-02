@@ -1,51 +1,77 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Gallery;
 use Image;
+
 class AdminImageController extends Controller
 {
 	public function ajaxShow(Request $request) {
 		$images = Gallery::all();
+
 		return response()->json($images);
 	}
-   public function ajaxStore(Request $request) {
+
+  public function ajaxStore(Request $request) {
    	$input = Input::all();
+   	$image = new Gallery();
    	$images = array();
+
    	if($request->hasfile('filenames'))
      {
+     		$count = 0;
         foreach($request->file('filenames') as $file)
-        {
+        {		
+						$count++;
+						$cap_count = 0;
+
             $picture = Image::make($file);
             $name = time().$file->getClientOriginalName();
 						$picture->save(public_path().'/uploads/gallery/images/original/'.$name);
             $picture->resize(255, 170);
 						$picture->save(public_path().'/uploads/gallery/images/thumbnails/'.$name);
-            $image = new Gallery();
 						$image->image = $name;
-						$image->caption = $input['caption'];
+						foreach ($input['caption'] as $image_caption) {
+							$cap_count++;    				
+        			if($cap_count == $count) {
+								$image->caption = $image_caption;
+        			}
+        		}
 						$image->updated_at = null;
+
 						$image->save();
         }
+
      }
-   	// if($request->hasfile('images')) {
-   	// 	foreach($request->file('images[]') as $file) {
-   	// 		$picture = Image::make($file);
-				// $name = time().$file->getClientOriginalName();
-				// $picture->resize(255,170);
-				// $picture->save(public_path().'/uploads/gallery/'.$name);
-				// $images[] = $name;
-				// dd($images);
-   	// 	}
-   	// }
-		// if($input['add_photos']) {
-		// 	$file = $input['add_photos'];
-		// 	$picture = Image::make($file);
-		// 	$name = time().$file->getClientOriginalName();
-		// 	$picture->resize(255,170);
-		// 	$picture->save(public_path().'/uploads/gallery/'.$name);
-		// }
 		return response()->json(['success'=>'Image/s successfully added.']);
-   }
+  }
+
+  public function ajaxUpdate(Request $request) {
+  	$image = Gallery::find($request->edit_image_id);
+  	if($request->hasfile('edit_photo'))
+  	{
+  		$file = $request->file('edit_photo');
+  		$picture = Image::make($file);
+      $name = time().$file->getClientOriginalName();
+			$picture->save(public_path().'/uploads/gallery/images/original/'.$name);
+      $picture->resize(255, 170);
+			$picture->save(public_path().'/uploads/gallery/images/thumbnails/'.$name);
+  		$image->image = $name;
+  	}
+
+		$image->caption = $request->edit_caption;
+		$image->save();
+
+		return response()->json(['success'=>'Image successfully updated.']);
+  }
+
+  public function ajaxDelete(Request $request) {
+  	$image = Gallery::find($request->delete_image_id);
+
+		$image->delete();
+		return response()->json(['success'=>'Image successfully removed.']);
+  }
 }

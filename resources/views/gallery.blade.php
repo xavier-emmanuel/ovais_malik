@@ -10,46 +10,15 @@
       <h1 class="text-center">Gallery</h1>
       <div class="headul"></div>
       <div class="d-flex flex-wrap justify-content-center">
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1079" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1079" data-src="https://picsum.photos/250/175/?image=1079" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1077" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1077" data-src="https://picsum.photos/250/175/?image=1077" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1062" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1062" data-src="https://picsum.photos/250/175/?image=1062" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1050" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1050" data-src="https://picsum.photos/250/175/?image=1050" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1027" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1027" data-src="https://picsum.photos/250/175/?image=1027" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=1024" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=1024" data-src="https://picsum.photos/250/175/?image=1024" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=9" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=9" data-src="https://picsum.photos/250/175/?image=9" alt="" width="100%">
-          </a>
-        </figure>
-        <figure class="mx-2">
-          <a data-fancybox="gallery" href="https://picsum.photos/1200/800/?image=20" data-caption="My caption">
-            <img class="lazyload" src="https://picsum.photos/12/8/?image=20" data-src="https://picsum.photos/250/175/?image=20" alt="" width="100%">
-          </a>
-        </figure>
+        @foreach($images as $image)
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <figure>
+            <a data-fancybox="gallery" href="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/original/'.$image->image : '/uploads/gallery/images/original/'.$image->image) }}" data-caption="{{ $image->caption }}">
+              <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/thumbnails/'.$image->image : '/uploads/gallery/images/thumbnails/'.$image->image) }}" alt="" width="100%">
+            </a>
+          </figure>
+        </div>
+        @endforeach
       </div>
     </div>
   </section>

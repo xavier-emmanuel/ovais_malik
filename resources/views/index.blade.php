@@ -186,33 +186,11 @@
   <section id="brands">
     <div class="container">
       <div class="brand-wrapper">
+		@foreach($logos as $logo)
         <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
+          <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/logo/'.$logo->image : '/uploads/gallery/logo/'.$logo->image) }}" alt="{{ $logo->name }}" width="100%;">
         </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" data-src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
-        </div>
-        <div class="image-wrapper">
-          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
