@@ -1,7 +1,7 @@
 #contact {
   @extend %background-default;
 
-  h1 {
+  h1, .lead {
     margin-bottom: 20px;
 
     span {
@@ -9,11 +9,17 @@
     }
   }
 
+  .lead {
+    span {
+      font-weight: 400;
+    }
+  }
+
   .form-wrapper {
-    background-color: $white;
-    box-shadow: 0 1px 10px 0 rgba(204, 204, 204, 0.75);
-    padding: 40px 50px;
-    border-radius: 5px;
+    // background-color: $white;
+    // box-shadow: 0 1px 10px 0 rgba(204, 204, 204, 0.75);
+    // padding: 40px 50px;
+    // border-radius: 5px;
 
     @media only screen and (max-width: 767px) {
       padding: 30px 20px;

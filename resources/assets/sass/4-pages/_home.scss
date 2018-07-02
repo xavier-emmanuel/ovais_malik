@@ -1,101 +1,12 @@
 #hero-wrapper {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  z-index: 1;
-
-  @media only screen and (max-width: 532px) {
-    height: auto;
-  }
-
-  video {
-    min-width: 100%;
-    min-height: 100%;
-    width: 100vw;
-  }
-}
-
-#video-content {
-  @include flex-center-all;
-  top: -100px;
-  left: 0;
-  right: 0;
-  position: absolute;
-  text-align: center;
+  background: linear-gradient(45deg,
+    rgba(185, 5, 4, 0.7), 
+    rgba(159, 17, 27, 1)
+  ), url("/img/about-us-image.jpg") no-repeat fixed center;
+  background-size: cover;
+  height: calc(100vh - 170px);
   color: $white;
-  height: 100vh;
-
-  @media only screen and (max-width: 320px) {
-    top: -35vh;
-  }
-
-  h1 {
-    @media only screen and (max-width: 532px) {
-      display: none;
-    }
-
-    span {
-      color: $red;
-    }
-  }
-
-  p {
-    @media only screen and (max-width: 532px) {
-      display: none;
-    }
-
-    @media only screen and (min-width: 533px) and (max-width: 766px) {
-      font-size: 1.5rem;
-    }
-
-    @media only screen and (max-width: 767px) {
-      font-size: 2.25rem;
-    }
-  }
-}
-
-.video-control {
-  position: absolute;
-  top: 20%;
-  right: 2%;
-  display: flex;
-
-  .video-control--is-circle {
-    border-radius: 50%;
-    border: 3px solid $white;
-    width: 40px;
-    height: 40px;
-    padding: 5px;
-    background-color: transparent;
-    margin-left: 5px;
-
-    &:hover {
-      background-color: $red;
-      border-color: $red;
-      cursor: pointer;
-    }
-
-    i {
-      font-size: 1rem;
-    }
-  }
-
-  @media only screen and (max-width: 320px) {
-    top: 38vh;
-    right: 5%;
-  }
-
-  @media only screen and (min-width: 321px) and (max-width: 486px) {
-    top: 20vh;
-    right: 5%;
-  }
-
-  @media only screen and (min-width: 487px) and (max-width: 767px) {
-    top: 20vh;
-    right: 5%;
-  }
+  @extend %background-default;
 }
 
 #audio-reel {

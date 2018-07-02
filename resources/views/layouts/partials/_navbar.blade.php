@@ -25,11 +25,6 @@
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
-            <li class="social-media__icon social-media__icon--twitter">
-              <a href="https://twitter.com/OvaisMalikVO" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
             <li class="social-media__icon social-media__icon--linkedin">
               <a href="https://www.linkedin.com/in/ovaismalik/" target="_blank">
                 <i class="fab fa-linkedin-in"></i>

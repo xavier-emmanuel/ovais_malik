@@ -50,22 +50,14 @@
 
 @section('content')
 	<section id="hero-wrapper">
-    <div id="hero-content">
-      <div id="video-background">
-        <video autoplay loop muted id="myVideo">
-          <source src="{{ asset(App::environment('production') ? '/public/videos/video_background.mp4' : '/videos/video_background.mp4') }}" type="video/mp4">
-        </video>
-      </div>
-
-      <div id="video-content">
-        <span class="video-control">
-          <div class="video-control--is-circle video-volume">
-            <i class="fas fa-volume-off"></i>
-          </div>
-          <div class="video-control--is-circle video-pause-play">
-            <i class="fas fa-pause"></i>
-          </div>
-        </span>
+    <div class="container" style="height: 100%">
+      <div class="row" style="height: 100%">
+        <div class="col-lg-5 col-md-12 col-sm-12 d-none d-lg-block"></div>
+        <div class="col-lg-7 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-start">
+          <h1 class="display-4">A Multilingual Voiceover Talent!</h1>
+          <p class="lead">Ovais is a multilingual voiceover actor in English, Hindi and Urdu with a unique flair talent. He is a well established professional voice actor in almost every aspect of the industry from commercials, narration to major video game software, movie trailer and more. Wanna hear my demo reels?</p>
+          <a href="#" class="btn btn-outline scroll-down" style="border: 2px solid #fff; color: #fff; padding: 10px 50px;">LISTEN</a>
+        </div>
       </div>
     </div>
   </section>
@@ -195,31 +187,31 @@
     <div class="container">
       <div class="brand-wrapper">
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;" data-src="{{ asset(App::environment('production') ? '/public/img/lamina.png' : '/img/lamina.png') }}" alt="Lamina Studios, LLC" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" data-src="{{ asset(App::environment('production') ? '/public/img/Keen_Software_House_logo.png' : '/img/Keen_Software_House_logo.png') }}" alt="Keen Software House Logo" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/Englility.jpg' : '/img/Englility.jpg') }}" alt="KeeEnglility" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/metlife.jpg' : '/img/metlife.jpg') }}" alt="Metlife Logo" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/ncsoft-logo.jpg' : '/img/ncsoft-logo.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/ams.jpg' : '/img/ams.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/kenco.jpg' : '/img/kenco.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/sunset-reserve.jpg' : '/img/sunset-reserve.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
         <div class="image-wrapper">
-          <img class="lazy" data-src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/img/syrian-american-medical-society.jpg' : '/img/syrian-american-medical-society.jpg') }}" alt="Ncsoft" width="100%;">
         </div>
       </div>
     </div>
@@ -231,18 +223,14 @@
 <script src="{{ asset(App::environment('production') ? '/public/plugins/perfect-scrollbar/perfect-scrollbar.js' : '/plugins/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 <script src="{{ asset(App::environment('production') ? '/public/js/pages/home.js' : '/js/pages/home.js') }}"></script>
 <script>
-  var promise = document.querySelector('video').play();
-  var pauseIcon = document.querySelector('.video-pause-play');
-  var node = document.createElement('i');
+  var hh = document.querySelector('.sticky-top').clientHeight;
 
-  if (promise !== undefined) {
-    promise.catch(error => {
-      pauseIcon.children[0].remove();
-      pauseIcon.appendChild(node).classList.add('fas', 'fa-play');
-    }).then(() => {
+  $('.scroll-down').click(() => {
+    $('html, body').animate({
+        scrollTop: $('#audio-reel').offset().top - hh
+    }, 500);
+  });
 
-    });
-  }
   var ps = new PerfectScrollbar('.reel-container');
 
   $(document).ready(function () {
