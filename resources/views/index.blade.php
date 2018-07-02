@@ -188,7 +188,7 @@
       <div class="brand-wrapper">
 		@foreach($logos as $logo)
         <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/logo/'.$logo->image : '/uploads/gallery/logo/'.$logo->image) }}" alt="{{ $logo->name }}" width="100%;">
+          <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/logo/original/'.$logo->image : '/uploads/gallery/logo/original/'.$logo->image) }}" alt="{{ $logo->name }}" width="100%;">
         </div>
         @endforeach
       </div>

@@ -18,8 +18,11 @@ $(document).ready(function() {
               var reader = new FileReader();
 
               reader.onload = function(event) {
+              		var image = new Image();
+									image.src = event.target.result;
+
                   $($.parseHTML('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 image-displayed">'
-                  + '<input type="hidden" class="image-name" name="image_name" value="'+ event.target.result +'">'
+                  + '<input type="hidden" class="image-name" name="image_name" value="'+ image.src +'">'
                   + '<img src="'+ event.target.result +'" alt="" width="100%" height="130px">'
                   + '<textarea name="caption[]" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>'
                 	+ '</div>')).appendTo(placeToInsertImagePreview);
@@ -109,7 +112,7 @@ function showImage() {
 				}
 				$('#gallery-images').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-images">'
               	+ '<figure>'
-                + '<img src="/uploads/gallery/images/thumbnails/'+ data[i].image +'" alt="" width="100%">'                
+                + '<img src="/uploads/gallery/images/small/'+ data[i].image +'" alt="" width="100%">'                
                 + '<div class="overlay">'
                 + '<div class="gallery-title">'
                 + '<p class="text-center">'+ caption +'</p>'
@@ -173,7 +176,7 @@ function editImage() {
 		var caption = $(this).data('caption');
 
 		$('#edit-image-id').val(id);
-		$('#image-show').attr('src', '/uploads/gallery/images/thumbnails/'+image);
+		$('#image-show').attr('src', '/uploads/gallery/images/original/'+image);
 		$('#edit-caption').text(caption);
 	})
 
@@ -264,7 +267,7 @@ function showLogo() {
 			for (var i = 0, len = data.length; i < len; i++) {
 				$('#gallery-logo').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-logo">'
               	+ '<figure>'
-                + '<img src="/uploads/gallery/logo/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'                
+                + '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'                
                 + '<div class="overlay">'
                 + '<div class="gallery-title">'
                 + '<p class="text-center">'+ data[i].name +'</p>'
@@ -353,7 +356,7 @@ function editLogo() {
 
 		$('#edit-logo-id').val(id);
 		$('#edit-client-logo-name').val(name);
-		$('#logo-show-edit').attr('src', '/uploads/gallery/logo/'+image);
+		$('#logo-show-edit').attr('src', '/uploads/gallery/logo/original/'+image);
 	})
 
 	frm_edit_logo = $('#frm-edit-client-logo').validate({

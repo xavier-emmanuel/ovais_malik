@@ -14,7 +14,7 @@
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
           <figure>
             <a data-fancybox="gallery" href="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/original/'.$image->image : '/uploads/gallery/images/original/'.$image->image) }}" data-caption="{{ $image->caption }}">
-              <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/thumbnails/'.$image->image : '/uploads/gallery/images/thumbnails/'.$image->image) }}" alt="" width="100%">
+              <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/medium/'.$image->image : '/uploads/gallery/images/medium/'.$image->image) }}" alt="" width="100%">
             </a>
           </figure>
         </div>

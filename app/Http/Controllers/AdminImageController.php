@@ -30,9 +30,35 @@ class AdminImageController extends Controller
 
             $picture = Image::make($file);
             $name = time().$file->getClientOriginalName();
-						$picture->save(public_path().'/uploads/gallery/images/original/'.$name);
-            $picture->resize(255, 170);
-						$picture->save(public_path().'/uploads/gallery/images/thumbnails/'.$name);
+            $picture->save(public_path().'/uploads/gallery/images/original/'.$name);
+
+            $imageType = array(
+                'extra-small' => array(
+                    'width' => 250,
+                    'path' => 'extra-small'                    
+                ),
+                'small' => array(
+                    'width' => 540,
+                    'path' => 'small'                    
+                ),
+                'medium' => array(
+                    'width' => 720,
+                    'path' => 'medium'                    
+                ),
+                'thumbnail' => array(
+                    'width' => 50,
+                    'path' => 'thumbnail'                    
+                )
+            );
+
+            foreach ($imageType as $key => $value) {
+              $picture->resize($value['width'], null,
+                function($constraint) {
+                  $constraint->aspectRatio();
+                });
+              $picture->save(public_path() . '/uploads/gallery/images/'.$value['path'].'/'. $name);
+            }
+
 						$image->image = $name;
 						foreach ($input['caption'] as $image_caption) {
 							$cap_count++;    				
@@ -57,8 +83,33 @@ class AdminImageController extends Controller
   		$picture = Image::make($file);
       $name = time().$file->getClientOriginalName();
 			$picture->save(public_path().'/uploads/gallery/images/original/'.$name);
-      $picture->resize(255, 170);
-			$picture->save(public_path().'/uploads/gallery/images/thumbnails/'.$name);
+      
+      $imageType = array(
+                'extra-small' => array(
+                    'width' => 250,
+                    'path' => 'extra-small'                    
+                ),
+                'small' => array(
+                    'width' => 540,
+                    'path' => 'small'                    
+                ),
+                'medium' => array(
+                    'width' => 720,
+                    'path' => 'medium'                    
+                ),
+                'thumbnail' => array(
+                    'width' => 50,
+                    'path' => 'thumbnail'                    
+                )
+            );
+
+      foreach ($imageType as $key => $value) {
+        $picture->resize($value['width'], null,
+          function($constraint) {
+            $constraint->aspectRatio();
+          });
+        $picture->save(public_path() . '/uploads/gallery/images/'.$value['path'].'/'. $name);
+      }
   		$image->image = $name;
   	}
 
