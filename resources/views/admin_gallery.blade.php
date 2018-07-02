@@ -242,7 +242,7 @@
             <input type="hidden" name="delete_logo_id" id="delete-logo-id">
             <div class="delete-question">
               <i class="fas fa-question-circle" style="font-size: 2rem;"></i>&nbsp;&nbsp;&nbsp;
-              <p>Are you sure you want to delete this client's logo?</p>
+              <p>Are you sure you want to delete <span id="client-logo-name">asd</span> logo?</p>
             </div>
           </div>
           <div class="modal-footer">

@@ -106,8 +106,6 @@
               @foreach($data as $audio)
                 <li class="list-group-item audio-list audio-list-id{{ $audio->id }}" data-id="{{ $audio->id }}" data-title="{{ $audio->title }}" data-audio-duration="{{ $audio->audio_duration }}" data-audio-file="{{ $audio->audio_file }}">
                   <span class="playlist-title">
-                    <!-- Add this <i> tag below when its <li> parent tag has an active class.
-                         This should only appear in currently playing music. -->
                     <i class="fas fa-headphones" style="font-size: 14px;"></i>
                     &nbsp; {{ $audio->title }}
                   </span>
@@ -186,10 +184,10 @@
   <section id="brands">
     <div class="container">
       <div class="brand-wrapper">
-		@foreach($logos as $logo)
-        <div class="image-wrapper">
-          <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/logo/original/'.$logo->image : '/uploads/gallery/logo/original/'.$logo->image) }}" alt="{{ $logo->name }}" width="100%;">
-        </div>
+		    @foreach($logos as $logo)
+          <div class="image-wrapper">
+            <img title="{{ $logo->name }}" class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/gallery/logo/thumbnail/'.$logo->image : 'uploads/gallery/logo/thumbnail/'.$logo->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/gallery/logo/extra-small/'.$logo->image : 'uploads/gallery/logo/extra-small/'.$logo->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/gallery/logo/small/'.$logo->image : 'uploads/gallery/logo/small/'.$logo->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/gallery/logo/medium/'.$logo->image : 'uploads/gallery/logo/medium/'.$logo->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/gallery/logo/original/'.$logo->image : 'uploads/gallery/logo/original/'.$logo->image) }} 1140w" sizes="100vw" alt="{{ $logo->name}}" width="100%">
+          </div>
         @endforeach
       </div>
     </div>
