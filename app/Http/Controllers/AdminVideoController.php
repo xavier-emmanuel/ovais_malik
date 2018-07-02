@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 use App\Video;
+use DateInterval;
 
 class AdminVideoController extends Controller
 {
@@ -70,7 +71,27 @@ class AdminVideoController extends Controller
 
     $video = new Video;
 
+    $video_info = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBcfLXJQqgr31OmvgEr-Sh1lwKoWnq_4hY&part=snippet,contentDetails,statistics,status&id='.YoutubeID($request->add_video_link).''),true);
+
+    foreach ($video_info['items'] as $info)
+    {
+      $title = $info['snippet']['title'];
+      $description = $info['snippet']['description'];
+      $duration = $info['contentDetails']['duration'];
+    }
+
+    $interval = new DateInterval($duration);
+    $vsec = $interval->h * 3600 + $interval->i * 60 + $interval->s;
+
+    if($vsec > 3600)
+        $vsec = gmdate("H:i:s", $vsec);
+    else
+        $vsec = gmdate("i:s", $vsec);
+
 		$video->link = YoutubeID($request->add_video_link);
+    $video->title = $title;
+    $video->description = nl2br($description);
+    $video->duration = $vsec;
 		$video->updated_at = null;
 		$video->save();
 
@@ -94,7 +115,27 @@ class AdminVideoController extends Controller
 
     $video = Video::find($request->edit_video_id);
 
+    $video_info = json_decode(file_get_contents('https://www.googleapis.com/youtube/v3/videos?key=AIzaSyBcfLXJQqgr31OmvgEr-Sh1lwKoWnq_4hY&part=snippet,contentDetails,statistics,status&id='.YoutubeID($request->edit_video_link).''),true);
+
+    foreach ($video_info['items'] as $info)
+    {
+      $title = $info['snippet']['title'];
+      $description = $info['snippet']['description'];
+      $duration = $info['contentDetails']['duration'];
+    }
+
+    $interval = new DateInterval($duration);
+    $vsec = $interval->h * 3600 + $interval->i * 60 + $interval->s;
+
+    if($vsec > 3600)
+        $vsec = gmdate("H:i:s", $vsec);
+    else
+        $vsec = gmdate("i:s", $vsec);
+
 		$video->link = YoutubeID($request->edit_video_link);
+    $video->title = $title;
+    $video->description = nl2br($description);
+    $video->duration = $vsec;
 		$video->save();
 
 		return response()->json($video);

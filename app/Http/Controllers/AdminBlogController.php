@@ -54,8 +54,33 @@ class AdminBlogController extends Controller
 			$thumbnail = Image::make($file);
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/admin-blogs/original/', $name);
-			$thumbnail->resize(525,315);
-			$thumbnail->save(public_path().'/uploads/admin-blogs/thumbnail/'.$name);
+
+			$images = array(
+                'medium' => array(
+                    'width' => 720,
+                    'folder' => '/medium/'                    
+                ),
+                'small' => array(
+                    'width' => 540,
+                    'folder' => '/small/'                     
+                ),
+                'extrasmall' => array(
+                    'width' => 250,
+                    'folder' => '/extra-small/'                     
+                ),
+                'thumbnail' => array(
+                    'width' => 50,                    
+                    'folder' => '/thumbnail/' 
+                ),
+            );
+
+            foreach ($images as $value) {
+            	$thumbnail->resize($value['width'], null, function ($constraint) {
+				    $constraint->aspectRatio();
+				});
+				$thumbnail->save(public_path().'/uploads/admin-blogs'.$value['folder'].$name);
+			}
+			
 		}
 
 			$blog = new Blog();
@@ -88,14 +113,38 @@ class AdminBlogController extends Controller
 		$input = Input::all();
 		$blog = Blog::findOrFail($input['hdn_blog_id']);
 
-    if(Input::file('blog_featured_image')) {
+    	if(Input::file('blog_featured_image')) {
 			$file = $input['blog_featured_image'];
 			$thumbnail = Image::make($file);
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/admin-blogs/original/', $name);
 			$image = $name;
-			$thumbnail->resize(525,315);
-			$thumbnail->save(public_path().'/uploads/admin-blogs/thumbnail/'.$name);
+			
+			$images = array(
+                'medium' => array(
+                    'width' => 720,
+                    'folder' => '/medium/'                    
+                ),
+                'small' => array(
+                    'width' => 540,
+                    'folder' => '/small/'                     
+                ),
+                'extrasmall' => array(
+                    'width' => 250,
+                    'folder' => '/extra-small/'                     
+                ),
+                'thumbnail' => array(
+                    'width' => 50,                    
+                    'folder' => '/thumbnail/' 
+                ),
+            );
+
+            foreach ($images as $value) {
+            	$thumbnail->resize($value['width'], null, function ($constraint) {
+				    $constraint->aspectRatio();
+				});
+				$thumbnail->save(public_path().'/uploads/admin-blogs'.$value['folder'].$name);
+			}
 		}
 		else {
 			$image = $input['hdn_blog_image'];
