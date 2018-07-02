@@ -23,12 +23,13 @@
       <input type="hidden" value="{{ $blogs->image }}" name="hdn_blog_image">
       <div class="blog-wrapper">
         <div class="box box-content-1">
-          <div class="form-group">
+          <div class="form-group" id="div">
             <label for="edit-blog-title">
               Title:
               <span>*</span>
             </label>
-            <input type="text" class="form-control" id="edit-blog-title" name="blog_title" value="{{ $blogs->title }}" required></div>
+            <input type="text" class="form-control" id="edit-blog-title" name="blog_title" value="{{ $blogs->title }}" required>
+          </div>
 
           <div class="form-group">
             <label for="edit-blog-category">

@@ -141,7 +141,13 @@ $(document).ready(function () {
                     },2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
-                    alert(xhr.responseText);
+                    if(xhr.status == 500){
+                        $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Publish');
+                        $('#frm-edit-blog input').prop('disabled', false);
+                        $('#frm-edit-blog .btn').prop('disabled', false);
+                        $('#edit-blog-title').addClass('error');
+                        $('#div').append('<label id="edit-blog-title-error" class="error" for="edit-blog-title">The title already exists.</label>');
+                    }
                 }
             });
         }
