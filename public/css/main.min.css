@@ -1235,6 +1235,33 @@ blockquote {
   }
 }
 
+.videos .video__wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-gap: 30px;
+}
+
+.videos .video__card {
+  position: relative;
+  background: #ffffff;
+}
+
+.videos .video__card:hover {
+  -webkit-box-shadow: 0 3px 7px 0 rgba(87, 87, 87, 0.75);
+          box-shadow: 0 3px 7px 0 rgba(87, 87, 87, 0.75);
+}
+
+.videos .video__details--is-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.videos .video__details--is-description {
+  max-height: 100px;
+}
+
 #blog #pagination {
   margin-top: 30px;
 }
@@ -1579,8 +1606,8 @@ blockquote {
 }
 
 .blog-related .blog-related__card:hover {
-  -webkit-box-shadow: 0 3px 10px 0 rgba(87, 87, 87, 0.75);
-          box-shadow: 0 3px 10px 0 rgba(87, 87, 87, 0.75);
+  -webkit-box-shadow: 0 3px 7px 0 rgba(87, 87, 87, 0.75);
+          box-shadow: 0 3px 7px 0 rgba(87, 87, 87, 0.75);
 }
 
 .blog-related .blog-related__card--info span.blog-tags {
@@ -2020,14 +2047,3 @@ label > span {
   margin-top: 10px;
 }
 
-input.my-error-class, select.my-error-class {
-  border-color:#FF0000;
-}
-
-label.my-error-class {
-  color:#FF0000;
-}
-
-label.my-valid-class {
-  color:#00CC00;
-}
