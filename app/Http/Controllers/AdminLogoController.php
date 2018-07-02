@@ -17,8 +17,7 @@ class AdminLogoController extends Controller
 
   public function ajaxStore(Request $request) {
 		$logo = new Logo();
-		if($request->hasfile('add_client_logo_image'))
-  	{
+		if($request->hasfile('add_client_logo_image')) {
   		$file = $request->file('add_client_logo_image');
   		$picture = Image::make($file);
       $name = time().$file->getClientOriginalName();
@@ -27,19 +26,19 @@ class AdminLogoController extends Controller
 			$imageType = array(
                 'extra-small' => array(
                     'width' => 250,
-                    'path' => 'extra-small'                    
+                    'path' => 'extra-small'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'path' => 'small'                    
+                    'path' => 'small'
                 ),
                 'medium' => array(
                     'width' => 720,
-                    'path' => 'medium'                    
+                    'path' => 'medium'
                 ),
                 'thumbnail' => array(
                     'width' => 50,
-                    'path' => 'thumbnail'                    
+                    'path' => 'thumbnail'
                 )
             );
 
@@ -62,8 +61,7 @@ class AdminLogoController extends Controller
 
   public function ajaxUpdate(Request $request) {
   	$logo = Logo::find($request->edit_logo_id);
-		if($request->hasfile('edit_client_logo_image'))
-  	{
+		if($request->hasfile('edit_client_logo_image')) {
   		$file = $request->file('edit_client_logo_image');
   		$picture = Image::make($file);
       $name = time().$file->getClientOriginalName();
@@ -72,19 +70,19 @@ class AdminLogoController extends Controller
 			$imageType = array(
                 'extra-small' => array(
                     'width' => 250,
-                    'path' => 'extra-small'                    
+                    'path' => 'extra-small'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'path' => 'small'                    
+                    'path' => 'small'
                 ),
                 'medium' => array(
                     'width' => 720,
-                    'path' => 'medium'                    
+                    'path' => 'medium'
                 ),
                 'thumbnail' => array(
                     'width' => 50,
-                    'path' => 'thumbnail'                    
+                    'path' => 'thumbnail'
                 )
             );
 

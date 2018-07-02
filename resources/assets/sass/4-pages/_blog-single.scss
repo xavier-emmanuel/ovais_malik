@@ -99,6 +99,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     @media only screen and (max-width: 767px) {
       flex-direction: column;
@@ -115,8 +116,17 @@
     }
 
     .social-sharer {
-      @media only screen and (max-width: 480px) {
-        display: none;
+      @media only screen and (max-width: 767px) {
+        justify-content: flex-start;
+      }
+      @media only screen and (max-width: 424px) {
+        flex-direction: row;
+      }
+    }
+
+    .social-media__icon {
+      &:first-child {
+        margin-left: 0;
       }
     }
   }

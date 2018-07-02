@@ -10,7 +10,7 @@ use Image;
 
 class AdminBlogController extends Controller
 {
-  public function ajaxShow(Request $request){
+	public function ajaxShow(Request $request) {
 
 		$blog = Blog::all();
 		$data = array();
@@ -19,27 +19,29 @@ class AdminBlogController extends Controller
 			$id =  $row->id;
 			$title = $row->title;
 			$created_at = $row->created_at->format('F d, Y h:i:s A');
+			
 			if (empty($row->updated_at)) {
 				$updated_at = '';
 			} else {
 				$updated_at = $row->updated_at->format('F d, Y h:i:s A');
 			}
+
 			$button = '<td>
-			<a href="/admin-blog/edit/'.$row->slug.'" class="btn btn-info edit-category"><i class="fas fa-edit"></i></a>&nbsp;
-			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-blog" data-id="'.$row->id.'" data-title="'.$row->title.'"><i class="fas fa-trash"></i></button>
-				</td>';
+							<a href="/admin-blog/edit/'.$row->slug.'" class="btn btn-info edit-category"><i class="fas fa-edit"></i></a>&nbsp;
+							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-blog" data-id="'.$row->id.'" data-title="'.$row->title.'"><i class="fas fa-trash"></i></button>
+					</td>';
 
 			$data[] = array(
-									$id,
-									$title,
-									$created_at,
-									$updated_at,
-									$button
-					);
+				$id,
+				$title,
+				$created_at,
+				$updated_at,
+				$button
+			);
 		}
 
 		$output = array(
-				"data" => $data
+			"data" => $data
 		);
 
 		return response()->json($output);
@@ -58,19 +60,19 @@ class AdminBlogController extends Controller
 			$images = array(
                 'medium' => array(
                     'width' => 720,
-                    'folder' => '/medium/'                    
+                    'folder' => '/medium/'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'folder' => '/small/'                     
+                    'folder' => '/small/'
                 ),
                 'extrasmall' => array(
                     'width' => 250,
-                    'folder' => '/extra-small/'                     
+                    'folder' => '/extra-small/'
                 ),
                 'thumbnail' => array(
-                    'width' => 50,                    
-                    'folder' => '/thumbnail/' 
+                    'width' => 50,
+                    'folder' => '/thumbnail/'
                 ),
             );
 
@@ -80,25 +82,24 @@ class AdminBlogController extends Controller
 				});
 				$thumbnail->save(public_path().'/uploads/admin-blogs'.$value['folder'].$name);
 			}
-			
 		}
 
-			$blog = new Blog();
+		$blog = new Blog();
 
-			$blog->title = $input['blog_title'];
-			$blog->image = $name;
-			$blog->content = $input['blog_content'];
-			$blog->category_id = $input['blog_category'];
-			$blog->tags = $input['blog_tags'];
-			$blog->slug = str_slug($blog->title);
-			$blog->updated_at = null;
+		$blog->title = $input['blog_title'];
+		$blog->image = $name;
+		$blog->content = $input['blog_content'];
+		$blog->category_id = $input['blog_category'];
+		$blog->tags = $input['blog_tags'];
+		$blog->slug = str_slug($blog->title);
+		$blog->updated_at = null;
 
-			$blog->save();
+		$blog->save();
 
-			return response()->json(['success'=>'Added successfully.']);
+		return response()->json(['success'=>'Added successfully.']);
     }
 
-  public function checkBlogTitle(Request $request){
+  	public function checkBlogTitle(Request $request){
 
 		$blog = Blog::where('title', Input::get('blog_title'))->first();
 		if ($blog) {
@@ -119,23 +120,23 @@ class AdminBlogController extends Controller
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/admin-blogs/original/', $name);
 			$image = $name;
-			
+
 			$images = array(
                 'medium' => array(
                     'width' => 720,
-                    'folder' => '/medium/'                    
+                    'folder' => '/medium/'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'folder' => '/small/'                     
+                    'folder' => '/small/'
                 ),
                 'extrasmall' => array(
                     'width' => 250,
-                    'folder' => '/extra-small/'                     
+                    'folder' => '/extra-small/'
                 ),
                 'thumbnail' => array(
-                    'width' => 50,                    
-                    'folder' => '/thumbnail/' 
+                    'width' => 50,
+                    'folder' => '/thumbnail/'
                 ),
             );
 

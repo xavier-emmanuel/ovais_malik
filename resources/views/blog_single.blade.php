@@ -22,14 +22,14 @@
             @endforeach
           </div>
 
-          <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/extra-small/'.$data->image : 'uploads/admin-blogs/extra-small/'.$data->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/small/'.$data->image : 'uploads/admin-blogs/small/'.$data->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/medium/'.$data->image : 'uploads/admin-blogs/medium/'.$data->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }} 1140w" sizes="100vw" alt="{{ $data->image}}" width="100%">
 
           <div class="blog-overlay">
             <h2>
              {{ $data->title }}
             </h2>
             <div class="author-info">
-              <p class="small">Written by
+              <p class="small w-100">Written by
                 <a href="#">Ovais Malik</a> on {{ $data->created_at->format('F d, Y') }}
               </p>
 
@@ -58,7 +58,6 @@
         <div class="blog-content-wrapper">
           <div class="blog-content">
             <p class="text-justify">{!! $data->content !!}</p>
-            <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }}" alt="" width="100%">
 
             <div class="blog-related my-4 pt-2">
               <h5>Related Posts</h5>

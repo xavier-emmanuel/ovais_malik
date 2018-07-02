@@ -20,11 +20,9 @@ class AdminImageController extends Controller
    	$image = new Gallery();
    	$images = array();
 
-   	if($request->hasfile('filenames'))
-     {
+   	if($request->hasfile('filenames')) {
      		$count = 0;
-        foreach($request->file('filenames') as $file)
-        {		
+        foreach($request->file('filenames') as $file) {
 						$count++;
 						$cap_count = 0;
 
@@ -35,19 +33,19 @@ class AdminImageController extends Controller
             $imageType = array(
                 'extra-small' => array(
                     'width' => 250,
-                    'path' => 'extra-small'                    
+                    'path' => 'extra-small'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'path' => 'small'                    
+                    'path' => 'small'
                 ),
                 'medium' => array(
                     'width' => 720,
-                    'path' => 'medium'                    
+                    'path' => 'medium'
                 ),
                 'thumbnail' => array(
                     'width' => 50,
-                    'path' => 'thumbnail'                    
+                    'path' => 'thumbnail'
                 )
             );
 
@@ -61,7 +59,7 @@ class AdminImageController extends Controller
 
 						$image->image = $name;
 						foreach ($input['caption'] as $image_caption) {
-							$cap_count++;    				
+							$cap_count++;
         			if($cap_count == $count) {
 								$image->caption = $image_caption;
         			}
@@ -77,29 +75,28 @@ class AdminImageController extends Controller
 
   public function ajaxUpdate(Request $request) {
   	$image = Gallery::find($request->edit_image_id);
-  	if($request->hasfile('edit_photo'))
-  	{
+  	if($request->hasfile('edit_photo')) {
   		$file = $request->file('edit_photo');
   		$picture = Image::make($file);
       $name = time().$file->getClientOriginalName();
 			$picture->save(public_path().'/uploads/gallery/images/original/'.$name);
-      
+
       $imageType = array(
                 'extra-small' => array(
                     'width' => 250,
-                    'path' => 'extra-small'                    
+                    'path' => 'extra-small'
                 ),
                 'small' => array(
                     'width' => 540,
-                    'path' => 'small'                    
+                    'path' => 'small'
                 ),
                 'medium' => array(
                     'width' => 720,
-                    'path' => 'medium'                    
+                    'path' => 'medium'
                 ),
                 'thumbnail' => array(
                     'width' => 50,
-                    'path' => 'thumbnail'                    
+                    'path' => 'thumbnail'
                 )
             );
 

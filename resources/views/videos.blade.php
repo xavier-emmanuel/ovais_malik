@@ -12,8 +12,8 @@
       <div class="video__wrapper">
         <div class="video__card">
           <div class="embed-responsive embed-responsive-16by9">
-            <!-- NOTE! I added this parameter 'feature=oembed&showinfo=0' after the video id to hide the information above. -->
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k7CLSX3a9m8?feature=oembed&showinfo=0" encrypted-media allowfullscreen></iframe>
+            <!-- NOTE! I added this parameter '?showinfo=0' after the video id to hide the information above. -->
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4pgMFb_pO_k?showinfo=0" encrypted-media allowfullscreen></iframe>
           </div>
           <div class="video__details p-4">
             <h5 class="video__details--is-title">Title here</h5>
