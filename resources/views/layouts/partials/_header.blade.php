@@ -52,4 +52,14 @@
     <meta name="twitter:description"    content="Ovais Malik is a multilingual voice over talent." />
     <meta name="twitter:image"          content="{{ asset(App::environment('production') ? '/public/img/logo.jpg' : '/img/logo.jpg') }}" />
   @endif
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121783600-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121783600-1');
+  </script>
+
 </head>
