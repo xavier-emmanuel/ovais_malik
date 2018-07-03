@@ -110,20 +110,20 @@ function showImage() {
 				} else {
 					caption = data[i].caption;
 				}
-				$('#gallery-images').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-images">'
-              	+ '<figure>'
-                + '<img src="/uploads/gallery/images/small/'+ data[i].image +'" alt="" width="100%">'
-                + '<div class="overlay">'
-                + '<div class="gallery-title">'
-                + '<p class="text-center">'+ caption +'</p>'
-                + '</div>'
-                + '<div class="gallery-action">'
-                + '<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-backdrop="static" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-caption="'+ data[i].caption +'"><i class="fas fa-edit"></i></button>&nbsp;'
-                + '<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-backdrop="static" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
-                + '</div>'
-                + '</div>'
-             		+ '</figure>'
-            		+ '</div>');
+				$('#gallery-images').append('<div>'
+																			+ '<figure class="d-flex justify-content-center align-items-center">'
+																			+ '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'
+																			+ '<div class="overlay">'
+																			+ '<div class="gallery-title">'
+																			+ '<p class="text-center">'+ data[i].name +'</p>'
+																			+ '</div>'
+																			+ '<div class="gallery-action">'
+																			+ '<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-edit"></i></button>&nbsp;'
+																			+ '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
+																			+ '</div>'
+																			+ '</div>'
+																			+ '</figure>'
+																			+ '</div>');
 			}
 		}
 	})

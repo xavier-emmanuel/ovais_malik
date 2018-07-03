@@ -20,9 +20,9 @@
             </button>
           </div>
 
-          <div class="row admin-gallery" id="gallery-images">
-            
+          <div class="admin-gallery" id="gallery-images">
           </div>
+
         </div>
         <div class="tab-pane fade" id="nav-client-logo" role="tabpanel" aria-labelledby="nav-client-logo-tab">
           <div class="action">
