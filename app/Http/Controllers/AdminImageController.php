@@ -17,35 +17,34 @@ class AdminImageController extends Controller
 
   public function ajaxStore(Request $request) {
    	$input = Input::all();
-   	$image = new Gallery();
-   	$images = array();
 
-   	if($request->hasfile('filenames')) {
-     		$count = 0;
-        foreach($request->file('filenames') as $file) {
-						$count++;
-						$cap_count = 0;
-
+     	$count = 0;
+        foreach($input['image_file'] as $files)
+        {		
+            $image = new Gallery();
+			$count++;
+			$cap_count = 0;
+            $file = base64_decode($files);
             $picture = Image::make($file);
-            $name = time().$file->getClientOriginalName();
-            $picture->save(public_path().'/uploads/gallery/images/original/'.$name);
+            $name = time().str_random(10).'.'.'png';
+            $picture->save(public_path().'/uploads/gallery/images/original/'.$name, $file);
 
             $imageType = array(
                 'extra-small' => array(
                     'width' => 250,
-                    'path' => 'extra-small'
+                    'path' => 'extra-small'                    
                 ),
                 'small' => array(
                     'width' => 540,
-                    'path' => 'small'
+                    'path' => 'small'                    
                 ),
                 'medium' => array(
                     'width' => 720,
-                    'path' => 'medium'
+                    'path' => 'medium'                    
                 ),
                 'thumbnail' => array(
                     'width' => 50,
-                    'path' => 'thumbnail'
+                    'path' => 'thumbnail'                    
                 )
             );
 
@@ -54,12 +53,12 @@ class AdminImageController extends Controller
                 function($constraint) {
                   $constraint->aspectRatio();
                 });
-              $picture->save(public_path() . '/uploads/gallery/images/'.$value['path'].'/'. $name);
+              $picture->save(public_path() . '/uploads/gallery/images/'.$value['path'].'/'. $name, $file);
             }
 
 						$image->image = $name;
 						foreach ($input['caption'] as $image_caption) {
-							$cap_count++;
+							$cap_count++;    				
         			if($cap_count == $count) {
 								$image->caption = $image_caption;
         			}
@@ -68,8 +67,6 @@ class AdminImageController extends Controller
 
 						$image->save();
         }
-
-     }
 		return response()->json(['success'=>'Image/s successfully added.']);
   }
 

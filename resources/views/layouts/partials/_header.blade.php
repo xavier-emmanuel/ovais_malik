@@ -12,6 +12,10 @@
     img:not([src]):not([srcset]) {
 			visibility: hidden;
     }
+    .my-error-class {
+      color: red !important;
+      border-color: red !important;
+    }
   </style>
 
   @yield('stylesheets')

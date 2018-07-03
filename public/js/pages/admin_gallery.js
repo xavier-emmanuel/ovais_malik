@@ -18,11 +18,8 @@ $(document).ready(function() {
               var reader = new FileReader();
 
               reader.onload = function(event) {
-              		var image = new Image();
-									image.src = event.target.result;
-
                   $($.parseHTML('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 image-displayed">'
-                  + '<input type="hidden" class="image-name" name="image_name" value="'+ image.src +'">'
+                  + '<input type="hidden" id="image-file" name="image_file[]" value="'+ event.target.result.split(',')[1] +'">'
                   + '<img src="'+ event.target.result +'" alt="" width="100%" height="130px">'
                   + '<textarea name="caption[]" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>'
                 	+ '</div>')).appendTo(placeToInsertImagePreview);
@@ -112,14 +109,14 @@ function showImage() {
 				}
 				$('#gallery-images').append('<div>'
 																			+ '<figure class="d-flex justify-content-center align-items-center">'
-																			+ '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'
+																			+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ data[i].caption +'" width="100%">'
 																			+ '<div class="overlay">'
 																			+ '<div class="gallery-title">'
-																			+ '<p class="text-center">'+ data[i].name +'</p>'
+																			+ '<p class="text-center">'+ data[i].caption +'</p>'
 																			+ '</div>'
 																			+ '<div class="gallery-action">'
-																			+ '<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-edit"></i></button>&nbsp;'
-																			+ '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
+																			+ '<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-caption="'+ data[i].caption +'"><i class="fas fa-edit"></i></button>&nbsp;'
+																			+ '<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].caption +'"><i class="fas fa-trash"></i></button>'
 																			+ '</div>'
 																			+ '</div>'
 																			+ '</figure>'
@@ -160,7 +157,23 @@ function uploadImage() {
 					stack: 6
 				});
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
-				alert(xhr.responseText);
+				// alert(xhr.responseText);
+				$('#frm-add-gallery')[0].reset();
+				$('#add-gallery').modal('hide');
+				$('.modal-backdrop').hide();
+				$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
+				$('.gallery-images').remove();
+				showImage();
+				
+				// toast popup js
+				$.toast({
+					heading: 'Error!',
+					text: 'An error has occured while uploding image. Image size is too big or maybe invalid. Please try again',
+					position: 'top-right',
+					icon: 'error',
+					hideAfter: 3500,
+					stack: 6
+				});
 			}
 		})
 	})
