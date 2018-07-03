@@ -18,9 +18,10 @@ $(document).ready(function() {
               var reader = new FileReader();
 
               reader.onload = function(event) {
-                  $($.parseHTML('<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 image-displayed">'
+									$($.parseHTML('<div class="image-displayed">'
+									+ '<i class="far fa-times-circle remove-icon" title="Remove photo"></i>'
                   + '<input type="hidden" id="image-file" name="image_file[]" value="'+ event.target.result.split(',')[1] +'">'
-                  + '<img src="'+ event.target.result +'" alt="" width="100%" height="130px">'
+                  + '<img src="'+ event.target.result +'" alt="" width="100%">'
                   + '<textarea name="caption[]" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>'
                 	+ '</div>')).appendTo(placeToInsertImagePreview);
               }

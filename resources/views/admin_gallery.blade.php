@@ -57,8 +57,11 @@
             </button>
 
             <div class="container-fluid">
-              <div class="row preview-image">
+              <!-- <div class="row preview-image">
 
+              </div> -->
+              <div class="preview-image">
+              
               </div>
             </div>
           </div>
@@ -93,7 +96,7 @@
             </div>
             <div class="form-group">
               <label for="">Preview:</label>
-              <div class="preview-image-wrapper">
+              <div class="preview-image-wrapper m-auto">
                 <img id="image-show" src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="">
               </div>
             </div>
