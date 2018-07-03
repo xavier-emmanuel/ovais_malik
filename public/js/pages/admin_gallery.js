@@ -287,7 +287,7 @@ function showLogo() {
                 + '</div>'
                 + '<div class="gallery-action">'
                 + '<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-edit"></i></button>&nbsp;'
-                + '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
+                + '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-trash"></i></button>'
                 + '</div>'
                 + '</div>'
              		+ '</figure>'
@@ -424,7 +424,10 @@ function editLogo() {
 function deleteLogo() {
 	$(document).on('click', '.delete-logo-button', function() {
 		var id = $(this).data('id');
+		var client = $(this).data('name');
+		
 		$('#delete-logo-id').val(id);
+		$('#client-logo-name').text(client);
 	})
 
 	$('#frm-delete-client-logo').on('submit').bind('submit', function(e) {
