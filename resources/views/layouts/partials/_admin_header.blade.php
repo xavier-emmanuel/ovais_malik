@@ -31,19 +31,12 @@
       </span>
 
       <div class="dropdown o-admin__wrapper">
-        <div class="o-admin-bell">
-        <span class="badge badge-danger">12</span>
-        </div>
         <img class="o-admin__image--is-round" src="http://via.placeholder.com/40x40" alt="Profile">
         <a class="dropdown-toggle" id="admin-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Ovais Malik
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="admin-dropdown">
           <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i>&nbsp; Settings</a>
-          <a href="#" class="dropdown-item"><i class="fas fa-envelope"></i>&nbsp; Messages&nbsp; 
-            <span class="badge badge-danger">12</span>
-          </a>
-          <div class="dropdown-divider"></div>
           <a href="/auth/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
         </div>
       </div>

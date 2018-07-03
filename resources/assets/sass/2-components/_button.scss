@@ -14,16 +14,22 @@
   border: 2px solid $red;
   color: $red;
   &:hover {
-    background-color: $dark-red;
-    border-color: $dark-red;
+    background-color: $dark-red !important;
+    border-color: $dark-red !important;
     color: darken($white, 10) !important;
   }
+}
+
+.btn-primary.disabled,.btn-primary:disabled{
+  background-color: $dark-red !important;
+  border-color: $dark-red !important;
+  color: darken($white, 10) !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle{
-  background-color: $dark-red;
-  border-color: $dark-red;
+  background-color: $dark-red !important;
+  border-color: $dark-red !important;
   color: darken($white, 10) !important;
 }

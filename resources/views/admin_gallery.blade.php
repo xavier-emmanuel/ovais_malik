@@ -26,13 +26,12 @@
         </div>
         <div class="tab-pane fade" id="nav-client-logo" role="tabpanel" aria-labelledby="nav-client-logo-tab">
           <div class="action">
-            <button class="btn btn-outline" data-toggle="modal" data-target="#add-client-logo" id="btn-upload-logo" data-backdrop="static">
+            <button class="btn btn-outline" data-toggle="modal" data-target="#add-client-logo" id="btn-upload-logo">
               <i class="fas fa-plus"></i>&nbsp; Add Logo
             </button>
           </div>
 
-          <div class="row admin-gallery" id="gallery-logo">
-            
+          <div class="admin-gallery" id="gallery-logo">
           </div>
         </div>
       </div>
@@ -165,10 +164,10 @@
               <label for="add-client-logo-image">Logo: <span>*</span></label>
               <input type="file" id="add-client-logo-image" name="add_client_logo_image" class="form-control-file" required>
             </div>
-            <!-- Hidden by default. Should only be displayed when input file count is > 0 -->
+
             <div class="form-group logo-preview">
               <label for="">Preview:</label>
-              <div class="preview-image-wrapper">
+              <div class="preview-image-wrapper m-auto">
                 <img src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="" id="logo-show">
               </div>
             </div>
@@ -211,7 +210,7 @@
             </div>
             <div class="form-group logo-preview-edit">
               <label for="">Preview:</label>
-              <div class="preview-image-wrapper">
+              <div class="preview-image-wrapper m-auto">
                 <img id="logo-show-edit" src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="">
               </div>
             </div>
