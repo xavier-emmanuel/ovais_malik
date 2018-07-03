@@ -107,7 +107,7 @@ function showImage() {
 				} else {
 					caption = data[i].caption;
 				}
-				$('#gallery-images').append('<div>'
+				$('#gallery-images').append('<div class="gallery-images">'
 																			+ '<figure class="d-flex justify-content-center align-items-center">'
 																			+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ data[i].caption +'" width="100%">'
 																			+ '<div class="overlay">'
@@ -278,7 +278,7 @@ function showLogo() {
 		dataType: "json",
 		success: function (data) {
 			for (var i = 0, len = data.length; i < len; i++) {
-				$('#gallery-logo').append('<div>'
+				$('#gallery-logo').append('<div class="gallery-logo">'
               	+ '<figure class="d-flex justify-content-center align-items-center">'
                 + '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'
                 + '<div class="overlay">'
