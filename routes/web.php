@@ -58,8 +58,6 @@ Route::group( [ 'middleware' => 'auth' ], function()
 Route::get('/blogs', 'PagesController@blogs');
 Route::get('/blogs/{slug}', 'PagesController@blogSingle')->name('blog-single');
 
-Route::get('/videos-show/display', 'AdminVideoController@ajaxDisplayVideos');
-
 Route::get('/contact', 'PagesController@contact');
 Route::post('/contact/send', 'ContactController@contactSend');
 

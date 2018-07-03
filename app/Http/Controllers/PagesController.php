@@ -7,6 +7,7 @@ use App\Audio;
 use App\Blog;
 use App\Gallery;
 use App\Logo;
+use App\Video;
 
 
 class PagesController extends Controller
@@ -36,7 +37,8 @@ class PagesController extends Controller
 
     public function videos()
     {
-        return view('videos')->with(array('page' => 'Videos'));
+        $videos = Video::all();
+        return view('videos')->with(array('page' => 'Videos', 'data' => $videos));
     }
 
     public function blogs()

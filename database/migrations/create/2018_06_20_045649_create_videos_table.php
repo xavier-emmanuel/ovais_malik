@@ -19,6 +19,7 @@ class CreateVideosTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('duration');
+            $table->string('published_at');
             $table->timestamps();
         });
     }

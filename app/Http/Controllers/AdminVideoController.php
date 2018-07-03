@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Carbon\Carbon;
 use App\Video;
 use DateInterval;
+use DateTime;
 
 class AdminVideoController extends Controller
 {
@@ -78,6 +79,7 @@ class AdminVideoController extends Controller
       $title = $info['snippet']['title'];
       $description = $info['snippet']['description'];
       $duration = $info['contentDetails']['duration'];
+      $published_at = $info['snippet']['publishedAt'];
     }
 
     $interval = new DateInterval($duration);
@@ -88,10 +90,13 @@ class AdminVideoController extends Controller
     else
         $vsec = gmdate("i:s", $vsec);
 
+    $dateObject = new DateTime($published_at);
+
 		$video->link = YoutubeID($request->add_video_link);
     $video->title = $title;
     $video->description = nl2br($description);
     $video->duration = $vsec;
+    $video->published_at = $dateObject->format('F d, Y');
 		$video->updated_at = null;
 		$video->save();
 
@@ -122,6 +127,7 @@ class AdminVideoController extends Controller
       $title = $info['snippet']['title'];
       $description = $info['snippet']['description'];
       $duration = $info['contentDetails']['duration'];
+      $published_at = $info['snippet']['publishedAt'];
     }
 
     $interval = new DateInterval($duration);
@@ -132,10 +138,13 @@ class AdminVideoController extends Controller
     else
         $vsec = gmdate("i:s", $vsec);
 
+    $dateObject = new DateTime($published_at);
+
 		$video->link = YoutubeID($request->edit_video_link);
     $video->title = $title;
     $video->description = nl2br($description);
     $video->duration = $vsec;
+    $video->published_at = $dateObject->format('F d, Y');
 		$video->save();
 
 		return response()->json($video);
@@ -196,11 +205,5 @@ class AdminVideoController extends Controller
     } else {
         return response()->json(TRUE);
     }
-	}
-
-	public function ajaxDisplayVideos(Request $request) {
-		$video = Video::all();
-
-		return response()->json($video);
 	}
 }
