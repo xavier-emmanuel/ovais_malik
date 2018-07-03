@@ -15,6 +15,10 @@ a {
   }
 }
 
+.form-info {
+  cursor: pointer;
+}
+
 @include heading-underline;
 
 .loading-overlay {

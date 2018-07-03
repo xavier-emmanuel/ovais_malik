@@ -136,6 +136,10 @@ a:hover {
   color: #9f111b !important;
 }
 
+.form-info {
+  cursor: pointer;
+}
+
 .headul {
   margin: 30px auto 50px auto;
 }

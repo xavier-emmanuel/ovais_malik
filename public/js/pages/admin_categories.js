@@ -21,8 +21,8 @@ $(document).ready(function () {
         },
         messages: {
             category_name: {
-                required: "The name field is required.",
-                remote: "This name already exists."
+                required: "Required field cannot be left blank.",
+                remote: "This category already exists. Try different category."
             }
         },
         submitHandler: function (frm_add_category, e) {
@@ -79,8 +79,8 @@ $(document).ready(function () {
         },
         messages: {
             category_name: {
-                required: "The name field is required.",
-                remote: "This name already exists."
+                required: "Required field cannot be left blank.",
+                remote: "This category already exists. Try different category."
             }
         },
         submitHandler: function (frm_edit_category, e) {

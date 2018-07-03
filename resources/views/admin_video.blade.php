@@ -51,8 +51,8 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="add-video-link">
-                <i class="fas fa-link"></i>&nbsp; Video Link:</label>
-              <input type="text" class="form-control" id="add-video-link" name="add_video_link" autocomplete="off">
+                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" title="Video Link" data-content="The field below only accepts none other than youtube link or url."></i></label>
+              <input type="text" class="form-control" id="add-video-link" name="add_video_link" autocomplete="off" placeholder="e.g. https://www.youtube.com/watch?v=4pgMFb_pO_k">
             </div>
           </div>
           <div class="modal-footer">
@@ -90,7 +90,7 @@
             <div class="form-group">
               <input type="hidden" class="form-control" id="edit-video-id" name="edit_video_id">
               <label for="edit-video-link">
-                <i class="fas fa-link"></i>&nbsp; Video Link:</label>
+                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" title="Video Link" data-content="The field below only accepts none other than youtube link or url."></i></label>
               <input type="text" class="form-control" id="edit-video-link" name="edit_video_link" autocomplete="off">
             </div>
           </div>
@@ -129,7 +129,7 @@
               <input type="hidden" class="form-control" id="delete-video-id" name="delete_video_id">
               <i class="fas fa-question-circle" style="font-size: 2rem;"></i>&nbsp;&nbsp;&nbsp;
               <p>Are you sure you want to delete
-                <span id="video-link">https://www.youtube.com/embed/4pgMFb_pO_k</span> ?</p>
+                <span id="video-link"></span> ?</p>
             </div>
           </div>
           <div class="modal-footer">

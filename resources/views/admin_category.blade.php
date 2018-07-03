@@ -3,8 +3,13 @@
 @section('stylesheets')
   <style>
     .error {
-      color: red !important;
-      border-color: red !important;
+      color: #b90504;
+      border-color: #b90504;
+    }
+
+    label.error {
+      font-size: 80%;
+      font-weight: 400;
     }
   </style>
 @endsection
@@ -55,12 +60,10 @@
             </button>
           </div>
           <div class="modal-body">
-
-              <div class="form-group">
-                <label for="add-category">Name:</label>
-                <input type="text" class="form-control" id="add-category-name" name="category_name" autocomplete="off">
-              </div>
-
+            <div class="form-group">
+              <label for="add-category">Name: <span>*</span></label>
+              <input type="text" class="form-control" id="add-category-name" name="category_name" autocomplete="off">
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -97,7 +100,7 @@
           <div class="modal-body">
 
               <div class="form-group">
-                <label for="edit-category">Name:</label>
+                <label for="edit-category">Name: <span>*</span></label>
                 <input type="text" class="form-control" id="edit-category-name" name="category_name" autocomplete="off">
               </div>
 

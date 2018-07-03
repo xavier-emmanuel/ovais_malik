@@ -17,8 +17,12 @@
 			visibility: hidden;
 		}
     .my-error-class {
-      color: red !important;
-      border-color: red !important;
+      color: #b90504;
+      border-color: #b90504;
+    }
+    label.my-error-class {
+      font-size: 80%;
+      font-weight: 400;
     }
   </style>
 
@@ -35,7 +39,7 @@
       </span>
 
       <div class="dropdown o-admin__wrapper">
-        <img class="o-admin__image--is-round" src="http://via.placeholder.com/40x40" alt="Profile">
+        <img class="o-admin__image--is-round" src="{{ asset(App::environment('production') ? '/public/img/avatar.svg' : '/img/avatar.svg') }}" alt="Profile">
         <a class="dropdown-toggle" id="admin-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Ovais Malik
         </a>

@@ -3,6 +3,9 @@ var add_video_form;
 var edit_video_form;
 
 $(document).ready(function () {
+	$('.form-info').popover({
+		trigger: 'hover'
+	});
 
 	tbl_video = $('#tbl-video').DataTable({
 		'ajax': {
@@ -21,14 +24,13 @@ function addVideo() {
 		$('#frm-add-video')[0].reset();
 		add_video_form.resetForm();
 		$('input').removeClass('my-error-class');
-	})
+	});
 
 	add_video_form = $('#frm-add-video').validate({
 		errorClass: "my-error-class",
 		validClass: "my-valid-class",
 
-		rules:
-		{
+		rules: {
 			add_video_link: {
 				required: true,
 				remote: {
@@ -37,17 +39,20 @@ function addVideo() {
 				}
 			}
 		},
-		messages:
-		{
+		messages: {
 			add_video_link: {
-				required: "Please input the video link.",
-				remote: "Video link is already added."
+				required: "Required field cannot be left blank.",
+				remote: "This video link already exists. Try different video link."
 			}
 		},
 		submitHandler: function (frm_add_video, e) {
 			e.preventDefault();
-			$('#btn-add').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Saving');
+
 			var data = new FormData($("#frm-add-video")[0]);
+
+			$('#frm-add-video input').prop('disabled', true);
+			$('#frm-add-video .btn').prop('disabled', true);
+			$('.loading-overlay').css('display', 'block');
 
 			$.ajax({
 				url: '/admin-video/create',
@@ -57,13 +62,15 @@ function addVideo() {
 				processData: false,
 				contentType: false,
 				success: function (data) {
+					$('#frm-add-video input').prop('disabled', false);
+					$('#frm-add-video .btn').prop('disabled', false);
+					$('.loading-overlay').css('display', 'none');
+
 					tbl_video.ajax.reload(null, false);
 					$('#frm-add-video')[0].reset();
 					$('#add-video').modal('hide');
 					$('.modal-backdrop').hide();
-					$('#btn-add').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Save');
 
-					// toast popup js
 					$.toast({
 						heading: 'Success!',
 						text: 'Video has been successfuly added.',
@@ -75,9 +82,9 @@ function addVideo() {
 				}, error: function (xhr, error, ajaxOptions, thrownError) {
 					alert(xhr.responseText);
 				}
-			})
+			});
 		}
-	})
+	});
 }
 
 function editVideo() {
@@ -91,14 +98,13 @@ function editVideo() {
 
 		$('#edit-video-id').val(id);
 		$('#edit-video-link').val(link);
-	})
+	});
 
 	edit_video_form = $('#frm-edit-video').validate({
 		errorClass: "my-error-class",
 		validClass: "my-valid-class",
 
-		rules:
-		{
+		rules:{
 			edit_video_link: {
 				required: true,
 				remote: {
@@ -107,17 +113,20 @@ function editVideo() {
 				}
 			}
 		},
-		messages:
-		{
+		messages: {
 			edit_video_link: {
-				required: "Please input the video link.",
-				remote: "Video link is already added."
+				required: "Required field cannot be left blank.",
+				remote: "This video link already exists. Try different video link."
 			}
 		},
 		submitHandler: function (frm_edit_video, e) {
 			e.preventDefault();
-			$('#btn-edit').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
+
 			var data = new FormData($("#frm-edit-video")[0]);
+
+			$('#frm-edit-video input').prop('disabled', true);
+			$('#frm-edit-video .btn').prop('disabled', true);
+			$('.loading-overlay').css('display', 'block');
 
 			$.ajax({
 				url: '/admin-video/update',
@@ -127,13 +136,14 @@ function editVideo() {
 				processData: false,
 				contentType: false,
 				success: function (data) {
+					$('#frm-edit-video input').prop('disabled', false);
+					$('#frm-edit-video .btn').prop('disabled', false);
+					$('.loading-overlay').css('display', 'none');
 					tbl_video.ajax.reload(null, false);
 					$('#frm-edit-video')[0].reset();
 					$('#edit-video').modal('hide');
 					$('.modal-backdrop').hide();
-					$('#btn-edit').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Update');
 
-					// toast popup js
 					$.toast({
 						heading: 'Success!',
 						text: 'Video has been successfuly updated.',
@@ -145,9 +155,9 @@ function editVideo() {
 				}, error: function (xhr, error, ajaxOptions, thrownError) {
 					alert(xhr.responseText);
 				}
-			})
+			});
 		}
-	})
+	});
 }
 
 function deleteVideo() {
@@ -161,8 +171,11 @@ function deleteVideo() {
 
 	$('#frm-delete-video').on('submit').bind('submit', function (e) {
 		e.preventDefault();
-		$('#btn-delete').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Deleting');
+
 		var data = new FormData($("#frm-delete-video")[0]);
+
+		$('#frm-delete-video .btn').prop('disabled', true);
+		$('.loading-overlay').css('display', 'block');
 
 		$.ajax({
 			url: '/admin-video/delete',
@@ -172,16 +185,16 @@ function deleteVideo() {
 			processData: false,
 			contentType: false,
 			success: function (data) {
+				$('#frm-delete-video .btn').prop('disabled', false);
+				$('.loading-overlay').css('display', 'none');
 				tbl_video.ajax.reload(null, false);
 				$('#frm-delete-video')[0].reset();
 				$('#delete-video').modal('hide');
 				$('.modal-backdrop').hide();
-				$('#btn-delete').removeAttr('disabled').html('<i class="fas fa-check"></i>&nbsp; Yes');
 
-				// toast popup js
 				$.toast({
 					heading: 'Success!',
-					text: 'Video has been successfuly removed.',
+					text: 'Video has been successfuly deleted.',
 					position: 'top-right',
 					icon: 'success',
 					hideAfter: 3500,
@@ -190,6 +203,6 @@ function deleteVideo() {
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
 				alert(xhr.responseText);
 			}
-		})
-	})
+		});
+	});
 }
