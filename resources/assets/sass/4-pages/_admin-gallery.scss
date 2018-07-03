@@ -20,15 +20,22 @@
 }
 
 .admin-gallery {
-  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-gap: 20px;
+
+  @media only screen and (max-width: 320px) {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
 
   figure {
-    max-height: 195px;
-    height: 195px;
+    width: 100%;
+    height: auto;
+    min-height: 240px;
+    position: relative;
     border: 1px solid $grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 
     &:hover {
       cursor: pointer;
@@ -41,17 +48,23 @@
         opacity: 1;
       }
     }
+
+    img {
+      width: inherit;
+      position: relative;
+    }
   }
 
   .overlay {
     position: absolute;
-    left: 15px;
+    left: 0;
+    right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
     opacity: 0;
     overflow: hidden;
-    width: calc(100% - 30px);
-    height: calc(100% - 30px);
+    width: inherit;
+    height: 100%;
     transition: .3s ease;
     padding: 20px;
 

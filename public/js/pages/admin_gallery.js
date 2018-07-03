@@ -112,7 +112,7 @@ function showImage() {
 				}
 				$('#gallery-images').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-images">'
               	+ '<figure>'
-                + '<img src="/uploads/gallery/images/small/'+ data[i].image +'" alt="" width="100%">'                
+                + '<img src="/uploads/gallery/images/small/'+ data[i].image +'" alt="" width="100%">'
                 + '<div class="overlay">'
                 + '<div class="gallery-title">'
                 + '<p class="text-center">'+ caption +'</p>'
@@ -265,16 +265,16 @@ function showLogo() {
 		dataType: "json",
 		success: function (data) {
 			for (var i = 0, len = data.length; i < len; i++) {
-				$('#gallery-logo').append('<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 gallery-logo">'
-              	+ '<figure>'
-                + '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'                
+				$('#gallery-logo').append('<div>'
+              	+ '<figure class="d-flex justify-content-center align-items-center">'
+                + '<img src="/uploads/gallery/logo/original/'+ data[i].image +'" alt="'+ data[i].name +'" width="100%">'
                 + '<div class="overlay">'
                 + '<div class="gallery-title">'
                 + '<p class="text-center">'+ data[i].name +'</p>'
                 + '</div>'
                 + '<div class="gallery-action">'
-                + '<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-backdrop="static" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-edit"></i></button>&nbsp;'
-                + '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-backdrop="static" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
+                + '<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-name="'+ data[i].name +'"><i class="fas fa-edit"></i></button>&nbsp;'
+                + '<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'"><i class="fas fa-trash"></i></button>'
                 + '</div>'
                 + '</div>'
              		+ '</figure>'
