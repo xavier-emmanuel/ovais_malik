@@ -63,10 +63,16 @@ $config['images'] = array(
 /*=================================== Backends ========================================*/
 // https://docs.ckeditor.com/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
 
+if($_SERVER["REMOTE_ADDR"] == "127.0.0.1"){
+    $link = '/uploads/admin-blogs/ckeditor/';
+} else{
+    $link = '/public/uploads/admin-blogs/ckeditor/';
+}
+
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/uploads/admin-blogs/ckeditor/',
+    'baseUrl'      => $link,
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
