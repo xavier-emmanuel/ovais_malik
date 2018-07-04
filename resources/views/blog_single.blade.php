@@ -22,7 +22,7 @@
             @endforeach
           </div>
 
-          <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/extra-small/'.$data->image : 'uploads/admin-blogs/extra-small/'.$data->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/small/'.$data->image : 'uploads/admin-blogs/small/'.$data->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/medium/'.$data->image : 'uploads/admin-blogs/medium/'.$data->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }} 1140w" sizes="100vw" alt="{{ $data->image}}" width="100%">
+          <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$data->image : 'uploads/admin-blogs/thumbnail/'.$data->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/extra-small/'.$data->image : 'uploads/admin-blogs/extra-small/'.$data->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/small/'.$data->image : 'uploads/admin-blogs/small/'.$data->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/medium/'.$data->image : 'uploads/admin-blogs/medium/'.$data->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$data->image : 'uploads/admin-blogs/original/'.$data->image) }} 1140w" sizes="100vw" alt="{{ $data->title}}" width="100%">
 
           <div class="blog-overlay">
             <h2>
@@ -58,72 +58,35 @@
         <div class="blog-content-wrapper">
           <div class="blog-content">
             <p class="text-justify">{!! $data->content !!}</p>
-
+            @if($related_post->count() > 0)
             <div class="blog-related my-4 pt-2">
               <h5>Related Posts</h5>
               <div class="blog-related__wrapper">
+                @foreach($related_post as $post)
                 <div class="blog-related__card">
                   <div class="blog-related__image">
                     <div class="blog-related__card--info">
-                      <span class="blog-related__card--category">News</span>
+                      <span class="blog-related__card--category">{{ $post->categories->name }}</span>
                     </div>
 
-                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
+                    <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$post->image : 'uploads/admin-blogs/thumbnail/'.$post->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/extra-small/'.$post->image : 'uploads/admin-blogs/extra-small/'.$post->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/small/'.$post->image : 'uploads/admin-blogs/small/'.$post->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/medium/'.$post->image : 'uploads/admin-blogs/medium/'.$post->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/admin-blogs/original/'.$post->image : 'uploads/admin-blogs/original/'.$post->image) }} 1140w" sizes="100vw" alt="{{ $post->title }}" width="100%">
 
                     <div class="box-overlay">
                       <div class="box-overlay__content">
                         <h6 class="box-overlay__title">
-                          <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
+                          <a href="/blogs/{{ $post->slug }}">{{ $post->title }}</a>
                         </h6>
                         <p class="small mb-0">Written by
-                          <a href="#">Ovais Malik</a> on June 15, 2018
+                          <a href="#">Ovais Malik</a> on {{ $post->created_at->format('F d, Y') }}
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="blog-related__card">
-                  <div class="blog-related__image">
-                    <div class="blog-related__card--info">
-                      <span class="blog-related__card--category">News</span>
-                    </div>
-
-                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
-
-                    <div class="box-overlay">
-                      <div class="box-overlay__content">
-                        <h6 class="box-overlay__title">
-                          <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
-                        </h6>
-                        <p class="small mb-0">Written by
-                          <a href="#">Ovais Malik</a> on June 15, 2018
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="blog-related__card">
-                  <div class="blog-related__image">
-                    <div class="blog-related__card--info">
-                      <span class="blog-related__card--category">News</span>
-                    </div>
-
-                    <img class="lazyload" src="https://picsum.photos/12/8/?image=27" data-src="https://picsum.photos/500/300/?image=27" alt="" width="100%">
-
-                    <div class="box-overlay">
-                      <div class="box-overlay__content">
-                        <h6 class="box-overlay__title">
-                          <a href="#">Popular Design News Of The Week: June 4, 2018 - June 10, 2018</a>
-                        </h6>
-                        <p class="small mb-0">Written by
-                          <a href="#">Ovais Malik</a> on June 15, 2018
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                @endforeach
               </div>
             </div>
+            @endif
 
             <div class="blog-comments" id="disqus_thread">
             </div>
@@ -144,51 +107,17 @@
               </div>
               <div class="latest-posts">
                 <ul>
-                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
-                    <a href="#" class="latest-post__link">
-                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
+                  @foreach($latest_post as $post)
+                  <li class="mb-3" title="{{ $post->title }}">
+                    <a href="/blogs/{{ $post->slug }}" class="latest-post__link">
+                      <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$post->image : 'uploads/admin-blogs/thumbnail/'.$post->image) }}" alt="{{ $post->title }}" width="50px" height="50px">
                       <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
-                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">{{ $post->description }}</p>
+                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; {{ $post->created_at->format('F d, Y') }}</p>
                       </div>
                     </a>
                   </li>
-                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
-                    <a href="#" class="latest-post__link">
-                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
-                      <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
-                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
-                    <a href="#" class="latest-post__link">
-                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
-                      <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
-                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
-                    <a href="#" class="latest-post__link">
-                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
-                      <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
-                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="mb-3" title="Lorem Ipsum Maalsum addasdasdasdasdas">
-                    <a href="#" class="latest-post__link">
-                      <img class="lazyload" src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/thumbnail/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" data-src="{{ asset(App::environment('production') ? '/public/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg' : '/uploads/admin-blogs/original/1530164410abstract-beautiful-bokeh-1179724.jpg') }}" alt="" width="50px" height="50px">
-                      <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">Lorem Ipsum Maalsum addasdasdasdasdas</p>
-                        <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; March 20, 2018</p>
-                      </div>
-                    </a>
-                  </li>
+                  @endforeach
                 </ul>
               </div>
             </div>
