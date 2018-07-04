@@ -97,7 +97,7 @@ class AdminBlogController extends Controller
 
 		$blog->save();
 
-		return response()->json(['success'=>'Added successfully.']);
+		return response()->json(['success'=>'Blog has been successfully added.']);
     }
 
   	public function checkBlogTitle(Request $request){
@@ -162,7 +162,7 @@ class AdminBlogController extends Controller
 
 		$blog->save();
 
-		return response()->json(['success'=>'Updated successfully.']);
+		return response()->json(['success'=>'Blog has been successfully updated.']);
 	}
 
 	public function ajaxDelete(Request $request){
@@ -170,7 +170,7 @@ class AdminBlogController extends Controller
 		$input = Input::all();
 		Blog::find($input['hdn_blog_id'])->delete();
 
-		return response()->json();
+		return response()->json(['success'=>'Blog has been successfully deleted.']);
 	}
 
 	public function uploadImage(Request $request) {

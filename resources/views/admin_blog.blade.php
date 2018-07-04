@@ -82,7 +82,7 @@
         {
             $.toast({
                 heading: 'Success',
-                text: 'Created successfully.',
+                text: 'Blog has been successfully added.',
                 position: 'top-right',
                 icon: 'success',
                 hideAfter: 3500
@@ -93,7 +93,7 @@
         {
             $.toast({
                 heading: 'Success',
-                text: 'Updated successfully.',
+                text: 'Blog has been successfully updated.',
                 position: 'top-right',
                 icon: 'success',
                 hideAfter: 3500

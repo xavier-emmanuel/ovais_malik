@@ -31,7 +31,7 @@ class AudioController extends Controller
 
 		$audio->save();
 
-		return response()->json(['success' => 'Added successfully.']);
+		return response()->json(['success' => 'Audio has been successfully added.']);
 	}
 
 	public function checkAudioTitle(Request $request){
@@ -105,7 +105,7 @@ class AudioController extends Controller
 
 		$audio->save();
 
-		return response()->json(['success'=>'Updated successfully.']);
+		return response()->json(['success'=>'Audio has been successfully updated.']);
 
 	}
 
@@ -114,7 +114,7 @@ class AudioController extends Controller
 		$input = Input::all();
 		Audio::find($input['hdn_audio_id'])->delete();
 
-		return response()->json();
+		return response()->json(['success'=>'Audio has been successfully deleted.']);
 
 	}
 
