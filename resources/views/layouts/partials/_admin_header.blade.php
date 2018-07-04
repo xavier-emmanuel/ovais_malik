@@ -44,8 +44,52 @@
           Ovais Malik
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="admin-dropdown">
-          <a href="#" class="dropdown-item"><i class="fas fa-cogs"></i>&nbsp; Settings</a>
+          <a href="#" data-target="#admin-settings" data-toggle="modal" data-backdrop="static" class="dropdown-item"><i class="fas fa-cogs"></i>&nbsp; Settings</a>
           <a href="/auth/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
         </div>
       </div>
     </header>
+
+    <div class="modal fade" id="admin-settings" tabindex="-1" role="dialog" aria-labelledby="adminSettings" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="loading-overlay" style="display: none;">
+          <div class="lds-default">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+          </div>
+        </div>
+        <div class="modal-content">
+          <form id="frm-admin-settings" method="post">
+            {{ csrf_field() }}
+            <div class="modal-header">
+              <h5 class="modal-title">Account Settings</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="">Username:&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="Feel free to change your username whenever you like. Just type in your desired username in the field below."></i></label>
+                <input type="text" name="" id="" class="form-control" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="">New Password:&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="Type in your desired password in the field below to change your account password."></i></label>
+                <input type="password" name="" id="" class="form-control" autocomplete="off">
+              </div>
+              <div class="form-group">
+                <label for="">Re-type Password:</label>
+                <input type="password" name="" id="" class="form-control" autocomplete="off">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                <i class="fas fa-times"></i>&nbsp; No</button>
+              <button type="submit" class="btn btn-info" id="btn-delete-logo">
+                <i class="fas fa-check"></i>&nbsp; Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>

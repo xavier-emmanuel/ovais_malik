@@ -67,10 +67,16 @@
 }
 
 .admin-aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   grid-area: aside;
+  width: 230px;
   min-height: 100%;
   box-shadow: 1px 0 5px 0 rgba(204, 204, 204, 0.75);
   z-index: 10;
+  transition: width 0.3s ease-in;
 
   .admin-logo {
     padding: 8px 0;

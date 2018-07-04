@@ -60,7 +60,7 @@ class PagesController extends Controller
         $tagsArray = explode(',', $tags);
         $latest_post = Blog::orderBy('created_at','ASC')->take(8)->get();
         $related_post = Blog::where('category_id', $blog->category_id)->take(6)->skip(1)->get();
-        return view('blog_single')->with(array('page' => $slug, 'data' => $blog, 'tags' => $tagsArray, 'latest_post' => $latest_post, 'related_post' => $related_post));
+        return view('blog_single')->with(array('page' => $blog->title, 'data' => $blog, 'tags' => $tagsArray, 'latest_post' => $latest_post, 'related_post' => $related_post));
     }
 
     public function adminVideo()

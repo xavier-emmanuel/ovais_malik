@@ -136,7 +136,7 @@ a:hover {
   color: #9f111b !important;
 }
 
-.form-info {
+label .form-info {
   cursor: pointer;
 }
 
@@ -1711,6 +1711,16 @@ figure {
   opacity: 0.9;
 }
 
+.blog-content p img {
+  width: 100% !important;
+  height: auto !important;
+  position: relative;
+}
+
+.blog-content p img:hover {
+  opacity: 1 !important;
+}
+
 .blog-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1881,11 +1891,18 @@ label > span {
 }
 
 .admin-aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   grid-area: aside;
+  width: 230px;
   min-height: 100%;
   -webkit-box-shadow: 1px 0 5px 0 rgba(204, 204, 204, 0.75);
           box-shadow: 1px 0 5px 0 rgba(204, 204, 204, 0.75);
   z-index: 10;
+  -webkit-transition: width 0.3s ease-in;
+  transition: width 0.3s ease-in;
 }
 
 .admin-aside .admin-logo {

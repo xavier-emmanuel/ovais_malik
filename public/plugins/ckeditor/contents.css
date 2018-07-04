@@ -2,26 +2,12 @@
 Copyright (c) 2003-2018, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
 */
-
-body
-{
-	/* Font */
-	/* Emoji fonts are added to visualise them nicely in Internet Explorer. */
-	font-family: sans-serif, Arial, Verdana, "Trebuchet MS", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	font-size: 12px;
-
-	/* Text color */
-	color: #333;
-
-	/* Remove the background color to make it transparent. */
-	background-color: #fff;
-
-	margin: 20px;
-}
-
 .cke_editable
 {
-	font-size: 13px;
+	font-family: inherit;
+	font-size: 16px;
+	font-family: "Lato", "Raleway", Arial, sans-serif;
+  color: #333;
 	line-height: 1.6;
 
 	/* Fix for missing scrollbars with RTL texts. (#10488) */
@@ -30,12 +16,11 @@ body
 
 blockquote
 {
-	font-style: italic;
-	font-family: Georgia, Times, "Times New Roman", serif;
-	padding: 2px 0;
-	border-style: solid;
-	border-color: #ccc;
-	border-width: 0;
+	font-family: "Roboto", Arial, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2rem;
+  font-style: italic;
 }
 
 .cke_contents_ltr blockquote

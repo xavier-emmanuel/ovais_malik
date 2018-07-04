@@ -57,7 +57,7 @@
 
         <div class="blog-content-wrapper">
           <div class="blog-content">
-            <p class="text-justify">{!! $data->content !!}</p>
+            {!! $data->content !!}
             @if($related_post->count() > 0)
             <div class="blog-related my-4 pt-2">
               <h5>Related Posts</h5>

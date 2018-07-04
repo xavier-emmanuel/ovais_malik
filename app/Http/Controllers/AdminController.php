@@ -8,7 +8,6 @@ use App\Blog;
 
 class AdminController extends Controller
 {
-    //
   public function adminBlog() {
 		return view('admin_blog')->with(array('page' => 'Blog'));
 	}

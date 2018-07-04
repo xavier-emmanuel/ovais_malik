@@ -41,7 +41,7 @@ Route::group( [ 'middleware' => 'auth' ], function()
 	Route::post('/admin-logo/update', 'AdminLogoController@ajaxUpdate');
 	Route::post('/admin-logo/create', 'AdminLogoController@ajaxStore');
 	Route::get('/admin-logo/show', 'AdminLogoController@ajaxShow');
-	
+
 	Route::post('/admin-gallery/delete', 'AdminImageController@ajaxDelete');
 	Route::post('/admin-gallery/update', 'AdminImageController@ajaxUpdate');
 	Route::post('/admin-gallery/create', 'AdminImageController@ajaxStore');

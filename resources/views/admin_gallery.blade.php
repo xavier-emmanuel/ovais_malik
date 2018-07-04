@@ -57,12 +57,7 @@
             </button>
 
             <div class="container-fluid">
-              <!-- <div class="row preview-image">
-
-              </div> -->
-              <div class="preview-image">
-              
-              </div>
+              <div class="preview-image"></div>
             </div>
           </div>
           <div class="modal-footer">

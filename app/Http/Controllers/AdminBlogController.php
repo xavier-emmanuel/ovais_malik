@@ -17,7 +17,7 @@ class AdminBlogController extends Controller
 
 		foreach($blog as $row) {
 			$id =  $row->id;
-			$title = $row->title;
+			$title = '<a href="/blogs/'.$row->slug.'" target="_blank">'.$row->title.'</a>';
 			$created_at = $row->created_at->format('F d, Y h:i:s A');
 			
 			if (empty($row->updated_at)) {

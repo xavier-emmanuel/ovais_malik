@@ -15,8 +15,10 @@ a {
   }
 }
 
-.form-info {
-  cursor: pointer;
+label {
+  .form-info {
+    cursor: pointer;
+  }
 }
 
 @include heading-underline;

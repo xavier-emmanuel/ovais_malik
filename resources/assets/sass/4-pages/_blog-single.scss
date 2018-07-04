@@ -335,3 +335,16 @@
     }
   }
 }
+
+.blog-content {
+  p {
+    img {
+      width: 100% !important;
+      height: auto !important;
+      position: relative;
+      &:hover {
+        opacity: 1 !important;
+      }
+    }
+  }
+}

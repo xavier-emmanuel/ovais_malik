@@ -27,8 +27,8 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/plugins/fancybox/jquery.fancybox.min.js' : '/plugins/fancybox/jquery.fancybox.min.js') }}"></script>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/masonry/masonry.pkgd.min.js' : '/plugins/masonry/masonry.pkgd.min.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/masonry/imagesloaded.pkgd.min.js' : '/plugins/masonry/imagesloaded.pkgd.min.js') }}"></script>
   <script>
     var grid = document.querySelector('.grid');
     var msnry;
