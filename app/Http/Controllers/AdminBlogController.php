@@ -170,4 +170,23 @@ class AdminBlogController extends Controller
 
 		return response()->json();
 	}
+
+	public function uploadImage(Request $request) {
+		$CKEditor = Input::get('CKEditor');
+	    $funcNum = Input::get('CKEditorFuncNum');
+	    $message = $url = '';
+	    if (Input::hasFile('upload')) {
+	        $file = Input::file('upload');
+	        if ($file->isValid()) {
+	            $filename = time().$file->getClientOriginalName();
+	            $file->move(public_path().'/uploads/admin-blogs/ckeditor/images/', $filename);
+	            $url = url('/uploads/admin-blogs/ckeditor/images/' . $filename);
+	        } else {
+	            $message = 'An error occured while uploading the file.';
+	        }
+	    } else {
+	        $message = 'No file uploaded.';
+	    }
+	    return '<script>window.parent.CKEDITOR.tools.callFunction('.$funcNum.', "'.$url.'", "'.$message.'")</script>';
+	}
 }

@@ -96,7 +96,10 @@
   <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/jquery.validate.min.js' : '/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_blog.js' : '/js/pages/admin_blog.js') }}"></script>
   <script>
-    CKEDITOR.replace('blog_content');
+    CKEDITOR.replace('blog_content', {
+      filebrowserUploadUrl: '{{ route('upload',['_token' => csrf_token() ]) }}',
+      filebrowserBrowseUrl: '{{ asset(App::environment('production') ? '/public/plugins/ckfinder/ckfinder.html' : '/plugins/ckfinder/ckfinder.html') }}'
+    });
 
     $(document).ready(function () {
       $('#edit-blog-tags').tagsinput();

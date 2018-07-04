@@ -28,6 +28,7 @@ Route::group( [ 'middleware' => 'auth' ], function()
 	Route::get('/admin-blog/edit/{slug}', 'AdminController@editBlog')->name('edit-blog');
 	Route::post('/admin-blog/edit/update', 'AdminBlogController@ajaxUpdate');
 	Route::post('/admin-blog/delete', 'AdminBlogController@ajaxDelete');
+	Route::post('/upload_image', 'AdminBlogController@uploadImage')->name('upload');
 
 	Route::get('/admin-category', 'AdminController@adminCategory');
 	Route::get('/admin-category/show', 'CategoryController@ajaxShow');
