@@ -87,6 +87,7 @@ class AdminBlogController extends Controller
 		$blog = new Blog();
 
 		$blog->title = $input['blog_title'];
+		$blog->description = $input['blog_description'];
 		$blog->image = $name;
 		$blog->content = $input['blog_content'];
 		$blog->category_id = $input['blog_category'];
@@ -152,6 +153,7 @@ class AdminBlogController extends Controller
 		}
 
 		$blog->title = $input['blog_title'];
+		$blog->description = $input['blog_description'];
 		$blog->image = $image;
 		$blog->content = $input['blog_content'];
 		$blog->category_id = $input['blog_category'];

@@ -45,6 +45,7 @@ $(document).ready(function () {
                     type:"get"
                }
             },
+            blog_description: "required",
             blog_featured_image: "required",
             blog_category: "required",
             blog_content: {
@@ -59,6 +60,7 @@ $(document).ready(function () {
                 required: "The title field is required.",
                 remote: "This title already exists."
             },
+            blog_description: "The short description field is required.",
             blog_featured_image: "The featured image field is required.",
             blog_category: "The category field is required.",
             blog_content: {
@@ -100,6 +102,7 @@ $(document).ready(function () {
         debug: false,
         rules: {
             blog_title: "required",
+            blog_description: "required",
             blog_category: "required",
             blog_content: {
                 required: function() {
@@ -112,6 +115,7 @@ $(document).ready(function () {
             blog_title: {
                 required: "The title field is required."
             },
+            blog_description: "The short description field is required.",
             blog_category: "The category field is required.",
             blog_content: {
                 required: "Please enter Text",

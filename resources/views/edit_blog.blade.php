@@ -32,6 +32,14 @@
           </div>
 
           <div class="form-group">
+            <label for="add-blog-description">
+              Short Description:
+              <span>*</span>
+            </label>
+            <textarea class="form-control" name="blog_description" id="edit-blog-description" cols="30" rows="3" required>{{ $blogs->description }}</textarea>
+          </div>
+
+          <div class="form-group">
             <label for="edit-blog-category">
               Category:
               <span>*</span>

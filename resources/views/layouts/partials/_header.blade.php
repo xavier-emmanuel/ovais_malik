@@ -30,7 +30,7 @@
   @if(Request::is('blogs/*'))
     <meta property="og:type"            content="article" />
     <meta property="og:title"           content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
-    <meta property="og:description"     content="{!! $data->content !!}" />
+    <meta property="og:description"     content="{!! $data->description !!}" />
     <meta property="og:image"           content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
     <meta property="og:image:width"     content="525" />
     <meta property="og:image:height"    content="315" />
@@ -39,7 +39,7 @@
     <meta name="twitter:site"           content="@OvaisMalikVO">
     <meta name="twitter:creator"        content="@OvaisMalikVO" />
     <meta name="twitter:title"          content="Ovais Malik Voiceover | Multilingual Voice Talent - {{ $data->title }}" />
-    <meta name="twitter:description"    content="{!! $data->content !!}" />
+    <meta name="twitter:description"    content="{!! $data->description !!}" />
     <meta name="twitter:image"          content="{{ url('/public/uploads/admin-blogs/thumbnail/'.$data->image) }}" />
   @else
     <meta property="og:type"            content="website" />

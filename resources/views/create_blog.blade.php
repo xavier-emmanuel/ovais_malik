@@ -28,6 +28,14 @@
             <input type="text" class="form-control" id="add-blog-title" name="blog_title" required></div>
 
           <div class="form-group">
+            <label for="add-blog-description">
+              Short Description:
+              <span>*</span>
+            </label>
+            <textarea class="form-control" name="blog_description" id="blog-description" cols="30" rows="3" required></textarea>
+          </div>
+
+          <div class="form-group">
             <label for="add-blog-category">
               Category:
               <span>*</span>
