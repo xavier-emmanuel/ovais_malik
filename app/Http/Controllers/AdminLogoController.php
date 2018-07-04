@@ -56,7 +56,7 @@ class AdminLogoController extends Controller
   	$logo->name = $request->add_client_logo_name;
 		$logo->save();
 
-		return response()->json(['success'=>'Client logo successfully added.']);
+		return response()->json(['success'=>'Client logo has been successfully added.']);
   }
 
   public function ajaxUpdate(Request $request) {
@@ -100,13 +100,13 @@ class AdminLogoController extends Controller
   	$logo->name = $request->edit_client_logo_name;
 		$logo->save();
 
-		return response()->json(['success'=>'Client logo successfully updated.']);
+		return response()->json(['success'=>'Client logo has been successfully updated.']);
   }
 
   public function ajaxDelete(Request $request) {
   	$logo = Logo::find($request->delete_logo_id);
 
 		$logo->delete();
-		return response()->json(['success'=>'Logo successfully removed.']);
+		return response()->json(['success'=>'Client logo has been successfully deleted.']);
   }
 }

@@ -56,7 +56,7 @@ class CategoryController extends Controller
 
 		$category->save();
 
-		return response()->json(['success' => 'Added successfully.']);
+		return response()->json(['success' => 'Category has been successfully added.']);
 	}
 
 	public function checkCategoryName(Request $request){
@@ -78,7 +78,7 @@ class CategoryController extends Controller
 
 		$category->save();
 
-		return response()->json(['success'=>'Updated successfully.']);
+		return response()->json(['success'=>'Category has been successfully updated.']);
 
 	}
 
@@ -87,7 +87,7 @@ class CategoryController extends Controller
 		$input = Input::all();
 		Category::find($input['hdn_category_id'])->delete();
 
-		return response()->json();
+		return response()->json(['success'=>'Category has been successfully deleted.']);
 
 	}
 }

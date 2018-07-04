@@ -67,7 +67,7 @@ class AdminImageController extends Controller
 
 						$image->save();
         }
-		return response()->json(['success'=>'Image/s successfully added.']);
+		return response()->json(['success'=>'Image/s has been successfully added.']);
   }
 
   public function ajaxUpdate(Request $request) {
@@ -110,13 +110,13 @@ class AdminImageController extends Controller
 		$image->caption = $request->edit_caption;
 		$image->save();
 
-		return response()->json(['success'=>'Image successfully updated.']);
+		return response()->json(['success'=>'Image has been successfully updated.']);
   }
 
   public function ajaxDelete(Request $request) {
   	$image = Gallery::find($request->delete_image_id);
 
 		$image->delete();
-		return response()->json(['success'=>'Image successfully removed.']);
+		return response()->json(['success'=>'Image has been successfully deleted.']);
   }
 }

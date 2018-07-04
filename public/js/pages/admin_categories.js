@@ -155,7 +155,7 @@ $(document).ready(function () {
 
                 $.toast({
                     heading: 'Success',
-                    text: 'Deleted successfully.',
+                    text: data.success,
                     position: 'top-right',
                     icon: 'success',
                     hideAfter: 3500
