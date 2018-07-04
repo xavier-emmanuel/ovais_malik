@@ -1246,6 +1246,41 @@ blockquote {
   }
 }
 
+.grid-sizer,
+.grid-item {
+  width: calc(25% - 10px);
+}
+
+@media only screen and (max-width: 991px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(33.33% - 10px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .grid-sizer,
+  .grid-item {
+    width: calc(50% - 10px);
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  margin-bottom: 10px;
+}
+
 .videos .video__wrapper {
   width: 100%;
   display: grid;
@@ -1701,7 +1736,7 @@ blockquote {
   width: 296px;
   height: auto;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 3px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }

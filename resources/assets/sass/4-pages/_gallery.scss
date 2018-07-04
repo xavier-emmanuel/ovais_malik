@@ -1,3 +1,29 @@
 .gallery {
   @extend %background-default;
 }
+
+.grid-sizer,
+.grid-item {
+  width: calc(25% - 10px);
+
+  @media only screen and (max-width: 991px) {
+    width: calc(33.33% - 10px);
+  }
+
+  @media only screen and (max-width: 767px) {
+    width: calc(50% - 10px);
+  }
+
+  @media only screen and (max-width: 425px) {
+    width: 100%;
+  }
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+figure {
+  margin-bottom: 10px;
+}

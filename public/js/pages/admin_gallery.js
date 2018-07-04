@@ -109,19 +109,19 @@ function showImage() {
 					caption = data[i].caption;
 				}
 				$('#gallery-images').append('<div class="gallery-images">'
-																			+ '<figure class="d-flex justify-content-center align-items-center">'
-																			+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ data[i].caption +'" width="100%">'
-																			+ '<div class="overlay">'
-																			+ '<div class="gallery-title">'
-																			+ '<p class="text-center">'+ caption +'</p>'
-																			+ '</div>'
-																			+ '<div class="gallery-action">'
-																			+ '<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-caption="'+ data[i].caption +'"><i class="fas fa-edit"></i></button>&nbsp;'
-																			+ '<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].caption +'"><i class="fas fa-trash"></i></button>'
-																			+ '</div>'
-																			+ '</div>'
-																			+ '</figure>'
-																			+ '</div>');
+						+ '<figure class="d-flex justify-content-center align-items-center">'
+						+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ data[i].caption +'" width="100%">'
+						+ '<div class="overlay">'
+						+ '<div class="gallery-title">'
+						+ '<p class="text-center">'+ caption +'</p>'
+						+ '</div>'
+						+ '<div class="gallery-action">'
+						+ '<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].image +'" data-caption="'+ data[i].caption +'"><i class="fas fa-edit"></i></button>&nbsp;'
+						+ '<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="'+ data[i].id +'" data-image="'+ data[i].caption +'"><i class="fas fa-trash"></i></button>'
+						+ '</div>'
+						+ '</div>'
+						+ '</figure>'
+						+ '</div>');
 			}
 		}
 	})

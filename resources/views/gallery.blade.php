@@ -9,15 +9,16 @@
     <div class="container">
       <h1 class="text-center">Gallery</h1>
       <div class="headul"></div>
-      <div class="d-flex flex-wrap justify-content-center">
+      <div class="grid m-auto">
         @foreach($images as $image)
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-          <figure>
-            <a data-fancybox="gallery" href="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/original/'.$image->image : '/uploads/gallery/images/original/'.$image->image) }}" data-caption="{{ $image->caption }}">
-              <img src="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/medium/'.$image->image : '/uploads/gallery/images/medium/'.$image->image) }}" alt="" width="100%">
-            </a>
-          </figure>
-        </div>
+          <div class="grid-sizer"></div>
+          <div class="grid-item">
+            <figure>
+              <a data-fancybox="gallery" href="{{ asset(App::environment('production') ? '/public/uploads/gallery/images/original/'.$image->image : '/uploads/gallery/images/original/'.$image->image) }}" data-caption="{{ $image->caption }}">
+              <img class="lazyload" src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$image->image : 'uploads/gallery/images/thumbnail/'.$image->image) }}" data-srcset="{{ asset(App::environment('production') ? 'public/uploads/gallery/images/extra-small/'.$image->image : 'uploads/gallery/images/extra-small/'.$image->image) }} 250w, {{ asset(App::environment('production') ? 'public/uploads/gallery/images/small/'.$image->image : 'uploads/gallery/images/small/'.$image->image) }} 540w, {{ asset(App::environment('production') ? 'public/uploads/gallery/images/medium/'.$image->image : 'uploads/gallery/images/medium/'.$image->image) }} 720w, {{ asset(App::environment('production') ? 'public/uploads/gallery/images/original/'.$image->image : 'uploads/gallery/images/original/'.$image->image) }} 1140w" sizes="100vw" alt="{{ $image->caption}}" width="100%">
+              </a>
+            </figure>
+          </div>
         @endforeach
       </div>
     </div>
@@ -26,7 +27,22 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/plugins/fancybox/jquery.fancybox.min.js' : '/plugins/fancybox/jquery.fancybox.min.js') }}"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
   <script>
+    var grid = document.querySelector('.grid');
+    var msnry;
+
+    imagesLoaded( grid, function() {
+      msnry = new Masonry( grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 10,
+        transitionDuration: '0.8s'
+      });
+    });
+
     sr.reveal('.headul', {
       origin: 'left',
       distance: '3vw',
