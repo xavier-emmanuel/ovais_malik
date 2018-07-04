@@ -100,7 +100,7 @@ class AdminVideoController extends Controller
 		$video->updated_at = null;
 		$video->save();
 
-		return response()->json($video);
+		return response()->json(['success'=>'Video has been successfully added.']);
 	}
 
 	public function ajaxUpdate(Request $request) {
@@ -147,14 +147,14 @@ class AdminVideoController extends Controller
     $video->published_at = $dateObject->format('F d, Y');
 		$video->save();
 
-		return response()->json($video);
+		return response()->json(['success'=>'Video has been successfully updated.']);
 	}
 
 	public function ajaxDelete(Request $request) {
 		$video = Video::find($request->delete_video_id);
 
 		$video->delete();
-    return response()->json($video);
+    return response()->json(['success'=>'Video has been successfully deleted.']);
 	}
 
 	public function addCheckExist(Request $request) {
