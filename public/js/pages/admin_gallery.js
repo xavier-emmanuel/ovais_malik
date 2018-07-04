@@ -84,6 +84,10 @@ $(document).ready(function() {
     $('.logo-preview-edit').show();
   });
 
+  $(document).on('click', '.remove-icon', function(){
+  	$(this).closest('.image-displayed').remove();
+  })
+
 	showImage();
 	uploadImage();
 	editImage();
@@ -130,53 +134,58 @@ function showImage() {
 function uploadImage() {
 	$('#frm-add-gallery').on('submit').bind('submit', function(e) {
 		e.preventDefault();
-		$('#btn-upload').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Uploading');
-		var data = new FormData($("#frm-add-gallery")[0]);
+		var selected_image = $('.image-displayed').length;
+		if(selected_image == 0) {
 
-		$.ajax({
-			url: '/admin-gallery/create',
-			type: 'POST',
-			data: data,
-			dataType: 'json',
-			processData: false,
-			contentType: false,
-			success: function (data) {
-				$('#frm-add-gallery')[0].reset();
-				$('#add-gallery').modal('hide');
-				$('.modal-backdrop').hide();
-				$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
-				$('.gallery-images').remove();
-				showImage();
+		} else {
+			$('#btn-upload').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Uploading');
+			var data = new FormData($("#frm-add-gallery")[0]);
 
-				// toast popup js
-				$.toast({
-					heading: 'Success!',
-					text: data.success,
-					position: 'top-right',
-					icon: 'success',
-					hideAfter: 3500,
-					stack: 6
-				});
-			}, error: function (xhr, error, ajaxOptions, thrownError) {
-				// alert(xhr.responseText);
-				$('#frm-add-gallery')[0].reset();
-				$('#add-gallery').modal('hide');
-				$('.modal-backdrop').hide();
-				$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
-				$('.gallery-images').remove();
-				showImage();
-				
-				// toast popup js
-				$.toast({
-					heading: 'Error!',
-					text: 'An error has occured while uploding image. Image size is too big or maybe invalid. Please try again',
-					position: 'top-right',
-					icon: 'error',
-					hideAfter: 3500,
-					stack: 6
-				});
-			}
-		})
+			$.ajax({
+				url: '/admin-gallery/create',
+				type: 'POST',
+				data: data,
+				dataType: 'json',
+				processData: false,
+				contentType: false,
+				success: function (data) {
+					$('#frm-add-gallery')[0].reset();
+					$('#add-gallery').modal('hide');
+					$('.modal-backdrop').hide();
+					$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
+					$('.gallery-images').remove();
+					showImage();
+
+					// toast popup js
+					$.toast({
+						heading: 'Success!',
+						text: data.success,
+						position: 'top-right',
+						icon: 'success',
+						hideAfter: 3500,
+						stack: 6
+					});
+				}, error: function (xhr, error, ajaxOptions, thrownError) {
+					// alert(xhr.responseText);
+					$('#frm-add-gallery')[0].reset();
+					$('#add-gallery').modal('hide');
+					$('.modal-backdrop').hide();
+					$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
+					$('.gallery-images').remove();
+					showImage();
+					
+					// toast popup js
+					$.toast({
+						heading: 'Error!',
+						text: 'An error has occured while uploding image. Image size is too big or maybe invalid. Please try again',
+						position: 'top-right',
+						icon: 'error',
+						hideAfter: 3500,
+						stack: 6
+					});
+				}
+			})
+		}
 	})
 }
 
