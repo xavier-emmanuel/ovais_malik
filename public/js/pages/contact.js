@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $("#frm-contact").validate({
         ignore: [],
         debug: false,
@@ -9,9 +8,9 @@ $(document).ready(function () {
             message: "required",
         },
         messages: {
-            contact_name: "The name field is required.",
-            contact_email: "The email field is required.",
-            message: "The message field is required.",
+            contact_name: "Required field cannot be left blank.",
+            contact_email: "Required field cannot be left blank.",
+            message: "Required field cannot be left blank.",
         },
         submitHandler: function (frm_contact, e) {
             event.preventDefault();
@@ -20,7 +19,7 @@ $(document).ready(function () {
 
             $('#frm-contact input').prop('disabled', true);
             $('#frm-contact .btn').prop('disabled', true);
-            $('.btn-send').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Sending');
+            $('.loading-overlay').css('display', 'block');
 
             $.ajax({
                 url: '/contact/send',
@@ -35,7 +34,6 @@ $(document).ready(function () {
                     $('.loading-overlay').css('display', 'none');
 
                     $('#frm-contact').trigger('reset');
-                    $('.btn-send').html('<i class="fas fa-paper-plane"></i>&nbsp; Send');
 
                     $.toast({
                         heading: 'Success',
@@ -51,5 +49,4 @@ $(document).ready(function () {
             });
         }
     });
-
 });

@@ -5,9 +5,15 @@
   <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.css' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.css') }}">
   <style>
     .error {
-      color: red !important;
-      border-color: red !important;
+      color: #b90504;
+      border-color: #b90504;
     }
+
+    label.error {
+      font-size: 80%;
+      font-weight: 400;
+    }
+
     .category-name {
       color: #495057 !important;
     }

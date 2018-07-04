@@ -42,6 +42,14 @@
   <div class="modal fade" id="add-gallery" tabindex="-1" role="dialog" aria-labelledby="addGallery" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
+        <div class="loading-overlay" style="display: none;">
+          <div class="lds-default">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+          </div>
+        </div>
         <form id="frm-add-gallery" method="post" enctype="multipart/form-data" name="frm_add_gallery">
           {{ csrf_field() }}
           <div class="modal-header">
@@ -75,6 +83,14 @@
   <div class="modal fade" id="edit-gallery" tabindex="-1" role="dialog" aria-labelledby="editGallery" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <div class="loading-overlay" style="display: none;">
+          <div class="lds-default">
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+            <div></div><div></div><div></div>
+          </div>
+        </div>
         <form id="frm-edit-gallery" name="frm_edit_gallery" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
           <div class="modal-header">
@@ -114,6 +130,14 @@
   <!-- Modal Delete Gallery -->
   <div class="modal fade" id="delete-gallery" tabindex="-1" role="dialog" aria-labelledby="deleteGallery" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-delete-gallery" method="post" name="frm_delete_gallery">
           {{ csrf_field() }}
@@ -143,6 +167,14 @@
   <!-- Modal Add Client Logo -->
   <div class="modal fade" id="add-client-logo" tabindex="-1" role="dialog" aria-labelledby="addClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-add-client-logo" name="frm_add_client_logo" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
@@ -184,6 +216,14 @@
   <!-- Modal Edit Client Logo -->
   <div class="modal fade" id="edit-client-logo" tabindex="-1" role="dialog" aria-labelledby="editClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-edit-client-logo" name="frm_edit_client_logo" method="post" enctype="multipart/form-data">
           {{ csrf_field() }}
@@ -227,6 +267,14 @@
   <!-- Modal Delete Client Logo -->
   <div class="modal fade" id="delete-client-logo" tabindex="-1" role="dialog" aria-labelledby="deleteClientLogo" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <div class="loading-overlay" style="display: none;">
+        <div class="lds-default">
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+          <div></div><div></div><div></div>
+        </div>
+      </div>
       <div class="modal-content">
         <form id="frm-delete-client-logo" method="post" name="frm_delete_client_logo">
           {{ csrf_field() }}
@@ -255,5 +303,5 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
 @endsection

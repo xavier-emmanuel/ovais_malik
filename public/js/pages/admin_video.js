@@ -115,7 +115,8 @@ function editVideo() {
 				remote: {
 					url: "/admin-video/update-check",
 					type: "GET"
-				}
+				},
+				youtubelink: true
 			}
 		},
 		messages: {
@@ -172,7 +173,7 @@ function deleteVideo() {
 
 		$('#delete-video-id').val(id);
 		$('#video-link').text(link);
-	})
+	});
 
 	$('#frm-delete-video').on('submit').bind('submit', function (e) {
 		e.preventDefault();

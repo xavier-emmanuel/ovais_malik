@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $('#tbl-audio').DataTable({
         "ajax": {
             url: "/admin-audio/show",
@@ -11,14 +10,12 @@ $(document).ready(function () {
     $('#edit-audio-prewiew').hide();
 
     function readUrlPreview(input) {
-
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
                 $("#frm-add-audio").find('#audio-preview').attr('src', e.target.result);
-            }
-
+            };
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -30,14 +27,12 @@ $(document).ready(function () {
     });
 
     function readUrlEdit(input) {
-
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function (e) {
                 $("#frm-edit-audio").find('#audio-preview').attr('src', e.target.result);
-            }
-
+            };
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -63,10 +58,10 @@ $(document).ready(function () {
         },
         messages: {
             add_audio_title: {
-                required: "The title field is required.",
-                remote: "This title already exists."
+                required: "Required field cannot be left blank.",
+                remote: "This title already exists. Try different title."
             },
-            add_audio: "The audio field is required."
+            add_audio: "Required field cannot be left blank."
         },
         submitHandler: function (frm_add_audio, e) {
             event.preventDefault();
@@ -117,7 +112,7 @@ $(document).ready(function () {
         },
         messages: {
             edit_audio_title: {
-                required: "The title field is required."
+                required: "Required field cannot be left blank."
             }
         },
         submitHandler: function (frm_edit_blog, e) {
@@ -156,7 +151,7 @@ $(document).ready(function () {
                 }
             });
         }
-    })
+    });
 
     $("#frm-delete-audio").unbind('submit').on('submit', function (event) {
         event.preventDefault();
@@ -218,5 +213,4 @@ $(document).ready(function () {
         $('#frm-delete-audio').find('#hdn-audio-id').val(id);
         $('#frm-delete-audio').find('#audio-title').html(title);
     });
-
 });

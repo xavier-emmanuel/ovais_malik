@@ -1,14 +1,11 @@
 $(document).ready(function () {
-
     function readUrlPreview(input) {
-
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function(e) {
                 $("#frm-create-blog").find('#image-preview').attr('src', e.target.result);
-            }
-
+            };
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -18,14 +15,12 @@ $(document).ready(function () {
     });
 
     function readUrlEdit(input) {
-
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
             reader.onload = function(e) {
                 $("#frm-edit-blog").find('#image-preview').attr('src', e.target.result);
-            }
-
+            };
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -39,13 +34,19 @@ $(document).ready(function () {
         debug: false,
         rules: {
             blog_title: {
-                required:true,
-                remote:{
+                required: true,
+                minlength: 8,
+                maxlength: 35,
+                remote: {
                     url:"/check-blog-title",
                     type:"get"
                }
             },
-            blog_description: "required",
+            blog_description: {
+                required: true,
+                minlength: 10,
+                maxlength: 80
+            },
             blog_featured_image: "required",
             blog_category: "required",
             blog_content: {
@@ -57,15 +58,21 @@ $(document).ready(function () {
         },
         messages: {
             blog_title: {
-                required: "The title field is required.",
-                remote: "This title already exists."
+                required: "Required field cannot be left blank.",
+                remote: "This title already exists. Try different title.",
+                minlength: "Please enter at least 8 characters.",
+                maxlength: "Please enter no more than 35 characters."
             },
-            blog_description: "The short description field is required.",
-            blog_featured_image: "The featured image field is required.",
-            blog_category: "The category field is required.",
+            blog_description: {
+                required: "Required field cannot be left blank.",
+                minlength: "Please enter at least 10 characters.",
+                maxlength: "Please enter no more than 80 characters."
+            },
+            blog_featured_image: "Required field cannot be left blank.",
+            blog_category: "Please select category.",
             blog_content: {
-                required: "Please enter Text",
-                minlength: "Please enter 10 characters"
+                required: "Required field cannot be left blank.",
+                minlength: "Please enter at least 10 characters."
             }
         },
         submitHandler: function (frm_store_blog, e) {
@@ -73,8 +80,6 @@ $(document).ready(function () {
 
             var data = new FormData($("#frm-create-blog")[0]);
 
-            $('#frm-create-blog input').prop('disabled', true);
-            $('#frm-create-blog .btn').prop('disabled', true);
             $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
 
             $.ajax({
@@ -101,8 +106,16 @@ $(document).ready(function () {
         ignore: [],
         debug: false,
         rules: {
-            blog_title: "required",
-            blog_description: "required",
+            blog_title: {
+                required: true,
+                minlength: 8,
+                maxlength: 35
+            },
+            blog_description: {
+                required: true,
+                minlength: 10,
+                maxlength: 80
+            },
             blog_category: "required",
             blog_content: {
                 required: function() {
@@ -113,13 +126,20 @@ $(document).ready(function () {
         },
         messages: {
             blog_title: {
-                required: "The title field is required."
+                required: "Required field cannot be left blank.",
+                remote: "This title already exists. Try different title.",
+                minlength: "Please enter at least 8 characters.",
+                maxlength: "Please enter no more than 35 characters."
             },
-            blog_description: "The short description field is required.",
-            blog_category: "The category field is required.",
+            blog_description: {
+                required: "Required field cannot be left blank.",
+                minlength: "Please enter at least 10 characters.",
+                maxlength: "Please enter no more than 80 characters."
+            },
+            blog_category: "Please select category.",
             blog_content: {
-                required: "Please enter Text",
-                minlength: "Please enter 10 characters"
+                required: "Required field cannot be left blank.",
+                minlength: "Please enter at least 10 characters."
             }
         },
         submitHandler: function (frm_update_blog, e) {
@@ -127,9 +147,7 @@ $(document).ready(function () {
 
             var data = new FormData($("#frm-edit-blog")[0]);
 
-            $('#frm-edit-blog input').prop('disabled', true);
-            $('#frm-edit-blog .btn').prop('disabled', true);
-            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
+            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
 
             $.ajax({
                 url: '/admin-blog/edit/update',
@@ -142,13 +160,11 @@ $(document).ready(function () {
                     localStorage.setItem("Update",data.OperationStatus);
                     setTimeout(function(){
                         window.location.href = '/admin-blog';
-                    },2000);
+                    }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
                     if(xhr.status == 500){
-                        $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Publish');
-                        $('#frm-edit-blog input').prop('disabled', false);
-                        $('#frm-edit-blog .btn').prop('disabled', false);
+                        $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Update');
                         $('#edit-blog-title').addClass('error');
                         $('#div').append('<label id="edit-blog-title-error" class="error" for="edit-blog-title">The title already exists.</label>');
                     }
@@ -156,5 +172,4 @@ $(document).ready(function () {
             });
         }
     });
-
 });

@@ -5,7 +5,7 @@ var frm_edit_logo;
 $(document).ready(function() {
 	$('#btn-upload-photos').on('click', function(){
 		$('div.image-displayed').remove();
-	})
+	});
 
 	$('.logo-preview').hide();
 
@@ -24,24 +24,24 @@ $(document).ready(function() {
                   + '<img src="'+ event.target.result +'" alt="" width="100%">'
                   + '<textarea name="caption[]" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>'
                 	+ '</div>')).appendTo(placeToInsertImagePreview);
-              }
-
+              };
               reader.readAsDataURL(input.files[i]);
           }
       }
-    };
+		};
+
     $('#add-photos').on('change', function() {
         imagesPreview(this, 'div.preview-image');
     });
 	});
+
 	function readImageUrlEditPreview(input) {
 	  if (input.files && input.files[0]) {
       var reader = new FileReader();
 
       reader.onload = function(e) {
         $("#frm-edit-gallery").find('#image-show').attr('src', e.target.result);
-      }
-
+      };
       reader.readAsDataURL(input.files[0]);
     }
   }
@@ -73,8 +73,7 @@ $(document).ready(function() {
 
       reader.onload = function(e) {
         $("#frm-edit-client-logo").find('#logo-show-edit').attr('src', e.target.result);
-      }
-
+      };
       reader.readAsDataURL(input.files[0]);
     }
   }
@@ -85,8 +84,10 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.remove-icon', function(){
-  	$(this).closest('.image-displayed').remove();
-  })
+  	$(this).closest('.image-displayed').fadeOut(function() {
+			$(this).remove();
+		});
+  });
 
 	showImage();
 	uploadImage();
@@ -114,7 +115,7 @@ function showImage() {
 				}
 				$('#gallery-images').append('<div class="gallery-images">'
 						+ '<figure class="d-flex justify-content-center align-items-center">'
-						+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ data[i].caption +'" width="100%">'
+						+ '<img src="/uploads/gallery/images/original/'+ data[i].image +'" alt="'+ caption +'" width="100%">'
 						+ '<div class="overlay">'
 						+ '<div class="gallery-title">'
 						+ '<p class="text-center">'+ caption +'</p>'
@@ -128,7 +129,7 @@ function showImage() {
 						+ '</div>');
 			}
 		}
-	})
+	});
 }
 
 function uploadImage() {
@@ -138,8 +139,12 @@ function uploadImage() {
 		if(selected_image == 0) {
 
 		} else {
-			$('#btn-upload').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Uploading');
 			var data = new FormData($("#frm-add-gallery")[0]);
+
+			$('#frm-add-gallery input').prop('disabled', true);
+			$('#frm-add-gallery textarea').prop('disabled', true);
+			$('#frm-add-gallery .btn').prop('disabled', true);
+			$('.loading-overlay').css('display', 'block');
 
 			$.ajax({
 				url: '/admin-gallery/create',
@@ -149,14 +154,18 @@ function uploadImage() {
 				processData: false,
 				contentType: false,
 				success: function (data) {
+					$('#frm-add-gallery input').prop('disabled', false);
+					$('#frm-add-gallery textarea').prop('disabled', false);
+					$('#frm-add-gallery .btn').prop('disabled', false);
+					$('.loading-overlay').css('display', 'none');
 					$('#frm-add-gallery')[0].reset();
 					$('#add-gallery').modal('hide');
 					$('.modal-backdrop').hide();
-					$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
-					$('.gallery-images').remove();
+					$('.gallery-images').fadeOut(function() {
+						$(this).remove();
+					});
 					showImage();
 
-					// toast popup js
 					$.toast({
 						heading: 'Success!',
 						text: data.success,
@@ -166,15 +175,14 @@ function uploadImage() {
 						stack: 6
 					});
 				}, error: function (xhr, error, ajaxOptions, thrownError) {
-					// alert(xhr.responseText);
 					$('#frm-add-gallery')[0].reset();
 					$('#add-gallery').modal('hide');
 					$('.modal-backdrop').hide();
-					$('#btn-upload').removeAttr('disabled').html('<i class="fas fa-upload"></i>&nbsp; Upload');
-					$('.gallery-images').remove();
+					$('.gallery-images').fadeOut(function() {
+						$(this).remove();
+					});
 					showImage();
-					
-					// toast popup js
+
 					$.toast({
 						heading: 'Error!',
 						text: 'An error has occured while uploding image. Image size is too big or maybe invalid. Please try again',
@@ -184,9 +192,9 @@ function uploadImage() {
 						stack: 6
 					});
 				}
-			})
+			});
 		}
-	})
+	});
 }
 
 function editImage() {
@@ -205,8 +213,13 @@ function editImage() {
 
 	$('#frm-edit-gallery').on('submit').bind('submit', function(e){
 		e.preventDefault();
-		$('#btn-edit-image').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
+
 		var data = new FormData($("#frm-edit-gallery")[0]);
+
+		$('#frm-edit-gallery input').prop('disabled', true);
+		$('#frm-edit-gallery textarea').prop('disabled', true);
+		$('#frm-edit-gallery .btn').prop('disabled', true);
+		$('.loading-overlay').css('display', 'block');
 
 		$.ajax({
 			url: '/admin-gallery/update',
@@ -216,14 +229,18 @@ function editImage() {
 			processData: false,
 			contentType: false,
 			success: function (data) {
+				$('#frm-edit-gallery input').prop('disabled', false);
+				$('#frm-edit-gallery textarea').prop('disabled', false);
+				$('#frm-edit-gallery .btn').prop('disabled', false);
+				$('.loading-overlay').css('display', 'none');
 				$('#frm-edit-gallery')[0].reset();
 				$('#edit-gallery').modal('hide');
 				$('.modal-backdrop').hide();
-				$('#btn-edit-image').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Update');
-				$('.gallery-images').remove();
+				$('.gallery-images').fadeOut(function() {
+					$(this).remove();
+				});
 				showImage();
 
-				// toast popup js
 				$.toast({
 					heading: 'Success!',
 					text: data.success,
@@ -235,20 +252,23 @@ function editImage() {
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
 				alert(xhr.responseText);
 			}
-		})
-	})
+		});
+	});
 }
 
 function deleteImage() {
 	$(document).on('click', '.delete-image-button', function() {
 		var id = $(this).data('id');
 		$('#delete-image-id').val(id);
-	})
+	});
 
 	$('#frm-delete-gallery').on('submit').bind('submit', function(e) {
 		e.preventDefault();
-		$('#btn-delete-image').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Deleting');
+
 		var data = new FormData($("#frm-delete-gallery")[0]);
+
+		$('#frm-delete-gallery .btn').prop('disabled', true);
+		$('.loading-overlay').css('display', 'block');
 
 		$.ajax({
 			url: '/admin-gallery/delete',
@@ -258,12 +278,12 @@ function deleteImage() {
 			processData: false,
 			contentType: false,
 			success: function (data) {
+				$('#frm-delete-gallery .btn').prop('disabled', false);
+				$('.loading-overlay').css('display', 'none');
 				$('#frm-delete-gallery')[0].reset();
 				$('#delete-gallery').modal('hide');
 				$('.modal-backdrop').hide();
-				$('#btn-delete-image').removeAttr('disabled').html('<i class="fas fa-check"></i>&nbsp; Yes');
 
-				// toast popup js
 				$.toast({
 					heading: 'Success!',
 					text: data.success,
@@ -272,13 +292,17 @@ function deleteImage() {
 					hideAfter: 3500,
 					stack: 6
 				});
-				$('.gallery-images').remove();
+
+				$('.gallery-images').fadeOut(function() {
+					$(this).remove();
+				});
+
 				showImage();
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
 				alert(xhr.responseText);
 			}
-		})
-	})
+		});
+	});
 }
 
 function showLogo() {
@@ -304,7 +328,7 @@ function showLogo() {
             		+ '</div>');
 			}
 		}
-	})
+	});
 }
 
 function uploadLogo() {
@@ -313,26 +337,28 @@ function uploadLogo() {
 		frm_upload_logo.resetForm();
 		$('.logo-preview').hide();
 		$('input').removeClass('my-error-class');
-	})
+	});
 
 	frm_upload_logo = $('#frm-add-client-logo').validate({
 		errorClass: "my-error-class",
 		validClass: "my-valid-class",
 
-		rules:
-		{
+		rules: {
 			add_client_logo_name: "required",
 			add_client_logo_image: "required"
 		},
-		messages:
-		{
-			add_client_logo_name: "Please input the client name.",
-			add_client_logo_image: "Please input the client logo."
+		messages: {
+			add_client_logo_name: "Required field cannot be left blank.",
+			add_client_logo_image: "Required field cannot be left blank."
 		},
 		submitHandler: function (frm_add_client_logo, e) {
 			e.preventDefault();
-			$('#btn-add-logo').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Saving');
+
 			var data = new FormData($("#frm-add-client-logo")[0]);
+
+			$('#frm-add-client-logo input').prop('disabled', true);
+			$('#frm-add-client-logo .btn').prop('disabled', true);
+			$('.loading-overlay').css('display', 'block');
 
 			$.ajax({
 				url: '/admin-logo/create',
@@ -342,15 +368,18 @@ function uploadLogo() {
 				processData: false,
 				contentType: false,
 				success: function (data) {
+					$('#frm-add-client-logo input').prop('disabled', false);
+					$('#frm-add-client-logo .btn').prop('disabled', false);
+					$('.loading-overlay').css('display', 'none');
 					$('#frm-add-client-logo')[0].reset();
 					$('#add-client-logo').modal('hide');
 					$('.modal-backdrop').hide();
-					$('#btn-add-logo').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Save');
 					$('.logo-preview').hide();
-					$('.gallery-logo').remove();
+					$('.gallery-logo').fadeOut(function() {
+						$(this).remove();
+					});
 					showLogo();
 
-					// toast popup js
 					$.toast({
 						heading: 'Success!',
 						text: data.success,
@@ -362,9 +391,9 @@ function uploadLogo() {
 				}, error: function (xhr, error, ajaxOptions, thrownError) {
 					alert(xhr.responseText);
 				}
-			})
+			});
 		}
-	})
+	});
 }
 
 function editLogo() {
@@ -386,18 +415,20 @@ function editLogo() {
 		errorClass: "my-error-class",
 		validClass: "my-valid-class",
 
-		rules:
-		{
+		rules: {
 			edit_client_logo_name: "required"
 		},
-		messages:
-		{
-			edit_client_logo_name: "Please input the client name."
+		messages: {
+			edit_client_logo_name: "Required field cannot be left blank."
 		},
 		submitHandler: function (frm_edit_client_logo, e) {
 		e.preventDefault();
-		$('#btn-edit-logo').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
+
 		var data = new FormData($("#frm-edit-client-logo")[0]);
+
+		$('#frm-edit-client-logo input').prop('disabled', true);
+		$('#frm-edit-client-logo .btn').prop('disabled', true);
+		$('.loading-overlay').css('display', 'block');
 
 		$.ajax({
 			url: '/admin-logo/update',
@@ -407,14 +438,17 @@ function editLogo() {
 			processData: false,
 			contentType: false,
 			success: function (data) {
+				$('#frm-edit-client-logo input').prop('disabled', false);
+				$('#frm-edit-client-logo .btn').prop('disabled', false);
+				$('.loading-overlay').css('display', 'none');
 				$('#frm-edit-client-logo')[0].reset();
 				$('#edit-client-logo').modal('hide');
 				$('.modal-backdrop').hide();
-				$('#btn-edit-logo').removeAttr('disabled').html('<i class="fas fa-save"></i>&nbsp; Update');
-				$('.gallery-logo').remove();
+				$('.gallery-logo').fadeOut(function() {
+					$(this).remove();
+				});
 				showLogo();
 
-				// toast popup js
 				$.toast({
 					heading: 'Success!',
 					text: data.success,
@@ -426,24 +460,27 @@ function editLogo() {
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
 				alert(xhr.responseText);
 			}
-		})
+		});
 		}
-	})
+	});
 }
 
 function deleteLogo() {
 	$(document).on('click', '.delete-logo-button', function() {
 		var id = $(this).data('id');
 		var client = $(this).data('name');
-		
+
 		$('#delete-logo-id').val(id);
 		$('#client-logo-name').text(client);
-	})
+	});
 
 	$('#frm-delete-client-logo').on('submit').bind('submit', function(e) {
 		e.preventDefault();
-		$('#btn-delete-logo').attr('disabled', 'disabled').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Deleting');
+
 		var data = new FormData($("#frm-delete-client-logo")[0]);
+
+		$('#frm-delete-client-logo .btn').prop('disabled', true);
+		$('.loading-overlay').css('display', 'block');
 
 		$.ajax({
 			url: '/admin-logo/delete',
@@ -453,14 +490,16 @@ function deleteLogo() {
 			processData: false,
 			contentType: false,
 			success: function (data) {
+				$('#frm-delete-client-logo .btn').prop('disabled', false);
+				$('.loading-overlay').css('display', 'none');
 				$('#frm-delete-client-logo')[0].reset();
 				$('#delete-client-logo').modal('hide');
 				$('.modal-backdrop').hide();
-				$('#btn-delete-logo').removeAttr('disabled').html('<i class="fas fa-check"></i>&nbsp; Yes');
-				$('.gallery-logo').remove();
+				$('.gallery-logo').fadeOut(function() {
+					$(this).remove();
+				});
 				showLogo();
 
-				// toast popup js
 				$.toast({
 					heading: 'Success!',
 					text: data.success,
@@ -472,6 +511,6 @@ function deleteLogo() {
 			}, error: function (xhr, error, ajaxOptions, thrownError) {
 				alert(xhr.responseText);
 			}
-		})
-	})
+		});
+	});
 }

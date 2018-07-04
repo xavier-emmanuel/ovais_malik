@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $('.tbl-category').DataTable({
         "ajax": {
             url: "/admin-category/show",
@@ -129,7 +128,7 @@ $(document).ready(function () {
                 }
             });
         }
-    })
+    });
 
     $("#frm-delete-category").unbind('submit').on('submit', function (event) {
         event.preventDefault();
@@ -180,5 +179,4 @@ $(document).ready(function () {
         $('#frm-delete-category').find('#hdn-category-id').val(id);
         $('#frm-delete-category').find('#category-name').html(name);
     });
-
 });
