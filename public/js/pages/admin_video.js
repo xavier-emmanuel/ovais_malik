@@ -14,6 +14,10 @@ $(document).ready(function () {
 		},
 	});
 
+	jQuery.validator.addMethod("youtubelink", function(value, element) {
+	  return this.optional(element) || /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/.test(value);
+	}, "The link you have entered is not from youtube. Please enter valid youtube link.");
+
 	addVideo();
 	editVideo();
 	deleteVideo();
@@ -36,7 +40,8 @@ function addVideo() {
 				remote: {
 					url: "/admin-video/create-check",
 					type: "GET"
-				}
+				},
+				youtubelink: true
 			}
 		},
 		messages: {
@@ -73,7 +78,7 @@ function addVideo() {
 
 					$.toast({
 						heading: 'Success!',
-						text: 'Video has been successfuly added.',
+						text: data.success,
 						position: 'top-right',
 						icon: 'success',
 						hideAfter: 3500,
@@ -146,7 +151,7 @@ function editVideo() {
 
 					$.toast({
 						heading: 'Success!',
-						text: 'Video has been successfuly updated.',
+						text: data.success,
 						position: 'top-right',
 						icon: 'success',
 						hideAfter: 3500,
@@ -194,7 +199,7 @@ function deleteVideo() {
 
 				$.toast({
 					heading: 'Success!',
-					text: 'Video has been successfuly deleted.',
+					text: data.success,
 					position: 'top-right',
 					icon: 'success',
 					hideAfter: 3500,

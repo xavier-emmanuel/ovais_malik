@@ -7,6 +7,10 @@ $(document).ready(function () {
         },
     });
 
+    jQuery.validator.addMethod("alphanumeric", function(value, element) {
+        return this.optional(element) || /^\w+$/i.test(value);
+    }, "Special characters are not allowed.");
+
     $("#frm-add-category").validate({
         ignore: [],
         debug: false,
@@ -16,7 +20,10 @@ $(document).ready(function () {
                 remote: {
                     url: "/check-category-name",
                     type: "get"
-                }
+                },
+                minlength: 4,
+                maxlength: 20,
+                alphanumeric: true
             }
         },
         messages: {
@@ -74,7 +81,10 @@ $(document).ready(function () {
                 remote: {
                     url: "/check-category-name",
                     type: "get"
-                }
+                },
+                minlength: 4,
+                maxlength: 20,
+                alphanumeric: true
             }
         },
         messages: {
