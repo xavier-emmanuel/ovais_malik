@@ -101,6 +101,7 @@
               <div class="fb-page" data-href="https://www.facebook.com/ovaismalikvoiceover/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-width="270"><blockquote cite="https://www.facebook.com/ovaismalikvoiceover/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ovaismalikvoiceover/">Ovais Malik Voiceover</a></blockquote></div>
             </div>
             <div class="side-ads mb-3">
+              @if($latest_post->count() > 0)
               <div class="side-ads__header">
                 <p class="ads-title">Latest Posts</p>
                 <hr class="headul">
@@ -120,6 +121,7 @@
                   @endforeach
                 </ul>
               </div>
+              @endif
             </div>
           </div>
         </div>
