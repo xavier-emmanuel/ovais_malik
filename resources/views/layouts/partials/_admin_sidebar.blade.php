@@ -7,11 +7,6 @@
     <nav>
       <input type="hidden" name="page_name" id="page-name" value="{{ $page }}">
       <ul>
-        <li id="li-dashboard"">
-          <a href="#">
-            <i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp; Dashboard
-          </a>
-        </li>
         <li class="{{ Request::is('admin-blog') ? 'active' : '' }}">
           <a href="/admin-blog">
             <i class="fab fa-blogger-b"></i>&nbsp;&nbsp; Blog
