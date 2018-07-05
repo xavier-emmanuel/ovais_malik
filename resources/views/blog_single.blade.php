@@ -112,7 +112,7 @@
                     <a href="/blogs/{{ $post->slug }}" class="latest-post__link">
                       <img src="{{ asset(App::environment('production') ? 'public/uploads/admin-blogs/thumbnail/'.$post->image : 'uploads/admin-blogs/thumbnail/'.$post->image) }}" alt="{{ $post->title }}" width="50px" height="50px">
                       <div class="ads-info pl-2">
-                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">{{ $post->description }}</p>
+                        <p class="latest-post__title mb-0 pl-0 font-weight-bold">{{ $post->title }}</p>
                         <p class="small text-muted mb-0 mt-1"><i class="fas fa-clock"></i>&nbsp; {{ $post->created_at->format('F d, Y') }}</p>
                       </div>
                     </a>

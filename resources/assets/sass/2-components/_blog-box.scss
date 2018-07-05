@@ -27,9 +27,14 @@
         margin: 0;
       }
     }
+
+    .box-image {
+      height: 100% !important;
+    }
   }
 
   img {
+    height: inherit;
     &:hover {
       opacity: 0.9;
     }

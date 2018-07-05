@@ -43,7 +43,7 @@ class PagesController extends Controller
 
     public function blogs()
     {
-        $blog = Blog::orderBy('created_at','DESC')->paginate(4);
+        $blog = Blog::latest()->paginate(4);
         return view('blogs')->with(array('page' => 'Blogs', 'data' => $blog));
     }
 
@@ -58,7 +58,7 @@ class PagesController extends Controller
         $blog = Blog::where('slug', $slug)->first();
         $tags = $blog->tags;
         $tagsArray = explode(',', $tags);
-        $latest_post = Blog::orderBy('created_at','ASC')->take(8)->get();
+        $latest_post = Blog::latest()->take(8)->get();
         $related_post = Blog::where('category_id', $blog->category_id)->take(6)->skip(1)->get();
         return view('blog_single')->with(array('page' => $blog->title, 'data' => $blog, 'tags' => $tagsArray, 'latest_post' => $latest_post, 'related_post' => $related_post));
     }

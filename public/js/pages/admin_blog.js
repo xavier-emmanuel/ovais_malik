@@ -65,7 +65,7 @@ $(document).ready(function () {
             blog_description: {
                 required: true,
                 minlength: 10,
-                maxlength: 80
+                maxlength: 120
             },
             blog_featured_image: {
                 required: true,
@@ -89,7 +89,7 @@ $(document).ready(function () {
             blog_description: {
                 required: "Required field cannot be left blank.",
                 minlength: "Please enter at least 10 characters.",
-                maxlength: "Please enter no more than 80 characters."
+                maxlength: "Please enter no more than 120 characters."
             },
             blog_featured_image: {
                 required: "Required field cannot be left blank.",
@@ -140,7 +140,7 @@ $(document).ready(function () {
             blog_description: {
                 required: true,
                 minlength: 10,
-                maxlength: 80
+                maxlength: 120
             },
             blog_featured_image: {
                 required: false,
@@ -163,7 +163,7 @@ $(document).ready(function () {
             blog_description: {
                 required: "Required field cannot be left blank.",
                 minlength: "Please enter at least 10 characters.",
-                maxlength: "Please enter no more than 80 characters."
+                maxlength: "Please enter no more than 120 characters."
             },
             blog_featured_image: {
                 required: "Required field cannot be left blank.",
