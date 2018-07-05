@@ -166,6 +166,10 @@ $(document).ready(function () {
         });
     });
 
+    $('#add-category').on('show.bs.modal', function (e) {
+        $('#frm-add-category').trigger('reset');
+    });
+
     $('#edit-category').on('show.bs.modal', function (e) {
         var id = $(e.relatedTarget).data('id');
         var name = $(e.relatedTarget).data('name');
