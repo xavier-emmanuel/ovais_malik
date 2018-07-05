@@ -176,6 +176,7 @@ $(document).ready(function () {
         var name = $(e.relatedTarget).data('name');
         $('#frm-edit-category').find('#hdn-category-id').val(id);
         $('#frm-edit-category').find('#edit-category-name').val(name);
+        $('#frm-edit-category').validate().resetForm();
     });
 
     $('#delete-category').on('show.bs.modal', function (e) {
