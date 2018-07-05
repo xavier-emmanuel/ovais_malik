@@ -168,6 +168,7 @@ $(document).ready(function () {
 
     $('#add-category').on('show.bs.modal', function (e) {
         $('#frm-add-category').trigger('reset');
+        $('#frm-add-category').validate().resetForm();
     });
 
     $('#edit-category').on('show.bs.modal', function (e) {

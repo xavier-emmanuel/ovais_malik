@@ -241,6 +241,7 @@ $(document).ready(function () {
         $('#frm-add-audio').trigger('reset');
         $('#add-audio-prewiew').hide();
         $("#frm-add-audio").find('#audio-preview').attr('src', '');
+        $('#frm-add-audio').validate().resetForm();
     });
 
     $('#edit-audio').on('show.bs.modal', function (e) {
@@ -253,6 +254,7 @@ $(document).ready(function () {
         $('#frm-edit-audio').find('#edit-audio-title').val(title);
         $("#frm-edit-audio").find('#audio-preview').attr('src', audio);
         $('#edit-audio-prewiew').show();
+        $('#frm-edit-audio').validate().resetForm();
     });
 
     $('#delete-audio').on('show.bs.modal', function (e) {

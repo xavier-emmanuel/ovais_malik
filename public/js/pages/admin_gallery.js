@@ -236,6 +236,8 @@ function uploadImage() {
 
 function editImage() {
 	$(document).on('click', '.edit-image-button', function() {
+		$('#frm-edit-gallery').validate().resetForm();
+		$('.div-preview').show();
 		$('#frm-edit-gallery')[0].reset();
 		$('input').removeClass('my-error-class');
 
