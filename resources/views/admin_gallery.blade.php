@@ -105,7 +105,7 @@
               <label for="add-client-logo-image">Image: </label>
               <input type="file" id="edit-photo" name="edit_photo" class="form-control-file">
             </div>
-            <div class="form-group">
+            <div class="form-group div-preview">
               <label for="">Preview:</label>
               <div class="preview-image-wrapper m-auto">
                 <img id="image-show" src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" alt="">
@@ -304,4 +304,5 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_gallery.js' : '/js/pages/admin_gallery.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/dist/additional-methods.js' : '/plugins/jquery-validation/dist/additional-methods.js') }}"></script>
 @endsection
