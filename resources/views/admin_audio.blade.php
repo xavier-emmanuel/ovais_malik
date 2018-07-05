@@ -62,10 +62,10 @@
             <div class="form-group">
               <label for="add-audio">
                 Audio:<span>*</span></label>
-              <input type="file" id="add-audio" name="add_audio" class="form-control-file" accept=".mp3,audio/*" required><br>
+              <input type="file" id="add-audio" name="add_audio" class="form-control-file" required><br>
             </div>
             <div class="form-group audio-preview" id="add-audio-prewiew">
-              <audio controls src="#" type="audio/mp3" id="audio-preview" controlsList="nodownload"></audio>
+              <audio controls src="#" id="audio-preview" controlsList="nodownload"></audio>
             </div>
           </div>
           <div class="modal-footer">
@@ -109,10 +109,10 @@
             <div class="form-group">
               <label for="add-audio">
                 Audio:<span>*</span></label>
-              <input type="file" id="edit-audio" name="edit_audio" class="form-control-file" accept=".mp3,audio/*"><br>
+              <input type="file" id="edit-audio" name="edit_audio" class="form-control-file"><br>
             </div>
             <div class="form-group audio-preview" id="edit-audio-prewiew">
-              <audio controls src="#" type="audio/mp3" id="audio-preview" controlsList="nodownload"></audio>
+              <audio controls src="#" id="audio-preview" controlsList="nodownload"></audio>
             </div>
           </div>
           <div class="modal-footer">
@@ -167,4 +167,5 @@
 
 @section('scripts')
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_audio.js' : '/js/pages/admin_audio.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/dist/additional-methods.js' : '/plugins/jquery-validation/dist/additional-methods.js') }}"></script>
 @endsection

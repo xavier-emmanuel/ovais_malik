@@ -20,11 +20,20 @@ $(document).ready(function () {
         }
     }
 
-    $("#frm-add-audio").find("#add-audio").change(function () {
-        readUrlPreview(this);
-        $("#add-audio-prewiew").fadeOut();
-        $("#add-audio-prewiew").delay(200).fadeIn();
-    });
+    
+        $("#frm-add-audio").find("#add-audio").change(function () {
+            var add_audio_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
+            var add_audio_ext = add_audio_filename.split('.').pop();
+            if (add_audio_ext == 'mp3' || add_audio_ext == 'wav' || add_audio_ext == 'ogg' || add_audio_ext == 'flac' || add_audio_ext == 'MP3') {
+                readUrlPreview(this);
+                $("#add-audio-prewiew").fadeOut();
+                $("#add-audio-prewiew").delay(200).fadeIn();
+            } else {
+                $('#add-audio-prewiew').hide();
+                $("#frm-add-audio").find('#audio-preview').attr('src', '');
+            }
+        });
+    
 
     function readUrlEdit(input) {
         if (input.files && input.files[0]) {
@@ -37,10 +46,17 @@ $(document).ready(function () {
         }
     }
 
-    $("#frm-edit-audio").find("#edit-audio").change(function () {
-        readUrlEdit(this);
-        $("#edit-audio-prewiew").fadeOut();
-        $("#edit-audio-prewiew").delay(200).fadeIn();
+    $("#frm-edit-audio").find("#edit-audio").change(function() {
+        var edit_audio_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
+        var edit_audio_ext = edit_audio_filename.split('.').pop();
+        if (edit_audio_ext == 'mp3' || edit_audio_ext == 'wav' || edit_audio_ext == 'ogg' || edit_audio_ext == 'flac' || edit_audio_ext == 'MP3') {
+            readUrlEdit(this);
+            $("#edit-audio-prewiew").fadeOut();
+            $("#edit-audio-prewiew").delay(200).fadeIn();
+        } else {
+            $('#edit-audio-prewiew').hide();
+            $("#frm-edit-audio").find('#audio-preview').attr('src', '');
+        }
     });
 
     $("#frm-add-audio").validate({
@@ -54,14 +70,20 @@ $(document).ready(function () {
                     type: "get"
                 }
             },
-            add_audio: "required"
+            add_audio: {
+                required: true,
+                extension: "mp3|wav|ogg|flac"
+            },
         },
         messages: {
             add_audio_title: {
                 required: "Required field cannot be left blank.",
                 remote: "This title already exists. Try different title."
             },
-            add_audio: "Required field cannot be left blank."
+            add_audio: {
+                required: "Required field cannot be left blank.",
+                extension: "You must select an audio file only."
+            } 
         },
         submitHandler: function (frm_add_audio, e) {
             event.preventDefault();
@@ -108,11 +130,19 @@ $(document).ready(function () {
         ignore: [],
         debug: false,
         rules: {
-            edit_audio_title: "required"
+            edit_audio_title: "required",
+            edit_audio: {
+                required: false,
+                extension: "mp3|wav|ogg|flac"
+            },
         },
         messages: {
             edit_audio_title: {
                 required: "Required field cannot be left blank."
+            },
+            edit_audio: {
+                required: "Required field cannot be left blank.",
+                extension: "You must select an audio file only."
             }
         },
         submitHandler: function (frm_edit_blog, e) {
