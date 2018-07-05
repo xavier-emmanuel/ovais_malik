@@ -34,7 +34,7 @@
               Title:
               <span>*</span>
             </label>
-            <input type="text" class="form-control" id="edit-blog-title" name="blog_title" value="{{ $blogs->title }}" required>
+            <input type="text" class="form-control" id="edit-blog-title" name="blog_title" value="{{ $blogs->title }}" autocomplete="off" required>
           </div>
 
           <div class="form-group">
@@ -42,7 +42,7 @@
               Short Description:
               <span>*</span>
             </label>
-            <textarea class="form-control" name="blog_description" id="edit-blog-description" cols="30" rows="3" required>{{ $blogs->description }}</textarea>
+            <textarea class="form-control" name="blog_description" id="edit-blog-description" cols="30" rows="3" autocomplete="off" required>{{ $blogs->description }}</textarea>
           </div>
 
           <div class="form-group">
@@ -65,21 +65,21 @@
               Content:
               <span>*</span>
             </label>
-            <textarea name="blog_content" id="blog_content" cols="30" rows="10" required>{{ $blogs->content }}</textarea>
+            <textarea name="blog_content" id="blog_content" cols="30" rows="10" autocomplete="off" required>{{ $blogs->content }}</textarea>
           </div>
         </div>
 
         <div class="box box-content-2">
           <div class="form-group">
             <label for="edit-blog-tags">Tags:</label>
-            <input type="text" id="edit-blog-tags" name="blog_tags" class="form-control" value="{{ $blogs->tags }}" data-role="tagsinput"></div>
+            <input type="text" id="edit-blog-tags" name="blog_tags" class="form-control" value="{{ $blogs->tags }}" data-role="tagsinput" autocomplete="off"></div>
 
           <div class="form-group">
             <label for="edit-blog-featured-image">
               Featured Image:
               <span>*</span>
             </label>
-            <input type="file" id="edit-blog-featured-image" name="blog_featured_image" class="form-control-file" accept="image/x-png,image/gif,image/jpeg"></div>
+            <input type="file" id="edit-blog-featured-image" name="blog_featured_image" class="form-control-file"></div>
 
           <div class="form-group">
             <label for="">Preview:</label>
@@ -109,6 +109,7 @@
   <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/jquery.validate.min.js' : '/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_blog.js' : '/js/pages/admin_blog.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/dist/additional-methods.js' : '/plugins/jquery-validation/dist/additional-methods.js') }}"></script>
   <script>
     CKEDITOR.replace('blog_content', {
       filebrowserUploadUrl: '{{ route('upload',['_token' => csrf_token() ]) }}',

@@ -28,7 +28,7 @@
                     <label for="contact-name">Name:
                       <span>*</span>
                     </label>
-                    <input type="text" class="form-control" id="contact-name" name="contact_name">
+                    <input type="text" class="form-control" id="contact-name" name="contact_name" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -36,14 +36,14 @@
                     <label for="contact-email">Email:
                       <span>*</span>
                     </label>
-                    <input type="email" class="form-control" id="contact-email" name="contact_email">
+                    <input type="email" class="form-control" id="contact-email" name="contact_email" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                   <div class="form-group">
                     <label for="contact-subject">Subject:
                     </label>
-                    <input type="text" class="form-control" id="contact-subject" name="contact_subject">
+                    <input type="text" class="form-control" id="contact-subject" name="contact_subject" autocomplete="off">
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -51,7 +51,7 @@
                     <label for="contact-message">Message:
                       <span>*</span>
                     </label>
-                    <textarea name="message" id="contact-message" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="message" id="contact-message" cols="30" rows="10" class="form-control" autocomplete="off"></textarea>
                   </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">

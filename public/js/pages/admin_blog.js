@@ -11,7 +11,17 @@ $(document).ready(function () {
     }
 
     $("#frm-create-blog").find("#add-blog-featured-image").change(function() {
-        readUrlPreview(this);
+        var add_image_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
+        var add_image = add_image_filename.split('.').pop();
+        if (add_image == 'jpg' || add_image == 'png' || add_image == 'jpeg') {
+            readUrlPreview(this);
+        } else {
+            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+                $("#frm-create-blog").find('#image-preview').attr('src', '/img/photo-preview-frame-icon-by_vexels.png');
+            } else {
+                $("#frm-create-blog").find('#image-preview').attr('src', '/public/img/photo-preview-frame-icon-by_vexels.png');
+            }
+        }
     });
 
     function readUrlEdit(input) {
@@ -26,7 +36,17 @@ $(document).ready(function () {
     }
 
     $("#frm-edit-blog").find("#edit-blog-featured-image").change(function() {
-        readUrlEdit(this);
+        var edit_image_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
+        var edit_image = edit_image_filename.split('.').pop();
+        if (edit_image == 'jpg' || edit_image == 'png' || edit_image == 'jpeg') {
+            readUrlEdit(this);
+        } else {
+            if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+                $("#frm-edit-blog").find('#image-preview').attr('src', '/img/photo-preview-frame-icon-by_vexels.png');
+            } else {
+                $("#frm-edit-blog").find('#image-preview').attr('src', '/public/img/photo-preview-frame-icon-by_vexels.png');
+            }
+        }
     });
 
     $("#frm-create-blog").validate({
@@ -47,7 +67,10 @@ $(document).ready(function () {
                 minlength: 10,
                 maxlength: 80
             },
-            blog_featured_image: "required",
+            blog_featured_image: {
+                required: true,
+                extension: "jpg|png|jpeg"
+            },
             blog_category: "required",
             blog_content: {
                 required: function() {
@@ -68,7 +91,10 @@ $(document).ready(function () {
                 minlength: "Please enter at least 10 characters.",
                 maxlength: "Please enter no more than 80 characters."
             },
-            blog_featured_image: "Required field cannot be left blank.",
+            blog_featured_image: {
+                required: "Required field cannot be left blank.",
+                extension: "You must select an image file only."
+            },
             blog_category: "Please select category.",
             blog_content: {
                 required: "Required field cannot be left blank.",
@@ -116,6 +142,10 @@ $(document).ready(function () {
                 minlength: 10,
                 maxlength: 80
             },
+            blog_featured_image: {
+                required: false,
+                extension: "jpg|png|jpeg"
+            },
             blog_category: "required",
             blog_content: {
                 required: function() {
@@ -127,7 +157,6 @@ $(document).ready(function () {
         messages: {
             blog_title: {
                 required: "Required field cannot be left blank.",
-                remote: "This title already exists. Try different title.",
                 minlength: "Please enter at least 8 characters.",
                 maxlength: "Please enter no more than 35 characters."
             },
@@ -135,6 +164,10 @@ $(document).ready(function () {
                 required: "Required field cannot be left blank.",
                 minlength: "Please enter at least 10 characters.",
                 maxlength: "Please enter no more than 80 characters."
+            },
+            blog_featured_image: {
+                required: "Required field cannot be left blank.",
+                extension: "You must select an image file only."
             },
             blog_category: "Please select category.",
             blog_content: {
@@ -163,11 +196,9 @@ $(document).ready(function () {
                     }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
-                    if(xhr.status == 500){
-                        $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Update');
-                        $('#edit-blog-title').addClass('error');
-                        $('#div').append('<label id="edit-blog-title-error" class="error" for="edit-blog-title">The title already exists.</label>');
-                    }
+                    $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Update');
+                    $('#edit-blog-title').addClass('error');
+                    $('#div').append('<label id="edit-blog-title-error" class="error" for="edit-blog-title">This title already exists. Try different title.</label>');
                 }
             });
         }

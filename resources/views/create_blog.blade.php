@@ -31,14 +31,14 @@
               Title:
               <span>*</span>
             </label>
-            <input type="text" class="form-control" id="add-blog-title" name="blog_title" required></div>
+            <input type="text" class="form-control" id="add-blog-title" name="blog_title" autocomplete="off" required></div>
 
           <div class="form-group">
             <label for="add-blog-description">
               Short Description:
               <span>*</span>
             </label>
-            <textarea class="form-control" name="blog_description" id="blog-description" cols="30" rows="3" required></textarea>
+            <textarea class="form-control" name="blog_description" id="blog-description" cols="30" rows="3" autocomplete="off" required></textarea>
           </div>
 
           <div class="form-group">
@@ -59,21 +59,21 @@
               Content:
               <span>*</span>
             </label>
-            <textarea name="blog_content" id="blog_content" cols="30" rows="10" required></textarea>
+            <textarea name="blog_content" id="blog_content" cols="30" rows="10" autocomplete="off" required></textarea>
           </div>
         </div>
 
         <div class="box box-content-2">
           <div class="form-group">
             <label for="add-blog-tags">Tags:</label>
-            <input type="text" id="add-blog-tags" name="blog_tags" class="form-control" data-role="tagsinput"></div>
+            <input type="text" id="add-blog-tags" name="blog_tags" class="form-control" autocomplete="off" data-role="tagsinput"></div>
 
           <div class="form-group">
             <label for="add-blog-featured-image">
               Featured Image:
               <span>*</span>
             </label>
-            <input type="file" id="add-blog-featured-image" name="blog_featured_image" class="form-control-file" accept="image/x-png,image/gif,image/jpeg" required></div>
+            <input type="file" id="add-blog-featured-image" name="blog_featured_image" class="form-control-file" required></div>
 
           <div class="form-group">
             <label for="">Preview:</label>
@@ -101,6 +101,7 @@
   <script src="{{ asset(App::environment('production') ? '/public/plugins/ckeditor/styles.js' : '/plugins/ckeditor/styles.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js' : '/plugins/bootstrap-tags-input/bootstrap-tagsinput.min.js') }}"></script>
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_blog.js' : '/js/pages/admin_blog.js') }}"></script>
+  <script src="{{ asset(App::environment('production') ? '/public/plugins/jquery-validation/dist/additional-methods.js' : '/plugins/jquery-validation/dist/additional-methods.js') }}"></script>
   <script>
     CKEDITOR.replace('blog_content', {
       filebrowserUploadUrl: '{{ route('upload',['_token' => csrf_token() ]) }}',

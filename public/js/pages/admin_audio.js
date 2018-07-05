@@ -13,26 +13,26 @@ $(document).ready(function () {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 $("#frm-add-audio").find('#audio-preview').attr('src', e.target.result);
             };
             reader.readAsDataURL(input.files[0]);
         }
     }
 
-    
-        $("#frm-add-audio").find("#add-audio").change(function () {
-            var add_audio_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
-            var add_audio_ext = add_audio_filename.split('.').pop();
-            if (add_audio_ext == 'mp3' || add_audio_ext == 'wav' || add_audio_ext == 'ogg' || add_audio_ext == 'flac' || add_audio_ext == 'MP3') {
-                readUrlPreview(this);
-                $("#add-audio-prewiew").fadeOut();
-                $("#add-audio-prewiew").delay(200).fadeIn();
-            } else {
-                $('#add-audio-prewiew').hide();
-                $("#frm-add-audio").find('#audio-preview').attr('src', '');
-            }
-        });
+
+    $("#frm-add-audio").find("#add-audio").change(function() {
+        var add_audio_filename = $(this)[0].files.length ? $(this)[0].files[0].name : "";
+        var add_audio_ext = add_audio_filename.split('.').pop();
+        if (add_audio_ext == 'mp3' || add_audio_ext == 'wav' || add_audio_ext == 'ogg' || add_audio_ext == 'flac' || add_audio_ext == 'MP3') {
+            readUrlPreview(this);
+            $("#add-audio-prewiew").fadeOut();
+            $("#add-audio-prewiew").delay(200).fadeIn();
+        } else {
+            $('#add-audio-prewiew').hide();
+            $("#frm-add-audio").find('#audio-preview').attr('src', '');
+        }
+    });
     
 
     function readUrlEdit(input) {
@@ -65,6 +65,8 @@ $(document).ready(function () {
         rules: {
             add_audio_title: {
                 required: true,
+                minlength: 5,
+                maxlength: 20,
                 remote: {
                     url: "/check-audio-title",
                     type: "get"
@@ -78,7 +80,9 @@ $(document).ready(function () {
         messages: {
             add_audio_title: {
                 required: "Required field cannot be left blank.",
-                remote: "This title already exists. Try different title."
+                remote: "This title already exists. Try different title.",
+                minlength: "Please enter at least 5 characters.",
+                maxlength: "Please enter no more than 20 characters."
             },
             add_audio: {
                 required: "Required field cannot be left blank.",
@@ -130,7 +134,11 @@ $(document).ready(function () {
         ignore: [],
         debug: false,
         rules: {
-            edit_audio_title: "required",
+            edit_audio_title: {
+                required: true,
+                minlength: 5,
+                maxlength: 20
+            },
             edit_audio: {
                 required: false,
                 extension: "mp3|wav|ogg|flac"
@@ -138,7 +146,9 @@ $(document).ready(function () {
         },
         messages: {
             edit_audio_title: {
-                required: "Required field cannot be left blank."
+                required: "Required field cannot be left blank.",
+                minlength: "Please enter at least 5 characters.",
+                maxlength: "Please enter no more than 20 characters."
             },
             edit_audio: {
                 required: "Required field cannot be left blank.",
@@ -177,7 +187,12 @@ $(document).ready(function () {
                         hideAfter: 3500
                     });
                 }, error: function (xhr, error, ajaxOptions, thrownError) {
-                    alert(xhr.responseText);
+                    $('#frm-edit-audio input').prop('disabled', false);
+                    $('#frm-edit-audio .btn').prop('disabled', false);
+                    $('.loading-overlay').css('display', 'none');
+                    $('.btn-edit-audio').html('<i class="fas fa-save"></i>&nbsp; Update');
+                    $('#edit-audio-title').addClass('error');
+                    $('.div').append('<label id="edit-audio-title-error" class="error" for="edit-audio-title">This title already exists. Try different title.</label>');
                 }
             });
         }

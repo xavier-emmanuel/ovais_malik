@@ -102,7 +102,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="form-group">
+            <div class="form-group div">
               <label for="add-audio">Title:<span>*</span></label>
               <input type="text" class="form-control" id="edit-audio-title" name="edit_audio_title" autocomplete="off" required>
             </div>
