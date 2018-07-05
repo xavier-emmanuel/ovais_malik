@@ -35,6 +35,15 @@ $(document).ready(function() {
 			var add_photos = add_photos_filename.split('.').pop();
 			if (add_photos == 'jpg' || add_photos == 'png' || add_photos == 'jpeg') {
 				imagesPreview(this, 'div.preview-image');
+			} else {
+				$.toast({
+					heading: 'Error!',
+					text: 'An error has occured while uploading image. You must select an image file only.',
+					position: 'top-right',
+					icon: 'error',
+					hideAfter: 3500,
+					stack: 6
+				});
 			}
 		});
 	});
@@ -209,7 +218,7 @@ function uploadImage() {
 
 					$.toast({
 						heading: 'Error!',
-						text: 'An error has occured while uploding image. Image size is too big or maybe invalid. Please try again',
+						text: 'An error has occured while uploading image. Image size is too big or maybe invalid. Please try again',
 						position: 'top-right',
 						icon: 'error',
 						hideAfter: 3500,
