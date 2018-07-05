@@ -58,8 +58,8 @@ class PagesController extends Controller
         $blog = Blog::where('slug', $slug)->first();
         $tags = $blog->tags;
         $tagsArray = explode(',', $tags);
-        $latest_post = Blog::latest()->take(8)->get();
-        $related_post = Blog::where('category_id', $blog->category_id)->take(6)->skip(1)->get();
+        $latest_post = Blog::where('id', '!=', $blog->id)->latest()->take(8)->get();
+        $related_post = Blog::where('category_id', $blog->category_id)->where('id', '!=', $blog->id)->take(6)->get();
         return view('blog_single')->with(array('page' => $blog->title, 'data' => $blog, 'tags' => $tagsArray, 'latest_post' => $latest_post, 'related_post' => $related_post));
     }
 
