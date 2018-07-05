@@ -51,7 +51,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="add-video-link">
-                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" title="Video Link" data-content="The field below only accepts none other than youtube link or url."></i></label>
+                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field only accepts none other than youtube link or url."></i></label>
               <input type="text" class="form-control" id="add-video-link" name="add_video_link" autocomplete="off" placeholder="e.g. https://www.youtube.com/watch?v=4pgMFb_pO_k">
             </div>
           </div>
@@ -90,7 +90,7 @@
             <div class="form-group">
               <input type="hidden" class="form-control" id="edit-video-id" name="edit_video_id">
               <label for="edit-video-link">
-                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" title="Video Link" data-content="The field below only accepts none other than youtube link or url."></i></label>
+                <i class="fas fa-link"></i>&nbsp; Video Link: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field only accepts none other than youtube link or url."></i></label>
               <input type="text" class="form-control" id="edit-video-link" name="edit_video_link" autocomplete="off">
             </div>
           </div>

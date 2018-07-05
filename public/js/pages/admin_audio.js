@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $('.form-info').popover({
+		trigger: 'hover'
+    });
+
     $('#tbl-audio').DataTable({
         "ajax": {
             url: "/admin-audio/show",
@@ -33,7 +37,6 @@ $(document).ready(function () {
             $("#frm-add-audio").find('#audio-preview').attr('src', '');
         }
     });
-    
 
     function readUrlEdit(input) {
         if (input.files && input.files[0]) {
@@ -66,7 +69,7 @@ $(document).ready(function () {
             add_audio_title: {
                 required: true,
                 minlength: 5,
-                maxlength: 20,
+                maxlength: 30,
                 remote: {
                     url: "/check-audio-title",
                     type: "get"
@@ -82,12 +85,12 @@ $(document).ready(function () {
                 required: "Required field cannot be left blank.",
                 remote: "This title already exists. Try different title.",
                 minlength: "Please enter at least 5 characters.",
-                maxlength: "Please enter no more than 20 characters."
+                maxlength: "Please enter no more than 30 characters."
             },
             add_audio: {
                 required: "Required field cannot be left blank.",
-                extension: "You must select an audio file only."
-            } 
+                extension: "Invalid file. Please select valid audio file and try again."
+            }
         },
         submitHandler: function (frm_add_audio, e) {
             event.preventDefault();
@@ -137,7 +140,7 @@ $(document).ready(function () {
             edit_audio_title: {
                 required: true,
                 minlength: 5,
-                maxlength: 20
+                maxlength: 30
             },
             edit_audio: {
                 required: false,
@@ -148,11 +151,11 @@ $(document).ready(function () {
             edit_audio_title: {
                 required: "Required field cannot be left blank.",
                 minlength: "Please enter at least 5 characters.",
-                maxlength: "Please enter no more than 20 characters."
+                maxlength: "Please enter no more than 30 characters."
             },
             edit_audio: {
                 required: "Required field cannot be left blank.",
-                extension: "You must select an audio file only."
+                extension: "Invalid file. Please select valid audio file and try again."
             }
         },
         submitHandler: function (frm_edit_blog, e) {

@@ -3,8 +3,13 @@
 @section('stylesheets')
   <style>
     .error {
-      color: red !important;
-      border-color: red !important;
+      color: #b90504;
+      border-color: #b90504;
+    }
+
+    label.error {
+      font-size: 80%;
+      font-weight: 400;
     }
   </style>
 @endsection
@@ -61,7 +66,7 @@
             </div>
             <div class="form-group">
               <label for="add-audio">
-                Audio:<span>*</span></label>
+                Audio:<span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="The field below only accept .mp3/.wav/.ogg/.flac audio file extension."></i></label>
               <input type="file" id="add-audio" name="add_audio" class="form-control-file" required><br>
             </div>
             <div class="form-group audio-preview" id="add-audio-prewiew">
@@ -108,7 +113,7 @@
             </div>
             <div class="form-group">
               <label for="add-audio">
-                Audio:<span>*</span></label>
+                Audio:<span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="The field below only accept .mp3/.wav/.ogg/.flac audio file extension."></i></label>
               <input type="file" id="edit-audio" name="edit_audio" class="form-control-file"><br>
             </div>
             <div class="form-group audio-preview" id="edit-audio-prewiew">

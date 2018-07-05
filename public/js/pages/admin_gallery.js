@@ -3,6 +3,10 @@ var frm_upload_logo;
 var frm_edit_logo;
 
 $(document).ready(function() {
+	$('.form-info').popover({
+		trigger: 'hover'
+	});
+
 	$('#btn-upload-photos').on('click', function() {
 		$('div.image-displayed').remove();
 	});
@@ -38,7 +42,7 @@ $(document).ready(function() {
 			} else {
 				$.toast({
 					heading: 'Error!',
-					text: 'An error has occured while uploading image. You must select an image file only.',
+					text: 'An error has occured while uploading image. You must select valid image file only.',
 					position: 'top-right',
 					icon: 'error',
 					hideAfter: 3500,
@@ -256,7 +260,7 @@ function editImage() {
         messages: {
             edit_photo: {
                 required: "Required field cannot be left blank.",
-                extension: "You must select an image file only."
+                extension: "Invalid file. Please select valid image file and try again."
             }
         },
         submitHandler: function (frm_store_blog, e) {
@@ -405,7 +409,7 @@ function uploadLogo() {
 			add_client_logo_name: "Required field cannot be left blank.",
 			add_client_logo_image: {
 				required: "Required field cannot be left blank.",
-				extension: "You must select an image file only."
+				extension: "Invalid file. Please select valid image file and try again."
 			}
 		},
 		submitHandler: function(frm_add_client_logo, e) {
@@ -484,7 +488,7 @@ function editLogo() {
 			edit_client_logo_name: "Required field cannot be left blank.",
 			edit_client_logo_image: {
 				required: "Required field cannot be left blank.",
-				extension: "You must select an image file only."
+				extension: "Invalid file. Please select valid image file and try again."
 			}
 		},
 		submitHandler: function(frm_edit_client_logo, e) {

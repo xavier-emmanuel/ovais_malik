@@ -1,6 +1,17 @@
 @extends('layouts.admin_master')
 
 @section('stylesheets')
+  <style>
+    .error {
+      color: #b90504;
+      border-color: #b90504;
+    }
+
+    label.error {
+      font-size: 80%;
+      font-weight: 400;
+    }
+  </style>
 @endsection
 
 @section('content')
@@ -61,7 +72,7 @@
           <div class="modal-body">
             <button type="button" class="btn btn-primary add-photos-wrapper">
               <input type="file" name="filenames[]" id="add-photos" multiple>
-              <label for="add-photos"><i class="fas fa-image"></i>&nbsp; Select photos</label>
+              <label for="add-photos"><i class="fas fa-image"></i>&nbsp; Select photos&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field accepts valid image file only with the following extensions .jpg/.jpeg/.png"></i></label>
             </button>
 
             <div class="container-fluid">
@@ -102,7 +113,7 @@
           <div class="modal-body">
             <div class="form-group">
               <input type="hidden" name="edit_image_id" id="edit-image-id">
-              <label for="add-client-logo-image">Image: </label>
+              <label for="add-client-logo-image">Image: &nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field accepts valid image file only with the following extensions .jpg/.jpeg/.png"></i></label>
               <input type="file" id="edit-photo" name="edit_photo" class="form-control-file">
             </div>
             <div class="form-group div-preview">
@@ -191,7 +202,7 @@
             </div>
 
             <div class="form-group">
-              <label for="add-client-logo-image">Logo: <span>*</span></label>
+              <label for="add-client-logo-image">Logo: <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field accepts valid image file only with the following extensions .jpg/.jpeg/.png"></i></label>
               <input type="file" id="add-client-logo-image" name="add_client_logo_image" class="form-control-file" required>
             </div>
 
@@ -242,7 +253,7 @@
             <div class="form-group">
               <label for="edit-client-logo-image">
                 Logo:
-                <span>*</span>
+                <span>*</span>&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="This field accepts valid image file only with the following extensions .jpg/.jpeg/.png"></i>
               </label>
               <input type="file" id="edit-client-logo-image" name="edit_client_logo_image" class="form-control-file">
             </div>
