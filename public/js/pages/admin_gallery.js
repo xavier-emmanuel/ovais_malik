@@ -42,7 +42,7 @@ $(document).ready(function() {
 			} else {
 				$.toast({
 					heading: 'Error!',
-					text: 'An error has occured while uploading image. You must select valid image file only.',
+					text: 'Invalid file. Please select valid image file and try again.',
 					position: 'top-right',
 					icon: 'error',
 					hideAfter: 3500,
