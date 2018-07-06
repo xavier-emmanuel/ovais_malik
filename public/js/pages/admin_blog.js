@@ -108,13 +108,12 @@ $(document).ready(function () {
                 minlength: "Please enter at least 10 characters."
             }
         },
-        submitHandler: function (frm_store_blog, e) {
+        submitHandler: function(frm_store_blog, e) {
             event.preventDefault();
 
             var data = new FormData($("#frm-create-blog")[0]);
 
             $('.btn-save').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Saving');
-
 
             $.ajax({
                 url: '/admin-blog/create/store',
@@ -146,7 +145,7 @@ $(document).ready(function () {
                         $('.btn-publish').attr('hidden', false);
                     }, 2000);
                 },
-                error: function (xhr, error, ajaxOptions, thrownError) {
+                error: function(xhr, error, ajaxOptions, thrownError) {
                     alert(xhr.responseText);
                 }
             });

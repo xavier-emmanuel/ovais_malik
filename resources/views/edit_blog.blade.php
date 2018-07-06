@@ -75,7 +75,7 @@
             <label for="edit-blog-tags">Tags:</label>
             <input type="text" id="edit-blog-tags" name="blog_tags" class="form-control" value="{{ $blogs->tags }}" data-role="tagsinput" autocomplete="off"></div>
 
-          <div class="form-group">
+          <div class="form-group div">
             <label for="edit-blog-featured-image">
               Featured Image:
               <span>*</span>

@@ -68,7 +68,7 @@
             <label for="add-blog-tags">Tags:</label>
             <input type="text" id="add-blog-tags" name="blog_tags" class="form-control" autocomplete="off" data-role="tagsinput"></div>
 
-          <div class="form-group">
+          <div class="form-group div">
             <label for="add-blog-featured-image">
               Featured Image:
               <span>*</span>

@@ -149,20 +149,37 @@ function showImage() {
 				} else {
 					caption = data[i].caption;
 				}
-				$('#gallery-images').append('<div class="gallery-images">' +
-					'<figure class="d-flex justify-content-center align-items-center">' +
-					'<img src="/uploads/gallery/images/original/' + data[i].image + '" alt="' + caption + '" width="100%">' +
-					'<div class="overlay">' +
-					'<div class="gallery-title">' +
-					'<p class="text-center">' + caption + '</p>' +
-					'</div>' +
-					'<div class="gallery-action">' +
-					'<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-caption="' + data[i].caption + '"><i class="fas fa-edit"></i></button>&nbsp;' +
-					'<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="' + data[i].id + '" data-image="' + data[i].caption + '"><i class="fas fa-trash"></i></button>' +
-					'</div>' +
-					'</div>' +
-					'</figure>' +
-					'</div>');
+				if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+					$('#gallery-images').append('<div class="gallery-images">' +
+						'<figure class="d-flex justify-content-center align-items-center">' +
+						'<img src="/uploads/gallery/images/original/' + data[i].image + '" alt="' + caption + '" width="100%">' +
+						'<div class="overlay">' +
+						'<div class="gallery-title">' +
+						'<p class="text-center">' + caption + '</p>' +
+						'</div>' +
+						'<div class="gallery-action">' +
+						'<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-caption="' + data[i].caption + '"><i class="fas fa-edit"></i></button>&nbsp;' +
+						'<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="' + data[i].id + '" data-image="' + data[i].caption + '"><i class="fas fa-trash"></i></button>' +
+						'</div>' +
+						'</div>' +
+						'</figure>' +
+						'</div>');
+				} else {
+					$('#gallery-images').append('<div class="gallery-images">' +
+						'<figure class="d-flex justify-content-center align-items-center">' +
+						'<img src="/public/uploads/gallery/images/original/' + data[i].image + '" alt="' + caption + '" width="100%">' +
+						'<div class="overlay">' +
+						'<div class="gallery-title">' +
+						'<p class="text-center">' + caption + '</p>' +
+						'</div>' +
+						'<div class="gallery-action">' +
+						'<button class="btn btn-primary edit-image-button" data-toggle="modal" data-target="#edit-gallery" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-caption="' + data[i].caption + '"><i class="fas fa-edit"></i></button>&nbsp;' +
+						'<button class="btn btn-primary delete-image-button" data-toggle="modal" data-target="#delete-gallery" data-id="' + data[i].id + '" data-image="' + data[i].caption + '"><i class="fas fa-trash"></i></button>' +
+						'</div>' +
+						'</div>' +
+						'</figure>' +
+						'</div>');
+				}
 			}
 		}
 	});
@@ -246,7 +263,12 @@ function editImage() {
 		var caption = $(this).data('caption');
 
 		$('#edit-image-id').val(id);
-		$('#image-show').attr('src', '/uploads/gallery/images/original/' + image);
+		if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+			$('#image-show').attr('src', '/uploads/gallery/images/original/' + image);
+		} else {
+			$('#image-show').attr('src', '/public/uploads/gallery/images/original/' + image);
+		}
+
 		$('#edit-caption').text(caption);
 	})
 
@@ -369,20 +391,37 @@ function showLogo() {
 		dataType: "json",
 		success: function(data) {
 			for (var i = 0, len = data.length; i < len; i++) {
-				$('#gallery-logo').append('<div class="gallery-logo">' +
-					'<figure class="d-flex justify-content-center align-items-center">' +
-					'<img src="/uploads/gallery/logo/original/' + data[i].image + '" alt="' + data[i].name + '" width="100%">' +
-					'<div class="overlay">' +
-					'<div class="gallery-title">' +
-					'<p class="text-center">' + data[i].name + '</p>' +
-					'</div>' +
-					'<div class="gallery-action">' +
-					'<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-edit"></i></button>&nbsp;' +
-					'<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-trash"></i></button>' +
-					'</div>' +
-					'</div>' +
-					'</figure>' +
-					'</div>');
+				if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+					$('#gallery-logo').append('<div class="gallery-logo">' +
+						'<figure class="d-flex justify-content-center align-items-center">' +
+						'<img src="/uploads/gallery/logo/original/' + data[i].image + '" alt="' + data[i].name + '" width="100%">' +
+						'<div class="overlay">' +
+						'<div class="gallery-title">' +
+						'<p class="text-center">' + data[i].name + '</p>' +
+						'</div>' +
+						'<div class="gallery-action">' +
+						'<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-edit"></i></button>&nbsp;' +
+						'<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-trash"></i></button>' +
+						'</div>' +
+						'</div>' +
+						'</figure>' +
+						'</div>');
+				} else {
+					$('#gallery-logo').append('<div class="gallery-logo">' +
+						'<figure class="d-flex justify-content-center align-items-center">' +
+						'<img src="/public/uploads/gallery/logo/original/' + data[i].image + '" alt="' + data[i].name + '" width="100%">' +
+						'<div class="overlay">' +
+						'<div class="gallery-title">' +
+						'<p class="text-center">' + data[i].name + '</p>' +
+						'</div>' +
+						'<div class="gallery-action">' +
+						'<button class="btn btn-primary edit-logo-button" data-toggle="modal" data-target="#edit-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-edit"></i></button>&nbsp;' +
+						'<button class="btn btn-primary delete-logo-button" data-toggle="modal" data-target="#delete-client-logo" data-id="' + data[i].id + '" data-image="' + data[i].image + '" data-name="' + data[i].name + '"><i class="fas fa-trash"></i></button>' +
+						'</div>' +
+						'</div>' +
+						'</figure>' +
+						'</div>');
+				}
 			}
 		}
 	});
@@ -472,7 +511,11 @@ function editLogo() {
 
 		$('#edit-logo-id').val(id);
 		$('#edit-client-logo-name').val(name);
-		$('#logo-show-edit').attr('src', '/uploads/gallery/logo/original/' + image);
+		if (location.hostname === "localhost" || location.hostname === "127.0.0.1"){
+			$('#logo-show-edit').attr('src', '/uploads/gallery/logo/original/' + image);
+	 	} else {
+	 		$('#logo-show-edit').attr('src', '/public/uploads/gallery/logo/original/' + image);
+	 	}
 	})
 
 	frm_edit_logo = $('#frm-edit-client-logo').validate({
