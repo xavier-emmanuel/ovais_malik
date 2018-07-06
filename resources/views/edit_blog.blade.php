@@ -106,7 +106,7 @@
           @else
             <hr>
             <div class="text-center">
-              <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
+              <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-check"></i>
                 &nbsp; Published
               </button>
             </div>
