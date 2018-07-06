@@ -25,38 +25,23 @@ $(document).ready(function() {
 		},
 		submitHandler: function (frm_admin_settings, e) {
 			e.preventDefault();
+			if($('#new-username').val() == '' && $('#new-password').val() == '') {
 
-			var data = new FormData($("#frm-admin-settings")[0]);
+			} else {
+				var data = new FormData($("#frm-admin-settings")[0]);
 
-			$('#frm-admin-settings input').prop('disabled', true);
-			$('#frm-admin-settings .btn').prop('disabled', true);
-			$('.loading-overlay').css('display', 'block');
+				$('#frm-admin-settings input').prop('disabled', true);
+				$('#frm-admin-settings .btn').prop('disabled', true);
+				$('.loading-overlay').css('display', 'block');
 
-			$.ajax({
-				url: '/admin-change-credentials',
-				type: 'POST',
-				data: data,
-				dataType: 'json',
-				processData: false,
-				contentType: false,
-				success: function (data) {
-					if(data.success == false) {
-						$('#frm-admin-settings input').prop('disabled', false);
-						$('#frm-admin-settings .btn').prop('disabled', false);
-						$('.loading-overlay').css('display', 'none');
-						$('#frm-admin-settings')[0].reset();
-						$('#admin-settings').modal('hide');
-						$('.modal-backdrop').hide();
-
-						$.toast({
-							heading: 'Error!',
-							text: data.message,
-							position: 'top-right',
-							icon: 'error',
-							hideAfter: 3500,
-							stack: 6
-						});
-					} else {
+				$.ajax({
+					url: '/admin-change-credentials',
+					type: 'POST',
+					data: data,
+					dataType: 'json',
+					processData: false,
+					contentType: false,
+					success: function (data) {
 						$('#frm-admin-settings input').prop('disabled', false);
 						$('#frm-admin-settings .btn').prop('disabled', false);
 						$('.loading-overlay').css('display', 'none');
@@ -72,11 +57,11 @@ $(document).ready(function() {
 							hideAfter: 3500,
 							stack: 6
 						});
+					}, error: function (xhr, error, ajaxOptions, thrownError) {
+						alert(xhr.responseText);
 					}
-				}, error: function (xhr, error, ajaxOptions, thrownError) {
-					alert(xhr.responseText);
-				}
-			});
+				});
+			}
 		}
 	});
 });
