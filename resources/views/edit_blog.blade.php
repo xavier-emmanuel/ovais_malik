@@ -97,12 +97,19 @@
             </button>
           </div>
           @if($blogs->published == 0)
-          <hr>
-          <div class="text-center">
-            <button type="button" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
-              &nbsp; Publish
-            </button>
-          </div>
+            <hr>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
+                &nbsp; Publish
+              </button>
+            </div>
+          @else
+            <hr>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
+                &nbsp; Published
+              </button>
+            </div>
           @endif
         </div>
       </div>
