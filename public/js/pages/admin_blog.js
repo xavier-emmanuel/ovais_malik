@@ -214,6 +214,8 @@ $(document).ready(function () {
                 success: function(data) {
                     setTimeout(function() {
                         $('.btn-update').html('<i class="fas fa-save"></i>&nbsp; Update');
+                        var slug = convertToSlug($('input[name="blog_title"]').val());
+                        $('a.btn-preview').attr('href', '/admin-blog/preview/' + slug);
                         $.toast({
                             heading: 'Success',
                             text: 'Blog has been successfully updated.',

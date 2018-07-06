@@ -89,7 +89,7 @@
           </div>
 
           <div class="text-center">
-            <a href="/admin-blog/preview/{{ $blogs->slug }}" target="_blank" class="btn btn-outline"> <i class="fas fa-eye"></i>
+            <a href="/admin-blog/preview/{{ $blogs->slug }}" target="_blank" class="btn btn-outline btn-preview"> <i class="fas fa-eye"></i>
               &nbsp; Preview
             </a>
             <button type="submit" class="btn btn-outline btn-update"> <i class="fas fa-save"></i>
