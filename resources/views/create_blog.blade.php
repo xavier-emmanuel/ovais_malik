@@ -78,7 +78,7 @@
           <div class="form-group">
             <label for="">Preview:</label>
             <div class="preview-image-wrapper">
-              <img src="{{ asset('/img/photo-preview-frame-icon-by_vexels.png') }}" id="image-preview" alt=""></div>
+              <img src="{{ asset(App::environment('production') ? '/public/img/photo-preview-frame-icon-by_vexels.png' : '/img/photo-preview-frame-icon-by_vexels.png') }}" id="image-preview" alt=""></div>
           </div>
 
           <div class="text-center">
