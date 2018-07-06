@@ -136,7 +136,7 @@ $(document).ready(function () {
 
                         $.toast({
                             heading: 'Success',
-                            text: 'Blog has been successfully added.',
+                            text: 'Blog has been successfully saved. Kindly publish your blog.',
                             position: 'top-right',
                             icon: 'success',
                             hideAfter: 3500

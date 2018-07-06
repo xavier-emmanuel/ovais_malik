@@ -16,9 +16,12 @@
           <div class="blog-info">
             <span class="blog-category">{{ $data->categories->name }}</span>
             @foreach($tags as $tag)
-            <span class="blog-tags small">
-              <a href="#">{{ $tag }}</a>
-            </span>
+              @if(empty($tag))
+              @else
+                <span class="blog-tags small">
+                  <a href="#">{{ $tag }}</a>
+                </span>
+              @endif
             @endforeach
           </div>
 
