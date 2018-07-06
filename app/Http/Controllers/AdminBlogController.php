@@ -63,6 +63,8 @@ class AdminBlogController extends Controller
 			$thumbnail = Image::make($file);
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/admin-blogs/original/', $name);
+			$thumbnail->resize(1400, 900);
+			$thumbnail->save(public_path().'/uploads/admin-blogs/landscape/'.$name);
 
 			$images = array(
                 'medium' => array(
@@ -129,6 +131,8 @@ class AdminBlogController extends Controller
 			$thumbnail = Image::make($file);
 			$name=time().$file->getClientOriginalName();
 			$file->move(public_path().'/uploads/admin-blogs/original/', $name);
+			$thumbnail->resize(1400, 900);
+			$thumbnail->save(public_path().'/uploads/admin-blogs/landscape/'.$name);
 			$image = $name;
 
 			$images = array(
