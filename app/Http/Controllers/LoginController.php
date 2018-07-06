@@ -16,7 +16,7 @@ class LoginController extends Controller
   public function login(Request $request)
   {
     if (Auth::attempt(['username' => $request->login_username, 'password' => $request->login_password])) {
-        return redirect()->intended('/admin-video');
+        return redirect()->intended('/admin-blog');
     } else {
     		return back()->withErrors(['Invalid login credentials!']);
     }

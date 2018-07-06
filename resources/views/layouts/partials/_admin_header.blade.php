@@ -41,7 +41,7 @@
       <div class="dropdown o-admin__wrapper">
         <img class="o-admin__image--is-round" src="{{ asset(App::environment('production') ? '/public/img/avatar.svg' : '/img/avatar.svg') }}" alt="Profile">
         <a class="dropdown-toggle" id="admin-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Ovais Malik
+          {{ Auth::user()->name }}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="admin-dropdown">
           <a href="#" data-target="#admin-settings" data-toggle="modal" data-backdrop="static" class="dropdown-item"><i class="fas fa-cogs"></i>&nbsp; Settings</a>

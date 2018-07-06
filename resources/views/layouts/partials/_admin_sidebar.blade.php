@@ -7,7 +7,7 @@
     <nav>
       <input type="hidden" name="page_name" id="page-name" value="{{ $page }}">
       <ul>
-        <li class="{{ Request::is('admin-blog') ? 'active' : '' }}">
+        <li class="{{ Request::is('admin-blog') || Request::is('admin-blog/*') ? 'active' : '' }}">
           <a href="/admin-blog">
             <i class="fab fa-blogger-b"></i>&nbsp;&nbsp; Blog
           </a>

@@ -13,8 +13,20 @@
 			visibility: hidden;
     }
     .my-error-class {
-      color: red !important;
-      border-color: red !important;
+      color: #b90504;
+      border-color: #b90504;
+    }
+    label.my-error-class {
+      font-size: 80%;
+      font-weight: 400;
+    }
+    .error {
+      color: #b90504;
+      border-color: #b90504;
+    }
+    label.error {
+      font-size: 80%;
+      font-weight: 400;
     }
   </style>
 
