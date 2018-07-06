@@ -88,14 +88,9 @@
             <button type="submit" class="btn btn-outline btn-save"> <i class="fas fa-save"></i>
               &nbsp; Save
             </button>
-          </div>
-          <div class="div-publish" hidden>
-            <hr>
-            <div class="text-center">
-              <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
-                &nbsp; Publish
-              </button>
-            </div>
+            <button type="button" class="btn btn-outline btn-publish" disabled hidden> <i class="fas fa-newspaper"></i>
+              &nbsp; Publish
+            </button>
           </div>
         </div>
       </div>

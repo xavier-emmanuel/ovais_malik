@@ -142,7 +142,8 @@ $(document).ready(function () {
                             hideAfter: 3500
                         });
 
-                        $('.div-publish').attr('hidden', false);
+                        $('.btn-save').attr('hidden', true);
+                        $('.btn-publish').attr('hidden', false);
                     }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
