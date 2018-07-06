@@ -141,6 +141,8 @@ $(document).ready(function () {
                             icon: 'success',
                             hideAfter: 3500
                         });
+
+                        $('.div-publish').attr('hidden', false);
                     }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {

@@ -89,11 +89,13 @@
               &nbsp; Save
             </button>
           </div>
-          <hr>
-          <div class="text-center">
-            <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
-              &nbsp; Publish
-            </button>
+          <div class="div-publish" hidden>
+            <hr>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
+                &nbsp; Publish
+              </button>
+            </div>
           </div>
         </div>
       </div>
