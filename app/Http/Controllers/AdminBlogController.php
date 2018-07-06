@@ -204,7 +204,11 @@ class AdminBlogController extends Controller
 	        if ($file->isValid()) {
 	            $filename = time().$file->getClientOriginalName();
 	            $file->move(public_path().'/uploads/admin-blogs/ckeditor/images/', $filename);
-	            $url = url('/uploads/admin-blogs/ckeditor/images/' . $filename);
+	            if($_SERVER["REMOTE_ADDR"] == "127.0.0.1"){
+				    $url = url('/uploads/admin-blogs/ckeditor/images/' . $filename);
+				} else{
+				    $url = url('/public/uploads/admin-blogs/ckeditor/images/' . $filename);
+				}
 	        } else {
 	            $message = 'An error occured while uploading the file.';
 	        }
