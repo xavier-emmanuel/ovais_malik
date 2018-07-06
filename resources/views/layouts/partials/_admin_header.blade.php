@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="modal-content">
-          <form id="frm-admin-settings" method="post">
+          <form id="frm-admin-settings" method="post" name="frm_admin_settings">
             {{ csrf_field() }}
             <div class="modal-header">
               <h5 class="modal-title">Account Settings</h5>
@@ -70,22 +70,23 @@
               </button>
             </div>
             <div class="modal-body">
+              <input type="hidden" name="user_id" id="user-id" value="{{ Auth::user()->id }}">
               <div class="form-group">
                 <label for="">Username:&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="Feel free to change your username whenever you like. Just type in your desired username in the field below."></i></label>
-                <input type="text" name="" id="" class="form-control" autocomplete="off">
+                <input type="text" name="new_username" id="new-username" class="form-control" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="">New Password:&nbsp;&nbsp; <i class="fas fa-question-circle form-info" data-toggle="popover" data-content="Type in your desired password in the field below to change your account password."></i></label>
-                <input type="password" name="" id="" class="form-control" autocomplete="off">
+                <input type="password" name="new_password" id="new-password" class="form-control" autocomplete="off">
               </div>
               <div class="form-group">
                 <label for="">Re-type Password:</label>
-                <input type="password" name="" id="" class="form-control" autocomplete="off">
+                <input type="password" name="retype_password" id="retype-password" class="form-control" autocomplete="off">
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                <i class="fas fa-times"></i>&nbsp; No</button>
+                <i class="fas fa-times"></i>&nbsp; Cancel</button>
               <button type="submit" class="btn btn-info" id="btn-delete-logo">
                 <i class="fas fa-check"></i>&nbsp; Update</button>
             </div>
