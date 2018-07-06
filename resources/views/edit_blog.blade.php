@@ -27,6 +27,7 @@
       <input type="hidden" value="{{ $blogs->id }}" name="hdn_blog_id">
       <input type="hidden" value="{{ $blogs->slug }}" name="hdn_blog_slug">
       <input type="hidden" value="{{ $blogs->image }}" name="hdn_blog_image">
+      <input type="hidden" value="{{ $blogs->published }}" name="hdn_blog_published">
       <div class="blog-wrapper">
         <div class="box box-content-1">
           <div class="form-group" id="div">
@@ -88,13 +89,21 @@
           </div>
 
           <div class="text-center">
-            <a href="#" target="_blank" class="btn btn-outline"> <i class="fas fa-eye"></i>
+            <a href="/admin-blog/preview/{{ $blogs->slug }}" target="_blank" class="btn btn-outline"> <i class="fas fa-eye"></i>
               &nbsp; Preview
             </a>
-            <button type="submit" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
+            <button type="submit" class="btn btn-outline btn-update"> <i class="fas fa-save"></i>
               &nbsp; Update
             </button>
           </div>
+          @if($blogs->published == 0)
+          <hr>
+          <div class="text-center">
+            <button type="button" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
+              &nbsp; Publish
+            </button>
+          </div>
+          @endif
         </div>
       </div>
     </form>

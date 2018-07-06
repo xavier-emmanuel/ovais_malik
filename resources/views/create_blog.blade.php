@@ -59,7 +59,7 @@
               Content:
               <span>*</span>
             </label>
-            <textarea name="blog_content" id="blog_content" cols="30" rows="10" autocomplete="off" required></textarea>
+            <textarea name="blog_content" id="blog_content" class="blog-content" cols="30" rows="10" autocomplete="off" required></textarea>
           </div>
         </div>
 
@@ -82,10 +82,16 @@
           </div>
 
           <div class="text-center">
-            <a href="#" target="_blank" class="btn btn-outline"> <i class="fas fa-eye"></i>
+            <a href="#" target="_blank" class="btn btn-outline btn-preview" hidden> <i class="fas fa-eye"></i>
               &nbsp; Preview
             </a>
-            <button type="submit" class="btn btn-outline btn-publish"> <i class="fas fa-newspaper"></i>
+            <button type="submit" class="btn btn-outline btn-save"> <i class="fas fa-save"></i>
+              &nbsp; Save
+            </button>
+          </div>
+          <hr>
+          <div class="text-center">
+            <button type="button" class="btn btn-outline btn-publish" disabled> <i class="fas fa-newspaper"></i>
               &nbsp; Publish
             </button>
           </div>

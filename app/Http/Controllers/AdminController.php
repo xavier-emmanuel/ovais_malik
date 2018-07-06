@@ -32,11 +32,20 @@ class AdminController extends Controller
 	}
 
 	public function adminVideo()
-  {
+  	{
     return view('admin_video')->with(array('page' => 'Videos'));
-  }
+  	}
 
 	public function adminGallery() {
 		return view('admin_gallery')->with(array('page' => 'Images'));
+	}
+
+	public function previewBlog($slug) {
+		$blog = Blog::where('slug', $slug)->first();
+        $tags = $blog->tags;
+        $tagsArray = explode(',', $tags);
+        $latest_post = Blog::where('id', '!=', $blog->id)->latest()->take(8)->get();
+        $related_post = Blog::where('category_id', $blog->category_id)->where('id', '!=', $blog->id)->take(6)->get();
+		return view('blog_single')->with(array('page' => $blog->title, 'data' => $blog, 'tags' => $tagsArray, 'latest_post' => $latest_post, 'related_post' => $related_post));
 	}
 }

@@ -18,6 +18,7 @@
             <th>Title</th>
             <th>Created at</th>
             <th>Updated at</th>
+            <th>Published at</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -69,6 +70,7 @@
   <script src="{{ asset(App::environment('production') ? '/public/js/pages/admin_delete_blog.js' : '/js/pages/admin_delete_blog.js') }}"></script>
   <script>
     $('.tbl-blog').DataTable({
+        "order": [[ 4, "desc" ]],
         "ajax": {
             url: "/admin-blog/show",
             type: 'GET'
@@ -76,11 +78,11 @@
     });
 
     $(document).ready(function(){
-        if(localStorage.getItem("Create"))
+        if(localStorage.getItem("Publish"))
         {
             $.toast({
                 heading: 'Success',
-                text: 'Blog has been successfully added.',
+                text: 'Blog has been successfully published.',
                 position: 'top-right',
                 icon: 'success',
                 hideAfter: 3500

@@ -26,6 +26,12 @@ class AdminBlogController extends Controller
 				$updated_at = $row->updated_at->format('F d, Y h:i:s A');
 			}
 
+			if ($row->published == 0) {
+				$published_at = '';
+			} else {
+				$published_at = Carbon::parse($row->published_at)->format('F d, Y h:i:s A');
+			}
+
 			$button = '<td>
 							<a href="/admin-blog/edit/'.$row->slug.'" class="btn btn-info edit-category"><i class="fas fa-edit"></i></a>&nbsp;
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-blog" data-id="'.$row->id.'" data-title="'.$row->title.'"><i class="fas fa-trash"></i></button>
@@ -36,6 +42,7 @@ class AdminBlogController extends Controller
 				$title,
 				$created_at,
 				$updated_at,
+				$published_at,
 				$button
 			);
 		}
@@ -93,6 +100,8 @@ class AdminBlogController extends Controller
 		$blog->category_id = $input['blog_category'];
 		$blog->tags = $input['blog_tags'];
 		$blog->slug = str_slug($blog->title);
+		$blog->published = 0;
+		$blog->published_at = null;
 		$blog->updated_at = null;
 
 		$blog->save();
@@ -163,6 +172,19 @@ class AdminBlogController extends Controller
 		$blog->save();
 
 		return response()->json(['success'=>'Blog has been successfully updated.']);
+	}
+
+	public function ajaxPublish(Request $request){
+
+		$blog = Blog::where('title', $request->title)->first();
+
+		$blog->published = 1;
+		$blog->created_at = $blog->created_at;
+		$blog->published_at = Carbon::now();
+
+		$blog->save();
+
+		return response()->json($blog);
 	}
 
 	public function ajaxDelete(Request $request){

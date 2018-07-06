@@ -25,6 +25,8 @@ class CreateBlogsTable extends Migration
                     ->references('id')->on('categories')
                     ->onDelete('cascade');
             $table->string('slug')->unique();
+            $table->integer('published');
+            $table->timestamp('published_at')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

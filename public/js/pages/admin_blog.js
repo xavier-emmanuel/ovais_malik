@@ -49,6 +49,13 @@ $(document).ready(function () {
         }
     });
 
+    function convertToSlug(Text) {
+        return Text
+            .toLowerCase()
+            .replace(/ /g, '-')
+            .replace(/[^\w-]+/g, '');
+    }
+
     $("#frm-create-blog").validate({
         ignore: [],
         debug: false,
@@ -106,7 +113,8 @@ $(document).ready(function () {
 
             var data = new FormData($("#frm-create-blog")[0]);
 
-            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
+            $('.btn-save').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Saving');
+
 
             $.ajax({
                 url: '/admin-blog/create/store',
@@ -115,11 +123,25 @@ $(document).ready(function () {
                 dataType: 'json',
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    localStorage.setItem("Create",data.OperationStatus);
-                    setTimeout(function(){
-                        window.location.href = '/admin-blog';
-                    },2000);
+                success: function(data) {
+                    setTimeout(function() {
+                        $('#frm-create-blog :input').attr('disabled', 'disabled');
+                        CKEDITOR.instances.blog_content.setReadOnly(true);
+                        $('.btn-preview').attr('hidden', false);
+                        $('.btn-save').attr('disabled', 'disabled');
+                        $('.btn-publish').attr('disabled', false);
+                        $('.btn-save').html('<i class="fas fa-save"></i>&nbsp; Saved');
+                        var slug = convertToSlug($('input[name="blog_title"]').val());
+                        $('a.btn-preview').attr('href', '/admin-blog/preview/' + slug);
+
+                        $.toast({
+                            heading: 'Success',
+                            text: 'Blog has been successfully added.',
+                            position: 'top-right',
+                            icon: 'success',
+                            hideAfter: 3500
+                        });
+                    }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
                     alert(xhr.responseText);
@@ -180,7 +202,7 @@ $(document).ready(function () {
 
             var data = new FormData($("#frm-edit-blog")[0]);
 
-            $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
+            $('.btn-update').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Updating');
 
             $.ajax({
                 url: '/admin-blog/edit/update',
@@ -189,18 +211,47 @@ $(document).ready(function () {
                 dataType: 'json',
                 processData: false,
                 contentType: false,
-                success: function (data) {
-                    localStorage.setItem("Update",data.OperationStatus);
-                    setTimeout(function(){
-                        window.location.href = '/admin-blog';
+                success: function(data) {
+                    setTimeout(function() {
+                        $('.btn-update').html('<i class="fas fa-save"></i>&nbsp; Update');
+                        $.toast({
+                            heading: 'Success',
+                            text: 'Blog has been successfully updated.',
+                            position: 'top-right',
+                            icon: 'success',
+                            hideAfter: 3500
+                        });
                     }, 2000);
                 },
                 error: function (xhr, error, ajaxOptions, thrownError) {
-                    $('.btn-publish').html('<i class="fas fa-newspaper"></i>&nbsp; Update');
+                    $('.btn-update').html('<i class="fas fa-newspaper"></i>&nbsp; Update');
                     $('#edit-blog-title').addClass('error');
                     $('#div').append('<label id="edit-blog-title-error" class="error" for="edit-blog-title">This title already exists. Try different title.</label>');
                 }
             });
         }
+    });
+
+    $('.btn-publish').unbind('click').on('click', function (event) {
+        event.preventDefault();
+
+        $('.btn-publish').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Publishing');
+
+        $.ajax({
+            url: '/admin-blog/publish',
+            type: 'POST',
+            headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').val() },
+            data: { _token: $('input[name="_token"]').val(), title: $('input[name="blog_title"]').val() },
+            dataType: 'json',
+            success: function (data) {
+                localStorage.setItem("Publish",data.OperationStatus);
+                    setTimeout(function(){
+                        window.location.href = '/admin-blog';
+                    }, 2000);
+            },
+            error: function (xhr, error, ajaxOptions, thrownError) {
+                alert(xhr.responseText);
+            }
+        });
     });
 });

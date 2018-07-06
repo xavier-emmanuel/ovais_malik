@@ -43,7 +43,7 @@ class PagesController extends Controller
 
     public function blogs()
     {
-        $blog = Blog::latest()->paginate(4);
+        $blog = Blog::where('published', 1)->latest()->paginate(4);
         return view('blogs')->with(array('page' => 'Blogs', 'data' => $blog));
     }
 
