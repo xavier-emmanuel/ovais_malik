@@ -19,7 +19,7 @@ class AdminBlogController extends Controller
 			$id =  $row->id;
 			$title = '<a href="/blogs/'.$row->slug.'" target="_blank">'.$row->title.'</a>';
 			$created_at = $row->created_at->format('F d, Y h:i:s A');
-			
+
 			if (empty($row->updated_at)) {
 				$updated_at = '';
 			} else {
@@ -27,9 +27,9 @@ class AdminBlogController extends Controller
 			}
 
 			if ($row->published == 0) {
-				$published_at = '';
+				$published_at = '<span class="badge badge-danger">Draft</span>';
 			} else {
-				$published_at = Carbon::parse($row->published_at)->format('F d, Y h:i:s A');
+				$published_at = '<span class="badge badge-info">Published</span>';
 			}
 
 			$button = '<td>

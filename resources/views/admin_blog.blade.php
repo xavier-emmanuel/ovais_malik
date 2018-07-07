@@ -18,7 +18,7 @@
             <th>Title</th>
             <th>Created at</th>
             <th>Updated at</th>
-            <th>Published at</th>
+            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
