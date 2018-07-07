@@ -18,12 +18,12 @@ class AdminBlogController extends Controller
 		foreach($blog as $row) {
 			$id =  $row->id;
 			$title = '<a href="/blogs/'.$row->slug.'" target="_blank">'.$row->title.'</a>';
-			$created_at = $row->created_at->format('F d, Y h:i:s A');
+			$created_at = $row->created_at->format('F d, Y h:i A');
 
 			if (empty($row->updated_at)) {
 				$updated_at = '';
 			} else {
-				$updated_at = $row->updated_at->format('F d, Y h:i:s A');
+				$updated_at = $row->updated_at->format('F d, Y h:i A');
 			}
 
 			if ($row->published == 0) {

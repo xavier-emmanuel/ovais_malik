@@ -18,11 +18,11 @@ class CategoryController extends Controller
 
     		$id =  $row->id;
             $name = $row->name;
-            $created_at = $row->created_at->format('F d, Y h:i:s A');
+            $created_at = $row->created_at->format('F d, Y h:i A');
             if (empty($row->updated_at)) {
             	$updated_at = '';
             } else {
-            	$updated_at = $row->updated_at->format('F d, Y h:i:s A');
+            	$updated_at = $row->updated_at->format('F d, Y h:i A');
             }
             $button = '<td>
 						<button type="button" class="btn btn-info edit-category" data-toggle="modal" data-target="#edit-category" data-id="'.$row->id.'" data-name="'.$row->name.'"><i class="fas fa-edit"></i></button>&nbsp;
