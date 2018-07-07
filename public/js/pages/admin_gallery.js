@@ -277,13 +277,11 @@ function editImage() {
         debug: false,
         rules: {
             edit_photo: {
-                required: true,
                 extension: "jpg|png|jpeg"
             }
         },
         messages: {
             edit_photo: {
-                required: "Required field cannot be left blank.",
                 extension: "Invalid file. Please select valid image file and try again."
             }
         },

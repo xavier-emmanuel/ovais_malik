@@ -57,6 +57,7 @@ Route::group( [ 'middleware' => 'auth' ], function()
 	Route::post('/admin-audio/update', 'AudioController@ajaxUpdate');
 	Route::post('/admin-audio/delete', 'AudioController@ajaxDelete');
 
+	Route::get('/admin-change-credentials/check', 'AdminSettingsController@checkUsername');
 	Route::post('/admin-change-credentials', 'AdminSettingsController@changeUserCredential');
 });
 

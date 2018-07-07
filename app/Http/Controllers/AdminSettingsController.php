@@ -21,4 +21,13 @@ class AdminSettingsController extends Controller
 
 			return response()->json(['success'=>'User credentials has been successfully updated.']);
    	}
+
+   	public function checkUsername(Request $request) {
+   		$username = User::all()->where('username', $request->new_username)->first();
+	    if ($username) {
+	        return response()->json(FALSE);
+	    } else {
+	        return response()->json(TRUE);
+	    }
+   	}
 }
