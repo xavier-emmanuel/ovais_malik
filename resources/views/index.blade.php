@@ -54,9 +54,9 @@
       <div class="row" style="height: 100%">
         <div class="col-lg-5 col-md-12 col-sm-12 d-none d-lg-block"></div>
         <div class="col-lg-7 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-start">
-          <h1 class="display-4">A Multilingual Voiceover Talent!</h1>
-          <p class="lead">Ovais is a multilingual voiceover actor in English, Hindi and Urdu with a unique flair talent. He is a well established professional voice actor in almost every aspect of the industry from commercials, narration to major video game software, movie trailer and more. Wanna hear my demo reels?</p>
-          <a href="#" class="btn btn-outline scroll-down" style="border: 2px solid #fff; color: #fff; padding: 10px 50px;">LISTEN</a>
+          <!-- <h1 class="display-4">A Multilingual Voiceover Talent!</h1> -->
+          <p class="lead">Ovais Malik is a multifaceted voice actor whose work has graced almost every aspect of the industry, from commercials and video games, to documentary films and ADR work for major motion pictures all around the world. His ability to work in 3 different languages: English, Urdu and Hindi have made him a global triple threat in the industry.</p>
+          <!-- <a href="#" class="btn btn-outline scroll-down" style="border: 2px solid #fff; color: #fff; padding: 10px 50px;">LISTEN</a> -->
         </div>
       </div>
     </div>

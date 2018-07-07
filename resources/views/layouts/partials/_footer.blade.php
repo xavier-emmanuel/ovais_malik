@@ -2,14 +2,18 @@
 
 <footer id="footer">
   <div class="container">
-    <div class="dev-owner">
       <p class="small">Copyright 2018
         <span style="font-weight: 500;">Ovais Malik Voiceover</span>. All Rights Reserved.
       </p>
-      <p class="small">Designed &amp; Developed by
-        <a href="https://www.oneiroswebsolutions.com">&nbsp;
-          <img src="{{ asset(App::environment('production') ? '/public/img/oneiros-web-solutions-logo.png' : '/img/oneiros-web-solutions-logo.png') }}" alt="Oneiros Web Solutions Logo">
+    <div class="dev-partner d-flex justify-content-between">
+      <p class="small lmn">Powered by
+        <a href="https://www.laminastudios.com/">
+          Lamina Studios, LLC.
         </a>
+      </p>
+      <p class="small ows">Designed &amp; Developed by
+        <a href="https://www.oneiroswebsolutions.com">
+          Oneiros Web Solutions.
       </p>
     </div>
   </div>

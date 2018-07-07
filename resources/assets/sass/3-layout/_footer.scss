@@ -3,34 +3,32 @@
   text-align: center;
   background-color: $dark-grey;
   color: darken($white, 3);
-
   a {
     &:hover {
       text-decoration: none;
     }
   }
-
   p {
     &.small {
       color: darken($grey, 10);
     }
-
     img {
       width: 90px;
     }
   }
-
-  .dev-owner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .dev-partner {
     margin-top: 30px;
-
     @media (max-width: 767px) {
       flex-direction: column;
+      align-items: center !important;
+    }
+    .ows {
+      margin-left: auto;
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
     }
   }
-
   a {
     &:hover {
       color: $grey !important;

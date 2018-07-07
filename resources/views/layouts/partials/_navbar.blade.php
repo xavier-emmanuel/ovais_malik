@@ -61,9 +61,9 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+            <!-- <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
               <a class="nav-link" href="/about">About</a>
-            </li>
+            </li> -->
             <li class="nav-item {{ Request::is('gallery') ? 'active' : '' }}">
               <a class="nav-link" href="/gallery">Gallery</a>
             </li>
