@@ -61,22 +61,16 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <!-- <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-              <a class="nav-link" href="/about">About</a>
-            </li> -->
             <li class="nav-item {{ Request::is('gallery') ? 'active' : '' }}">
               <a class="nav-link" href="/gallery">Gallery</a>
             </li>
             <li class="nav-item {{ Request::is('videos-show') ? 'active' : '' }}">
               <a class="nav-link" href="/videos-show">Videos</a>
             </li>
-            <li class="nav-item {{ Request::is('blogs') || Request::is('blogs/*') ? 'active' : '' }}">
-              <a class="nav-link" href="/blogs">Blogs</a>
-            </li>
             <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
-              <a class="nav-link" href="/contact">Contact</a>
+              <a class="nav-link mr-0 pr-0" href="/contact">Contact</a>
             </li>
-            <div class="dropdown" style="display: {{ Auth::check() ? 'block' : 'none' }};">
+            <!-- <div class="dropdown" style="display: {{ Auth::check() ? 'block' : 'none' }};">
               <button class="btn btn-outline dropdown-toggle" type="button" id="admin-setting-option" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-cogs"></i>&nbsp;
               </button>
@@ -87,7 +81,7 @@
             </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" id="login-button" style="display: {{ Auth::check() ? 'none' : 'block' }};">
               LOGIN
-            </button>
+            </button> -->
           </ul>
         </div>
       </nav>

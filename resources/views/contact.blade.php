@@ -15,7 +15,7 @@
     <div class="container">
       <h1 class="text-center">Contact <span>Ovais</span></h1>
       <div class="headul"></div>
-      <p class="lead text-center">Are you looking for the right voiceover actor for your <span>commercials, movie trailer, narration for video game software</span> and other voice talent project?<br><br>I'd love to hear from you, feel free to fill-out the form.</p><br>
+      <p class="lead text-center">No project is too big or small. If you have any questions, please contact Ovais on this form below.</p><br>
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
