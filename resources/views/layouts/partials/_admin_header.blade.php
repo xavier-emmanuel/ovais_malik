@@ -44,7 +44,7 @@
           {{ Auth::user()->name }}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="admin-dropdown">
-          <a href="#" data-target="#admin-settings" data-toggle="modal" data-backdrop="static" class="dropdown-item"><i class="fas fa-cogs"></i>&nbsp; Settings</a>
+          <a href="#" data-target="#admin-settings" data-toggle="modal" data-backdrop="static" class="dropdown-item" id="settings"><i class="fas fa-cogs"></i>&nbsp; Settings</a>
           <a href="/auth/logout" class="dropdown-item"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
         </div>
       </div>
@@ -87,7 +87,7 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">
                 <i class="fas fa-times"></i>&nbsp; Cancel</button>
-              <button type="submit" class="btn btn-info" id="btn-delete-logo">
+              <button type="submit" class="btn btn-info" id="btn-update-user">
                 <i class="fas fa-check"></i>&nbsp; Update</button>
             </div>
           </form>

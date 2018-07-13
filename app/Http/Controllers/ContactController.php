@@ -39,7 +39,7 @@ class ContactController extends Controller
        $data, function($message) use ($from, $subject, $name)
     {	
        $message->from($from, $name);
-       $message->to('imjordanlopez@gmail.com', 'Jordan Lopez')->subject($subject);
+       $message->to('info@ovaismalik.com', 'Ovais Malik')->subject($subject);
     });
 
     return response()->json(['success' => 'Thanks for contacting us!']);

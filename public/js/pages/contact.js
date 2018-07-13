@@ -19,7 +19,7 @@ $(document).ready(function () {
 
             $('#frm-contact input').prop('disabled', true);
             $('#frm-contact .btn').prop('disabled', true);
-            $('.loading-overlay').css('display', 'block');
+            $('.btn-send').html('<i class="fas fa-spinner fa-spin"></i>&nbsp; Sending');
 
             $.ajax({
                 url: '/contact/send',
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 success: function (data) {
                     $('#frm-contact input').prop('disabled', false);
                     $('#frm-contact .btn').prop('disabled', false);
-                    $('.loading-overlay').css('display', 'none');
+                    $('.btn-send').html('<i class="fas fa-paper-plane"></i>&nbsp; Send');
 
                     $('#frm-contact').trigger('reset');
 

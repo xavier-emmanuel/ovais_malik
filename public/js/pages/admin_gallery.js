@@ -24,7 +24,7 @@ $(document).ready(function() {
 					reader.onload = function(event) {
 						$($.parseHTML('<div class="image-displayed">' +
 							'<i class="far fa-times-circle remove-icon" title="Remove photo"></i>' +
-							'<input type="hidden" id="image-file" name="image_file[]" value="' + event.target.result.split(',')[1] + '">' +
+							'<input type="hidden" name="image_file[]" value="' + event.target.result.split(',')[1] + '">' +
 							'<img src="' + event.target.result + '" alt="" width="100%">' +
 							'<textarea name="caption[]" cols="30" rows="3" class="form-control image-caption" placeHolder="Add caption here"></textarea>' +
 							'</div>')).appendTo(placeToInsertImagePreview);
@@ -277,13 +277,11 @@ function editImage() {
         debug: false,
         rules: {
             edit_photo: {
-                required: true,
                 extension: "jpg|png|jpeg"
             }
         },
         messages: {
             edit_photo: {
-                required: "Required field cannot be left blank.",
                 extension: "Invalid file. Please select valid image file and try again."
             }
         },
