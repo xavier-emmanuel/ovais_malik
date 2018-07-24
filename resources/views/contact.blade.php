@@ -2,12 +2,6 @@
 
 @section('stylesheets')
   <link rel="stylesheet" href="{{ asset(App::environment('production') ? '/public/plugins/toast-master/css/jquery.toast.css' : '/plugins/toast-master/css/jquery.toast.css') }}">
-  <style>
-    .error {
-      color: red !important;
-      border-color: red !important;
-    }
-  </style>
 @endsection
 
 @section('content')
